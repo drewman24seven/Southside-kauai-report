@@ -311,6 +311,18 @@ def check_cdip_health():
 def main():
     print(f"=== Starting Kauai South Shore Wind/Water Data Aggregator ===")
     
+    # Load previous data.json so we can fall back to stale-but-valid values
+    # if any live fetch fails this run (prevents blanking swell/tide on transient API errors)
+    workspace_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    output_path = os.path.join(workspace_dir, "data.json")
+    previous_data = {}
+    try:
+        if os.path.exists(output_path):
+            with open(output_path) as f:
+                previous_data = json.load(f)
+    except Exception:
+        pass
+    
     # 1. Fetch Wind PWS readings
     wind_readings = get_wind_data()
     wind_results = None
@@ -366,6 +378,16 @@ def main():
             print(f"Error running analyze_swell.py: {e}", file=sys.stderr)
             
     # 7. Compile final JSON payload
+    # Fall back to previous good values if any critical section came back null
+    if swell_results is None and previous_data.get("swell"):
+        print("WARNING: Swell analysis returned null — preserving previous swell data.", file=sys.stderr)
+        swell_results = previous_data["swell"]
+    
+    tide_predictions = tide_info["predictions"][:48]
+    if not tide_predictions and previous_data.get("tides", {}).get("predictions"):
+        print("WARNING: Tide predictions empty — preserving previous tide data.", file=sys.stderr)
+        tide_predictions = previous_data["tides"]["predictions"]
+    
     report_data = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
         "cdip_health": cdip_status,
@@ -373,7 +395,7 @@ def main():
         "model_wind": model_wind,
         "swell": swell_results,
         "tides": {
-            "predictions": tide_info["predictions"][:48],  # limit size
+            "predictions": tide_predictions,
             "observations": tide_info["observations"][-24:],
             "surge_ft": tide_info["tide_surge_ft"]
         },
