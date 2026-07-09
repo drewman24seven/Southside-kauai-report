@@ -23,11 +23,16 @@ jobs:
           python-version: '3.10'
 
       - name: Fetch and Process Data
-        run: python scripts/fetch_data.py
+        run: python3 scripts/fetch_data.py
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add data.json nws_forecast_cache.txt nws_grid_wind_cache.txt
+          
+          # Add files safely (only if they exist)
+          git add data.json
+          if [ -f nws_forecast_cache.txt ]; then git add nws_forecast_cache.txt; fi
+          if [ -f nws_grid_wind_cache.txt ]; then git add nws_grid_wind_cache.txt; fi
+          
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update marine telemetry" && git push)
