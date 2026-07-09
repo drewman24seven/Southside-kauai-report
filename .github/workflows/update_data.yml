@@ -5,6 +5,9 @@ on:
     # Run every 30 minutes
     - cron: '*/30 * * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI
+  push:
+    branches:
+      - main  # Also fires on every file upload to keep the scheduler active
 
 permissions:
   contents: write # Allow committing back to the repository
@@ -22,6 +25,11 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Delete stale cache (force fresh fetch every run)
+        run: |
+          rm -f nws_forecast_cache.txt
+          rm -f nws_grid_wind_cache.txt
+
       - name: Fetch and Process Data
         run: python3 scripts/fetch_data.py
 
@@ -30,9 +38,6 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           
-          # Add files safely (only if they exist)
           git add data.json
-          if [ -f nws_forecast_cache.txt ]; then git add nws_forecast_cache.txt; fi
-          if [ -f nws_grid_wind_cache.txt ]; then git add nws_grid_wind_cache.txt; fi
-          
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update marine telemetry" && git push)
+
