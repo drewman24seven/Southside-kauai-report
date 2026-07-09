@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kauai South Shore - Wind & Marine Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ocean-bg-gradient"></div>
+    <div class="overlay-texture"></div>
+
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-logo">
+                <span class="island-badge">Kauai</span>
+                <h1>South Shore <span class="accent-text">Marine Report</span></h1>
+            </div>
+            <div class="header-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Location</span>
+                    <span class="meta-val">Nomilo to Makahuena</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Small Craft Advisory</span>
+                    <span class="meta-val" id="sca-badge">Checking...</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Last Updated</span>
+                    <span class="meta-val id-time" id="last-updated">Checking...</span>
+                </div>
+                <div class="meta-item refresh-item">
+                    <button class="refresh-btn" id="refresh-button" title="Refresh Live Data">
+                        <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                        </svg>
+                        <span>Refresh Data</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <main class="dashboard-grid">
+            <!-- Row 1: Primary Swell & Wind Cards -->
+            <section class="card marine-card" id="marine-widget">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 12c4-3 6-3 10 0s6 3 10 0" />
+                            <path d="M2 17c4-3 6-3 10 0s6 3 10 0" />
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                        <h2>Swell & Tides</h2>
+                    </div>
+                    <div class="header-badges">
+                        <span class="trend-badge" id="swell-trend" style="margin-right: 0.5rem;">Holding</span>
+                        <span class="surge-badge" id="tide-surge-badge">Surge: Offline</span>
+                    </div>
+                </div>
+                <div class="card-body marine-row swell-row-container" style="border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.8rem; justify-content: space-between; width: 100%; display: flex;">
+                    <div class="swell-stats">
+                        <div class="stat-main" style="margin-bottom: 0.5rem;">
+                            <div class="stat-number" id="swell-height">--.-</div>
+                            <div class="stat-unit">FT</div>
+                        </div>
+                        <div class="stat-meta-grid">
+                            <div class="sub-stat">
+                                <span class="sub-label">Period</span>
+                                <span class="sub-val" id="swell-period">--s</span>
+                            </div>
+                            <div class="sub-stat">
+                                <span class="sub-label">Direction</span>
+                                <span class="sub-val" id="swell-dir">---° --</span>
+                            </div>
+                            <div class="sub-stat">
+                                <span class="sub-label">Buoy Lag</span>
+                                <span class="sub-val" id="swell-lag">-.--h</span>
+                            </div>
+                            <div class="sub-stat">
+                                <span class="sub-label">Swell Profile</span>
+                                <span class="sub-val confidence-high" id="swell-conf">---</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="visual-indicator wave-compass-container compact" style="width: 110px; height: 110px; flex-shrink: 0; background: rgba(255, 255, 255, 0.01);">
+                        <div class="compass-dial" style="top: 2px; left: 2px; right: 2px; bottom: 2px;">
+                            <div class="compass-marker n" style="top: 8px; font-size: 0.6rem;">N</div>
+                            <div class="compass-marker e" style="right: 2px; top: 50%; font-size: 0.6rem;">E</div>
+                            <div class="compass-marker s" style="bottom: 0px; font-size: 0.6rem;">S</div>
+                            <div class="compass-marker w" style="left: 10px; top: 50%; font-size: 0.6rem;">W</div>
+                            <div class="compass-arrow" id="swell-arrow" style="width: 20px; height: 20px; margin-top: -10px; margin-left: -10px;">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body marine-row tide-row-container" style="padding-top: 0.8rem; padding-bottom: 0.8rem; justify-content: space-between; width: 100%; display: flex; align-items: center;">
+                    <div class="tide-graph-container" style="flex: 1; margin-bottom: 0; margin-right: 1.25rem; background: rgba(0, 0, 0, 0.1); padding: 0.4rem 0.6rem 0.2rem;">
+                        <svg class="tide-curve" viewBox="0 0 240 80" id="tide-svg" style="height: 60px;">
+                            <defs>
+                                <linearGradient id="tide-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="rgba(78, 205, 196, 0.4)" />
+                                    <stop offset="100%" stop-color="rgba(78, 205, 196, 0.0)" />
+                                </linearGradient>
+                            </defs>
+                            <g class="loading-windows-group"></g>
+                            <path class="tide-area-path" d="" fill="url(#tide-grad)"/>
+                            <path class="tide-line-path" d="" fill="none" stroke="var(--accent-teal)" stroke-width="2"/>
+                            <!-- Indicator line for current time -->
+                            <line class="current-time-line" x1="120" y1="0" x2="120" y2="80" stroke="#e0a96d" stroke-dasharray="3,3"/>
+                            <circle class="current-time-dot" cx="120" cy="40" r="4" fill="#e0a96d"/>
+                        </svg>
+                        <div class="tide-axis" style="font-size: 0.65rem; margin-top: 0.2rem;">
+                            <span>00:00</span>
+                            <span>06:00</span>
+                            <span>12:00</span>
+                            <span>18:00</span>
+                        </div>
+                    </div>
+                    <div class="tide-extreme-stats" id="tide-extremes" style="flex-direction: column; justify-content: center; gap: 0.4rem; flex-wrap: nowrap; display: flex;">
+                        <!-- High and Low tides list -->
+                    </div>
+                </div>
+
+                <div class="card-body alerts-row-container" style="padding-top: 0; border-top: none; display: block; width: 100%;">
+                    <div class="harbor-alerts-list" id="harbor-alerts-container" style="border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 0; padding-top: 0.6rem;">
+                        <!-- Dynamic Kukuiula Harbor Alerts -->
+                    </div>
+                </div>
+
+                <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="footer-note" id="swell-verify">Buoy 51212 vs 51213: Comparing...</span>
+                    <span class="footer-note" id="tide-footer">Station 1611347 - Observed vs Predictions</span>
+                </div>
+            </section>
+
+            <section class="card wind-card" id="wind-widget">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
+                        </svg>
+                        <h2>Wind Report</h2>
+                    </div>
+                    <span class="trend-badge" id="wind-reliability">Reliable</span>
+                </div>
+                <div class="card-body wind-body">
+                    <div class="twin-wind-container">
+                        <!-- Column 1: PWS Wind -->
+                        <div class="wind-column pws-column">
+                            <h3 class="wind-column-title">Landing</h3>
+                            <div class="wind-main-stat">
+                                <div class="stat-number compact" id="wind-speed">--.-</div>
+                                <div class="stat-unit">MPH</div>
+                            </div>
+                            <div class="wind-column-meta">
+                                <div class="column-sub-stat">
+                                    <span class="sub-label">Avg Gusts</span>
+                                    <span class="sub-val" id="wind-gusts">-- mph</span>
+                                </div>
+                                <div class="column-sub-stat">
+                                    <span class="sub-label">Direction</span>
+                                    <span class="sub-val" id="wind-dir">---° --</span>
+                                </div>
+                            </div>
+                            <div class="visual-indicator wind-compass-container compact">
+                                <div class="compass-dial">
+                                    <div class="compass-marker n">N</div>
+                                    <div class="compass-marker s">S</div>
+                                    <div class="compass-arrow wind" id="wind-arrow">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: NAM Wind -->
+                        <div class="wind-column model-column">
+                            <h3 class="wind-column-title">Exposed Points</h3>
+                            <div class="wind-main-stat">
+                                <div class="stat-number compact" id="model-wind-speed">--.-</div>
+                                <div class="stat-unit">KT</div>
+                            </div>
+                            <div class="wind-column-meta">
+                                <div class="column-sub-stat">
+                                    <span class="sub-label">Wind Speed</span>
+                                    <span class="sub-val" id="model-wind-mph">--.- mph</span>
+                                </div>
+                                <div class="column-sub-stat">
+                                    <span class="sub-label">Direction</span>
+                                    <span class="sub-val" id="model-wind-dir">---° --</span>
+                                </div>
+                            </div>
+                            <div class="visual-indicator wind-compass-container compact">
+                                <div class="compass-dial">
+                                    <div class="compass-marker n">N</div>
+                                    <div class="compass-marker s">S</div>
+                                    <div class="compass-arrow wind model-wind" id="model-wind-arrow">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transit Comfort Levels Section -->
+                    <div class="transit-comfort-section">
+                        <div class="transit-row">
+                            <span class="transit-label">West of Makahuena <small style="color: var(--text-muted); font-size: 0.72rem;">(Poipu / Kukuiula)</small></span>
+                            <span class="comfort-badge" id="comfort-west">--</span>
+                        </div>
+                        <div class="transit-row">
+                            <span class="transit-label">East of Makahuena <small style="color: var(--text-muted); font-size: 0.72rem;">(Kipu Kai / Lihue)</small></span>
+                            <span class="comfort-badge" id="comfort-east">--</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="station-pills" id="station-list">
+                        <!-- Stations will be added dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Row 2: Tides & Forecast -->
+            <section class="card forecast-card" id="forecast-widget">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg>
+                        <h2>NWS Marine Forecast</h2>
+                    </div>
+                    <span class="zone-badge">PHZ112</span>
+                </div>
+                <div class="card-body forecast-body">
+                    <div class="forecast-content" id="forecast-text">
+                        Loading leeward waters marine forecast text...
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="footer-note">Kauai Leeward Waters (PHZ112) Forecast Text</span>
+                </div>
+            </section>
+
+            <section class="card dive-card" id="dive-widget">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="4" />
+                            <line x1="4.93" y1="4.93" x2="9.17" y2="9.17" />
+                            <line x1="14.83" y1="9.17" x2="19.07" y2="4.93" />
+                            <line x1="14.83" y1="14.83" x2="19.07" y2="19.07" />
+                            <line x1="4.93" y1="19.07" x2="9.17" y2="14.83" />
+                        </svg>
+                        <h2>Dive Sites Conditions</h2>
+                    </div>
+                    <span class="trend-badge" id="dive-overall-status">Assess Swell</span>
+                </div>
+                <div class="card-body dive-body">
+                    <div class="dive-sites-list" id="dive-sites-container">
+                        <!-- Dive sites will be populated dynamically -->
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="footer-note">Safety thresholds based on active swell heights & wind speeds</span>
+                </div>
+            </section>
+
+
+        </main>
+
+        <!-- Footer instructions -->
+        <footer class="main-footer">
+            <p>Kauai South Shore Wind & Marine Report App. To refresh the data, execute `python3 scripts/fetch_data.py` in your terminal.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+{
+  "last_updated": "2026-07-09T04:38:01.619772+00:00",
+  "cdip_health": "Laggard",
+  "wind": {
+    "stations": [
+      {
+        "id": "KHIKOLOA25",
+        "speed_mph": 2.0,
+        "direction_deg": 81.0,
+        "direction_compass": "E",
+        "role": "Primary/Anchor",
+        "gust_mph": 3,
+        "temp_f": 79,
+        "humidity": 81,
+        "time_local": "2026-07-08 18:37:38",
+        "time_utc": "2026-07-09T04:37:38Z",
+        "status": "Online"
+      },
+      {
+        "id": "KHIKOLOA34",
+        "speed_mph": 8.0,
+        "direction_deg": 112.0,
+        "direction_compass": "ESE",
+        "role": "Verification 1",
+        "gust_mph": 9,
+        "temp_f": 80,
+        "humidity": 74,
+        "time_local": "2026-07-08 18:37:54",
+        "time_utc": "2026-07-09T04:37:54Z",
+        "status": "Online"
+      },
+      {
+        "id": "KHIKOLOA27",
+        "speed_mph": 4.0,
+        "direction_deg": 151.0,
+        "direction_compass": "SSE",
+        "role": "Verification 2",
+        "gust_mph": 9,
+        "temp_f": 79,
+        "humidity": 79,
+        "time_local": "2026-07-08 18:37:00",
+        "time_utc": "2026-07-09T04:37:00Z",
+        "status": "Online"
+      }
+    ],
+    "num_stations": 3,
+    "average_speed_mph": 4.7,
+    "vector_average_speed_mph": 4.3,
+    "average_direction_deg": 118.6,
+    "average_direction_compass": "ESE",
+    "direction_reliable": true,
+    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
+  },
+  "model_wind": {
+    "speed_mph": 20.7,
+    "speed_knots": 18.0,
+    "direction_deg": 60,
+    "direction_compass": "ENE",
+    "source": "NWS gridded forecast (NAM Hawaii 3km)"
+  },
+  "swell": {
+    "current_south_shore_estimate": {
+      "obs_time_utc": "2026-07-09T03:30:00",
+      "wvht_m": 1.4,
+      "dpd_s": 8.0,
+      "mwd_deg": 166.0,
+      "wvht_ft": 4.6,
+      "mwd_compass": "SSE",
+      "lag_hours": 4.16,
+      "lag_confidence": "low",
+      "source_obs_time_utc": "2026-07-09T03:30:00",
+      "as_of_now_utc": "2026-07-09T04:38:01.552361",
+      "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+    },
+    "verification_estimate": {
+      "obs_time_utc": "2026-07-09T03:56:00",
+      "wvht_m": 1.1,
+      "dpd_s": 14.0,
+      "mwd_deg": 181.0,
+      "wvht_ft": 3.6,
+      "mwd_compass": "S",
+      "lag_hours": 1.51,
+      "lag_confidence": "high",
+      "source_obs_time_utc": "2026-07-09T03:56:00",
+      "as_of_now_utc": "2026-07-09T04:38:01.552361",
+      "lookback_match_quality": "good"
+    },
+    "agreement": {
+      "direction_diff_deg": 15.0,
+      "height_diff_ft": 1.0,
+      "confirmed": true
+    },
+    "latest_barbers_point_reading": {
+      "obs_time_utc": "2026-07-09T03:30:00",
+      "wvht_m": 1.4,
+      "dpd_s": 8.0,
+      "mwd_deg": 166.0,
+      "wvht_ft": 4.6,
+      "mwd_compass": "SSE"
+    },
+    "trend_next_several_hours": "holding steady"
+  },
+  "tides": {
+    "predictions": [
+      {
+        "time": "2026-07-08 00:00",
+        "value_ft": 0.545
+      },
+      {
+        "time": "2026-07-08 00:06",
+        "value_ft": 0.518
+      },
+      {
+        "time": "2026-07-08 00:12",
+        "value_ft": 0.491
+      },
+      {
+        "time": "2026-07-08 00:18",
+        "value_ft": 0.464
+      },
+      {
+        "time": "2026-07-08 00:24",
+        "value_ft": 0.437
+      },
+      {
+        "time": "2026-07-08 00:30",
+        "value_ft": 0.41
+      },
+      {
+        "time": "2026-07-08 00:36",
+        "value_ft": 0.383
+      },
+      {
+        "time": "2026-07-08 00:42",
+        "value_ft": 0.356
+      },
+      {
+        "time": "2026-07-08 00:48",
+        "value_ft": 0.33
+      },
+      {
+        "time": "2026-07-08 00:54",
+        "value_ft": 0.303
+      },
+      {
+        "time": "2026-07-08 01:00",
+        "value_ft": 0.277
+      },
+      {
+        "time": "2026-07-08 01:06",
+        "value_ft": 0.252
+      },
+      {
+        "time": "2026-07-08 01:12",
+        "value_ft": 0.227
+      },
+      {
+        "time": "2026-07-08 01:18",
+        "value_ft": 0.202
+      },
+      {
+        "time": "2026-07-08 01:24",
+        "value_ft": 0.178
+      },
+      {
+        "time": "2026-07-08 01:30",
+        "value_ft": 0.154
+      },
+      {
+        "time": "2026-07-08 01:36",
+        "value_ft": 0.131
+      },
+      {
+        "time": "2026-07-08 01:42",
+        "value_ft": 0.109
+      },
+      {
+        "time": "2026-07-08 01:48",
+        "value_ft": 0.088
+      },
+      {
+        "time": "2026-07-08 01:54",
+        "value_ft": 0.067
+      },
+      {
+        "time": "2026-07-08 02:00",
+        "value_ft": 0.047
+      },
+      {
+        "time": "2026-07-08 02:06",
+        "value_ft": 0.028
+      },
+      {
+        "time": "2026-07-08 02:12",
+        "value_ft": 0.01
+      },
+      {
+        "time": "2026-07-08 02:18",
+        "value_ft": -0.007
+      },
+      {
+        "time": "2026-07-08 02:24",
+        "value_ft": -0.024
+      },
+      {
+        "time": "2026-07-08 02:30",
+        "value_ft": -0.039
+      },
+      {
+        "time": "2026-07-08 02:36",
+        "value_ft": -0.053
+      },
+      {
+        "time": "2026-07-08 02:42",
+        "value_ft": -0.066
+      },
+      {
+        "time": "2026-07-08 02:48",
+        "value_ft": -0.078
+      },
+      {
+        "time": "2026-07-08 02:54",
+        "value_ft": -0.088
+      },
+      {
+        "time": "2026-07-08 03:00",
+        "value_ft": -0.098
+      },
+      {
+        "time": "2026-07-08 03:06",
+        "value_ft": -0.106
+      },
+      {
+        "time": "2026-07-08 03:12",
+        "value_ft": -0.113
+      },
+      {
+        "time": "2026-07-08 03:18",
+        "value_ft": -0.119
+      },
+      {
+        "time": "2026-07-08 03:24",
+        "value_ft": -0.123
+      },
+      {
+        "time": "2026-07-08 03:30",
+        "value_ft": -0.126
+      },
+      {
+        "time": "2026-07-08 03:36",
+        "value_ft": -0.128
+      },
+      {
+        "time": "2026-07-08 03:42",
+        "value_ft": -0.129
+      },
+      {
+        "time": "2026-07-08 03:48",
+        "value_ft": -0.128
+      },
+      {
+        "time": "2026-07-08 03:54",
+        "value_ft": -0.125
+      },
+      {
+        "time": "2026-07-08 04:00",
+        "value_ft": -0.122
+      },
+      {
+        "time": "2026-07-08 04:06",
+        "value_ft": -0.117
+      },
+      {
+        "time": "2026-07-08 04:12",
+        "value_ft": -0.11
+      },
+      {
+        "time": "2026-07-08 04:18",
+        "value_ft": -0.103
+      },
+      {
+        "time": "2026-07-08 04:24",
+        "value_ft": -0.093
+      },
+      {
+        "time": "2026-07-08 04:30",
+        "value_ft": -0.083
+      },
+      {
+        "time": "2026-07-08 04:36",
+        "value_ft": -0.071
+      },
+      {
+        "time": "2026-07-08 04:42",
+        "value_ft": -0.058
+      }
+    ],
+    "observations": [],
+    "surge_ft": null
+  },
+  "forecast_text": "PHZ112-091345-\nKauai Leeward Waters-\n304 PM HST Wed Jul 8 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH EARLY THURSDAY\nMORNING...\n\n.TONIGHT...East northeast winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East northeast 7 feet at 7 seconds and south 3 feet\nat 13 seconds. Numerous showers. \n.THURSDAY...East northeast winds 20 to 25 knots. Seas 6 to\n8 feet. Wave Detail: East 7 feet at 7 seconds and south 3 feet at\n12 seconds. Numerous showers, mainly in the morning. \n.THURSDAY NIGHT...East winds to 20 knots. Seas 5 to 7 feet. Wave\nDetail: East 6 feet at 7 seconds. Scattered showers. \n.FRIDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 6 feet at 7 seconds. Scattered showers. \n.FRIDAY NIGHT...East northeast winds 20 to 25 knots. Seas 5 to\n7 feet. Wave Detail: East 7 feet at 7 seconds. Scattered showers.\n.SATURDAY...East northeast winds to 20 knots. Seas 5 to 7 feet.\nWave Detail: East northeast 7 feet at 7 seconds. Scattered\nshowers, mainly in the morning. \n.SATURDAY NIGHT...East northeast winds to 20 knots. In the\nKaulakahi Channel, east northeast winds 15 to 20 knots, easing to\n10 to 15 knots after midnight. Seas 5 to 7 feet. Wave Detail:\nEast northeast 6 feet at 7 seconds. Isolated showers in the\nevening, then scattered showers after midnight. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 5 to 7 feet.\nWave Detail: East northeast 6 feet at 7 seconds. Isolated\nshowers. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 6 feet at 7 seconds. Isolated showers."
+}
