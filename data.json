@@ -1,52 +1,52 @@
 {
-  "last_updated": "2026-07-09T05:36:56.432123+00:00",
+  "last_updated": "2026-07-09T05:54:48.424847+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 4.0,
-        "direction_deg": 29.0,
-        "direction_compass": "NNE",
+        "speed_mph": 7.0,
+        "direction_deg": 88.0,
+        "direction_compass": "E",
         "role": "Primary/Anchor",
-        "gust_mph": 7,
-        "temp_f": 78,
-        "humidity": 84,
-        "time_local": "2026-07-08 19:36:50",
-        "time_utc": "2026-07-09T05:36:50Z",
+        "gust_mph": 10,
+        "temp_f": 77,
+        "humidity": 85,
+        "time_local": "2026-07-08 19:54:31",
+        "time_utc": "2026-07-09T05:54:31Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 6.0,
+        "speed_mph": 3.0,
         "direction_deg": 112.0,
         "direction_compass": "ESE",
         "role": "Verification 1",
-        "gust_mph": 6,
+        "gust_mph": 4,
         "temp_f": 78,
-        "humidity": 78,
-        "time_local": "2026-07-08 19:36:42",
-        "time_utc": "2026-07-09T05:36:42Z",
+        "humidity": 79,
+        "time_local": "2026-07-08 19:54:30",
+        "time_utc": "2026-07-09T05:54:30Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA27",
         "speed_mph": 3.0,
-        "direction_deg": 86.0,
+        "direction_deg": 93.0,
         "direction_compass": "E",
         "role": "Verification 2",
-        "gust_mph": 7,
+        "gust_mph": 3,
         "temp_f": 78,
-        "humidity": 82,
-        "time_local": "2026-07-08 19:36:00",
-        "time_utc": "2026-07-09T05:36:00Z",
+        "humidity": 83,
+        "time_local": "2026-07-08 19:53:00",
+        "time_utc": "2026-07-09T05:53:00Z",
         "status": "Online"
       }
     ],
     "num_stations": 3,
     "average_speed_mph": 4.3,
-    "vector_average_speed_mph": 3.5,
-    "average_direction_deg": 82.1,
+    "vector_average_speed_mph": 4.3,
+    "average_direction_deg": 94.6,
     "average_direction_compass": "E",
     "direction_reliable": true,
     "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
@@ -58,7 +58,48 @@
     "direction_compass": "ENE",
     "source": "NWS gridded forecast (NAM Hawaii 3km)"
   },
-  "swell": null,
+  "swell": {
+    "current_south_shore_estimate": {
+      "obs_time_utc": "2026-07-09T05:00:00",
+      "wvht_m": 1.4,
+      "dpd_s": 8.0,
+      "mwd_deg": 167.0,
+      "wvht_ft": 4.6,
+      "mwd_compass": "SSE",
+      "lag_hours": 4.06,
+      "lag_confidence": "low",
+      "source_obs_time_utc": "2026-07-09T05:00:00",
+      "as_of_now_utc": "2026-07-09T05:54:48.361748",
+      "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+    },
+    "verification_estimate": {
+      "obs_time_utc": "2026-07-09T04:56:00",
+      "wvht_m": 1.0,
+      "dpd_s": 13.0,
+      "mwd_deg": 181.0,
+      "wvht_ft": 3.3,
+      "mwd_compass": "S",
+      "lag_hours": 1.63,
+      "lag_confidence": "medium",
+      "source_obs_time_utc": "2026-07-09T04:56:00",
+      "as_of_now_utc": "2026-07-09T05:54:48.361748",
+      "lookback_match_quality": "good"
+    },
+    "agreement": {
+      "direction_diff_deg": 14.0,
+      "height_diff_ft": 1.3,
+      "confirmed": false
+    },
+    "latest_barbers_point_reading": {
+      "obs_time_utc": "2026-07-09T05:00:00",
+      "wvht_m": 1.4,
+      "dpd_s": 8.0,
+      "mwd_deg": 167.0,
+      "wvht_ft": 4.6,
+      "mwd_compass": "SSE"
+    },
+    "trend_next_several_hours": "holding steady"
+  },
   "tides": {
     "predictions": [
       {
