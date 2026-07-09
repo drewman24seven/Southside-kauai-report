@@ -1,1 +1,33 @@
+name: Update Marine Data
 
+on:
+  schedule:
+    # Run every 30 minutes
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write # Allow committing back to the repository
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Fetch and Process Data
+        run: python scripts/fetch_data.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add data.json nws_forecast_cache.txt nws_grid_wind_cache.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update marine telemetry" && git push)
