@@ -1,0 +1,6 @@
+nws_forecast_cache.txt
+nws_grid_wind_cache.txt
+__pycache__/
+*.pyc
+.env
+.DS_Store
