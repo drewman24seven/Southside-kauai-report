@@ -802,7 +802,7 @@ function updateHarborAlerts(data) {
         predictions.forEach(p => {
             const shiftName = getDockShiftName(p.time);
             if (shiftName) {
-                const totalHeight = p.value + surge;
+                const totalHeight = p.value_ft + surge;
                 if (!shiftWaterLevels[shiftName] || totalHeight > shiftWaterLevels[shiftName]) {
                     shiftWaterLevels[shiftName] = totalHeight;
                 }
@@ -872,7 +872,7 @@ function updateHarborAlerts(data) {
         
         // Ebb is falling tide (next hour height is lower)
         if (closestIdx < preds.length - 1) {
-            isEbbing = preds[closestIdx + 1].value < preds[closestIdx].value;
+            isEbbing = preds[closestIdx + 1].value_ft < preds[closestIdx].value_ft;
         }
     }
 
@@ -954,7 +954,7 @@ function updateTransitComfort(data) {
             }
         }
         if (closestIdx < preds.length - 1) {
-            isEbbing = preds[closestIdx + 1].value < preds[closestIdx].value;
+            isEbbing = preds[closestIdx + 1].value_ft < preds[closestIdx].value_ft;
         }
     }
 
