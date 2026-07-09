@@ -5,47 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Auto-refresh every 5 minutes (if dashboard is kept open)
     setInterval(fetchData, 300000);
 
-    // Setup Refresh Button
-    const refreshBtn = document.getElementById("refresh-button");
-    if (refreshBtn) {
-        refreshBtn.addEventListener("click", triggerServerRefresh);
-    }
+
 });
 
-async function triggerServerRefresh() {
-    const refreshBtn = document.getElementById("refresh-button");
-    if (!refreshBtn || refreshBtn.classList.contains("loading")) return;
 
-    // Add loading class to spin the icon
-    refreshBtn.classList.add("loading");
-    refreshBtn.querySelector("span").textContent = "Refreshing...";
-
-    try {
-        const response = await fetch("/refresh", {
-            method: "POST"
-        });
-        
-        if (response.ok) {
-            // Success: reload the local data payload
-            await fetchData();
-        } else {
-            throw new Error("Server responded with error code " + response.status);
-        }
-    } catch (error) {
-        console.error("Failed to trigger data refresh via server:", error);
-        alert(
-            "Unable to refresh automatically: the local dashboard server is not running.\n\n" +
-            "To enable the Refresh button:\n" +
-            "1. Close this window.\n" +
-            "2. Go to the 'Weather Report' folder on your Desktop.\n" +
-            "3. Double-click the 'Start Dashboard.command' launcher to run the server.\n\n" +
-            "(Alternatively, you can manually run 'python3 scripts/fetch_data.py' in your terminal and reload this page.)"
-        );
-    } finally {
-        refreshBtn.classList.remove("loading");
-        refreshBtn.querySelector("span").textContent = "Refresh Data";
-    }
-}
 
 async function fetchData() {
     try {
