@@ -1,29 +1,293 @@
+// ─── Constants ────────────────────────────────────────────────────────────────
+const BUOY_PRIMARY   = "51212"; // Barbers Point, Oahu
+const BUOY_VERIFY    = "51213"; // Lanai Southwest
+const TIDE_STATION   = "1611347"; // Port Allen
+const NWS_ZONE       = "PHZ112"; // Kauai Leeward Waters
+
+// Swell physics reference points (matches analyze_swell.py exactly)
+const BARBERS_POINT   = [21.323,  -158.149];
+const SOUTH_SHORE_MID = [21.877705, -159.485705];
+const _LAT0 = (BARBERS_POINT[0] + SOUTH_SHORE_MID[0]) / 2;
+const _KM_PER_DEG_LAT = 111.32;
+const _KM_PER_DEG_LON = 111.32 * Math.cos(_LAT0 * Math.PI / 180);
+const _D_EAST_KM  = (SOUTH_SHORE_MID[1] - BARBERS_POINT[1]) * _KM_PER_DEG_LON;
+const _D_NORTH_KM = (SOUTH_SHORE_MID[0] - BARBERS_POINT[0]) * _KM_PER_DEG_LAT;
+const COMPASS_16 = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+
+// ─── Boot ─────────────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
-    // Initial fetch
-    fetchData();
-
-    // Auto-refresh every 5 minutes (if dashboard is kept open)
-    setInterval(fetchData, 300000);
-
-
+    fetchAll();
+    setInterval(fetchAll, 300000); // auto-refresh every 5 minutes if page is open
 });
 
+// ─── Swell Physics (ported from analyze_swell.py) ────────────────────────────
+function degToCompass(deg) {
+    if (deg == null) return null;
+    return COMPASS_16[Math.round((deg % 360) / 22.5) % 16];
+}
 
+function groupVelocityKmh(period_s) {
+    if (!period_s) return null;
+    return 0.78 * period_s * 3.6;
+}
 
-async function fetchData() {
+function computeLagHours(mwd_deg, dpd_s) {
+    if (mwd_deg == null || dpd_s == null) return { lag: null, confidence: "unknown" };
+    const bearing = (mwd_deg + 180) % 360;
+    const tx = Math.sin(bearing * Math.PI / 180);
+    const ty = Math.cos(bearing * Math.PI / 180);
+    const projected_km = _D_EAST_KM * tx + _D_NORTH_KM * ty;
+    const v = groupVelocityKmh(dpd_s);
+    if (!v) return { lag: null, confidence: "unknown" };
+    const lag = projected_km / v;
+    const confidence = dpd_s >= 14 ? "high" : dpd_s >= 12 ? "medium" : "low";
+    return { lag: Math.round(lag * 100) / 100, confidence };
+}
+
+function parseBuoySeries(rawTxt) {
+    if (!rawTxt) return [];
+    const lines = rawTxt.split("\n").filter(l => l && !l.startsWith("#"));
+    const series = [];
+    for (const line of lines) {
+        const cols = line.trim().split(/\s+/);
+        if (cols.length < 9) continue;
+        const [yr, mo, dy, hr, mn] = cols.slice(0, 5).map(Number);
+        if (isNaN(yr)) continue;
+        const obs_time_utc = new Date(Date.UTC(yr, mo - 1, dy, hr, mn)).toISOString();
+        const wvht_m = parseFloat(cols[8]);
+        const dpd_s  = parseFloat(cols[9]);
+        const mwd_deg = parseFloat(cols[11]);
+        if (isNaN(wvht_m) || wvht_m >= 99) continue;
+        series.push({
+            obs_time_utc,
+            _dt: new Date(Date.UTC(yr, mo - 1, dy, hr, mn)),
+            wvht_m,
+            wvht_ft: Math.round(wvht_m * 3.28084 * 10) / 10,
+            dpd_s: isNaN(dpd_s) || dpd_s >= 99 ? null : dpd_s,
+            mwd_deg: isNaN(mwd_deg) || mwd_deg >= 999 ? null : mwd_deg,
+            mwd_compass: degToCompass(isNaN(mwd_deg) || mwd_deg >= 999 ? null : mwd_deg)
+        });
+    }
+    return series.sort((a, b) => a._dt - b._dt);
+}
+
+function closestRow(series, targetDt) {
+    if (!series.length) return null;
+    return series.reduce((best, row) =>
+        Math.abs(row._dt - targetDt) < Math.abs(best._dt - targetDt) ? row : best
+    );
+}
+
+function estimateCurrentSouthShore(series) {
+    if (!series.length) return null;
+    const nowDt = new Date();
+    const latest = series[series.length - 1];
+
+    // First pass: use most recent row's lag as initial guess
+    let { lag: guessLag } = computeLagHours(latest.mwd_deg, latest.dpd_s);
+    if (guessLag == null) guessLag = 1.5;
+    const target1 = new Date(nowDt - guessLag * 3600000);
+    const candidate = closestRow(series, target1);
+
+    // Second pass: refine with candidate's own direction/period
+    let { lag, confidence } = computeLagHours(candidate.mwd_deg, candidate.dpd_s);
+    if (lag == null) { lag = guessLag; confidence = "unknown"; }
+    const target2 = new Date(nowDt - lag * 3600000);
+    const refined = closestRow(series, target2);
+
+    const final = computeLagHours(refined.mwd_deg, refined.dpd_s);
+
+    return {
+        wvht_ft:       refined.wvht_ft,
+        wvht_m:        refined.wvht_m,
+        dpd_s:         refined.dpd_s,
+        mwd_deg:       refined.mwd_deg,
+        mwd_compass:   refined.mwd_compass,
+        lag_hours:     final.lag,
+        lag_confidence: final.confidence,
+        source_obs_time_utc: refined.obs_time_utc
+    };
+}
+
+function analyzeSwell(primaryTxt, verifyTxt) {
+    const primary = parseBuoySeries(primaryTxt);
+    const verify  = parseBuoySeries(verifyTxt);
+    if (!primary.length) return null;
+
+    const currentEst = estimateCurrentSouthShore(primary);
+    const verifyEst  = verify.length ? estimateCurrentSouthShore(verify) : null;
+    const latest     = primary[primary.length - 1];
+
+    let agreement = null;
+    if (verifyEst && currentEst?.mwd_deg != null && verifyEst?.mwd_deg != null) {
+        const diff = Math.min(
+            Math.abs(currentEst.mwd_deg - verifyEst.mwd_deg),
+            360 - Math.abs(currentEst.mwd_deg - verifyEst.mwd_deg)
+        );
+        const hDiff = Math.abs((currentEst.wvht_ft || 0) - (verifyEst.wvht_ft || 0));
+        agreement = { direction_diff_deg: diff, height_diff_ft: hDiff, confirmed: diff <= 25 && hDiff <= 1.0 };
+    }
+
+    let trend = "holding steady";
+    if (currentEst) {
+        const delta = (latest.wvht_ft || 0) - (currentEst.wvht_ft || 0);
+        if (delta >= 0.5) trend = "building";
+        else if (delta <= -0.5) trend = "dropping";
+    }
+
+    return {
+        current_south_shore_estimate: currentEst,
+        verification_estimate: verifyEst,
+        agreement,
+        latest_barbers_point_reading: latest,
+        trend_next_several_hours: trend
+    };
+}
+
+// ─── Live API Fetchers ────────────────────────────────────────────────────────
+async function fetchBuoyLive() {
     try {
-        const response = await fetch("data.json?_t=" + Date.now());
-        if (!response.ok) {
-            throw new Error("HTTP error " + response.status);
-        }
-        const data = await response.json();
-        updateDashboard(data);
-    } catch (error) {
-        console.error("Error loading dashboard data:", error);
-        document.getElementById("last-updated").textContent = "Error loading data";
-        document.getElementById("last-updated").style.color = "var(--accent-sunset)";
+        const [r1, r2] = await Promise.all([
+            fetch(`https://corsproxy.io/?https://www.ndbc.noaa.gov/data/realtime2/${BUOY_PRIMARY}.txt`),
+            fetch(`https://corsproxy.io/?https://www.ndbc.noaa.gov/data/realtime2/${BUOY_VERIFY}.txt`)
+        ]);
+        const [t1, t2] = await Promise.all([r1.text(), r2.text()]);
+        return analyzeSwell(t1, t2);
+    } catch (e) {
+        console.warn("Buoy fetch failed:", e);
+        return null;
     }
 }
+
+async function fetchTideLive() {
+    const base = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter";
+    const common = `&station=${TIDE_STATION}&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore&format=json`;
+    try {
+        const [predRes, obsRes] = await Promise.all([
+            fetch(`${base}?date=today&product=predictions${common}`),
+            fetch(`${base}?date=today&product=water_level${common}`)
+        ]);
+        const [predJson, obsJson] = await Promise.all([predRes.json(), obsRes.json()]);
+
+        const predictions = (predJson.predictions || []).map(p => ({
+            time: p.t, value_ft: parseFloat(p.v)
+        }));
+        const observations = (obsJson.data || []).map(o => ({
+            time: o.t, value_ft: parseFloat(o.v)
+        }));
+
+        let surge_ft = null;
+        if (observations.length && predictions.length) {
+            const latestObs = observations[observations.length - 1];
+            const match = predictions.find(p => p.time === latestObs.time);
+            if (match) surge_ft = Math.round((latestObs.value_ft - match.value_ft) * 100) / 100;
+        }
+
+        return { predictions, observations, surge_ft };
+    } catch (e) {
+        console.warn("Tide fetch failed:", e);
+        return null;
+    }
+}
+
+async function fetchNWSLive() {
+    try {
+        // api.weather.gov is CORS-enabled — fetch zone forecast directly
+        const res = await fetch(`https://api.weather.gov/zones/forecast/${NWS_ZONE}/forecast`, {
+            headers: { "Accept": "application/geo+json" }
+        });
+        const json = await res.json();
+        const periods = json.properties?.periods || [];
+        // Combine all periods into a single readable block matching the old format
+        const text = periods.map(p => `.${p.name.toUpperCase()}...\n${p.detailedForecast}`).join("\n\n");
+        return text || null;
+    } catch (e) {
+        console.warn("NWS forecast fetch failed:", e);
+        return null;
+    }
+}
+
+async function fetchModelWindLive() {
+    try {
+        const res = await fetch("https://api.weather.gov/gridpoints/HFO/87,170", {
+            headers: { "Accept": "application/geo+json" }
+        });
+        const data = await res.json();
+        const props = data.properties;
+        const windSpeedValues = props?.windSpeed?.values || [];
+        const windDirValues = props?.windDirection?.values || [];
+        
+        const now = new Date();
+        
+        let speedVal = null;
+        for (const item of [...windSpeedValues].sort((a, b) => a.validTime.localeCompare(b.validTime))) {
+            const startStr = item.validTime.split('/')[0];
+            const startDt = new Date(startStr);
+            if (startDt <= now) {
+                speedVal = item.value;
+            } else {
+                break;
+            }
+        }
+        
+        let dirVal = null;
+        for (const item of [...windDirValues].sort((a, b) => a.validTime.localeCompare(b.validTime))) {
+            const startStr = item.validTime.split('/')[0];
+            const startDt = new Date(startStr);
+            if (startDt <= now) {
+                dirVal = item.value;
+            } else {
+                break;
+            }
+        }
+        
+        if (speedVal !== null && dirVal !== null) {
+            const speed_mph = Math.round(speedVal * 0.621371 * 10) / 10;
+            const speed_knots = Math.round(speedVal * 0.539957 * 10) / 10;
+            const direction_deg = Math.round(dirVal * 10) / 10;
+            const direction_compass = degToCompass(direction_deg);
+            
+            return {
+                speed_mph,
+                speed_knots,
+                direction_deg,
+                direction_compass,
+                source: "NWS gridded forecast (NAM Hawaii 3km)"
+            };
+        }
+    } catch (e) {
+        console.warn("Exposed wind fetch failed:", e);
+    }
+    return null;
+}
+
+// ─── Main Fetch Orchestrator ──────────────────────────────────────────────────
+async function fetchAll() {
+    document.getElementById("last-updated").textContent = "Updating…";
+
+    // Fetch wind from data.json (Weather Underground blocks browser CORS)
+    // and live data from NOAA/NWS simultaneously
+    const [cachedData, swellLive, tideLive, forecastLive, modelWindLive] = await Promise.all([
+        fetch("data.json?_t=" + Date.now()).then(r => r.json()).catch(() => ({})),
+        fetchBuoyLive(),
+        fetchTideLive(),
+        fetchNWSLive(),
+        fetchModelWindLive()
+    ]);
+
+    // Merge: live data overrides cached wherever available
+    const data = {
+        ...cachedData,
+        swell:         swellLive  || cachedData.swell  || null,
+        tides:         tideLive   || cachedData.tides  || null,
+        forecast_text: forecastLive || cachedData.forecast_text || null,
+        model_wind:    modelWindLive || cachedData.model_wind || null,
+        last_updated:  new Date().toISOString()
+    };
+
+    updateDashboard(data);
+}
+
 
 function formatHST(isoString) {
     if (!isoString) return "N/A";
