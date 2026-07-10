@@ -148,11 +148,11 @@ function analyzeSwell(primaryTxt, verifyTxt) {
 async function fetchBuoyLive() {
     try {
         const [r1, r2] = await Promise.all([
-            fetch(`https://corsproxy.io/?https://www.ndbc.noaa.gov/data/realtime2/${BUOY_PRIMARY}.txt`),
-            fetch(`https://corsproxy.io/?https://www.ndbc.noaa.gov/data/realtime2/${BUOY_VERIFY}.txt`)
+            fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.ndbc.noaa.gov/data/realtime2/${BUOY_PRIMARY}.txt`)}`),
+            fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.ndbc.noaa.gov/data/realtime2/${BUOY_VERIFY}.txt`)}`)
         ]);
-        const [t1, t2] = await Promise.all([r1.text(), r2.text()]);
-        return analyzeSwell(t1, t2);
+        const [j1, j2] = await Promise.all([r1.json(), r2.json()]);
+        return analyzeSwell(j1.contents, j2.contents);
     } catch (e) {
         console.warn("Buoy fetch failed:", e);
         return null;
@@ -263,29 +263,35 @@ async function fetchModelWindLive() {
 
 // ─── Main Fetch Orchestrator ──────────────────────────────────────────────────
 async function fetchAll() {
-    document.getElementById("last-updated").textContent = "Updating…";
+    try {
+        document.getElementById("last-updated").textContent = "Updating…";
 
-    // Fetch wind from data.json (Weather Underground blocks browser CORS)
-    // and live data from NOAA/NWS simultaneously
-    const [cachedData, swellLive, tideLive, forecastLive, modelWindLive] = await Promise.all([
-        fetch("data.json?_t=" + Date.now()).then(r => r.json()).catch(() => ({})),
-        fetchBuoyLive(),
-        fetchTideLive(),
-        fetchNWSLive(),
-        fetchModelWindLive()
-    ]);
+        // Fetch wind from data.json (Weather Underground blocks browser CORS)
+        // and live data from NOAA/NWS simultaneously
+        const [cachedData, swellLive, tideLive, forecastLive, modelWindLive] = await Promise.all([
+            fetch("data.json?_t=" + Date.now()).then(r => r.json()).catch(() => ({})),
+            fetchBuoyLive(),
+            fetchTideLive(),
+            fetchNWSLive(),
+            fetchModelWindLive()
+        ]);
 
-    // Merge: live data overrides cached wherever available
-    const data = {
-        ...cachedData,
-        swell:         swellLive  || cachedData.swell  || null,
-        tides:         tideLive   || cachedData.tides  || null,
-        forecast_text: forecastLive || cachedData.forecast_text || null,
-        model_wind:    modelWindLive || cachedData.model_wind || null,
-        last_updated:  new Date().toISOString()
-    };
+        // Merge: live data overrides cached wherever available
+        const data = {
+            ...cachedData,
+            swell:         swellLive  || cachedData.swell  || null,
+            tides:         tideLive   || cachedData.tides  || null,
+            forecast_text: forecastLive || cachedData.forecast_text || null,
+            model_wind:    modelWindLive || cachedData.model_wind || null,
+            last_updated:  new Date().toISOString()
+        };
 
-    updateDashboard(data);
+        updateDashboard(data);
+    } catch (e) {
+        console.error("Critical error in fetchAll:", e);
+        document.getElementById("last-updated").textContent = "Error loading data";
+        document.getElementById("last-updated").style.color = "var(--accent-sunset)";
+    }
 }
 
 
