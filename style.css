@@ -1126,10 +1126,10 @@ body {
     display: none; /* Hidden on desktop */
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     /* Enable mobile tabs layout */
     .mobile-tabs {
-        display: flex;
+        display: flex !important;
         justify-content: space-around;
         align-items: center;
         background: rgba(11, 26, 45, 0.85);
