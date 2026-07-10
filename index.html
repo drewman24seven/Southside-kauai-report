@@ -15,6 +15,90 @@
         @media (max-width: 900px) {
             .mobile-tabs {
                 display: flex !important;
+                justify-content: space-around;
+                align-items: center;
+                background: rgba(11, 26, 45, 0.85);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 20px;
+                padding: 8px 6px;
+                margin-bottom: 0.5rem;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+                width: 100%;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .mobile-tab-item {
+                background: none !important;
+                border: none !important;
+                outline: none !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 6px !important;
+                flex: 1 !important;
+                cursor: pointer !important;
+                padding: 6px 4px !important;
+                color: #9db2c6 !important;
+                font-family: 'Plus Jakarta Sans', sans-serif !important;
+                font-weight: 500 !important;
+                font-size: 0.72rem !important;
+                position: relative !important;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+
+            .mobile-tab-item .tab-icon {
+                width: 22px !important;
+                height: 22px !important;
+                padding: 4px !important;
+                border-radius: 16px !important;
+                display: block !important;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            }
+
+            .mobile-tab-item.active {
+                color: #f0f4f8 !important;
+                font-weight: 700 !important;
+            }
+
+            .mobile-tab-item.active .tab-icon {
+                background: rgba(78, 205, 196, 0.16) !important;
+                color: #4ecdc4 !important;
+                transform: scale(1.1) !important;
+                box-shadow: 0 0 12px rgba(78, 205, 196, 0.1) !important;
+            }
+
+            .dashboard-grid {
+                display: block !important;
+            }
+
+            .dashboard-grid .card {
+                margin-bottom: 0.75rem !important;
+                width: 100% !important;
+            }
+
+            .mobile-hide {
+                display: none !important;
+            }
+
+            .mobile-show {
+                display: flex !important;
+                flex-direction: column !important;
+                animation: tabFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+
+            @keyframes tabFadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(8px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         }
     </style>
