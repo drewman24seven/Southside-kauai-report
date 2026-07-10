@@ -492,7 +492,7 @@ function updateDashboard(data) {
         
         let sumGusts = 0;
         let countGusts = 0;
-        w.stations.forEach(s => {
+        (w.stations || []).forEach(s => {
             if (s.gust_mph !== undefined) {
                 sumGusts += s.gust_mph;
                 countGusts++;
@@ -540,7 +540,7 @@ function updateDashboard(data) {
             `;
             listContainer.appendChild(pill);
         } else {
-            w.stations.forEach(s => {
+            (w.stations || []).forEach(s => {
                 const pill = document.createElement("div");
                 pill.className = "station-pill";
                 pill.innerHTML = `
