@@ -1045,54 +1045,75 @@ function updateHarborAlerts(data) {
     const d = now.getDate();
     const isWhaleSeason = (m === 11) || (m === 0) || (m === 1) || (m === 2) || (m === 3 && d === 1);
 
-    // Dock Time shifts mapping and past-filtering function
-    function getDockShiftInfo(timeStr) {
-        // timeStr format is "YYYY-MM-DD HH:MM"
-        const parts = timeStr.split(' ');
-        const datePart = parts[0];
-        const timePart = parts[1];
-        if (!timePart) return null;
-        
-        const timeParts = timePart.split(':');
-        const hour = parseInt(timeParts[0]);
-        const min = parseInt(timeParts[1]);
-        const mins = hour * 60 + min;
+    // Dynamic range finder for high water conditions
+    function findHighWaterRanges(preds, threshold, surgeVal) {
+        const ranges = [];
+        let activeRange = null;
 
-        let label = null;
-        let endMin = 0;
-        if (mins >= 420 && mins <= 525) { label = "Morning (07:00 - 08:45)"; endMin = 525; }
-        else if (mins >= 630 && mins <= 705) { label = "Mid-Morning (10:30 - 11:45)"; endMin = 705; }
-        else if (mins >= 840 && mins <= 870) { label = "Afternoon (14:00 - 14:30)"; endMin = 870; }
-        else if (mins >= 900 && mins <= 960) { label = "Afternoon (15:00 - 16:00)"; endMin = 960; }
-        else if (mins >= 1080 && mins <= 1110) { label = "Evening (18:00 - 18:30)"; endMin = 1110; }
+        preds.forEach(p => {
+            const totalHeight = p.value_ft + surgeVal;
+            // p.time is "YYYY-MM-DD HH:MM"
+            const parts = p.time.split(' ');
+            const datePart = parts[0];
+            const timePart = parts[1];
+            if (!timePart) return;
 
-        if (!label) return null;
+            const isAbove = totalHeight >= threshold;
 
-        // Parse date in local time zone safely
-        const predDateParts = datePart.split('-');
-        const predYear = parseInt(predDateParts[0]);
-        const predMonth = parseInt(predDateParts[1]) - 1;
-        const predDay = parseInt(predDateParts[2]);
-        const predDate = new Date(predYear, predMonth, predDay);
-        
-        const todayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-        
-        const isToday = predDate.getTime() === todayDate.getTime();
-        const isTomorrow = predDate.getTime() > todayDate.getTime();
-        
-        if (isToday) {
-            const currentMins = now.getHours() * 60 + now.getMinutes();
-            if (currentMins > endMin) {
-                return null; // Shift has already passed today
+            if (isAbove) {
+                if (!activeRange) {
+                    activeRange = {
+                        date: datePart,
+                        startTime: timePart,
+                        endTime: timePart,
+                        maxVal: totalHeight
+                    };
+                } else {
+                    activeRange.endTime = timePart;
+                    if (totalHeight > activeRange.maxVal) {
+                        activeRange.maxVal = totalHeight;
+                    }
+                }
+            } else {
+                if (activeRange) {
+                    ranges.push(activeRange);
+                    activeRange = null;
+                }
             }
-            return { label, day: "Today" };
-        } else if (isTomorrow) {
-            return { label, day: "Tomorrow" };
+        });
+
+        if (activeRange) {
+            ranges.push(activeRange);
         }
-        return null;
+
+        return ranges;
     }
 
-    // 1. Check Tide Flooding in daily dock windows
+    // Helper to format date as YYYY-MM-DD in local time
+    const formatDateDash = (date) => {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const d = String(date.getDate()).padStart(2, '0');
+        return `${y}-${m}-${d}`;
+    };
+
+    const todayStr = formatDateDash(now);
+    const tomorrow = new Date();
+    tomorrow.setDate(now.getDate() + 1);
+    const tomorrowStr = formatDateDash(tomorrow);
+
+    // Filter past ranges (keep only active/upcoming ranges for today)
+    const currentMins = now.getHours() * 60 + now.getMinutes();
+    const filterPastRanges = r => {
+        if (r.date === todayStr) {
+            const endParts = r.endTime.split(':');
+            const endMins = parseInt(endParts[0]) * 60 + parseInt(endParts[1]);
+            return currentMins <= endMins;
+        }
+        return true;
+    };
+
+    // 1. Check Tide Flooding in daily windows
     if (data.tides && data.tides.predictions && data.tides.predictions.length > 0) {
         const predictions = data.tides.predictions;
         let surge = data.tides.surge_ft !== null ? data.tides.surge_ft : 0;
@@ -1105,71 +1126,48 @@ function updateHarborAlerts(data) {
             }
         }
         
-        // Track the maximum water level per dock shift window
-        const shiftWaterLevels = {};
-
-        predictions.forEach(p => {
-            const info = getDockShiftInfo(p.time);
-            if (info) {
-                const key = `${info.day}: ${info.label}`;
-                const totalHeight = p.value_ft + surge;
-                if (!shiftWaterLevels[key] || totalHeight > shiftWaterLevels[key]) {
-                    shiftWaterLevels[key] = totalHeight;
-                }
-            }
-        });
-
-        // Group warnings by Day and Threat Level
-        const todayFlooding = [];
-        const todayHighWater = [];
-        const tomorrowFlooding = [];
-        const tomorrowHighWater = [];
-
-        for (const [key, maxVal] of Object.entries(shiftWaterLevels)) {
-            const isToday = key.startsWith("Today");
-            const shiftName = key.substring(key.indexOf(": ") + 2);
-            // Format to be compact: e.g. "Morning (07:00-08:45) +1.95ft"
-            const compactName = shiftName.replace(/\s*-\s*/g, '-');
-            const entryText = `${compactName} (+${maxVal.toFixed(2)} ft)`;
-
-            if (maxVal >= 1.9) {
-                if (isToday) todayFlooding.push(entryText);
-                else tomorrowFlooding.push(entryText);
-            } else if (maxVal >= 1.6) {
-                if (isToday) todayHighWater.push(entryText);
-                else tomorrowHighWater.push(entryText);
-            }
-        }
-
         const suffix = isWaveSetupFallback ? " (includes swell setup)" : "";
 
-        // TODAY alerts: prioritize flooding over high water
-        if (todayFlooding.length > 0) {
+        // Find continuous periods above thresholds
+        const floodingRanges = findHighWaterRanges(predictions, 1.9, surge).filter(filterPastRanges);
+        const highWaterRanges = findHighWaterRanges(predictions, 1.6, surge).filter(filterPastRanges);
+
+        // Format a range for output
+        const formatRange = r => `${r.startTime} - ${r.endTime} (max +${r.maxVal.toFixed(2)} ft)`;
+
+        // Today Grouping
+        const todayFloodingText = floodingRanges.filter(r => r.date === todayStr).map(formatRange);
+        const todayHighWaterText = highWaterRanges.filter(r => r.date === todayStr).map(formatRange);
+
+        if (todayFloodingText.length > 0) {
             alerts.push({
                 status: "danger",
                 icon: "🌊",
-                text: `TODAY DOCK FLOODING: Kukuiula dock will flood during: ${todayFlooding.join(", ")}${suffix}.`
+                text: `TODAY DOCK FLOODING: Kukuiula dock will flood from: ${todayFloodingText.join(", ")}${suffix}.`
             });
-        } else if (todayHighWater.length > 0) {
+        } else if (todayHighWaterText.length > 0) {
             alerts.push({
                 status: "caution",
                 icon: "⚠",
-                text: `TODAY HIGH WATER: High tide wash-over risk during: ${todayHighWater.join(", ")}${suffix}.`
+                text: `TODAY HIGH WATER: High tide wash-over risk from: ${todayHighWaterText.join(", ")}${suffix}.`
             });
         }
 
-        // TOMORROW alerts: prioritize flooding over high water
-        if (tomorrowFlooding.length > 0) {
+        // Tomorrow Grouping
+        const tomorrowFloodingText = floodingRanges.filter(r => r.date === tomorrowStr).map(formatRange);
+        const tomorrowHighWaterText = highWaterRanges.filter(r => r.date === tomorrowStr).map(formatRange);
+
+        if (tomorrowFloodingText.length > 0) {
             alerts.push({
                 status: "danger",
                 icon: "🌊",
-                text: `TOMORROW DOCK FLOODING: Kukuiula dock will flood during: ${tomorrowFlooding.join(", ")}${suffix}.`
+                text: `TOMORROW DOCK FLOODING: Kukuiula dock will flood from: ${tomorrowFloodingText.join(", ")}${suffix}.`
             });
-        } else if (tomorrowHighWater.length > 0) {
+        } else if (tomorrowHighWaterText.length > 0) {
             alerts.push({
                 status: "caution",
                 icon: "⚠",
-                text: `TOMORROW HIGH WATER: High tide wash-over risk during: ${tomorrowHighWater.join(", ")}${suffix}.`
+                text: `TOMORROW HIGH WATER: High tide wash-over risk from: ${tomorrowHighWaterText.join(", ")}${suffix}.`
             });
         }
     }
