@@ -7,7 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2.0">
+    <link rel="stylesheet" href="style.css?v=3.0">
+    <style>
+        .mobile-tabs {
+            display: none !important;
+        }
+        @media (max-width: 768px) {
+            .mobile-tabs {
+                display: flex !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="ocean-bg-gradient"></div>
@@ -37,7 +47,7 @@
         </header>
 
         <!-- Mobile Navigation Tabs (Material Design 3 style) -->
-        <nav class="mobile-tabs" id="mobile-tabs" style="display: none;">
+        <nav class="mobile-tabs" id="mobile-tabs">
             <button class="mobile-tab-item active" id="tab-marine">
                 <span class="tab-indicator"></span>
                 <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -329,6 +339,6 @@
         </footer>
     </div>
 
-    <script src="app.js?v=2.0"></script>
+    <script src="app.js?v=3.0"></script>
 </body>
 </html>
