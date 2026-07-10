@@ -17,8 +17,46 @@ const COMPASS_16 = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WS
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
     fetchAll();
+    initMobileTabs();
     setInterval(fetchAll, 300000); // auto-refresh every 5 minutes if page is open
 });
+
+function initMobileTabs() {
+    const tabMarine = document.getElementById("tab-marine");
+    const tabWind = document.getElementById("tab-wind");
+    const tabDive = document.getElementById("tab-dive");
+    const tabForecast = document.getElementById("tab-forecast");
+
+    const wMarine = document.getElementById("marine-widget");
+    const wWind = document.getElementById("wind-widget");
+    const wDive = document.getElementById("dive-widget");
+    const wForecast = document.getElementById("forecast-widget");
+
+    const tabs = [tabMarine, tabWind, tabDive, tabForecast];
+    const widgets = [wMarine, wWind, wDive, wForecast];
+
+    tabs.forEach((tab, index) => {
+        if (!tab) return;
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => { if (t) t.classList.remove("active"); });
+            tab.classList.add("active");
+
+            widgets.forEach((w, wIndex) => {
+                if (!w) return;
+                if (wIndex === index) {
+                    w.classList.add("mobile-show");
+                    w.classList.remove("mobile-hide");
+                } else {
+                    w.classList.add("mobile-hide");
+                    w.classList.remove("mobile-show");
+                }
+            });
+        });
+    });
+
+    // Set initial active tab
+    if (tabMarine) tabMarine.click();
+}
 
 // ─── Swell Physics (ported from analyze_swell.py) ────────────────────────────
 function degToCompass(deg) {

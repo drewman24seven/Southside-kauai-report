@@ -965,6 +965,7 @@ body {
     color: var(--accent-sunset);
     border: 1px solid rgba(255, 107, 107, 0.2);
 }
+
 /* Mobile responsive styles (max-width: 550px) */
 @media (max-width: 550px) {
     body {
@@ -1046,3 +1047,103 @@ body {
         font-size: 2.3rem;
     }
 }
+
+/* ─── Mobile Tabs (Material Design 3 Layout) ────────────────────────────────── */
+.mobile-tabs {
+    display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+    /* Enable mobile tabs layout */
+    .mobile-tabs {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: rgba(11, 26, 45, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 8px 6px;
+        margin-bottom: 0.5rem;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .mobile-tab-item {
+        background: none;
+        border: none;
+        outline: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        flex: 1;
+        cursor: pointer;
+        padding: 6px 4px;
+        color: var(--text-secondary);
+        font-family: var(--font-body);
+        font-weight: 500;
+        font-size: 0.72rem;
+        transition: var(--transition-smooth);
+        position: relative;
+    }
+
+    /* MD3 active pill container shape */
+    .mobile-tab-item .tab-icon {
+        width: 22px;
+        height: 22px;
+        padding: 4px;
+        border-radius: 16px;
+        transition: var(--transition-smooth);
+        display: block;
+    }
+
+    /* Active State Highlights */
+    .mobile-tab-item.active {
+        color: var(--text-primary);
+        font-weight: 700;
+    }
+
+    .mobile-tab-item.active .tab-icon {
+        background: rgba(78, 205, 196, 0.16);
+        color: var(--accent-cyan);
+        transform: scale(1.1);
+        box-shadow: 0 0 12px rgba(78, 205, 196, 0.1);
+    }
+
+    /* Visibility classes for widgets on mobile */
+    .dashboard-grid {
+        display: block !important;
+    }
+
+    .dashboard-grid .card {
+        margin-bottom: 0.75rem;
+        width: 100% !important;
+    }
+
+    .mobile-hide {
+        display: none !important;
+    }
+
+    .mobile-show {
+        display: flex !important;
+        flex-direction: column;
+        animation: tabFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes tabFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
