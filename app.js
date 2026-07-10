@@ -1119,28 +1119,60 @@ function updateHarborAlerts(data) {
             }
         });
 
-        // Generate warnings per shift
+        // Group warnings by Day and Threat Level
+        const todayFlooding = [];
+        const todayHighWater = [];
+        const tomorrowFlooding = [];
+        const tomorrowHighWater = [];
+
         for (const [key, maxVal] of Object.entries(shiftWaterLevels)) {
-            const suffix = isWaveSetupFallback ? " (includes swell setup estimate)" : "";
             const isToday = key.startsWith("Today");
-            const dayPrefix = isToday ? "TODAY" : "TOMORROW";
             const shiftName = key.substring(key.indexOf(": ") + 2);
-            
+            // Format to be compact: e.g. "Morning (07:00-08:45) +1.95ft"
+            const compactName = shiftName.replace(/\s*-\s*/g, '-');
+            const entryText = `${compactName} (+${maxVal.toFixed(2)} ft)`;
+
             if (maxVal >= 1.9) {
-                alerts.push({
-                    status: "danger",
-                    icon: "🌊",
-                    text: `${dayPrefix} DOCK FLOODING: High tide (+${maxVal.toFixed(2)} ft) will flood Kukuiula dock during the ${shiftName} loading window${suffix}.`
-                });
+                if (isToday) todayFlooding.push(entryText);
+                else tomorrowFlooding.push(entryText);
             } else if (maxVal >= 1.6) {
-                alerts.push({
-                    status: "caution",
-                    icon: "⚠",
-                    text: `${dayPrefix} HIGH WATER: High tide (+${maxVal.toFixed(2)} ft) approaching wash-over level during the ${shiftName} loading window${suffix}.`
-                });
+                if (isToday) todayHighWater.push(entryText);
+                else tomorrowHighWater.push(entryText);
+            }
+        }
+
+        const suffix = isWaveSetupFallback ? " (includes swell setup)" : "";
+
+        // TODAY alerts: prioritize flooding over high water
+        if (todayFlooding.length > 0) {
+            alerts.push({
+                status: "danger",
+                icon: "🌊",
+                text: `TODAY DOCK FLOODING: Kukuiula dock will flood during: ${todayFlooding.join(", ")}${suffix}.`
+            });
+        } else if (todayHighWater.length > 0) {
+            alerts.push({
+                status: "caution",
+                icon: "⚠",
+                text: `TODAY HIGH WATER: High tide wash-over risk during: ${todayHighWater.join(", ")}${suffix}.`
+            });
+        }
+
+        // TOMORROW alerts: prioritize flooding over high water
+        if (tomorrowFlooding.length > 0) {
+            alerts.push({
+                status: "danger",
+                icon: "🌊",
+                text: `TOMORROW DOCK FLOODING: Kukuiula dock will flood during: ${tomorrowFlooding.join(", ")}${suffix}.`
+            });
+        } else if (tomorrowHighWater.length > 0) {
+            alerts.push({
+                status: "caution",
+                icon: "⚠",
+                text: `TOMORROW HIGH WATER: High tide wash-over risk during: ${tomorrowHighWater.join(", ")}${suffix}.`
+            });
         }
     }
-}
 
     // 2. Swell Wrap & harbor surge on Westerly Boat Ramp
     const swellHeight = data.swell && data.swell.current_south_shore_estimate ? data.swell.current_south_shore_estimate.wvht_ft : null;
