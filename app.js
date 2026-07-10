@@ -162,9 +162,25 @@ async function fetchBuoyLive() {
 async function fetchTideLive() {
     const base = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter";
     const common = `&station=${TIDE_STATION}&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore&format=json`;
+    
+    // Construct today and tomorrow date strings (YYYYMMDD) in local time
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+
+    const formatDate = (date) => {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const d = String(date.getDate()).padStart(2, '0');
+        return `${y}${m}${d}`;
+    };
+
+    const begin = formatDate(today);
+    const end = formatDate(tomorrow);
+
     try {
         const [predRes, obsRes] = await Promise.all([
-            fetch(`${base}?date=today&product=predictions${common}`),
+            fetch(`${base}?begin_date=${begin}&end_date=${end}&product=predictions${common}`),
             fetch(`${base}?date=today&product=water_level${common}`)
         ]);
         const [predJson, obsJson] = await Promise.all([predRes.json(), obsRes.json()]);
@@ -1029,27 +1045,50 @@ function updateHarborAlerts(data) {
     const d = now.getDate();
     const isWhaleSeason = (m === 11) || (m === 0) || (m === 1) || (m === 2) || (m === 3 && d === 1);
 
-    // Dock Time shifts mapping function
-    function getDockShiftName(timeStr) {
+    // Dock Time shifts mapping and past-filtering function
+    function getDockShiftInfo(timeStr) {
         // timeStr format is "YYYY-MM-DD HH:MM"
-        const timePart = timeStr.split(' ')[1];
+        const parts = timeStr.split(' ');
+        const datePart = parts[0];
+        const timePart = parts[1];
         if (!timePart) return null;
+        
         const timeParts = timePart.split(':');
         const hour = parseInt(timeParts[0]);
         const min = parseInt(timeParts[1]);
         const mins = hour * 60 + min;
 
-        // Morning: 07:00 (420) to 08:45 (525)
-        if (mins >= 420 && mins <= 525) return "Morning (07:00 - 08:45)";
-        // Mid-Morning: 10:30 (630) to 11:45 (705)
-        if (mins >= 630 && mins <= 705) return "Mid-Morning (10:30 - 11:45)";
-        // Afternoon 1: 14:00 (840) to 14:30 (870)
-        if (mins >= 840 && mins <= 870) return "Afternoon (14:00 - 14:30)";
-        // Afternoon 2: 15:00 (900) to 16:00 (960)
-        if (mins >= 900 && mins <= 960) return "Afternoon (15:00 - 16:00)";
-        // Evening: 18:00 (1080) to 18:30 (1110)
-        if (mins >= 1080 && mins <= 1110) return "Evening (18:00 - 18:30)";
+        let label = null;
+        let endMin = 0;
+        if (mins >= 420 && mins <= 525) { label = "Morning (07:00 - 08:45)"; endMin = 525; }
+        else if (mins >= 630 && mins <= 705) { label = "Mid-Morning (10:30 - 11:45)"; endMin = 705; }
+        else if (mins >= 840 && mins <= 870) { label = "Afternoon (14:00 - 14:30)"; endMin = 870; }
+        else if (mins >= 900 && mins <= 960) { label = "Afternoon (15:00 - 16:00)"; endMin = 960; }
+        else if (mins >= 1080 && mins <= 1110) { label = "Evening (18:00 - 18:30)"; endMin = 1110; }
 
+        if (!label) return null;
+
+        // Parse date in local time zone safely
+        const predDateParts = datePart.split('-');
+        const predYear = parseInt(predDateParts[0]);
+        const predMonth = parseInt(predDateParts[1]) - 1;
+        const predDay = parseInt(predDateParts[2]);
+        const predDate = new Date(predYear, predMonth, predDay);
+        
+        const todayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        
+        const isToday = predDate.getTime() === todayDate.getTime();
+        const isTomorrow = predDate.getTime() > todayDate.getTime();
+        
+        if (isToday) {
+            const currentMins = now.getHours() * 60 + now.getMinutes();
+            if (currentMins > endMin) {
+                return null; // Shift has already passed today
+            }
+            return { label, day: "Today" };
+        } else if (isTomorrow) {
+            return { label, day: "Tomorrow" };
+        }
         return null;
     }
 
@@ -1070,33 +1109,38 @@ function updateHarborAlerts(data) {
         const shiftWaterLevels = {};
 
         predictions.forEach(p => {
-            const shiftName = getDockShiftName(p.time);
-            if (shiftName) {
+            const info = getDockShiftInfo(p.time);
+            if (info) {
+                const key = `${info.day}: ${info.label}`;
                 const totalHeight = p.value_ft + surge;
-                if (!shiftWaterLevels[shiftName] || totalHeight > shiftWaterLevels[shiftName]) {
-                    shiftWaterLevels[shiftName] = totalHeight;
+                if (!shiftWaterLevels[key] || totalHeight > shiftWaterLevels[key]) {
+                    shiftWaterLevels[key] = totalHeight;
                 }
             }
         });
 
         // Generate warnings per shift
-        for (const [shiftName, maxVal] of Object.entries(shiftWaterLevels)) {
+        for (const [key, maxVal] of Object.entries(shiftWaterLevels)) {
             const suffix = isWaveSetupFallback ? " (includes swell setup estimate)" : "";
+            const isToday = key.startsWith("Today");
+            const dayPrefix = isToday ? "TODAY" : "TOMORROW";
+            const shiftName = key.substring(key.indexOf(": ") + 2);
+            
             if (maxVal >= 1.9) {
                 alerts.push({
                     status: "danger",
                     icon: "🌊",
-                    text: `DOCK FLOODING: High tide (+${maxVal.toFixed(2)} ft) will flood Kukuiula dock during the ${shiftName} loading window${suffix}.`
+                    text: `${dayPrefix} DOCK FLOODING: High tide (+${maxVal.toFixed(2)} ft) will flood Kukuiula dock during the ${shiftName} loading window${suffix}.`
                 });
             } else if (maxVal >= 1.6) {
                 alerts.push({
                     status: "caution",
                     icon: "⚠",
-                    text: `HIGH WATER: High tide (+${maxVal.toFixed(2)} ft) approaching wash-over level during the ${shiftName} loading window${suffix}.`
+                    text: `${dayPrefix} HIGH WATER: High tide (+${maxVal.toFixed(2)} ft) approaching wash-over level during the ${shiftName} loading window${suffix}.`
                 });
-            }
         }
     }
+}
 
     // 2. Swell Wrap & harbor surge on Westerly Boat Ramp
     const swellHeight = data.swell && data.swell.current_south_shore_estimate ? data.swell.current_south_shore_estimate.wvht_ft : null;
