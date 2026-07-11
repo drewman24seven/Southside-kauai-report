@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3.1">
+    <link rel="stylesheet" href="style.css?v=3.2">
     <style>
         .mobile-tabs {
             display: none !important;
@@ -271,13 +271,13 @@
                         </svg>
                         <h2>Wind Report</h2>
                     </div>
-                    <span class="trend-badge" id="wind-reliability">Reliable</span>
                 </div>
                 <div class="card-body wind-body">
                     <div class="twin-wind-container">
                         <!-- Column 1: PWS Wind -->
                         <div class="wind-column pws-column">
                             <h3 class="wind-column-title">Landing</h3>
+                            <span class="trend-badge" id="wind-reliability" style="margin-bottom: 0.5rem; font-size: 0.65rem;">Checking...</span>
                             <div class="wind-main-stat">
                                 <div class="stat-number compact" id="wind-speed">--.-</div>
                                 <div class="stat-unit">MPH</div>
@@ -392,6 +392,6 @@
         </main>
     </div>
 
-    <script src="app.js?v=3.1"></script>
+    <script src="app.js?v=3.2"></script>
 </body>
 </html>

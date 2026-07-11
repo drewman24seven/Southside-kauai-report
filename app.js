@@ -515,14 +515,17 @@ function updateDashboard(data) {
             relBadge.textContent = "Estimated (Shadow Model)";
             relBadge.style.background = "rgba(244, 208, 104, 0.12)";
             relBadge.style.color = "var(--accent-gold)";
+            relBadge.style.borderColor = "rgba(244, 208, 104, 0.2)";
         } else if (w.direction_reliable) {
             relBadge.textContent = "Reliable";
             relBadge.style.background = "rgba(6, 214, 160, 0.12)";
             relBadge.style.color = "var(--accent-teal)";
+            relBadge.style.borderColor = "rgba(6, 214, 160, 0.2)";
         } else {
             relBadge.textContent = "Variable";
             relBadge.style.background = "rgba(244, 208, 104, 0.12)";
             relBadge.style.color = "var(--accent-gold)";
+            relBadge.style.borderColor = "rgba(244, 208, 104, 0.2)";
         }
         if (w.note) relBadge.title = w.note;
 
