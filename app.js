@@ -407,10 +407,12 @@ function updateDashboard(data) {
         confBadge.textContent = profileText;
         confBadge.className = `sub-val confidence-${confVal}`;
         
-        // Swell arrow rotation. Since it comes FROM mwd_deg, it travels TOWARD (mwd_deg + 180)
-        if (est.mwd_deg !== undefined) {
-            const travelDir = (est.mwd_deg + 180) % 360;
-            document.getElementById("swell-arrow").style.transform = `rotate(${travelDir}deg)`;
+        // Swell direction text display
+        if (est.mwd_deg !== undefined && est.mwd_compass) {
+            const abbrEl = document.getElementById("swell-dir-abbr");
+            const degEl  = document.getElementById("swell-dir-deg");
+            if (abbrEl) abbrEl.textContent = est.mwd_compass;
+            if (degEl)  degEl.textContent  = `${Math.round(est.mwd_deg)}°`;
         }
 
         // Swell agreement
@@ -489,6 +491,12 @@ function updateDashboard(data) {
         const compassDir = windCompassCove;
         const degDir = windDirCove !== undefined ? `${Math.round(windDirCove)}°` : "---°";
         document.getElementById("wind-dir").textContent = (w.direction_reliable || isFallback) ? `${degDir} ${compassDir}` : "Variable";
+
+        // Landing direction text display
+        const windAbbrEl = document.getElementById("wind-dir-abbr");
+        const windDegEl  = document.getElementById("wind-dir-deg");
+        if (windAbbrEl) windAbbrEl.textContent = (w.direction_reliable || isFallback) ? compassDir : "VAR";
+        if (windDegEl)  windDegEl.textContent  = (w.direction_reliable || isFallback) ? degDir : "";
         
         let sumGusts = 0;
         let countGusts = 0;
@@ -527,61 +535,52 @@ function updateDashboard(data) {
             document.getElementById("wind-arrow").style.opacity = "0.2"; // fade out if variable
         }
 
-        // Render PWS Station list pills in footer
-        const listContainer = document.getElementById("station-list");
-        listContainer.innerHTML = "";
-        if (isFallback) {
-            const pill = document.createElement("div");
-            pill.className = "station-pill offline";
-            pill.innerHTML = `
-                <span class="station-status-dot offline" style="background: var(--accent-sunset);"></span>
-                <span>All Koloa Stations Offline</span>
-                <span class="station-val">Model Fallback Active</span>
-            `;
-            listContainer.appendChild(pill);
-        } else {
-            (w.stations || []).forEach(s => {
-                const pill = document.createElement("div");
-                pill.className = "station-pill";
-                pill.innerHTML = `
-                    <span class="station-status-dot"></span>
-                    <span>${s.id}</span>
-                    <span class="station-val">${Math.round(s.speed_mph)} mph ${s.direction_compass}</span>
-                `;
-                listContainer.appendChild(pill);
-            });
-        }
+        // No station pills rendered — removed per UI update
+
     } else {
         document.getElementById("wind-speed").textContent = "--.-";
     }
 
     // NAM Model (Exposed) Wind
+    const modelRelBadge = document.getElementById("model-wind-reliability");
     if (data.model_wind) {
         const mw = data.model_wind;
-        
+
         // Model Speed in Knots (KT)
         document.getElementById("model-wind-speed").textContent = mw.speed_knots !== undefined ? mw.speed_knots.toFixed(1) : "--.-";
-        
+
         // Model Speed in MPH
         document.getElementById("model-wind-mph").textContent = mw.speed_mph !== undefined ? `${mw.speed_mph.toFixed(1)} mph` : "--.- mph";
-        
-        // Model Direction
-        const mwCompass = mw.direction_compass || "N/A";
+
+        // Model Direction — sub-stat degrees only, abbreviation in dir-text display
         const mwDeg = mw.direction_deg !== undefined ? `${Math.round(mw.direction_deg)}°` : "---°";
-        document.getElementById("model-wind-dir").textContent = `${mwDeg} ${mwCompass}`;
-        
-        // Model Wind arrow rotation (blowing TOWARD direction_deg + 180)
-        if (mw.direction_deg !== undefined) {
-            const travelDir = (mw.direction_deg + 180) % 360;
-            document.getElementById("model-wind-arrow").style.transform = `rotate(${travelDir}deg)`;
-            document.getElementById("model-wind-arrow").style.opacity = "1";
-        } else {
-            document.getElementById("model-wind-arrow").style.opacity = "0.2";
+        document.getElementById("model-wind-dir").textContent = mwDeg;
+
+        // Exposed Points direction text display
+        const mwAbbrEl = document.getElementById("model-wind-dir-abbr");
+        const mwDegEl  = document.getElementById("model-wind-dir-deg");
+        if (mwAbbrEl) mwAbbrEl.textContent = mw.direction_compass || "--";
+        if (mwDegEl)  mwDegEl.textContent  = mwDeg;
+
+        // Exposed Points reliability badge
+        if (modelRelBadge) {
+            modelRelBadge.textContent = "Reliable";
+            modelRelBadge.style.background = "rgba(6, 214, 160, 0.12)";
+            modelRelBadge.style.color = "var(--accent-teal)";
+            modelRelBadge.style.borderColor = "rgba(6, 214, 160, 0.2)";
         }
     } else {
         document.getElementById("model-wind-speed").textContent = "--.-";
         document.getElementById("model-wind-mph").textContent = "--.- mph";
-        document.getElementById("model-wind-dir").textContent = "---° --";
+        document.getElementById("model-wind-dir").textContent = "---°";
+        const mwAbbrEl = document.getElementById("model-wind-dir-abbr");
+        if (mwAbbrEl) mwAbbrEl.textContent = "--";
+        if (modelRelBadge) {
+            modelRelBadge.textContent = "Unavailable";
+            modelRelBadge.style.background = "rgba(255,255,255,0.05)";
+            modelRelBadge.style.color = "var(--text-muted)";
+            modelRelBadge.style.borderColor = "transparent";
+        }
     }
 
     // 4. Tide Card
@@ -1166,9 +1165,9 @@ function updateHarborAlerts(data) {
         
         const suffix = isWaveSetupFallback ? " (includes swell setup)" : "";
 
-        // Find continuous periods above thresholds
-        const floodingRanges = findHighWaterRanges(predictions, 1.9, surge).filter(filterPastRanges);
-        const highWaterRanges = findHighWaterRanges(predictions, 1.6, surge).filter(filterPastRanges);
+        // Find continuous periods above thresholds (field-calibrated 2026-07-10)
+        const floodingRanges  = findHighWaterRanges(predictions, 2.1, surge).filter(filterPastRanges);
+        const highWaterRanges = findHighWaterRanges(predictions, 1.8, surge).filter(filterPastRanges);
 
         // Format a range for output
         const formatRange = r => `${r.startTime} - ${r.endTime} (max +${r.maxVal.toFixed(2)} ft)`;

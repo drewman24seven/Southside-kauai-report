@@ -217,18 +217,9 @@
                         </div>
                     </div>
 
-                    <div class="visual-indicator wave-compass-container compact" style="width: 110px; height: 110px; flex-shrink: 0; background: rgba(255, 255, 255, 0.01);">
-                        <div class="compass-dial" style="top: 2px; left: 2px; right: 2px; bottom: 2px;">
-                            <div class="compass-marker n" style="top: 8px; font-size: 0.6rem;">N</div>
-                            <div class="compass-marker e" style="right: 2px; top: 50%; font-size: 0.6rem;">E</div>
-                            <div class="compass-marker s" style="bottom: 0px; font-size: 0.6rem;">S</div>
-                            <div class="compass-marker w" style="left: 10px; top: 50%; font-size: 0.6rem;">W</div>
-                            <div class="compass-arrow" id="swell-arrow" style="width: 20px; height: 20px; margin-top: -10px; margin-left: -10px;">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
-                                </svg>
-                            </div>
-                        </div>
+                    <div class="dir-text-display swell-dir-display">
+                        <div class="dir-abbr" id="swell-dir-abbr">--</div>
+                        <div class="dir-deg" id="swell-dir-deg">---°</div>
                     </div>
                 </div>
 
@@ -301,22 +292,16 @@
                                     <span class="sub-val" id="wind-dir">---° --</span>
                                 </div>
                             </div>
-                            <div class="visual-indicator wind-compass-container compact">
-                                <div class="compass-dial">
-                                    <div class="compass-marker n">N</div>
-                                    <div class="compass-marker s">S</div>
-                                    <div class="compass-arrow wind" id="wind-arrow">
-                                        <svg viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
-                                        </svg>
-                                    </div>
-                                </div>
+                            <div class="dir-text-display wind-dir-display">
+                                <div class="dir-abbr" id="wind-dir-abbr">--</div>
+                                <div class="dir-deg" id="wind-dir-deg">---°</div>
                             </div>
                         </div>
 
                         <!-- Column 2: NAM Wind -->
                         <div class="wind-column model-column">
                             <h3 class="wind-column-title">Exposed Points</h3>
+                            <span class="trend-badge" id="model-wind-reliability" style="margin-bottom: 0.5rem; font-size: 0.65rem;">Checking...</span>
                             <div class="wind-main-stat">
                                 <div class="stat-number compact" id="model-wind-speed">--.-</div>
                                 <div class="stat-unit">KT</div>
@@ -328,19 +313,12 @@
                                 </div>
                                 <div class="column-sub-stat">
                                     <span class="sub-label">Direction</span>
-                                    <span class="sub-val" id="model-wind-dir">---° --</span>
+                                    <span class="sub-val" id="model-wind-dir">---°</span>
                                 </div>
                             </div>
-                            <div class="visual-indicator wind-compass-container compact">
-                                <div class="compass-dial">
-                                    <div class="compass-marker n">N</div>
-                                    <div class="compass-marker s">S</div>
-                                    <div class="compass-arrow wind model-wind" id="model-wind-arrow">
-                                        <svg viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
-                                        </svg>
-                                    </div>
-                                </div>
+                            <div class="dir-text-display wind-dir-display">
+                                <div class="dir-abbr" id="model-wind-dir-abbr">--</div>
+                                <div class="dir-deg" id="model-wind-dir-deg">---°</div>
                             </div>
                         </div>
                     </div>
@@ -357,11 +335,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <div class="station-pills" id="station-list">
-                        <!-- Stations will be added dynamically -->
-                    </div>
-                </div>
+
             </section>
 
             <!-- Row 2: Tides & Forecast -->
