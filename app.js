@@ -1162,8 +1162,8 @@ function updateHarborAlerts(data) {
         const suffix = isWaveSetupFallback ? " (includes swell setup)" : "";
 
         // Find continuous periods above thresholds (field-calibrated 2026-07-10)
-        const floodingRanges  = findHighWaterRanges(predictions, 2.1, surge).filter(filterPastRanges);
-        const highWaterRanges = findHighWaterRanges(predictions, 1.8, surge).filter(filterPastRanges);
+        const floodingRanges  = findHighWaterRanges(predictions, 3.2, surge).filter(filterPastRanges);
+        const highWaterRanges = findHighWaterRanges(predictions, 2.85, surge).filter(filterPastRanges);
 
         // Format a range for output
         const formatRange = r => `${r.startTime} - ${r.endTime} (max +${r.maxVal.toFixed(2)} ft)`;
