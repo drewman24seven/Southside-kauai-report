@@ -526,14 +526,7 @@ function updateDashboard(data) {
         }
         if (w.note) relBadge.title = w.note;
 
-        // PWS Wind arrow rotation (blowing TOWARD wind_deg + 180)
-        if (windDirCove !== undefined && (w.direction_reliable || isFallback)) {
-            const travelDir = (windDirCove + 180) % 360;
-            document.getElementById("wind-arrow").style.transform = `rotate(${travelDir}deg)`;
-            document.getElementById("wind-arrow").style.opacity = "1";
-        } else {
-            document.getElementById("wind-arrow").style.opacity = "0.2"; // fade out if variable
-        }
+        // Wind arrow removed — direction shown as text abbreviation
 
         // No station pills rendered — removed per UI update
 
