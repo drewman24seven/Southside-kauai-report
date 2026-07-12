@@ -217,7 +217,7 @@ def main():
     try:
         now_dt = datetime.fromisoformat(now_str) if now_str else datetime.now(timezone.utc).replace(tzinfo=None)
     except ValueError:
-        now_dt = datetime.utcnow()
+        now_dt = datetime.now(timezone.utc).replace(tzinfo=None)
  
     primary_series = parse_series(payload.get("primary_series"))
     verification_series = parse_series(payload.get("verification_series"))
