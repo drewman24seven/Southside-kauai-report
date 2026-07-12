@@ -1,46 +1,46 @@
 {
-  "last_updated": "2026-07-12T11:45:07.712403+00:00",
+  "last_updated": "2026-07-12T15:39:54.659800+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 4.0,
-        "direction_deg": 33.0,
-        "direction_compass": "NNE",
+        "speed_mph": 1.0,
+        "direction_deg": 74.0,
+        "direction_compass": "ENE",
         "role": "Primary/Anchor",
-        "gust_mph": 6,
+        "gust_mph": 3,
         "temp_f": 77,
-        "humidity": 90,
-        "time_local": "2026-07-12 01:45:01",
-        "time_utc": "2026-07-12T11:45:01Z",
+        "humidity": 87,
+        "time_local": "2026-07-12 05:39:41",
+        "time_utc": "2026-07-12T15:39:41Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 4.0,
+        "speed_mph": 9.0,
         "direction_deg": 68.0,
         "direction_compass": "ENE",
         "role": "Verification 1",
-        "gust_mph": 5,
-        "temp_f": 76,
-        "humidity": 87,
-        "time_local": "2026-07-12 01:44:54",
-        "time_utc": "2026-07-12T11:44:54Z",
+        "gust_mph": 12,
+        "temp_f": 77,
+        "humidity": 83,
+        "time_local": "2026-07-12 05:39:42",
+        "time_utc": "2026-07-12T15:39:42Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 4.0,
-    "vector_average_speed_mph": 3.8,
-    "average_direction_deg": 50.5,
-    "average_direction_compass": "NE",
+    "average_speed_mph": 5.0,
+    "vector_average_speed_mph": 5.0,
+    "average_direction_deg": 68.6,
+    "average_direction_compass": "ENE",
     "direction_reliable": true,
     "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
   },
   "model_wind": {
-    "speed_mph": 18.4,
-    "speed_knots": 16.0,
+    "speed_mph": 21.9,
+    "speed_knots": 19.0,
     "direction_deg": 70,
     "direction_compass": "ENE",
     "source": "NWS gridded forecast (Honolulu WFO)"
@@ -2013,5 +2013,5 @@
     "observations": [],
     "surge_ft": null
   },
-  "forecast_text": "PHZ112-121430-\nKauai Leeward Waters-\n316 PM HST Sat Jul 11 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH SUNDAY AFTERNOON...\n\n.TONIGHT...East northeast winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and southwest 3 feet at\n16 seconds. Isolated showers. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 5 to 7 feet.\nWave Detail: East 6 feet at 7 seconds and southwest 3 feet at\n16 seconds. Isolated showers in the morning, then scattered\nshowers in the afternoon. \n.SUNDAY NIGHT...East northeast winds 20 to 25 knots, easing to\n15 to 20 knots after midnight. Seas 5 to 7 feet. Wave Detail:\nEast 6 feet at 7 seconds and southwest 3 feet at 15 seconds.\nScattered showers, mainly in the evening. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 5 to 7 feet.\nWave Detail: East 6 feet at 7 seconds and southwest 3 feet at\n15 seconds. Isolated showers. \n.MONDAY NIGHT...East northeast winds 15 to 20 knots. In the\nKaulakahi Channel, east northeast winds 10 to 15 knots, becoming\n7 to 10 knots after midnight. Seas 5 to 7 feet. Wave Detail: East\n5 feet at 6 seconds and southwest 3 feet at 14 seconds. Isolated\nshowers. \n.TUESDAY...East northeast winds to 15 knots...East northeast\n10 to 15 knots in the Kaulakahi Channel. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds. Scattered showers, mainly in\nthe morning. \n.TUESDAY NIGHT...East winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 4 feet at 6 seconds. Scattered showers. \n.WEDNESDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East northeast 4 feet at 6 seconds. Scattered showers in\nthe morning, then isolated showers in the afternoon. Scattered\nshowers through the day. \n.THURSDAY...East winds 10 to 15 knots, rising to 15 to 20 knots.\nSeas 4 to 5 feet. Wave Detail: East 5 feet at 6 seconds.\nScattered showers."
+  "forecast_text": "PHZ112-130145-\nKauai Leeward Waters-\n318 AM HST Sun Jul 12 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH MONDAY AFTERNOON...\n\n.TODAY...East northeast winds 20 to 25 knots. Seas 5 to 8 feet.\nWave Detail: East 7 feet at 8 seconds and southwest 3 feet at\n16 seconds. Isolated showers this morning. \n.TONIGHT...East northeast winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and southwest 3 feet at\n15 seconds. Isolated showers. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 5 to 7 feet.\nWave Detail: East 6 feet at 6 seconds and southwest 3 feet at\n15 seconds. Isolated showers in the morning. \n.MONDAY NIGHT...East northeast winds 15 to 20 knots. Seas 4 to\n6 feet. Wave Detail: East 5 feet at 6 seconds and southwest\n3 feet at 14 seconds. Isolated showers. \n.TUESDAY...East northeast winds to 15 knots...East northeast\n10 to 15 knots in the Kaulakahi Channel. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 6 seconds. Isolated showers in the\nmorning. \n.TUESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 5 feet.\nWave Detail: East 4 feet at 6 seconds. Isolated showers. \n.WEDNESDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 6 seconds. Isolated showers in the\nmorning. Isolated showers through the day. \n.THURSDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 6 seconds. Isolated showers in the\nmorning. Isolated showers through the day."
 }
