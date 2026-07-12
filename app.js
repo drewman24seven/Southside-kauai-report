@@ -145,17 +145,31 @@ function computeLagHours(mwd_deg, dpd_s) {
 
 function parseBuoySeries(rawTxt) {
     if (!rawTxt) return [];
-    const lines = rawTxt.split("\n").filter(l => l && !l.startsWith("#"));
+    const allLines = rawTxt.split("\n");
+
+    // Dynamically find WVHT/DPD/MWD column indices from the NDBC header row.
+    // Guards against NDBC adding/removing columns in future format updates.
+    const headerLine = allLines.find(l => l.startsWith('#') && l.includes('WVHT') && l.includes('MWD'));
+    let idxWvht = 8, idxDpd = 9, idxMwd = 11; // safe defaults matching current NDBC layout
+    if (headerLine) {
+        const hCols = headerLine.replace(/^#+/, '').trim().split(/\s+/);
+        const h = name => hCols.indexOf(name);
+        if (h('WVHT') !== -1) idxWvht = h('WVHT');
+        if (h('DPD')  !== -1) idxDpd  = h('DPD');
+        if (h('MWD')  !== -1) idxMwd  = h('MWD');
+    }
+
+    const dataLines = allLines.filter(l => l && !l.startsWith('#'));
     const series = [];
-    for (const line of lines) {
+    for (const line of dataLines) {
         const cols = line.trim().split(/\s+/);
         if (cols.length < 9) continue;
         const [yr, mo, dy, hr, mn] = cols.slice(0, 5).map(Number);
         if (isNaN(yr)) continue;
         const obs_time_utc = new Date(Date.UTC(yr, mo - 1, dy, hr, mn)).toISOString();
-        const wvht_m = parseFloat(cols[8]);
-        const dpd_s  = parseFloat(cols[9]);
-        const mwd_deg = parseFloat(cols[11]);
+        const wvht_m = parseFloat(cols[idxWvht]);
+        const dpd_s  = parseFloat(cols[idxDpd]);
+        const mwd_deg = parseFloat(cols[idxMwd]);
         if (isNaN(wvht_m) || wvht_m >= 99) continue;
         series.push({
             obs_time_utc,
@@ -422,6 +436,62 @@ function formatHST(isoString) {
     }) + " HST";
 }
 
+// ─── Hawaii Time Helpers ──────────────────────────────────────────────────────
+// NOAA tide predictions are always in Hawaii Standard Time (UTC-10, no DST).
+// Appending -10:00 ensures correct epoch parsing regardless of browser timezone.
+function parsePredictionTime(timeStr) {
+    return new Date(timeStr.replace(' ', 'T') + '-10:00');
+}
+function getHSTDateStr() {
+    return new Date().toLocaleDateString('en-CA', { timeZone: 'Pacific/Honolulu' });
+}
+function getHSTMinutes() {
+    const t = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'Pacific/Honolulu', hour12: false,
+        hour: '2-digit', minute: '2-digit'
+    });
+    const parts = t.split(':');
+    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+}
+
+// ─── Wind Shadow Decay (single source of truth) ───────────────────────────────
+// Estimates Koloa Landing cove wind from offshore NWS model wind.
+// Direction-dependent decay accounts for Makahuena Point's lee shadow.
+function estimateCoveWindFromModel(modelWind) {
+    if (!modelWind || modelWind.speed_mph === undefined) return null;
+    const mwDir = modelWind.direction_deg !== undefined ? modelWind.direction_deg : 90;
+    let decayCoeff = 0.6;
+    if (mwDir >= 45 && mwDir <= 110)       decayCoeff = 0.3; // ENE trades — strong shadow
+    else if (mwDir >= 135 && mwDir <= 225) decayCoeff = 0.9; // South — direct onshore
+    return modelWind.speed_mph * decayCoeff;
+}
+
+// ─── 3-State Tidal Model ──────────────────────────────────────────────────────
+// Returns { isFlooding, isEbbing, isSlack, available }.
+// Slack is detected via rate-of-change of water level: tidal current ∝ dh/dt,
+// so near-zero slope at high/low tide = near-zero current = slack water.
+// This prevents false standing-wave alerts at the top and bottom of each cycle.
+function computeTideState(preds) {
+    if (!preds || preds.length === 0) {
+        return { isFlooding: false, isEbbing: false, isSlack: false, available: false };
+    }
+    const nowEpoch = Date.now();
+    let closestIdx = 0, minDiff = Infinity;
+    for (let i = 0; i < preds.length; i++) {
+        const diff = Math.abs(parsePredictionTime(preds[i].time).getTime() - nowEpoch);
+        if (diff < minDiff) { minDiff = diff; closestIdx = i; }
+    }
+    // Rate of change over ±30 min (5 × 6-min NOAA intervals each side)
+    const ahead  = Math.min(closestIdx + 5, preds.length - 1);
+    const behind = Math.max(closestIdx - 5, 0);
+    const rateOfChange = Math.abs(preds[ahead].value_ft - preds[behind].value_ft);
+    const isSlack = rateOfChange < 0.15; // < ~0.3 ft/hr ≈ slack water
+    const isEbbing = (closestIdx < preds.length - 1)
+        ? preds[closestIdx + 1].value_ft < preds[closestIdx].value_ft
+        : false;
+    return { isFlooding: !isEbbing, isEbbing, isSlack, available: true };
+}
+
 function updateDashboard(data) {
     // 1. Last Updated and Small Craft Advisory (SCA)
     const lastUpdatedDt = data.last_updated;
@@ -431,9 +501,10 @@ function updateDashboard(data) {
     const forecastText = data.forecast_text ? data.forecast_text.toUpperCase() : "";
     const swellHeight = data.swell && data.swell.current_south_shore_estimate ? data.swell.current_south_shore_estimate.wvht_ft : null;
     const windSpeedExposed = data.model_wind ? data.model_wind.speed_mph : null;
+    const windSpeedKnots = data.model_wind ? data.model_wind.speed_knots : null; // used for NWS SCA threshold (21 KT)
 
     let scaActive = forecastText.includes("SMALL CRAFT ADVISORY");
-    if (windSpeedExposed !== null && windSpeedExposed >= 25) scaActive = true;
+    if (windSpeedKnots !== null && windSpeedKnots >= 21) scaActive = true; // NWS SCA threshold: 21 KT
     if (swellHeight !== null && swellHeight >= 10.0) scaActive = true;
 
     if (scaActive) {
@@ -522,25 +593,12 @@ function updateDashboard(data) {
         let isFallback = false;
 
         if (stationsOnline === 0 || windSpeedCove === null || windSpeedCove === 0) {
-            // Apply wind shadow decay fallback if all three stations are offline
-            if (data.model_wind && data.model_wind.speed_mph !== undefined) {
-                const mw = data.model_wind;
-                const mwSpeed = mw.speed_mph;
-                const mwDir = mw.direction_deg !== undefined ? mw.direction_deg : 90;
-                
-                let decayCoeff = 0.6;
-                if (mwDir >= 45 && mwDir <= 110) {
-                    decayCoeff = 0.3; // ENE trades - heavy leeward shadow of Makahuena Point
-                } else if (mwDir >= 135 && mwDir <= 225) {
-                    decayCoeff = 0.9; // South winds - direct onshore, no shadow
-                }
-                
-                windSpeedCove = mwSpeed * decayCoeff;
-                windDirCove = mwDir;
-                
-                const directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
-                const val = Math.floor((mwDir / 22.5) + 0.5);
-                windCompassCove = directions[val % 16];
+            // Apply wind shadow decay fallback if all stations are offline (single source of truth)
+            const decayedSpeed = estimateCoveWindFromModel(data.model_wind);
+            if (decayedSpeed !== null) {
+                windSpeedCove = decayedSpeed;
+                windDirCove   = data.model_wind.direction_deg;
+                windCompassCove = data.model_wind.direction_compass || degToCompass(windDirCove);
                 isFallback = true;
             }
         }
@@ -751,29 +809,14 @@ function renderTideSVG(predictions, observations) {
     let dArea = `${d} L ${points[points.length - 1].x} ${height} L ${points[0].x} ${height} Z`;
     svg.querySelector(".tide-area-path").setAttribute("d", dArea);
 
-    // Locate indicator dots on the curve for "Current Time"
-    // Since prediction dates are formatted as '2026-07-08 16:30', let's see which one is closest to local system time
-    const now = new Date();
-    // Format local time to match predictions format (YYYY-MM-DD HH:MM)
-    // Predictions are in Hawaii local standard time (LST_LDT) because we query with time_zone=lst_ldt
-    const localHour = now.getHours();
-    const localMin = now.getMinutes();
-    
-    // Find matching time in predictions
+    // Locate "Current Time" dot — use full epoch via parsePredictionTime (HST-aware)
+    // so this works correctly for any browser timezone and across day boundaries.
+    const nowEpoch = Date.now();
     let minDiff = Infinity;
     let closestIdx = 0;
-    
     predictions.forEach((p, idx) => {
-        // Parse "2026-07-08 16:30"
-        const tParts = p.time.split(' ')[1].split(':');
-        const h = parseInt(tParts[0]);
-        const m = parseInt(tParts[1]);
-        
-        const diff = Math.abs((h * 60 + m) - (localHour * 60 + localMin));
-        if (diff < minDiff) {
-            minDiff = diff;
-            closestIdx = idx;
-        }
+        const diff = Math.abs(parsePredictionTime(p.time).getTime() - nowEpoch);
+        if (diff < minDiff) { minDiff = diff; closestIdx = idx; }
     });
     
     // Position dot & current time line
@@ -823,9 +866,13 @@ function renderTideSVG(predictions, observations) {
 }
 
 function findAndRenderExtremes(predictions) {
+    // Filter to today's date in HST — predictions span 48 hours, show today's tides only
+    const todayHST = getHSTDateStr();
+    predictions = predictions.filter(p => p.time.split(' ')[0] === todayHST);
+
     // Find local maxima and minima to show high and low tides
     const extremes = [];
-    
+
     for (let i = 1; i < predictions.length - 1; i++) {
         const prev = predictions[i-1].value_ft;
         const curr = predictions[i].value_ft;
@@ -883,12 +930,8 @@ function updateDiveSites(data) {
     const stationsOnline = data.wind && data.wind.stations_online !== undefined ? data.wind.stations_online : (data.wind && data.wind.stations ? data.wind.stations.length : 0);
     
     if (stationsOnline === 0 || windSpeedCove === null || windSpeedCove === 0) {
-        if (windSpeedExposed !== null && windDirExposed !== null) {
-            let decayCoeff = 0.6;
-            if (windDirExposed >= 45 && windDirExposed <= 110) decayCoeff = 0.3;
-            else if (windDirExposed >= 135 && windDirExposed <= 225) decayCoeff = 0.9;
-            windSpeedCove = windSpeedExposed * decayCoeff;
-        }
+        const decayedSpeed = estimateCoveWindFromModel(data.model_wind);
+        if (decayedSpeed !== null) windSpeedCove = decayedSpeed;
     }
 
     // Determine wind alignment relative to the South Shore (facing 180°)
@@ -1037,14 +1080,25 @@ function updateDiveSites(data) {
             else if (energy >= energyCautionLimit) current = "Moderate Drift";
         }
 
-        // 3. Transit Condition
+        // 3. Transit Condition — period-aware model
+        // Wave steepness ∝ H/T²: longer period = gentler organized rollers = smoother crossing.
+        // Short-period windswell is steep and chaotic even at moderate heights.
         let transit = "Smooth Transit";
         if (type === "Shore") {
             transit = "N/A (Shore Entry)";
         } else {
-            if (windSpeedExposed !== null) {
-                if (windSpeedExposed >= 20 || energy >= 250) transit = "Rough Ride";
-                else if (windSpeedExposed >= 12 || energy >= 120) transit = "Bumpy Ride";
+            let pFactor = 1.0;
+            if (swellPeriod !== null) {
+                if (swellPeriod >= 16)      pFactor = 0.50; // Classic groundswell — long organized rollers
+                else if (swellPeriod >= 14) pFactor = 0.65; // Good groundswell
+                else if (swellPeriod >= 12) pFactor = 0.80; // Mixed swell
+                else if (swellPeriod <= 8)  pFactor = 1.30; // Windswell — steep and disorganized
+            }
+            const effH = (swellHeight || 0) * pFactor;
+            if ((windSpeedExposed !== null && windSpeedExposed >= 20) || effH >= 6.0) {
+                transit = "Rough Ride";
+            } else if ((windSpeedExposed !== null && windSpeedExposed >= 12) || effH >= 3.5) {
+                transit = "Bumpy Ride";
             }
         }
 
@@ -1139,10 +1193,10 @@ function updateHarborAlerts(data) {
 
     const alerts = [];
     
-    // Check if current date falls within Whale Season (Dec 1 - Apr 1)
-    const now = new Date();
-    const m = now.getMonth(); // 0 = Jan, 11 = Dec
-    const d = now.getDate();
+    // Whale season check — use HST date (predictions are in Hawaii Standard Time)
+    const nowHST = new Date(new Date().toLocaleString('en-US', { timeZone: 'Pacific/Honolulu' }));
+    const m = nowHST.getMonth(); // 0 = Jan, 11 = Dec
+    const d = nowHST.getDate();
     const isWhaleSeason = (m === 11) || (m === 0) || (m === 1) || (m === 2) || (m === 3 && d === 1);
 
     // Dynamic range finder for high water conditions
@@ -1189,21 +1243,11 @@ function updateHarborAlerts(data) {
         return ranges;
     }
 
-    // Helper to format date as YYYY-MM-DD in local time
-    const formatDateDash = (date) => {
-        const y = date.getFullYear();
-        const m = String(date.getMonth() + 1).padStart(2, '0');
-        const d = String(date.getDate()).padStart(2, '0');
-        return `${y}-${m}-${d}`;
-    };
+    // Use HST-aware date strings — predictions are always in Hawaii Standard Time
+    const todayStr = getHSTDateStr();
 
-    const todayStr = formatDateDash(now);
-    const tomorrow = new Date();
-    tomorrow.setDate(now.getDate() + 1);
-    const tomorrowStr = formatDateDash(tomorrow);
-
-    // Filter past ranges (keep only active/upcoming ranges for today)
-    const currentMins = now.getHours() * 60 + now.getMinutes();
+    // Filter past ranges — compare end times in HST minutes
+    const currentMins = getHSTMinutes();
     const filterPastRanges = r => {
         if (r.date === todayStr) {
             const endParts = r.endTime.split(':');
@@ -1252,24 +1296,6 @@ function updateHarborAlerts(data) {
                 text: `TODAY HIGH WATER: High tide wash-over risk from: ${todayHighWaterText.join(", ")}${suffix}.`
             });
         }
-
-        // Tomorrow Grouping
-        const tomorrowFloodingText = floodingRanges.filter(r => r.date === tomorrowStr).map(formatRange);
-        const tomorrowHighWaterText = highWaterRanges.filter(r => r.date === tomorrowStr).map(formatRange);
-
-        if (tomorrowFloodingText.length > 0) {
-            alerts.push({
-                status: "danger",
-                icon: "🌊",
-                text: `TOMORROW DOCK FLOODING: Kukuiula dock will flood from: ${tomorrowFloodingText.join(", ")}${suffix}.`
-            });
-        } else if (tomorrowHighWaterText.length > 0) {
-            alerts.push({
-                status: "caution",
-                icon: "⚠",
-                text: `TOMORROW HIGH WATER: High tide wash-over risk from: ${tomorrowHighWaterText.join(", ")}${suffix}.`
-            });
-        }
     }
 
     // 2. Swell Wrap & harbor surge on Westerly Boat Ramp
@@ -1294,43 +1320,20 @@ function updateHarborAlerts(data) {
         }
     }
 
-    // 3. Reverse Current (West-to-East) ebbing current colliding with East trade wind waves
+    // 3. Reverse Current: active flood tide (West-to-East) opposing ENE trades → standing waves.
+    // 3-state model: slack suppresses alert (near-zero current at tide peaks).
     const windSpeedExposed = data.model_wind ? data.model_wind.speed_mph : null;
     const windDirExposed = data.model_wind ? data.model_wind.direction_deg : null;
-    let isEbbing = false;
-    let tideDataAvailable = false;
+    const tideState = computeTideState(data.tides?.predictions);
 
-    if (data.tides && data.tides.predictions && data.tides.predictions.length > 0) {
-        tideDataAvailable = true;
-        const preds = data.tides.predictions;
-        const nowLocal = new Date();
-        let closestIdx = 0;
-        let minDiff = Infinity;
-        
-        for (let i = 0; i < preds.length; i++) {
-            const pDate = new Date(preds[i].time.replace(' ', 'T'));
-            const diff = Math.abs(nowLocal - pDate);
-            if (diff < minDiff) {
-                minDiff = diff;
-                closestIdx = i;
-            }
-        }
-        
-        // Ebb is falling tide (next hour height is lower)
-        if (closestIdx < preds.length - 1) {
-            isEbbing = preds[closestIdx + 1].value_ft < preds[closestIdx].value_ft;
-        }
-    }
-
-    if (tideDataAvailable && !isEbbing && windSpeedExposed !== null && windSpeedExposed > 12 && windDirExposed !== null) {
-        // Wind is from East/ENE (45° to 110°)
-        if (windDirExposed >= 45 && windDirExposed <= 110) {
-            alerts.push({
-                status: "caution",
-                icon: "🌊",
-                text: `HARSH SEAS: Flood tide generating reverse West-to-East current against East trades. Expect steep standing waves and a rough boat ride.`
-            });
-        }
+    if (tideState.available && tideState.isFlooding && !tideState.isSlack &&
+        windSpeedExposed !== null && windSpeedExposed > 12 &&
+        windDirExposed !== null && windDirExposed >= 45 && windDirExposed <= 110) {
+        alerts.push({
+            status: "caution",
+            icon: "🌊",
+            text: `HARSH SEAS: Active flood tide generating West-to-East current against ENE trades. Expect steep standing waves and a rough boat ride.`
+        });
     }
 
     // Render alerts
@@ -1362,7 +1365,7 @@ function updateHarborAlerts(data) {
     if (isWhaleSeason) {
         note.textContent = "Whale season dock alerts active (Dec 1 - Apr 1).";
     } else {
-        note.textContent = "Whale season dock alerts active Dec 1 - Apr 1. (Currently in demo mode for testing).";
+        note.textContent = "Dock flooding alerts active year-round. Whale season: Dec 1 – Apr 1.";
     }
     container.appendChild(note);
 }
@@ -1372,78 +1375,72 @@ function updateTransitComfort(data) {
     const eastBadge = document.getElementById("comfort-east");
     if (!westBadge || !eastBadge) return;
 
-    // Get swell and wind stats
     const swellHeight = data.swell && data.swell.current_south_shore_estimate ? data.swell.current_south_shore_estimate.wvht_ft : null;
     const swellPeriod = data.swell && data.swell.current_south_shore_estimate ? data.swell.current_south_shore_estimate.dpd_s : null;
     const windSpeedExposed = data.model_wind ? data.model_wind.speed_mph : null;
-    const windDirExposed = data.model_wind ? data.model_wind.direction_deg : null;
+    const windDirExposed   = data.model_wind ? data.model_wind.direction_deg : null;
 
-    // Calculate Swell Energy
-    const energy = (swellHeight !== null && swellPeriod !== null) ? (swellHeight * swellHeight * swellPeriod) : 0;
+    // Period comfort factor — wave steepness ∝ H/T²:
+    //   Long period  → gentle organized rollers → easier transit (factor < 1.0)
+    //   Short period → steep chaotic windswell  → harder transit (factor > 1.0)
+    let periodFactor = 1.0;
+    if (swellPeriod !== null) {
+        if      (swellPeriod >= 16) periodFactor = 0.50; // Classic groundswell
+        else if (swellPeriod >= 14) periodFactor = 0.65; // Good groundswell
+        else if (swellPeriod >= 12) periodFactor = 0.80; // Mixed swell
+        else if (swellPeriod <=  8) periodFactor = 1.30; // Windswell — steep and disorganized
+    }
+    const effectiveSwellHeight = (swellHeight || 0) * periodFactor;
 
-    // A. Evaluate West of Makahuena (Poipu / Kukuiula)
-    // Sheltered from trades, but vulnerable to reverse current flood tide standing waves
+    // 3-state tidal model: active flooding / slack / active ebbing
+    const tideState = computeTideState(data.tides?.predictions);
+
+    // Reverse current: active flood tide pushes West-to-East against ENE trades → standing waves.
+    // Gated on !isSlack: near-zero current at high/low water does not create standing waves.
+    const hasReverseCurrent = tideState.available && tideState.isFlooding && !tideState.isSlack &&
+        windSpeedExposed !== null && windSpeedExposed > 12 &&
+        windDirExposed !== null && windDirExposed >= 45 && windDirExposed <= 110;
+
+    // Ebb improvement: ebb runs East-to-West WITH ENE trades → reduces apparent wave steepness.
+    // Effect is modest (~3-5% of wave phase speed) — modeled as 15% threshold relief.
+    const hasEbbImprovement = tideState.available && tideState.isEbbing && !tideState.isSlack &&
+        windDirExposed !== null && windDirExposed >= 45 && windDirExposed <= 110;
+
+    // A. West of Makahuena (Poipu / Kukuiula) — sheltered from trades by the point
     let westStatus = "smooth";
-    
-    let isEbbing = false;
-    let tideDataAvailable = false;
-    if (data.tides && data.tides.predictions && data.tides.predictions.length > 0) {
-        tideDataAvailable = true;
-        const preds = data.tides.predictions;
-        const nowLocal = new Date();
-        let closestIdx = 0;
-        let minDiff = Infinity;
-        for (let i = 0; i < preds.length; i++) {
-            const pDate = new Date(preds[i].time.replace(' ', 'T'));
-            const diff = Math.abs(nowLocal - pDate);
-            if (diff < minDiff) {
-                minDiff = diff;
-                closestIdx = i;
-            }
-        }
-        if (closestIdx < preds.length - 1) {
-            isEbbing = preds[closestIdx + 1].value_ft < preds[closestIdx].value_ft;
-        }
-    }
-
-    const hasReverseCurrent = tideDataAvailable && !isEbbing && windSpeedExposed !== null && windSpeedExposed > 12 && windDirExposed !== null && (windDirExposed >= 45 && windDirExposed <= 110);
-
     if (hasReverseCurrent) {
-        westStatus = "harsh"; // Standing waves!
-    } else if (windSpeedExposed !== null && windSpeedExposed > 20 || energy > 250) {
-        westStatus = "rough";
-    } else if (windSpeedExposed !== null && windSpeedExposed > 12 || energy > 110) {
-        westStatus = "choppy";
+        westStatus = "harsh"; // Active flood current opposing ENE trades → standing waves
     } else {
-        westStatus = "smooth";
+        const ebFactor = hasEbbImprovement ? 1.15 : 1.0; // mild threshold relief on ebb
+        if ((windSpeedExposed !== null && windSpeedExposed > 20) || effectiveSwellHeight >= 5.5 / ebFactor) {
+            westStatus = "rough";
+        } else if ((windSpeedExposed !== null && windSpeedExposed > 12) || effectiveSwellHeight >= 3.0 / ebFactor) {
+            westStatus = "choppy";
+        } else {
+            westStatus = "smooth";
+        }
     }
 
-    // Render West
-    westBadge.className = `comfort-badge ${westStatus}`;
-    if (westStatus === "harsh") {
-        westBadge.textContent = "Standing Waves";
-    } else {
-        westBadge.textContent = westStatus;
-    }
+    const westText = westStatus === "harsh"  ? "Standing Waves"
+        : (westStatus === "smooth" && tideState.available && tideState.isSlack) ? "Smooth (Slack)"
+        : westStatus.charAt(0).toUpperCase() + westStatus.slice(1);
+    westBadge.className  = `comfort-badge ${westStatus}`;
+    westBadge.textContent = westText;
 
-    // B. Evaluate East of Makahuena (Makahuena to Kipu Kai)
-    // Fully exposed to ENE trades and open-ocean swell
+    // B. East of Makahuena (Makahuena to Kipu Kai) — fully exposed, no tidal current shelter
     let eastStatus = "smooth";
-    if (windSpeedExposed !== null && windSpeedExposed > 20 || energy > 250) {
-        eastStatus = "harsh"; // Very Rough
-    } else if (windSpeedExposed !== null && windSpeedExposed > 14 || energy > 160) {
+    if ((windSpeedExposed !== null && windSpeedExposed > 20) || effectiveSwellHeight >= 5.5) {
+        eastStatus = "harsh";
+    } else if ((windSpeedExposed !== null && windSpeedExposed > 14) || effectiveSwellHeight >= 3.5) {
         eastStatus = "rough";
-    } else if (windSpeedExposed !== null && windSpeedExposed > 10 || energy > 90) {
+    } else if ((windSpeedExposed !== null && windSpeedExposed > 10) || effectiveSwellHeight >= 2.0) {
         eastStatus = "choppy";
     } else {
         eastStatus = "smooth";
     }
 
-    // Render East
-    eastBadge.className = `comfort-badge ${eastStatus}`;
-    if (eastStatus === "harsh") {
-        eastBadge.textContent = "Very Rough";
-    } else {
-        eastBadge.textContent = eastStatus;
-    }
+    eastBadge.className  = `comfort-badge ${eastStatus}`;
+    eastBadge.textContent = eastStatus === "harsh" ? "Very Rough"
+        : eastStatus.charAt(0).toUpperCase() + eastStatus.slice(1);
 }
+
