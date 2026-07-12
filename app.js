@@ -609,13 +609,11 @@ function updateDashboard(data) {
         // PWS (Cove) Details
         const compassDir = windCompassCove;
         const degDir = windDirCove !== undefined ? `${Math.round(windDirCove)}°` : "---°";
-        document.getElementById("wind-dir").textContent = (w.direction_reliable || isFallback) ? `${degDir} ${compassDir}` : "Variable";
+        document.getElementById("wind-dir").textContent = (w.direction_reliable || isFallback) ? degDir : "Variable";
 
         // Landing direction text display
         const windAbbrEl = document.getElementById("wind-dir-abbr");
-        const windDegEl  = document.getElementById("wind-dir-deg");
         if (windAbbrEl) windAbbrEl.textContent = (w.direction_reliable || isFallback) ? compassDir : "VAR";
-        if (windDegEl)  windDegEl.textContent  = (w.direction_reliable || isFallback) ? degDir : "";
         
         let sumGusts = 0;
         let countGusts = 0;
@@ -667,15 +665,13 @@ function updateDashboard(data) {
         // Model Speed in MPH
         document.getElementById("model-wind-mph").textContent = mw.speed_mph !== undefined ? `${mw.speed_mph.toFixed(1)} mph` : "--.- mph";
 
-        // Model Direction — sub-stat degrees only, abbreviation in dir-text display
+        // Model Direction — sub-stat degrees only, abbreviation inline next to speed
         const mwDeg = mw.direction_deg !== undefined ? `${Math.round(mw.direction_deg)}°` : "---°";
         document.getElementById("model-wind-dir").textContent = mwDeg;
 
         // Exposed Points direction text display
         const mwAbbrEl = document.getElementById("model-wind-dir-abbr");
-        const mwDegEl  = document.getElementById("model-wind-dir-deg");
         if (mwAbbrEl) mwAbbrEl.textContent = mw.direction_compass || "--";
-        if (mwDegEl)  mwDegEl.textContent  = mwDeg;
 
         // Exposed Points reliability badge
         if (modelRelBadge) {

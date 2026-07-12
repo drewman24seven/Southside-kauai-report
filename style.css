@@ -859,15 +859,6 @@ body {
     border-radius: 50%;
 }
 
-.wind-dir-display {
-    width: 72px;
-    height: 72px;
-    background: rgba(244, 208, 104, 0.05);
-    border: 1px solid rgba(244, 208, 104, 0.12);
-    border-radius: 50%;
-    margin-top: 0.5rem;
-}
-
 .dir-abbr {
     font-family: var(--font-heading);
     font-size: 1.35rem;
@@ -877,14 +868,16 @@ body {
     letter-spacing: -0.5px;
 }
 
-.swell-dir-display .dir-abbr {
+.wind-abbr-inline {
+    font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--accent-cyan);
-}
-
-.wind-dir-display .dir-abbr {
-    font-size: 1.1rem;
+    font-weight: 800;
     color: var(--accent-gold);
+    margin-left: 0.8rem;
+    padding-left: 0.8rem;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+    line-height: 1;
+    align-self: center;
 }
 
 .dir-deg {
