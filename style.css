@@ -868,16 +868,15 @@ body {
     letter-spacing: -0.5px;
 }
 
-.wind-abbr-inline {
+.wind-abbr-under {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--accent-gold);
-    margin-left: 0.8rem;
-    padding-left: 0.8rem;
-    border-left: 1.5px solid rgba(255, 255, 255, 0.15);
+    margin-top: -0.2rem;
+    margin-bottom: 0.8rem;
     line-height: 1;
-    align-self: center;
+    letter-spacing: -0.5px;
 }
 
 .dir-deg {
