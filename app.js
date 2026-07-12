@@ -1298,8 +1298,10 @@ function updateHarborAlerts(data) {
     const windSpeedExposed = data.model_wind ? data.model_wind.speed_mph : null;
     const windDirExposed = data.model_wind ? data.model_wind.direction_deg : null;
     let isEbbing = false;
+    let tideDataAvailable = false;
 
     if (data.tides && data.tides.predictions && data.tides.predictions.length > 0) {
+        tideDataAvailable = true;
         const preds = data.tides.predictions;
         const nowLocal = new Date();
         let closestIdx = 0;
@@ -1320,13 +1322,13 @@ function updateHarborAlerts(data) {
         }
     }
 
-    if (isEbbing && windSpeedExposed !== null && windSpeedExposed > 12 && windDirExposed !== null) {
+    if (tideDataAvailable && !isEbbing && windSpeedExposed !== null && windSpeedExposed > 12 && windDirExposed !== null) {
         // Wind is from East/ENE (45° to 110°)
         if (windDirExposed >= 45 && windDirExposed <= 110) {
             alerts.push({
                 status: "caution",
                 icon: "🌊",
-                text: `HARSH SEAS: Ebb tide generating reverse West-to-East current against East trades. Expect steep standing waves and a rough boat ride.`
+                text: `HARSH SEAS: Flood tide generating reverse West-to-East current against East trades. Expect steep standing waves and a rough boat ride.`
             });
         }
     }
@@ -1380,11 +1382,13 @@ function updateTransitComfort(data) {
     const energy = (swellHeight !== null && swellPeriod !== null) ? (swellHeight * swellHeight * swellPeriod) : 0;
 
     // A. Evaluate West of Makahuena (Poipu / Kukuiula)
-    // Sheltered from trades, but vulnerable to reverse current ebb tide standing waves
+    // Sheltered from trades, but vulnerable to reverse current flood tide standing waves
     let westStatus = "smooth";
     
     let isEbbing = false;
+    let tideDataAvailable = false;
     if (data.tides && data.tides.predictions && data.tides.predictions.length > 0) {
+        tideDataAvailable = true;
         const preds = data.tides.predictions;
         const nowLocal = new Date();
         let closestIdx = 0;
@@ -1402,7 +1406,7 @@ function updateTransitComfort(data) {
         }
     }
 
-    const hasReverseCurrent = isEbbing && windSpeedExposed !== null && windSpeedExposed > 12 && windDirExposed !== null && (windDirExposed >= 45 && windDirExposed <= 110);
+    const hasReverseCurrent = tideDataAvailable && !isEbbing && windSpeedExposed !== null && windSpeedExposed > 12 && windDirExposed !== null && (windDirExposed >= 45 && windDirExposed <= 110);
 
     if (hasReverseCurrent) {
         westStatus = "harsh"; // Standing waves!
