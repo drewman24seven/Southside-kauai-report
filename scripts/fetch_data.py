@@ -25,7 +25,7 @@ WU_API_KEY = "e1f10a1e78da46f5b10a1e78da96f525"
 WIND_STATIONS = {
     "KHIKOLOA25": "Primary/Anchor",
     "KHIKOLOA34": "Verification 1",
-    "KHIKOLOA27": "Verification 2"
+    # "KHIKOLOA27": "Verification 2"  # Commented out due to physical wind shadow / Southerly direction bias
 }
 
 BUOY_PRIMARY = "51212"    # Barbers Point, Oahu
