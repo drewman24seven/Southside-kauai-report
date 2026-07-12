@@ -18,7 +18,7 @@ import urllib.request
 import urllib.error
 import re
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import time
 
 WU_API_KEY = "e1f10a1e78da46f5b10a1e78da96f525"
@@ -173,9 +173,13 @@ def get_buoy_data():
     return primary_series, verify_series
 
 def get_tide_data():
-    # Fetch today's observations and predictions
+    # Fetch today's observations and 48-hour predictions (today and tomorrow)
+    now = datetime.now()
+    begin_str = now.strftime("%Y%m%d")
+    end_str = (now + timedelta(days=1)).strftime("%Y%m%d")
+    
     obs_url = f"https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=today&station={TIDE_STATION}&product=water_level&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore-swell&format=xml"
-    pred_url = f"https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=today&station={TIDE_STATION}&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore-swell&format=xml"
+    pred_url = f"https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date={begin_str}&end_date={end_str}&station={TIDE_STATION}&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore-swell&format=xml"
     
     print("Fetching tide predictions...")
     pred_xml = fetch_url(pred_url)
@@ -226,7 +230,7 @@ def get_nws_forecast():
     return "NWS Forecast unavailable."
 
 def get_nws_grid_wind():
-    url = "https://api.weather.gov/gridpoints/HFO/87,170"
+    url = "https://api.weather.gov/gridpoints/HFO/88,169"
     print("Fetching NWS Gridded Model wind forecast...")
     content = fetch_url_cached(url, "nws_grid_wind_cache.txt", 1800)
     if not content:
@@ -275,7 +279,7 @@ def get_nws_grid_wind():
                 "speed_knots": speed_knots,
                 "direction_deg": direction_deg,
                 "direction_compass": direction_compass,
-                "source": "NWS gridded forecast (NAM Hawaii 3km)"
+                "source": "NWS gridded forecast (Honolulu WFO)"
             }
     except Exception as e:
         print(f"Error parsing gridded forecast: {e}", file=sys.stderr)
@@ -383,7 +387,7 @@ def main():
         print("WARNING: Swell analysis returned null — preserving previous swell data.", file=sys.stderr)
         swell_results = previous_data["swell"]
     
-    tide_predictions = tide_info["predictions"][:48]
+    tide_predictions = tide_info["predictions"]
     if not tide_predictions and previous_data.get("tides", {}).get("predictions"):
         print("WARNING: Tide predictions empty — preserving previous tide data.", file=sys.stderr)
         tide_predictions = previous_data["tides"]["predictions"]
