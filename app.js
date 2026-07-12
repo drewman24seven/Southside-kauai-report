@@ -34,12 +34,21 @@ function initMobileTabs() {
 
     const tabs = [tabMarine, tabWind, tabDive, tabForecast];
     const widgets = [wMarine, wWind, wDive, wForecast];
+    const indicator = document.getElementById("tab-indicator-bar");
+
+    function updateIndicator(activeTab) {
+        if (!indicator || !activeTab) return;
+        // Slide to active tab item bounds
+        indicator.style.left = `${activeTab.offsetLeft}px`;
+        indicator.style.width = `${activeTab.offsetWidth}px`;
+    }
 
     tabs.forEach((tab, index) => {
         if (!tab) return;
         tab.addEventListener("click", () => {
             tabs.forEach(t => { if (t) t.classList.remove("active"); });
             tab.classList.add("active");
+            updateIndicator(tab);
 
             widgets.forEach((w, wIndex) => {
                 if (!w) return;
@@ -55,7 +64,59 @@ function initMobileTabs() {
     });
 
     // Set initial active tab
-    if (tabMarine) tabMarine.click();
+    if (tabMarine) {
+        tabMarine.click();
+        // Delay slightly to ensure layout has computed offsets on load
+        setTimeout(() => updateIndicator(tabMarine), 150);
+    }
+
+    // Keep indicator aligned on window resize/orientation change
+    window.addEventListener("resize", () => {
+        const activeTab = tabs.find(t => t && t.classList.contains("active"));
+        if (activeTab) updateIndicator(activeTab);
+    });
+
+    // Touch swipe gestures to switch tabs on mobile
+    const grid = document.querySelector(".dashboard-grid");
+    if (grid) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        grid.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        grid.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const diffX = touchEndX - touchStartX;
+            const diffY = touchEndY - touchStartY;
+
+            // Only trigger if horizontal movement is distinct and vertical movement is minor
+            // (prevents switching tabs when user is scrolling vertically)
+            if (Math.abs(diffX) > 60 && Math.abs(diffY) < 40) {
+                const activeIndex = tabs.findIndex(t => t && t.classList.contains("active"));
+                if (activeIndex === -1) return;
+
+                if (diffX < 0) {
+                    // Swiped Left -> Next tab
+                    const nextIndex = (activeIndex + 1) % tabs.length;
+                    if (tabs[nextIndex]) tabs[nextIndex].click();
+                } else {
+                    // Swiped Right -> Previous tab
+                    const prevIndex = (activeIndex - 1 + tabs.length) % tabs.length;
+                    if (tabs[prevIndex]) tabs[prevIndex].click();
+                }
+            }
+        }
+    }
 }
 
 // ─── Swell Physics (ported from analyze_swell.py) ────────────────────────────
@@ -263,7 +324,7 @@ async function fetchNWSLive() {
 
 async function fetchModelWindLive() {
     try {
-        const res = await fetch("https://api.weather.gov/gridpoints/HFO/87,170", {
+        const res = await fetch("https://api.weather.gov/gridpoints/HFO/88,169", {
             headers: { "Accept": "application/geo+json" }
         });
         const data = await res.json();
@@ -306,7 +367,7 @@ async function fetchModelWindLive() {
                 speed_knots,
                 direction_deg,
                 direction_compass,
-                source: "NWS gridded forecast (NAM Hawaii 3km)"
+                source: "NWS gridded forecast (Honolulu WFO)"
             };
         }
     } catch (e) {
@@ -833,7 +894,7 @@ function updateDiveSites(data) {
     // Determine wind alignment relative to the South Shore (facing 180°)
     let windExposure = "cross-shore";
     if (windDirExposed !== null) {
-        if (windDirExposed >= 315 || windDirExposed <= 45) {
+        if (windDirExposed >= 315 || windDirExposed <= 65) {
             windExposure = "offshore";
         } else if (windDirExposed >= 135 && windDirExposed <= 225) {
             windExposure = "onshore";
@@ -914,8 +975,14 @@ function updateDiveSites(data) {
             }
         } else {
             if (windSpeedExposed !== null) {
-                if (windSpeedExposed >= windDangerLimitBoat) windStatus = "danger";
-                else if (windSpeedExposed >= windCautionLimitBoat) windStatus = "caution";
+                let dangerLimit = windDangerLimitBoat;
+                let cautionLimit = windCautionLimitBoat;
+                if (name === "Brennecke's Ledge" && windExposure === "offshore") {
+                    dangerLimit = 18;  // Revert to strict unprotected limits
+                    cautionLimit = 12;
+                }
+                if (windSpeedExposed >= dangerLimit) windStatus = "danger";
+                else if (windSpeedExposed >= cautionLimit) windStatus = "caution";
             }
         }
 
@@ -1015,9 +1082,9 @@ function updateDiveSites(data) {
             getConditions: () => getFormattedConditions("Boat", "Brennecke's Ledge", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, windSpeedExposed)
         },
         {
-            name: "Turtle Bluffs",
+            name: "The Buoy",
             type: "Boat",
-            getConditions: () => getFormattedConditions("Boat", "Turtle Bluffs", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, windSpeedExposed)
+            getConditions: () => getFormattedConditions("Boat", "The Buoy", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, windSpeedExposed)
         }
     ];
 
