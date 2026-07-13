@@ -930,6 +930,18 @@ function updateDiveSites(data) {
         if (decayedSpeed !== null) windSpeedCove = decayedSpeed;
     }
 
+    // Calculate wind-swell angle alignment factor
+    // Perpendicular wind-swell angles (around 90°) do not compound or build chop as aggressively,
+    // resulting in significantly milder transit and dive conditions.
+    let alignmentFactor = 1.0;
+    if (windDirExposed !== null && swellDir !== null) {
+        let angleDiff = Math.abs(windDirExposed - swellDir) % 360;
+        if (angleDiff > 180) angleDiff = 360 - angleDiff;
+        // Sinusoidal scaling: drops to 0.75 when perpendicular (90° difference)
+        alignmentFactor = 1.0 - 0.25 * Math.abs(Math.sin(angleDiff * Math.PI / 180));
+    }
+    const effWindSpeedExposed = windSpeedExposed !== null ? windSpeedExposed * alignmentFactor : null;
+
     // Determine wind alignment relative to the South Shore (facing 180°)
     let windExposure = "cross-shore";
     if (windDirExposed !== null) {
@@ -998,11 +1010,23 @@ function updateDiveSites(data) {
             thresholdScale = 0.85;
         }
 
+        // Overrides for compounding limits (e.g. Koloa Landing South swell + South wind)
+        let siteDangerLimit = energyDangerLimit;
+        let siteCautionLimit = energyCautionLimit;
+        let isCompoundingKoloaSurge = false;
+
+        if (name === "Koloa Landing" && isCoveOnshore && swellDir !== null && swellDir >= 160 && swellDir <= 220) {
+            // Drop swell energy limits to force Danger/Caution under much smaller swells
+            siteDangerLimit = 135;
+            siteCautionLimit = 65;
+            isCompoundingKoloaSurge = true;
+        }
+
         // Determine Swell & Wind Danger levels
         let swellStatus = "safe";
-        if (energy >= energyDangerLimit * thresholdScale) {
+        if (energy >= siteDangerLimit * thresholdScale) {
             swellStatus = "danger";
-        } else if (energy >= energyCautionLimit * thresholdScale) {
+        } else if (energy >= siteCautionLimit * thresholdScale) {
             swellStatus = "caution";
         }
 
@@ -1025,8 +1049,23 @@ function updateDiveSites(data) {
             }
         }
 
-        const finalStatus = (swellStatus === "danger" || windStatus === "danger") ? "danger" :
-                            (swellStatus === "caution" || windStatus === "caution") ? "caution" : "safe";
+        // Determine final card status:
+        // Swell status (underwater surge/drift) is the primary driver of Danger.
+        // Wind status (surface comfort) triggers Caution, but only triggers Danger in extreme wind speeds.
+        let finalStatus = "safe";
+        if (swellStatus === "danger") {
+            finalStatus = "danger";
+        } else if (windStatus === "danger") {
+            const extremeWindLimit = (type === "Shore") ? 22 : 26;
+            const currentWind = (type === "Shore") ? windSpeedCove : windSpeedExposed;
+            if (currentWind !== null && currentWind >= extremeWindLimit) {
+                finalStatus = "danger";
+            } else {
+                finalStatus = "caution"; // Downgrade wind-only danger to caution for diving
+            }
+        } else if (swellStatus === "caution" || windStatus === "caution") {
+            finalStatus = "caution";
+        }
 
         // Construct Uniform Output Text
         // 1. Surface Condition
@@ -1109,32 +1148,33 @@ function updateDiveSites(data) {
         }
 
         const shadowNote = shadowed ? ` (Refraction shadow active: ${swellHeight.toFixed(1)}ft effective swell)` : "";
-        const text = `Surface: ${surface} | Current: ${current} | Transit: ${transit}${surgeWarning}${shadowNote}`;
+        const compoundingNote = isCompoundingKoloaSurge ? " | ⚠ COMPOUNDING BAY SURGE: Direct South swell and onshore wind colliding in landing channel." : "";
+        const text = `Surface: ${surface} | Current: ${current} | Transit: ${transit}${surgeWarning}${shadowNote}${compoundingNote}`;
 
         return { status: finalStatus, text: text };
     }
 
-    // Define dive sites
+    // Define dive sites (use effective wind speed adjusted for swell alignment)
     const sites = [
         {
             name: "Koloa Landing",
             type: "Shore",
-            getConditions: () => getFormattedConditions("Shore", "Koloa Landing", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, windSpeedExposed)
+            getConditions: () => getFormattedConditions("Shore", "Koloa Landing", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, effWindSpeedExposed)
         },
         {
             name: "Sheraton Caverns",
             type: "Boat",
-            getConditions: () => getFormattedConditions("Boat", "Sheraton Caverns", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, windSpeedExposed)
+            getConditions: () => getFormattedConditions("Boat", "Sheraton Caverns", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, effWindSpeedExposed)
         },
         {
             name: "Brennecke's Ledge",
             type: "Boat",
-            getConditions: () => getFormattedConditions("Boat", "Brennecke's Ledge", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, windSpeedExposed)
+            getConditions: () => getFormattedConditions("Boat", "Brennecke's Ledge", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, effWindSpeedExposed)
         },
         {
             name: "The Buoy",
             type: "Boat",
-            getConditions: () => getFormattedConditions("Boat", "The Buoy", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, windSpeedExposed)
+            getConditions: () => getFormattedConditions("Boat", "The Buoy", rawSwellHeight, swellPeriod, swellDir, windSpeedCove, effWindSpeedExposed)
         }
     ];
 
@@ -1268,8 +1308,8 @@ function updateHarborAlerts(data) {
         
         const suffix = isWaveSetupFallback ? " (includes swell setup)" : "";
 
-        // Find continuous periods above thresholds (field-calibrated 2026-07-10)
-        const floodingRanges  = findHighWaterRanges(predictions, 3.2, surge).filter(filterPastRanges);
+        // Find continuous periods above thresholds (field-calibrated 2026-07-12)
+        const floodingRanges  = findHighWaterRanges(predictions, 3.0, surge).filter(filterPastRanges);
         const highWaterRanges = findHighWaterRanges(predictions, 2.85, surge).filter(filterPastRanges);
 
         // Format a range for output
@@ -1402,15 +1442,25 @@ function updateTransitComfort(data) {
     const hasEbbImprovement = tideState.available && tideState.isEbbing && !tideState.isSlack &&
         windDirExposed !== null && windDirExposed >= 45 && windDirExposed <= 110;
 
+    // Calculate wind-swell angle difference for transit alignment factor
+    let alignmentFactor = 1.0;
+    const swellDir = data.swell && data.swell.current_south_shore_estimate ? data.swell.current_south_shore_estimate.mwd_deg : null;
+    if (windDirExposed !== null && swellDir !== null) {
+        let angleDiff = Math.abs(windDirExposed - swellDir) % 360;
+        if (angleDiff > 180) angleDiff = 360 - angleDiff;
+        alignmentFactor = 1.0 - 0.25 * Math.abs(Math.sin(angleDiff * Math.PI / 180));
+    }
+    const effWindSpeedExposed = windSpeedExposed !== null ? windSpeedExposed * alignmentFactor : null;
+
     // A. West of Makahuena (Poipu / Kukuiula) — sheltered from trades by the point
     let westStatus = "smooth";
     if (hasReverseCurrent) {
         westStatus = "harsh"; // Active flood current opposing ENE trades → standing waves
     } else {
         const ebFactor = hasEbbImprovement ? 1.15 : 1.0; // mild threshold relief on ebb
-        if ((windSpeedExposed !== null && windSpeedExposed > 20) || effectiveSwellHeight >= 5.5 / ebFactor) {
+        if ((effWindSpeedExposed !== null && effWindSpeedExposed > 20) || effectiveSwellHeight >= 5.5 / ebFactor) {
             westStatus = "rough";
-        } else if ((windSpeedExposed !== null && windSpeedExposed > 12) || effectiveSwellHeight >= 3.0 / ebFactor) {
+        } else if ((effWindSpeedExposed !== null && effWindSpeedExposed > 12) || effectiveSwellHeight >= 3.0 / ebFactor) {
             westStatus = "choppy";
         } else {
             westStatus = "smooth";
@@ -1425,11 +1475,11 @@ function updateTransitComfort(data) {
 
     // B. East of Makahuena (Makahuena to Kipu Kai) — fully exposed, no tidal current shelter
     let eastStatus = "smooth";
-    if ((windSpeedExposed !== null && windSpeedExposed > 20) || effectiveSwellHeight >= 5.5) {
+    if ((effWindSpeedExposed !== null && effWindSpeedExposed > 20) || effectiveSwellHeight >= 5.5) {
         eastStatus = "harsh";
-    } else if ((windSpeedExposed !== null && windSpeedExposed > 14) || effectiveSwellHeight >= 3.5) {
+    } else if ((effWindSpeedExposed !== null && effWindSpeedExposed > 14) || effectiveSwellHeight >= 3.5) {
         eastStatus = "rough";
-    } else if ((windSpeedExposed !== null && windSpeedExposed > 10) || effectiveSwellHeight >= 2.0) {
+    } else if ((effWindSpeedExposed !== null && effWindSpeedExposed > 10) || effectiveSwellHeight >= 2.0) {
         eastStatus = "choppy";
     } else {
         eastStatus = "smooth";
