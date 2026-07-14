@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-07-14T11:51:56.295614+00:00",
+  "last_updated": "2026-07-14T16:44:40.033288+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 1.0,
-        "direction_deg": 51.0,
-        "direction_compass": "NE",
+        "speed_mph": 3.0,
+        "direction_deg": 104.0,
+        "direction_compass": "ESE",
         "role": "Primary/Anchor",
-        "gust_mph": 2,
+        "gust_mph": 5,
         "temp_f": 73,
-        "humidity": 91,
-        "time_local": "2026-07-14 01:51:31",
-        "time_utc": "2026-07-14T11:51:31Z",
+        "humidity": 92,
+        "time_local": "2026-07-14 06:44:31",
+        "time_utc": "2026-07-14T16:44:31Z",
         "status": "Online"
       },
       {
@@ -23,27 +23,26 @@
         "direction_compass": "E",
         "role": "Verification 1",
         "gust_mph": 0,
-        "temp_f": 73,
+        "temp_f": 74,
         "humidity": 86,
-        "time_local": "2026-07-14 01:51:43",
-        "time_utc": "2026-07-14T11:51:43Z",
+        "time_local": "2026-07-14 06:44:31",
+        "time_utc": "2026-07-14T16:44:31Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 0.5,
-    "vector_average_speed_mph": 0.5,
-    "average_direction_deg": null,
-    "average_direction_compass": null,
-    "direction_reliable": false,
-    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph",
-    "note": "Station wind directions largely cancel out (opposing winds of similar strength) - average direction is not meaningful here."
+    "average_speed_mph": 1.5,
+    "vector_average_speed_mph": 1.5,
+    "average_direction_deg": 104.0,
+    "average_direction_compass": "ESE",
+    "direction_reliable": true,
+    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
   },
   "model_wind": {
-    "speed_mph": 17.3,
-    "speed_knots": 15.0,
-    "direction_deg": 60,
-    "direction_compass": "ENE",
+    "speed_mph": 15.0,
+    "speed_knots": 13.0,
+    "direction_deg": 50,
+    "direction_compass": "NE",
     "source": "NWS gridded forecast (Honolulu WFO)"
   },
   "swell": {
@@ -2014,5 +2013,5 @@
     "observations": [],
     "surge_ft": null
   },
-  "forecast_text": "PHZ112-141915-\nKauai Leeward Waters-\n826 PM HST Mon Jul 13 2026\n\n.REST OF TONIGHT...East northeast winds 15 to 20 knots. Seas to\n5 feet. Wave Detail: East 5 feet at 6 seconds. Isolated showers. \n.TUESDAY...East northeast winds 15 to 20 knots. Seas 4 to 5 feet.\nWave Detail: East 5 feet at 6 seconds. Isolated showers. \n.TUESDAY NIGHT...East northeast winds 15 to 20 knots. Seas 4 to\n5 feet. Wave Detail: East northeast 4 feet at 6 seconds.\nScattered showers, mainly in the evening. \n.WEDNESDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East northeast 4 feet at 5 seconds. Isolated showers. \n.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 3 to 5 feet.\nWave Detail: East 3 feet at 5 seconds. Isolated showers. \n.THURSDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 4 feet at 6 seconds. Isolated showers. \n.THURSDAY NIGHT...East winds 15 to 20 knots. Seas 4 to 5 feet.\nWave Detail: East 4 feet at 6 seconds. Isolated showers in the\nevening. \n.FRIDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 5 feet at 6 seconds. Isolated showers through\nthe day. \n.SATURDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds and south southwest 3 feet at\n13 seconds. Isolated showers in the morning. Isolated showers\nthrough the day."
+  "forecast_text": "PHZ112-150145-\nKauai Leeward Waters-\n323 AM HST Tue Jul 14 2026\n\n.TODAY...East northeast winds 15 to 20 knots. Seas 4 to 5 feet.\nWave Detail: East 4 feet at 6 seconds. Isolated showers this\nmorning, then scattered showers this afternoon. \n.TONIGHT...East northeast winds 15 to 20 knots. Seas to 5 feet.\nWave Detail: East northeast 4 feet at 6 seconds. Scattered\nshowers. \n.WEDNESDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 6 seconds. Isolated showers. \n.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 5 feet.\nWave Detail: East 4 feet at 5 seconds. Scattered showers. \n.THURSDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 5 seconds. Isolated showers. \n.THURSDAY NIGHT...East winds 15 to 20 knots. Seas 4 to 5 feet.\nWave Detail: East 4 feet at 6 seconds. Isolated showers in the\nevening. \n.FRIDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 5 feet at 6 seconds. Isolated showers through\nthe day. \n.SATURDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds. Isolated showers in the\nmorning. Isolated showers through the day."
 }
