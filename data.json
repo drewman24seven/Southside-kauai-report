@@ -1,48 +1,49 @@
 {
-  "last_updated": "2026-07-15T07:31:56.151177+00:00",
+  "last_updated": "2026-07-15T12:55:50.946647+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 4.0,
-        "direction_deg": 25.0,
-        "direction_compass": "NNE",
+        "speed_mph": 0.0,
+        "direction_deg": 82.0,
+        "direction_compass": "E",
         "role": "Primary/Anchor",
-        "gust_mph": 6,
-        "temp_f": 71,
-        "humidity": 97,
-        "time_local": "2026-07-14 21:31:37",
-        "time_utc": "2026-07-15T07:31:37Z",
+        "gust_mph": 0,
+        "temp_f": 72,
+        "humidity": 94,
+        "time_local": "2026-07-15 02:55:31",
+        "time_utc": "2026-07-15T12:55:31Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
         "speed_mph": 0.0,
-        "direction_deg": 22.0,
-        "direction_compass": "NNE",
+        "direction_deg": 45.0,
+        "direction_compass": "NE",
         "role": "Verification 1",
         "gust_mph": 0,
-        "temp_f": 72,
-        "humidity": 89,
-        "time_local": "2026-07-14 21:31:42",
-        "time_utc": "2026-07-15T07:31:42Z",
+        "temp_f": 71,
+        "humidity": 91,
+        "time_local": "2026-07-15 02:55:30",
+        "time_utc": "2026-07-15T12:55:30Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 2.0,
-    "vector_average_speed_mph": 2.0,
-    "average_direction_deg": 25.0,
-    "average_direction_compass": "NNE",
-    "direction_reliable": true,
-    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
+    "average_speed_mph": 0.0,
+    "vector_average_speed_mph": 0.0,
+    "average_direction_deg": null,
+    "average_direction_compass": null,
+    "direction_reliable": false,
+    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph",
+    "note": "Station wind directions largely cancel out (opposing winds of similar strength) - average direction is not meaningful here."
   },
   "model_wind": {
-    "speed_mph": 18.4,
-    "speed_knots": 16.0,
-    "direction_deg": 50,
-    "direction_compass": "NE",
+    "speed_mph": 13.8,
+    "speed_knots": 12.0,
+    "direction_deg": 70,
+    "direction_compass": "ENE",
     "source": "NWS gridded forecast (Honolulu WFO)"
   },
   "swell": {
@@ -2013,5 +2014,5 @@
     "observations": [],
     "surge_ft": null
   },
-  "forecast_text": "PHZ112-151430-\nKauai Leeward Waters-\n316 PM HST Tue Jul 14 2026\n\n.TONIGHT...East northeast winds 15 to 20 knots. Seas to 5 feet.\nWave Detail: East northeast 4 feet at 6 seconds. Scattered\nshowers. \n.WEDNESDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 6 seconds. Scattered showers, mainly in\nthe morning. \n.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 5 feet.\nWave Detail: East 4 feet at 5 seconds. Scattered showers. \n.THURSDAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 5 seconds. Isolated showers in the\nmorning. \n.THURSDAY NIGHT...East winds 15 to 20 knots. Seas 4 to 5 feet.\nWave Detail: East 4 feet at 6 seconds. Isolated showers in the\nevening, then scattered showers after midnight. \n.FRIDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds. Isolated showers in the\nmorning. \n.FRIDAY NIGHT...East northeast winds 15 to 20 knots. Seas 4 to\n6 feet. Wave Detail: East 5 feet at 6 seconds. Isolated showers. \n.SATURDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds. Isolated showers in the\nmorning. Isolated showers through the day. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 5 feet at 6 seconds and south 3 feet at\n17 seconds. Isolated showers in the morning. Isolated showers\nthrough the day."
+  "forecast_text": "NWS Forecast unavailable."
 }
