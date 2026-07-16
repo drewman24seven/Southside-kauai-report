@@ -1,48 +1,48 @@
 {
-  "last_updated": "2026-07-16T12:10:57.884531+00:00",
+  "last_updated": "2026-07-16T16:52:37.985246+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 6.0,
-        "direction_deg": 101.0,
-        "direction_compass": "E",
+        "speed_mph": 1.0,
+        "direction_deg": 56.0,
+        "direction_compass": "NE",
         "role": "Primary/Anchor",
-        "gust_mph": 8,
+        "gust_mph": 1,
         "temp_f": 77,
-        "humidity": 89,
-        "time_local": "2026-07-16 02:10:48",
-        "time_utc": "2026-07-16T12:10:48Z",
+        "humidity": 91,
+        "time_local": "2026-07-16 06:52:31",
+        "time_utc": "2026-07-16T16:52:31Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 1.0,
-        "direction_deg": 158.0,
-        "direction_compass": "SSE",
+        "speed_mph": 2.0,
+        "direction_deg": 68.0,
+        "direction_compass": "ENE",
         "role": "Verification 1",
-        "gust_mph": 1,
+        "gust_mph": 2,
         "temp_f": 77,
-        "humidity": 83,
-        "time_local": "2026-07-16 02:10:42",
-        "time_utc": "2026-07-16T12:10:42Z",
+        "humidity": 84,
+        "time_local": "2026-07-16 06:52:30",
+        "time_utc": "2026-07-16T16:52:30Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 3.5,
-    "vector_average_speed_mph": 3.3,
-    "average_direction_deg": 108.3,
-    "average_direction_compass": "ESE",
+    "average_speed_mph": 1.5,
+    "vector_average_speed_mph": 1.5,
+    "average_direction_deg": 64.0,
+    "average_direction_compass": "ENE",
     "direction_reliable": true,
     "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
   },
   "model_wind": {
-    "speed_mph": 12.7,
-    "speed_knots": 11.0,
-    "direction_deg": 120,
-    "direction_compass": "ESE",
+    "speed_mph": 15.0,
+    "speed_knots": 13.0,
+    "direction_deg": 80,
+    "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO)"
   },
   "swell": {
@@ -2013,5 +2013,5 @@
     "observations": [],
     "surge_ft": null
   },
-  "forecast_text": "PHZ112-161430-\nKauai Leeward Waters-\n347 PM HST Wed Jul 15 2026\n\n.TONIGHT...East southeast winds 15 to 20 knots. Seas 4 to 5 feet.\nWave Detail: East southeast 4 feet at 6 seconds. Hazy. Scattered\nshowers. \n.THURSDAY...East winds 10 to 15 knots, rising to 15 to 20 knots\nin the afternoon. Seas to 5 feet. Wave Detail: East southeast\n4 feet at 6 seconds. Hazy in the morning. Isolated showers. \n.THURSDAY NIGHT...East winds 15 to 20 knots. Seas 5 to 6 feet.\nWave Detail: East 5 feet at 6 seconds. Scattered showers. \n.FRIDAY...East northeast winds 15 to 20 knots. Seas 5 to 6 feet.\nWave Detail: East 5 feet at 6 seconds and south southwest 3 feet\nat 16 seconds. Isolated showers in the morning. \n.FRIDAY NIGHT...East northeast winds 15 to 20 knots. Seas 5 to\n7 feet. Wave Detail: East 6 feet at 7 seconds and south 3 feet at\n14 seconds. \n.SATURDAY...East northeast winds 15 to 20 knots. Seas 5 to\n7 feet. Wave Detail: East 6 feet at 7 seconds and south 3 feet at\n13 seconds. \n.SATURDAY NIGHT...East northeast winds 15 to 20 knots. Seas 5 to\n6 feet. Wave Detail: East 6 feet at 7 seconds. Isolated showers. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 6 feet at 7 seconds and south 3 feet at\n17 seconds. Isolated showers after midnight. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 4 to 5 feet.\nWave Detail: East 5 feet at 6 seconds and south 4 feet at\n16 seconds. Isolated showers. Scattered showers after midnight."
+  "forecast_text": "PHZ112-170215-\nKauai Leeward Waters-\n328 AM HST Thu Jul 16 2026\n\n.TODAY...East winds 10 to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 6 seconds. \n.TONIGHT...East winds 15 to 20 knots. Seas to 5 feet. Wave\nDetail: East southeast 4 feet at 6 seconds. Isolated showers in\nthe evening. Scattered showers after midnight. \n.FRIDAY...East winds 15 to 20 knots. Seas 5 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds and south southwest 3 feet at\n16 seconds. Isolated showers in the morning. \n.FRIDAY NIGHT...East northeast winds 15 to 20 knots. Seas 5 to\n6 feet. Wave Detail: East 5 feet at 6 seconds and south southwest\n3 feet at 15 seconds. \n.SATURDAY...East northeast winds 15 to 20 knots. Seas 4 to\n6 feet. Wave Detail: East 6 feet at 7 seconds. \n.SATURDAY NIGHT...East northeast winds 15 to 20 knots. Seas 4 to\n6 feet. Wave Detail: East 6 feet at 7 seconds. Isolated showers. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 5 feet at 7 seconds and south 3 feet at\n16 seconds. Isolated showers after midnight. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 5 feet at 6 seconds and south 4 feet at\n16 seconds. Isolated showers. Scattered showers after midnight."
 }
