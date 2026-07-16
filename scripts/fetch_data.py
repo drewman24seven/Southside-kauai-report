@@ -35,10 +35,13 @@ TIDE_STATION = "1611347"  # Port Allen
 
 NWS_ZONE = "PHZ112"       # Kauai Leeward Waters
 
+import ssl
+
 def fetch_url(url, timeout=10):
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as response:
+        context = ssl._create_unverified_context()
+        with urllib.request.urlopen(req, timeout=timeout, context=context) as response:
             return response.read().decode('utf-8')
     except Exception as e:
         print(f"Error fetching {url}: {e}", file=sys.stderr)
@@ -172,18 +175,18 @@ def get_buoy_data():
     
     return primary_series, verify_series
 
-def get_tide_data():
+def get_tide_data_for_station(station_id):
     # Fetch today's observations and 48-hour predictions (today and tomorrow)
     now = datetime.now()
     begin_str = now.strftime("%Y%m%d")
     end_str = (now + timedelta(days=1)).strftime("%Y%m%d")
     
-    obs_url = f"https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=today&station={TIDE_STATION}&product=water_level&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore-swell&format=xml"
-    pred_url = f"https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date={begin_str}&end_date={end_str}&station={TIDE_STATION}&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore-swell&format=xml"
+    obs_url = f"https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=today&station={station_id}&product=water_level&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore-swell&format=xml"
+    pred_url = f"https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date={begin_str}&end_date={end_str}&station={station_id}&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english&application=kauai-south-shore-swell&format=xml"
     
-    print("Fetching tide predictions...")
+    print(f"Fetching tide predictions for station {station_id}...")
     pred_xml = fetch_url(pred_url)
-    print("Fetching tide observations...")
+    print(f"Fetching tide observations for station {station_id}...")
     obs_xml = fetch_url(obs_url)
     
     predictions = []
@@ -194,7 +197,7 @@ def get_tide_data():
         predictions = [{"time": p[0], "value_ft": float(p[1])} for p in predictions]
         
     tide_surge_ft = None
-    if obs_xml and f'metadata id="{TIDE_STATION}"' in obs_xml:
+    if obs_xml and f'metadata id="{station_id}"' in obs_xml:
         obs_list = re.findall(r'<o t="([^"]+)"\s+v="([^"]+)"', obs_xml)
         if obs_list:
             observations = [{"time": o[0], "value_ft": float(o[1])} for o in obs_list]
@@ -204,9 +207,9 @@ def get_tide_data():
             matching_preds = [p for p in predictions if p["time"] == latest_obs["time"]]
             if matching_preds:
                 tide_surge_ft = round(latest_obs["value_ft"] - matching_preds[0]["value_ft"], 2)
-                print(f"Calculated Tide Surge: {tide_surge_ft} ft")
+                print(f"Calculated Tide Surge for {station_id}: {tide_surge_ft} ft")
     else:
-        print("Tide observed water level data is unavailable (station offline/no sensor).")
+        print(f"Tide observed water level data is unavailable for {station_id} (offline/no sensor).")
         
     return {
         "predictions": predictions,
@@ -214,25 +217,31 @@ def get_tide_data():
         "tide_surge_ft": tide_surge_ft
     }
 
-def get_nws_forecast():
+def get_tide_data():
+    return get_tide_data_for_station(TIDE_STATION)
+
+def get_nws_forecast_zone(zone_id):
     url = "https://tgftp.nws.noaa.gov/data/raw/fz/fzhw50.phfo.cwf.hfo.txt"
-    print("Fetching NWS Marine Forecast...")
+    print(f"Fetching NWS Marine Forecast zone {zone_id}...")
     content = fetch_url_cached(url, "nws_forecast_cache.txt", 1800)
     if content:
-        match = re.search(r'(PHZ112-.*?\$\$)', content, re.DOTALL)
+        match = re.search(rf'({zone_id}-.*?\$\$)', content, re.DOTALL)
         if match:
             raw_text = match.group(1).strip()
             # Clean up double dollars and extra whitespace
             raw_text = raw_text.replace('$$', '').strip()
-            print("NWS Forecast section PHZ112 found.")
+            print(f"NWS Forecast section {zone_id} found.")
             return raw_text
-    print("NWS Forecast section PHZ112 not found.", file=sys.stderr)
-    return "NWS Forecast unavailable."
+    print(f"NWS Forecast section {zone_id} not found.", file=sys.stderr)
+    return f"NWS Forecast zone {zone_id} unavailable."
 
-def get_nws_grid_wind():
-    url = "https://api.weather.gov/gridpoints/HFO/88,169"
-    print("Fetching NWS Gridded Model wind forecast...")
-    content = fetch_url_cached(url, "nws_grid_wind_cache.txt", 1800)
+def get_nws_forecast():
+    return get_nws_forecast_zone(NWS_ZONE)
+
+def get_nws_grid_wind(grid_x=88, grid_y=169, label="South Shore (Koloa)", cache_file="nws_grid_wind_cache.txt"):
+    url = f"https://api.weather.gov/gridpoints/HFO/{grid_x},{grid_y}"
+    print(f"Fetching NWS Gridded Model wind forecast for {label} ({grid_x},{grid_y})...")
+    content = fetch_url_cached(url, cache_file, 1800)
     if not content:
         return None
     
@@ -273,18 +282,66 @@ def get_nws_grid_wind():
             from average_wind import deg_to_compass
             direction_compass = deg_to_compass(direction_deg)
             
-            print(f"  Model wind matching now: {speed_mph} mph ({speed_knots} KT), Dir {direction_deg}° {direction_compass}")
+            print(f"  {label} grid wind: {speed_mph} mph ({speed_knots} KT) from {direction_compass} ({direction_deg}°)")
             return {
                 "speed_mph": speed_mph,
                 "speed_knots": speed_knots,
                 "direction_deg": direction_deg,
                 "direction_compass": direction_compass,
-                "source": "NWS gridded forecast (Honolulu WFO)"
+                "source": f"NWS gridded forecast (Honolulu WFO HFO/{grid_x},{grid_y})"
             }
     except Exception as e:
-        print(f"Error parsing gridded forecast: {e}", file=sys.stderr)
+        print(f"Error parsing gridded forecast for {label}: {e}", file=sys.stderr)
         
     return None
+
+
+def get_metar_wind(icao):
+    """Fetch latest METAR wind observation from aviationweather.gov for a given ICAO station ID.
+    Returns dict with speed_knots, speed_mph, direction_deg, direction_compass, gust_knots, raw_metar.
+    PHBK = PMRF Barking Sands, Kekaha — the only active ASOS on the west Kauai coast.
+    """
+    url = f"https://aviationweather.gov/api/data/metar?ids={icao}&format=json"
+    print(f"Fetching METAR wind for {icao}...")
+    content = fetch_url(url)
+    if not content:
+        return None
+    try:
+        data = json.loads(content)
+        if not data:
+            print(f"  METAR {icao}: no observations returned.", file=sys.stderr)
+            return None
+        obs = data[0]
+        wspd_kt = obs.get('wspd')   # knots
+        wdir_deg = obs.get('wdir')  # degrees
+        wgst_kt = obs.get('wgst')   # knots, may be None
+        if wspd_kt is None or wdir_deg is None:
+            print(f"  METAR {icao}: wind data missing from response.", file=sys.stderr)
+            return None
+        
+        sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+        from average_wind import deg_to_compass
+        
+        speed_mph = round(wspd_kt * 1.15078, 1)
+        gust_mph = round(wgst_kt * 1.15078, 1) if wgst_kt else None
+        compass = deg_to_compass(wdir_deg) if wdir_deg else "VAR"
+        print(f"  METAR {icao}: {wspd_kt} kt from {wdir_deg}° ({compass}), gust={wgst_kt} kt")
+        return {
+            "station": icao,
+            "speed_knots": float(wspd_kt),
+            "speed_mph": speed_mph,
+            "direction_deg": float(wdir_deg) if wdir_deg else None,
+            "direction_compass": compass,
+            "gust_knots": float(wgst_kt) if wgst_kt else None,
+            "gust_mph": gust_mph,
+            "raw_metar": obs.get('rawOb', ''),
+            "obs_time_utc": obs.get('obsTime', ''),
+            "source": f"METAR ASOS {icao} (aviationweather.gov)"
+        }
+    except Exception as e:
+        print(f"Error parsing METAR for {icao}: {e}", file=sys.stderr)
+        return None
+
 
 def check_cdip_health():
     url = "https://erddap.cdip.ucsd.edu/erddap/outOfDateDatasets.html"
@@ -342,24 +399,135 @@ def main():
             wind_results = json.loads(res.stdout)
         except Exception as e:
             print(f"Error running average_wind.py: {e}", file=sys.stderr)
+
+    # 1b. Fetch Waimea-Kekaha PWS wind (KHIWAIME179)
+    print("Fetching Waimea PWS KHIWAIME179...")
+    wind_179 = None
+    url_179 = f"https://api.weather.com/v2/pws/observations/current?apiKey={WU_API_KEY}&units=e&stationId=KHIWAIME179&format=json"
+    content_179 = fetch_url(url_179)
+    if content_179:
+        try:
+            data_179 = json.loads(content_179)
+            obs_179 = data_179['observations'][0]
+            wind_179 = {
+                "speed_mph": obs_179['imperial']['windSpeed'],
+                "direction_deg": obs_179['winddir'],
+                "gust_mph": obs_179['imperial']['windGust'],
+                "temp_f": obs_179['imperial']['temp'],
+                "humidity": obs_179['humidity'],
+                "time_local": obs_179['obsTimeLocal'],
+                "time_utc": obs_179['obsTimeUtc'],
+                "status": "Online"
+            }
+            print(f"Waimea Wind: Speed {wind_179['speed_mph']} mph, Dir {wind_179['direction_deg']}°")
+        except Exception as e:
+            print(f"Error parsing Waimea PWS: {e}", file=sys.stderr)
             
-    # 2. Fetch Buoys
+    # 1c. Fetch Kalaheo PWS wind (KHIKALAH11) for Port Allen
+    print("Fetching Kalaheo PWS KHIKALAH11...")
+    wind_11 = None
+    url_11 = f"https://api.weather.com/v2/pws/observations/current?apiKey={WU_API_KEY}&units=e&stationId=KHIKALAH11&format=json"
+    content_11 = fetch_url(url_11)
+    if content_11:
+        try:
+            data_11 = json.loads(content_11)
+            obs_11 = data_11['observations'][0]
+            wind_11 = {
+                "speed_mph": obs_11['imperial']['windSpeed'],
+                "direction_deg": obs_11['winddir'],
+                "gust_mph": obs_11['imperial']['windGust'],
+                "temp_f": obs_11['imperial']['temp'],
+                "humidity": obs_11['humidity'],
+                "time_local": obs_11['obsTimeLocal'],
+                "time_utc": obs_11['obsTimeUtc'],
+                "status": "Online"
+            }
+            print(f"Kalaheo Wind: Speed {wind_11['speed_mph']} mph, Dir {wind_11['direction_deg']}°")
+        except Exception as e:
+            print(f"Error parsing Kalaheo PWS: {e}", file=sys.stderr)
+            
+    # 2. Fetch South Shore Buoys
     primary_series, verify_series = get_buoy_data()
+
+    # 2b. Fetch Buoy 51208 (Na Pali Swell)
+    print("Fetching Buoy 51208...")
+    buoy_51208_url = "https://www.ndbc.noaa.gov/data/realtime2/51208.txt"
+    buoy_51208_txt = fetch_url(buoy_51208_url)
+    buoy_51208_series = parse_buoy_txt(buoy_51208_txt)
+    swell_51208 = None
+    if buoy_51208_series:
+        latest = buoy_51208_series[0]
+        # local import
+        sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+        from average_wind import deg_to_compass
+        swell_51208 = {
+            "obs_time_utc": latest["obs_time_utc"],
+            "wvht_m": latest["wvht_m"],
+            "wvht_ft": round(latest["wvht_m"] * 3.28084, 1),
+            "dpd_s": latest["dpd_s"],
+            "mwd_deg": latest["mwd_deg"],
+            "mwd_compass": deg_to_compass(latest["mwd_deg"]) if latest["mwd_deg"] is not None else "N/A"
+        }
+        print(f"Buoy 51208 parsed: {swell_51208['wvht_ft']} ft @ {swell_51208['dpd_s']}s from {swell_51208['mwd_compass']}")
     
-    # 3. Fetch Tide
-    tide_info = get_tide_data()
+    # 3. Fetch Tides (Port Allen 1611347, Nawiliwili 1611400, Waimea Bay 1611401)
+    tide_1611347 = get_tide_data_for_station("1611347") # Port Allen
+    tide_1611400 = get_tide_data_for_station("1611400") # Nawiliwili
+    tide_1611401 = get_tide_data_for_station("1611401") # Waimea Bay
     
-    # 4. Fetch NWS Forecast
-    nws_forecast = get_nws_forecast()
+    # Generate subordinate predictions for Waimea Bay (1611401) from Nawiliwili (1611400)
+    if not tide_1611401["predictions"] and tide_1611400["predictions"]:
+        print("Generating subordinate predictions for Waimea Bay (1611401) from Nawiliwili (1611400)...")
+        waimea_preds = []
+        for p in tide_1611400["predictions"]:
+            try:
+                t_dt = datetime.strptime(p["time"], "%Y-%m-%d %H:%M")
+                waimea_dt = t_dt + timedelta(minutes=12)
+                waimea_val = round(p["value_ft"] * 0.88, 3)
+                waimea_preds.append({
+                    "time": waimea_dt.strftime("%Y-%m-%d %H:%M"),
+                    "value_ft": waimea_val
+                })
+            except Exception as e:
+                pass
+        tide_1611401["predictions"] = waimea_preds
     
-    # 4b. Fetch NWS Gridded Wind Forecast (NAMHI)
-    model_wind = get_nws_grid_wind()
+    # 4. Fetch NWS Forecasts
+    nws_forecast = get_nws_forecast_zone("PHZ112")
+    nws_forecast_110 = get_nws_forecast_zone("PHZ110")
+    nws_forecast_111 = get_nws_forecast_zone("PHZ111")
+    
+    # 4b. Fetch NWS Gridded Wind Forecast — South Shore (Koloa/Poipu area, HFO/88,169)
+    model_wind = get_nws_grid_wind(
+        grid_x=88, grid_y=169,
+        label="South Shore (Koloa/Poipu)",
+        cache_file="nws_grid_wind_cache.txt"
+    )
+    
+    # 4c. Fetch NWS Gridded Wind Forecast — Port Allen (HFO/82,171)
+    model_wind_port_allen = get_nws_grid_wind(
+        grid_x=82, grid_y=171,
+        label="Port Allen Harbor",
+        cache_file="nws_grid_port_allen_cache.txt"
+    )
+    
+    # 4d. Fetch NWS Gridded Wind Forecast — Kikiaola/Kekaha (HFO/75,174)
+    model_wind_kikiaola = get_nws_grid_wind(
+        grid_x=75, grid_y=174,
+        label="Kikiaola Harbor",
+        cache_file="nws_grid_kikiaola_cache.txt"
+    )
+    
+    # 4e. Fetch PHBK METAR (PMRF Barking Sands, Kekaha) — only active ASOS on west Kauai coast
+    # Reliable, hourly-reporting official ASOS station 2 nm from Kikiaola Harbor.
+    metar_phbk = get_metar_wind("PHBK")
+    
     
     # 5. Fetch CDIP Health
     cdip_status = check_cdip_health()
     print(f"CDIP pipeline status: {cdip_status}")
     
-    # 6. Run swell analysis
+    # 6. Run swell analysis (South Shore)
     swell_results = None
     if primary_series:
         now_utc = datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
@@ -367,7 +535,7 @@ def main():
             "now_utc": now_utc,
             "primary_series": primary_series,
             "verification_series": verify_series,
-            "tide_surge_ft": tide_info["tide_surge_ft"]
+            "tide_surge_ft": tide_1611347["tide_surge_ft"]
         }
         
         try:
@@ -387,10 +555,12 @@ def main():
         print("WARNING: Swell analysis returned null — preserving previous swell data.", file=sys.stderr)
         swell_results = previous_data["swell"]
     
-    tide_predictions = tide_info["predictions"]
-    if not tide_predictions and previous_data.get("tides", {}).get("predictions"):
+    tide_predictions_1611347 = tide_1611347["predictions"]
+    if not tide_predictions_1611347 and previous_data.get("tides", {}).get("predictions"):
         print("WARNING: Tide predictions empty — preserving previous tide data.", file=sys.stderr)
-        tide_predictions = previous_data["tides"]["predictions"]
+        tide_predictions_1611347 = previous_data["tides"]["predictions"]
+        tide_1611347["observations"] = previous_data["tides"]["observations"]
+        tide_1611347["tide_surge_ft"] = previous_data["tides"]["surge_ft"]
     
     report_data = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
@@ -399,11 +569,25 @@ def main():
         "model_wind": model_wind,
         "swell": swell_results,
         "tides": {
-            "predictions": tide_predictions,
-            "observations": tide_info["observations"][-24:],
-            "surge_ft": tide_info["tide_surge_ft"]
+            "predictions": tide_predictions_1611347,
+            "observations": tide_1611347["observations"][-24:],
+            "surge_ft": tide_1611347["tide_surge_ft"]
         },
-        "forecast_text": nws_forecast
+        "forecast_text": nws_forecast,
+        
+        # Na Pali / Region Expansion Additions (Section 2)
+        "wind_khiwaime179": wind_179,
+        "wind_khikalah11": wind_11,
+        "swell_51208": swell_51208,
+        "tides_1611347": tide_1611347,
+        "tides_1611400": tide_1611400,
+        "tides_1611401": tide_1611401,
+        "forecast_text_110": nws_forecast_110,
+        "forecast_text_111": nws_forecast_111,
+        # Na Pali harbor-specific wind sources
+        "model_wind_port_allen": model_wind_port_allen,  # NWS HFO/82,171 — directly over Port Allen
+        "model_wind_kikiaola": model_wind_kikiaola,       # NWS HFO/75,174 — directly over Kikiaola/Kekaha
+        "metar_phbk": metar_phbk                          # PMRF Barking Sands ASOS — 2nm from Kikiaola Harbor
     }
     
     # Write to data.json
@@ -449,8 +633,8 @@ def main():
     else:
         print("Swell: No buoy data available.")
         
-    if tide_info["tide_surge_ft"] is not None:
-        print(f"Tide Surge: {tide_info['tide_surge_ft']} ft residual surge at Port Allen.")
+    if tide_1611347["tide_surge_ft"] is not None:
+        print(f"Tide Surge: {tide_1611347['tide_surge_ft']} ft residual surge at Port Allen.")
     else:
         print("Tide Surge: Port Allen observed water level offline.")
         
