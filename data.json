@@ -1,48 +1,49 @@
 {
-  "last_updated": "2026-07-24T09:33:06.769003+00:00",
+  "last_updated": "2026-07-24T15:18:53.339759+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 3.0,
-        "direction_deg": 65.0,
-        "direction_compass": "ENE",
+        "speed_mph": 1.0,
+        "direction_deg": 79.0,
+        "direction_compass": "E",
         "role": "Primary/Anchor",
-        "gust_mph": 5,
+        "gust_mph": 1,
         "temp_f": 77,
-        "humidity": 83,
-        "time_local": "2026-07-23 23:32:43",
-        "time_utc": "2026-07-24T09:32:43Z",
+        "humidity": 87,
+        "time_local": "2026-07-24 05:18:35",
+        "time_utc": "2026-07-24T15:18:35Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 4.0,
-        "direction_deg": 90.0,
-        "direction_compass": "E",
+        "speed_mph": 0.0,
+        "direction_deg": 158.0,
+        "direction_compass": "SSE",
         "role": "Verification 1",
-        "gust_mph": 5,
-        "temp_f": 78,
-        "humidity": 78,
-        "time_local": "2026-07-23 23:32:55",
-        "time_utc": "2026-07-24T09:32:55Z",
+        "gust_mph": 0,
+        "temp_f": 77,
+        "humidity": 81,
+        "time_local": "2026-07-24 05:18:43",
+        "time_utc": "2026-07-24T15:18:43Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 3.5,
-    "vector_average_speed_mph": 3.4,
-    "average_direction_deg": 79.3,
-    "average_direction_compass": "E",
-    "direction_reliable": true,
-    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
+    "average_speed_mph": 0.5,
+    "vector_average_speed_mph": 0.5,
+    "average_direction_deg": null,
+    "average_direction_compass": null,
+    "direction_reliable": false,
+    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph",
+    "note": "Station wind directions largely cancel out (opposing winds of similar strength) - average direction is not meaningful here."
   },
   "model_wind": {
-    "speed_mph": 24.2,
-    "speed_knots": 21.0,
-    "direction_deg": 70,
-    "direction_compass": "ENE",
+    "speed_mph": 23.0,
+    "speed_knots": 20.0,
+    "direction_deg": 80,
+    "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO HFO/88,169)"
   },
   "swell": {
@@ -2013,33 +2014,33 @@
     "observations": [],
     "surge_ft": null
   },
-  "forecast_text": "PHZ112-242030-\nKauai Leeward Waters-\n931 PM HST Thu Jul 23 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH FRIDAY AFTERNOON...\n\n.REST OF TONIGHT...East winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and south 4 feet at\n18 seconds. Isolated showers. \n.FRIDAY...East northeast winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and south 4 feet at\n18 seconds. Scattered showers. \n.FRIDAY NIGHT...East northeast winds to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 7 seconds and south 4 feet at\n17 seconds. Isolated showers. \n.SATURDAY...East northeast winds 15 to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 6 seconds and south 4 feet at\n20 seconds. Isolated showers. \n.SATURDAY NIGHT...East northeast winds 15 to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 6 seconds and south 4 feet at\n18 seconds. Isolated showers. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 6 to 7 feet.\nWave Detail: East 6 feet at 6 seconds and south 4 feet at\n16 seconds. Isolated showers. \n.SUNDAY NIGHT...East northeast winds 15 to 20 knots. Seas 5 to\n7 feet. Wave Detail: East 6 feet at 6 seconds and south 4 feet at\n15 seconds. Isolated showers. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 5 to 7 feet.\nWave Detail: East 5 feet at 6 seconds and south 4 feet at\n15 seconds. Isolated showers in the morning. Scattered showers\nafter midnight. \n.TUESDAY...East northeast winds 20 to 25 knots, becoming\nnortheast 25 to 30 knots. Seas 5 to 7 feet. Wave Detail: East\nnortheast 6 feet at 6 seconds, south 4 feet at 14 seconds and\neast 3 feet at 11 seconds. Scattered showers in the morning.\nIsolated showers through the night, then scattered showers after\nmidnight.",
+  "forecast_text": "PHZ112-250415-\nKauai Leeward Waters-\n504 AM HST Fri Jul 24 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH LATE THIS AFTERNOON...\n\n.TODAY...East northeast winds 20 to 25 knots. Seas 7 to 9 feet.\nWave Detail: East 8 feet at 8 seconds and south 4 feet at\n18 seconds. \n.TONIGHT...East northeast winds 15 to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and south 3 feet at\n16 seconds. Isolated showers. \n.SATURDAY...East northeast winds 15 to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 7 seconds and south 4 feet at\n20 seconds. Isolated showers. \n.SATURDAY NIGHT...East northeast winds 15 to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 7 seconds and south 4 feet at\n18 seconds. Isolated showers. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 6 to 7 feet.\nWave Detail: East 6 feet at 6 seconds and south 4 feet at\n16 seconds. Isolated showers in the morning. \n.SUNDAY NIGHT...East northeast winds 15 to 20 knots. Seas 5 to\n8 feet. Wave Detail: East 6 feet at 6 seconds and south 4 feet at\n15 seconds. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 5 to 8 feet.\nWave Detail: East 6 feet at 6 seconds, east 3 feet at 12 seconds\nand south 3 feet at 15 seconds. Isolated showers after midnight. \n.TUESDAY...Northeast winds 15 to 20 knots. Seas 5 to 7 feet. Wave\nDetail: East northeast 7 feet at 8 seconds, east 4 feet at\n11 seconds and south 3 feet at 14 seconds. Isolated showers.\nScattered showers after midnight.",
   "wind_khiwaime179": {
-    "speed_mph": 4,
-    "direction_deg": 86,
-    "gust_mph": 10,
-    "temp_f": 75,
-    "humidity": 79,
-    "time_local": "2026-07-23 23:30:00",
-    "time_utc": "2026-07-24T09:30:00Z",
+    "speed_mph": null,
+    "direction_deg": null,
+    "gust_mph": null,
+    "temp_f": null,
+    "humidity": null,
+    "time_local": "2026-07-24 05:15:00",
+    "time_utc": "2026-07-24T15:15:00Z",
     "status": "Online"
   },
   "wind_khikalah11": {
     "speed_mph": 0,
     "direction_deg": 180,
     "gust_mph": 0,
-    "temp_f": 78,
-    "humidity": 77,
-    "time_local": "2026-07-23 23:31:00",
-    "time_utc": "2026-07-24T09:31:00Z",
+    "temp_f": 77,
+    "humidity": 78,
+    "time_local": "2026-07-24 05:18:00",
+    "time_utc": "2026-07-24T15:18:00Z",
     "status": "Online"
   },
   "swell_51208": {
-    "obs_time_utc": "2026-07-24T08:56:00",
-    "wvht_m": 2.0,
-    "wvht_ft": 6.6,
-    "dpd_s": 7.0,
-    "mwd_deg": 68.0,
+    "obs_time_utc": "2026-07-24T14:56:00",
+    "wvht_m": 1.7,
+    "wvht_ft": 5.6,
+    "dpd_s": 8.0,
+    "mwd_deg": 67.0,
     "mwd_compass": "ENE"
   },
   "tides_1611347": {
@@ -7820,19 +7821,19 @@
     "observations": [],
     "tide_surge_ft": null
   },
-  "forecast_text_110": "PHZ110-242030-\nKauai Northwest Waters-\n931 PM HST Thu Jul 23 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH FRIDAY AFTERNOON...\n\n.REST OF TONIGHT...East northeast winds 20 to 25 knots. Seas 6 to\n8 feet. Wave Detail: East 6 feet at 7 seconds and south southwest\n4 feet at 18 seconds. Scattered showers. \n.FRIDAY...East northeast winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East 6 feet at 7 seconds and south southwest 4 feet\nat 18 seconds. Scattered showers, mainly in the morning. \n.FRIDAY NIGHT...East northeast winds to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 7 seconds and south southwest\n4 feet at 17 seconds. Scattered showers. \n.SATURDAY...East northeast winds to 20 knots. Seas 6 to 7 feet.\nWave Detail: East 6 feet at 6 seconds, south southwest 4 feet at\n20 seconds and east 3 feet at 12 seconds. Scattered showers,\nmainly in the morning. \n.SATURDAY NIGHT...East northeast winds to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 6 seconds, south southwest\n4 feet at 18 seconds and east 3 feet at 15 seconds. Isolated\nshowers in the evening, then scattered showers after midnight. \n.SUNDAY...East northeast winds to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 5 feet at 6 seconds, east 4 feet at 14 seconds\nand south southwest 4 feet at 16 seconds. Isolated showers. \n.SUNDAY NIGHT...East northeast winds 15 to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 5 feet at 6 seconds, east 5 feet at\n14 seconds and south southwest 3 feet at 15 seconds. Isolated\nshowers in the evening, then scattered showers after midnight. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 5 to 7 feet.\nWave Detail: East 5 feet at 6 seconds, east 5 feet at 13 seconds\nand south southwest 3 feet at 15 seconds. Isolated showers in the\nmorning. Isolated showers in the evening, then scattered showers\nafter midnight. \n.TUESDAY...East northeast winds 20 to 25 knots. Seas 5 to 7 feet.\nWave Detail: East 5 feet at 9 seconds, east 5 feet at 12 seconds\nand south southwest 3 feet at 14 seconds. Scattered showers.",
-  "forecast_text_111": "PHZ111-242030-\nKauai Windward Waters-\n931 PM HST Thu Jul 23 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH FRIDAY AFTERNOON...\n\n.REST OF TONIGHT...East winds to 20 knots. Seas 7 to 8 feet. Wave\nDetail: East southeast 6 feet at 7 seconds and south 4 feet at\n18 seconds. Scattered showers. \n.FRIDAY...East northeast winds to 20 knots. Seas 7 to 8 feet.\nWave Detail: East 6 feet at 7 seconds and south 4 feet at\n18 seconds. Scattered showers, mainly in the morning. \n.FRIDAY NIGHT...East northeast winds 15 to 20 knots. Seas 6 to\n8 feet. Wave Detail: East 6 feet at 6 seconds and south 4 feet at\n17 seconds. Scattered showers. \n.SATURDAY...East northeast winds to 20 knots. Seas 6 to 7 feet.\nWave Detail: East 5 feet at 6 seconds, south 4 feet at 20 seconds\nand east 3 feet at 12 seconds. Scattered showers. \n.SATURDAY NIGHT...East northeast winds 15 to 20 knots. Seas 6 to\n8 feet. Wave Detail: East 5 feet at 6 seconds, east 4 feet at\n14 seconds and south 4 feet at 18 seconds. Scattered showers. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 5 feet at 6 seconds, east 4 feet at 14 seconds\nand south 4 feet at 16 seconds. Isolated showers. \n.SUNDAY NIGHT...East northeast winds 15 to 20 knots. Seas 6 to\n8 feet. Wave Detail: East southeast 5 feet at 6 seconds, east\n5 feet at 14 seconds and south 4 feet at 15 seconds. Scattered\nshowers. \n.MONDAY...East northeast winds to 15 knots. Seas 6 to 8 feet.\nWave Detail: East southeast 5 feet at 6 seconds, east 5 feet at\n13 seconds and south 4 feet at 15 seconds. Isolated showers.\nScattered showers after midnight. \n.TUESDAY...East northeast winds 15 to 20 knots, becoming\nnortheast 20 to 25 knots after midnight. Seas 6 to 8 feet. Wave\nDetail: East 6 feet at 9 seconds, east 5 feet at 12 seconds and\nsouth 4 feet at 14 seconds. Scattered showers, then numerous\nshowers after midnight.",
+  "forecast_text_110": "PHZ110-250415-\nKauai Northwest Waters-\n504 AM HST Fri Jul 24 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH LATE THIS AFTERNOON...\n\n.TODAY...East northeast winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and south southwest 4 feet\nat 18 seconds. Isolated showers this morning. \n.TONIGHT...East northeast winds 15 to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and south southwest 3 feet\nat 16 seconds. Isolated showers in the evening, then scattered\nshowers after midnight. \n.SATURDAY...East northeast winds to 20 knots. Seas 6 to 7 feet.\nWave Detail: East 6 feet at 7 seconds and south southwest 4 feet\nat 20 seconds. Scattered showers, mainly in the morning. \n.SATURDAY NIGHT...East northeast winds to 20 knots. Seas 6 to\n8 feet. Wave Detail: East 6 feet at 7 seconds and south southwest\n4 feet at 18 seconds. Isolated showers. \n.SUNDAY...East northeast winds to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 14 seconds and south southwest 3 feet\nat 16 seconds. Isolated showers in the morning. \n.SUNDAY NIGHT...East northeast winds 15 to 20 knots. Seas 7 to\n8 feet. Wave Detail: East 7 feet at 14 seconds and south\nsouthwest 3 feet at 15 seconds. Isolated showers. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 6 to 9 feet.\nWave Detail: East 7 feet at 13 seconds. Isolated showers in the\nmorning. Isolated showers in the evening, then scattered showers\nafter midnight. \n.TUESDAY...Northeast winds 15 to 20 knots. Seas 6 to 9 feet. Wave\nDetail: East 8 feet at 11 seconds and south southwest 3 feet at\n14 seconds. Scattered showers.",
+  "forecast_text_111": "PHZ111-250415-\nKauai Windward Waters-\n504 AM HST Fri Jul 24 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH LATE THIS AFTERNOON...\n\n.TODAY...East winds 20 to 25 knots, becoming east northeast 15 to\n20 knots this afternoon. Seas 7 to 8 feet. Wave Detail: East\n7 feet at 8 seconds and south 4 feet at 18 seconds. Isolated\nshowers this morning. \n.TONIGHT...East northeast winds 15 to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and south 3 feet at\n17 seconds. Scattered showers. \n.SATURDAY...East northeast winds 15 to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 7 seconds and south 4 feet at\n20 seconds. Scattered showers, mainly in the morning. \n.SATURDAY NIGHT...East northeast winds to 20 knots. Seas 6 to\n7 feet. Wave Detail: East 6 feet at 7 seconds and south 4 feet at\n18 seconds. Isolated showers in the evening, then scattered\nshowers after midnight. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 6 to 9 feet.\nWave Detail: East 7 feet at 14 seconds and south 4 feet at\n16 seconds. Isolated showers in the morning. \n.SUNDAY NIGHT...East northeast winds 15 to 20 knots. Seas 8 to\n9 feet. Wave Detail: East 7 feet at 14 seconds and south 4 feet\nat 15 seconds. Isolated showers. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 8 to 10 feet.\nWave Detail: East 7 feet at 13 seconds and south 3 feet at\n15 seconds. Isolated showers in the morning. Isolated showers in\nthe evening, then scattered showers after midnight. \n.TUESDAY...Northeast winds 15 to 20 knots. Seas 7 to 10 feet.\nWave Detail: East 9 feet at 11 seconds and south 3 feet at\n14 seconds. Scattered showers, then numerous showers after\nmidnight.",
   "model_wind_port_allen": {
-    "speed_mph": 17.3,
-    "speed_knots": 15.0,
+    "speed_mph": 19.6,
+    "speed_knots": 17.0,
     "direction_deg": 80,
     "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO HFO/82,171)"
   },
   "model_wind_kikiaola": {
-    "speed_mph": 13.8,
-    "speed_knots": 12.0,
-    "direction_deg": 100,
+    "speed_mph": 17.3,
+    "speed_knots": 15.0,
+    "direction_deg": 90,
     "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO HFO/75,174)"
   },
@@ -7844,8 +7845,8 @@
     "direction_compass": "VAR",
     "gust_knots": null,
     "gust_mph": null,
-    "raw_metar": "METAR PHBK 240851Z AUTO 00000KT 10SM BKN070 26/18 A3007 RMK AO2 SLP184 T02560178 51016 PWINO",
-    "obs_time_utc": 1784883060,
+    "raw_metar": "METAR PHBK 241451Z AUTO 00000KT 10SM FEW050 SCT065 24/18 A3001 RMK AO2 SLP165 T02440178 56008 PWINO",
+    "obs_time_utc": 1784904660,
     "source": "METAR ASOS PHBK (aviationweather.gov)"
   }
 }
