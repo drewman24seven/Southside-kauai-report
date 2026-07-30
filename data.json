@@ -1,49 +1,48 @@
 {
-  "last_updated": "2026-07-30T16:14:18.886982+00:00",
+  "last_updated": "2026-07-30T20:45:09.771708+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 0.0,
-        "direction_deg": 21.0,
-        "direction_compass": "NNE",
+        "speed_mph": 2.0,
+        "direction_deg": 113.0,
+        "direction_compass": "ESE",
         "role": "Primary/Anchor",
-        "gust_mph": 0,
-        "temp_f": 73,
-        "humidity": 98,
-        "time_local": "2026-07-30 06:13:55",
-        "time_utc": "2026-07-30T16:13:55Z",
+        "gust_mph": 3,
+        "temp_f": 86,
+        "humidity": 76,
+        "time_local": "2026-07-30 10:44:51",
+        "time_utc": "2026-07-30T20:44:51Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 0.0,
-        "direction_deg": 68.0,
-        "direction_compass": "ENE",
+        "speed_mph": 3.0,
+        "direction_deg": 112.0,
+        "direction_compass": "ESE",
         "role": "Verification 1",
-        "gust_mph": 0,
-        "temp_f": 74,
-        "humidity": 91,
-        "time_local": "2026-07-30 06:14:06",
-        "time_utc": "2026-07-30T16:14:06Z",
+        "gust_mph": 3,
+        "temp_f": 89,
+        "humidity": 58,
+        "time_local": "2026-07-30 10:44:54",
+        "time_utc": "2026-07-30T20:44:54Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 0.0,
-    "vector_average_speed_mph": 0.0,
-    "average_direction_deg": null,
-    "average_direction_compass": null,
-    "direction_reliable": false,
-    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph",
-    "note": "Station wind directions largely cancel out (opposing winds of similar strength) - average direction is not meaningful here."
+    "average_speed_mph": 2.5,
+    "vector_average_speed_mph": 2.5,
+    "average_direction_deg": 112.4,
+    "average_direction_compass": "ESE",
+    "direction_reliable": true,
+    "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
   },
   "model_wind": {
     "speed_mph": 6.9,
     "speed_knots": 6.0,
-    "direction_deg": 70,
-    "direction_compass": "ENE",
+    "direction_deg": 90,
+    "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO HFO/88,169)"
   },
   "swell": {
@@ -2016,31 +2015,31 @@
   },
   "forecast_text": "PHZ112-310230-\nKauai Leeward Waters-\n320 AM HST Thu Jul 30 2026\n\n.TODAY...East southeast winds 7 to 10 knots, becoming 10 to\n15 knots this afternoon. Seas 5 to 6 feet. Wave Detail: South\n4 feet at 12 seconds and east southeast 3 feet at 7 seconds.\nScattered showers. \n.TONIGHT...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East southeast 5 feet at 7 seconds and south 4 feet at\n12 seconds. Isolated showers in the evening, then scattered\nshowers after midnight. \n.FRIDAY...East winds 15 to 20 knots. Seas 5 to 7 feet. Wave\nDetail: East southeast 5 feet at 7 seconds and south 3 feet at\n12 seconds. Isolated showers. \n.FRIDAY NIGHT...East northeast winds 20 to 25 knots. Seas 5 to\n8 feet. Wave Detail: East 7 feet at 7 seconds and south 3 feet at\n11 seconds. Isolated showers after midnight. \n.SATURDAY...East northeast winds 20 to 25 knots. Seas 5 to\n8 feet. Wave Detail: East 7 feet at 7 seconds. Isolated showers. \n.SATURDAY NIGHT...East northeast winds 20 to 25 knots. Seas 5 to\n8 feet. Wave Detail: East 7 feet at 7 seconds. Isolated showers\nin the evening, then scattered showers after midnight. \n.SUNDAY...East northeast winds 15 to 20 knots. Seas 5 to 7 feet.\nWave Detail: East 7 feet at 7 seconds. Isolated showers. \n.MONDAY...East northeast winds 15 to 20 knots, easing to 10 to\n15 knots after midnight. In the Kaulakahi Channel, east northeast\nwinds 7 to 10 knots, veering to east 10 to 15 knots. Seas 4 to\n5 feet. Wave Detail: East 5 feet at 6 seconds. Isolated showers.",
   "wind_khiwaime179": {
-    "speed_mph": null,
-    "direction_deg": null,
-    "gust_mph": null,
-    "temp_f": null,
-    "humidity": null,
-    "time_local": "2026-07-30 06:10:00",
-    "time_utc": "2026-07-30T16:10:00Z",
+    "speed_mph": 7,
+    "direction_deg": 94,
+    "gust_mph": 10,
+    "temp_f": 90,
+    "humidity": 63,
+    "time_local": "2026-07-30 10:40:00",
+    "time_utc": "2026-07-30T20:40:00Z",
     "status": "Online"
   },
   "wind_khikalah11": {
     "speed_mph": 0,
-    "direction_deg": 188,
+    "direction_deg": 209,
     "gust_mph": 0,
-    "temp_f": 81,
+    "temp_f": 83,
     "humidity": 73,
-    "time_local": "2026-07-30 06:13:00",
-    "time_utc": "2026-07-30T16:13:00Z",
+    "time_local": "2026-07-30 10:43:00",
+    "time_utc": "2026-07-30T20:43:00Z",
     "status": "Online"
   },
   "swell_51208": {
-    "obs_time_utc": "2026-07-30T15:56:00",
-    "wvht_m": 1.9,
-    "wvht_ft": 6.2,
+    "obs_time_utc": "2026-07-30T19:56:00",
+    "wvht_m": 1.7,
+    "wvht_ft": 5.6,
     "dpd_s": 9.0,
-    "mwd_deg": 65.0,
+    "mwd_deg": 68.0,
     "mwd_compass": "ENE"
   },
   "tides_1611347": {
@@ -7826,8 +7825,8 @@
   "model_wind_port_allen": {
     "speed_mph": 8.1,
     "speed_knots": 7.0,
-    "direction_deg": 70,
-    "direction_compass": "ENE",
+    "direction_deg": 90,
+    "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO HFO/82,171)"
   },
   "model_wind_kikiaola": {
@@ -7839,14 +7838,14 @@
   },
   "metar_phbk": {
     "station": "PHBK",
-    "speed_knots": 0.0,
-    "speed_mph": 0.0,
-    "direction_deg": null,
-    "direction_compass": "VAR",
+    "speed_knots": 10.0,
+    "speed_mph": 11.5,
+    "direction_deg": 190.0,
+    "direction_compass": "S",
     "gust_knots": null,
     "gust_mph": null,
-    "raw_metar": "METAR PHBK 301551Z AUTO 00000KT 10SM SCT060 25/22 A2993 RMK AO2 SLP137 T02500217 PWINO $",
-    "obs_time_utc": 1785426660,
+    "raw_metar": "SPECI PHBK 302018Z AUTO 19010KT 10SM SCT035 30/21 A2996 RMK AO2 T03000211 PWINO $",
+    "obs_time_utc": 1785442680,
     "source": "METAR ASOS PHBK (aviationweather.gov)"
   }
 }
