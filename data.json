@@ -1,46 +1,46 @@
 {
-  "last_updated": "2026-08-02T20:15:20.831769+00:00",
+  "last_updated": "2026-08-02T23:45:05.398103+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 7.0,
-        "direction_deg": 127.0,
-        "direction_compass": "SE",
+        "speed_mph": 5.0,
+        "direction_deg": 14.0,
+        "direction_compass": "NNE",
         "role": "Primary/Anchor",
-        "gust_mph": 11,
-        "temp_f": 80,
-        "humidity": 79,
-        "time_local": "2026-08-02 10:15:11",
-        "time_utc": "2026-08-02T20:15:11Z",
+        "gust_mph": 7,
+        "temp_f": 84,
+        "humidity": 74,
+        "time_local": "2026-08-02 13:44:47",
+        "time_utc": "2026-08-02T23:44:47Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 8.0,
+        "speed_mph": 5.0,
         "direction_deg": 68.0,
         "direction_compass": "ENE",
         "role": "Verification 1",
-        "gust_mph": 9,
-        "temp_f": 84,
-        "humidity": 67,
-        "time_local": "2026-08-02 10:15:06",
-        "time_utc": "2026-08-02T20:15:06Z",
+        "gust_mph": 6,
+        "temp_f": 88,
+        "humidity": 57,
+        "time_local": "2026-08-02 13:44:54",
+        "time_utc": "2026-08-02T23:44:54Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 7.5,
-    "vector_average_speed_mph": 6.5,
-    "average_direction_deg": 95.3,
-    "average_direction_compass": "E",
+    "average_speed_mph": 5.0,
+    "vector_average_speed_mph": 4.5,
+    "average_direction_deg": 41.0,
+    "average_direction_compass": "NE",
     "direction_reliable": true,
     "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
   },
   "model_wind": {
-    "speed_mph": 24.2,
-    "speed_knots": 21.0,
+    "speed_mph": 23.0,
+    "speed_knots": 20.0,
     "direction_deg": 60,
     "direction_compass": "ENE",
     "source": "NWS gridded forecast (Honolulu WFO HFO/88,169)"
@@ -2015,32 +2015,32 @@
   },
   "forecast_text": "PHZ112-030215-\nKauai Leeward Waters-\n339 AM HST Sun Aug 2 2026\n\n.TODAY...East northeast winds to 20 knots. Seas 6 to 9 feet. Wave\nDetail: East 5 feet at 8 seconds and east 3 feet at 14 seconds.\nIsolated showers. \n.TONIGHT...East northeast winds 15 to 20 knots. Seas 5 to 7 feet.\nWave Detail: East 5 feet at 7 seconds. Isolated showers. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 4 to 6 feet.\nWave Detail: East 5 feet at 6 seconds. Isolated showers. \n.MONDAY NIGHT...East northeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: East 5 feet at 6 seconds. Isolated showers. \n.TUESDAY...Winds east northeast winds 10 to 15 knots. Seas 3 to\n4 feet. Wave Detail: East 4 feet at 8 seconds. Isolated showers. \n.TUESDAY NIGHT...East northeast winds 10 to 15 knots. Seas 3 to\n4 feet. Wave Detail: East 3 feet at 8 seconds. Isolated showers. \n.WEDNESDAY...East northeast winds 10 to 15 knots. In the\nKaulakahi Channel, east northeast winds 10 to 15 knots, veering\nto east 7 to 10 knots after midnight. Seas 3 to 4 feet. Wave\nDetail: East 3 feet at 5 seconds. Isolated showers, then\nscattered showers after midnight. \n.THURSDAY...East winds 10 to 15 knots, rising to 15 to 20 knots\nafter midnight. Seas 3 to 4 feet. Wave Detail: East 4 feet at\n6 seconds. Isolated showers, then scattered showers after\nmidnight.",
   "wind_khiwaime179": {
-    "speed_mph": 16,
-    "direction_deg": 86,
-    "gust_mph": 28,
-    "temp_f": 86,
-    "humidity": 53,
-    "time_local": "2026-08-02 10:10:00",
-    "time_utc": "2026-08-02T20:10:00Z",
+    "speed_mph": 18,
+    "direction_deg": 77,
+    "gust_mph": 31,
+    "temp_f": 88,
+    "humidity": 50,
+    "time_local": "2026-08-02 13:40:00",
+    "time_utc": "2026-08-02T23:40:00Z",
     "status": "Online"
   },
   "wind_khikalah11": {
     "speed_mph": 0,
-    "direction_deg": 172,
+    "direction_deg": 180,
     "gust_mph": 0,
-    "temp_f": 78,
-    "humidity": 77,
-    "time_local": "2026-08-02 10:14:00",
-    "time_utc": "2026-08-02T20:14:00Z",
+    "temp_f": 80,
+    "humidity": 75,
+    "time_local": "2026-08-02 13:44:00",
+    "time_utc": "2026-08-02T23:44:00Z",
     "status": "Online"
   },
   "swell_51208": {
-    "obs_time_utc": "2026-08-02T19:56:00",
-    "wvht_m": 2.8,
-    "wvht_ft": 9.2,
+    "obs_time_utc": "2026-08-02T23:26:00",
+    "wvht_m": 2.5,
+    "wvht_ft": 8.2,
     "dpd_s": 9.0,
-    "mwd_deg": 84.0,
-    "mwd_compass": "E"
+    "mwd_deg": 72.0,
+    "mwd_compass": "ENE"
   },
   "tides_1611347": {
     "predictions": [
@@ -7825,27 +7825,27 @@
   "model_wind_port_allen": {
     "speed_mph": 16.1,
     "speed_knots": 14.0,
-    "direction_deg": 70,
-    "direction_compass": "ENE",
+    "direction_deg": 80,
+    "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO HFO/82,171)"
   },
   "model_wind_kikiaola": {
-    "speed_mph": 15.0,
-    "speed_knots": 13.0,
+    "speed_mph": 10.4,
+    "speed_knots": 9.0,
     "direction_deg": 90,
     "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO HFO/75,174)"
   },
   "metar_phbk": {
     "station": "PHBK",
-    "speed_knots": 8.0,
-    "speed_mph": 9.2,
+    "speed_knots": 6.0,
+    "speed_mph": 6.9,
     "direction_deg": 250.0,
     "direction_compass": "WSW",
     "gust_knots": null,
     "gust_mph": null,
-    "raw_metar": "METAR PHBK 021951Z AUTO 25008KT 10SM BKN045 BKN055 27/21 A3007 RMK AO2 SLP185 T02720206 PWINO $",
-    "obs_time_utc": 1785700260,
+    "raw_metar": "METAR PHBK 022251Z AUTO 25006KT 10SM FEW055 31/19 A3003 RMK AO2 SLP170 T03060194 PWINO $",
+    "obs_time_utc": 1785711060,
     "source": "METAR ASOS PHBK (aviationweather.gov)"
   }
 }
