@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-08-08T15:39:19.855013+00:00",
+  "last_updated": "2026-08-08T16:42:22.593035+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
         "speed_mph": 3.0,
-        "direction_deg": 122.0,
-        "direction_compass": "ESE",
+        "direction_deg": 79.0,
+        "direction_compass": "E",
         "role": "Primary/Anchor",
         "gust_mph": 5,
-        "temp_f": 75,
-        "humidity": 97,
-        "time_local": "2026-08-08 05:39:01",
-        "time_utc": "2026-08-08T15:39:01Z",
+        "temp_f": 76,
+        "humidity": 96,
+        "time_local": "2026-08-08 06:41:57",
+        "time_utc": "2026-08-08T16:41:57Z",
         "status": "Online"
       },
       {
@@ -22,19 +22,19 @@
         "direction_deg": 68.0,
         "direction_compass": "ENE",
         "role": "Verification 1",
-        "gust_mph": 4,
-        "temp_f": 76,
-        "humidity": 92,
-        "time_local": "2026-08-08 05:39:07",
-        "time_utc": "2026-08-08T15:39:07Z",
+        "gust_mph": 3,
+        "temp_f": 77,
+        "humidity": 91,
+        "time_local": "2026-08-08 06:42:06",
+        "time_utc": "2026-08-08T16:42:06Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
     "average_speed_mph": 3.0,
-    "vector_average_speed_mph": 2.7,
-    "average_direction_deg": 95.0,
-    "average_direction_compass": "E",
+    "vector_average_speed_mph": 3.0,
+    "average_direction_deg": 73.5,
+    "average_direction_compass": "ENE",
     "direction_reliable": true,
     "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
   },
@@ -2020,8 +2020,8 @@
     "gust_mph": null,
     "temp_f": null,
     "humidity": null,
-    "time_local": "2026-08-08 05:35:00",
-    "time_utc": "2026-08-08T15:35:00Z",
+    "time_local": "2026-08-08 06:40:00",
+    "time_utc": "2026-08-08T16:40:00Z",
     "status": "Online"
   },
   "wind_khikalah11": {
@@ -2030,17 +2030,17 @@
     "gust_mph": null,
     "temp_f": null,
     "humidity": null,
-    "time_local": "2026-08-08 05:37:00",
-    "time_utc": "2026-08-08T15:37:00Z",
+    "time_local": "2026-08-08 06:41:00",
+    "time_utc": "2026-08-08T16:41:00Z",
     "status": "Online"
   },
   "swell_51208": {
-    "obs_time_utc": "2026-08-08T14:56:00",
+    "obs_time_utc": "2026-08-08T15:56:00",
     "wvht_m": 1.1,
     "wvht_ft": 3.6,
-    "dpd_s": 5.0,
-    "mwd_deg": 60.0,
-    "mwd_compass": "ENE"
+    "dpd_s": 6.0,
+    "mwd_deg": 50.0,
+    "mwd_compass": "NE"
   },
   "tides_1611347": {
     "predictions": [
@@ -7838,14 +7838,14 @@
   },
   "metar_phbk": {
     "station": "PHBK",
-    "speed_knots": 0.0,
-    "speed_mph": 0.0,
-    "direction_deg": null,
-    "direction_compass": "VAR",
+    "speed_knots": 4.0,
+    "speed_mph": 4.6,
+    "direction_deg": 180.0,
+    "direction_compass": "S",
     "gust_knots": null,
     "gust_mph": null,
-    "raw_metar": "METAR PHBK 081451Z AUTO 00000KT 10SM OVC036 25/22 A2998 RMK AO2 SLP154 T02500217 53001 PWINO $",
-    "obs_time_utc": 1786200660,
+    "raw_metar": "METAR PHBK 081551Z AUTO 18004KT 10SM FEW034 BKN043 OVC050 26/22 A2998 RMK AO2 SLP155 T02560217 PWINO $",
+    "obs_time_utc": 1786204260,
     "source": "METAR ASOS PHBK (aviationweather.gov)"
   }
 }
