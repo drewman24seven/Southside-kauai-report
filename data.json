@@ -1,39 +1,39 @@
 {
-  "last_updated": "2026-08-13T17:03:04.891266+00:00",
+  "last_updated": "2026-08-13T18:29:06.275380+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
         "speed_mph": 5.0,
-        "direction_deg": 20.0,
-        "direction_compass": "NNE",
+        "direction_deg": 62.0,
+        "direction_compass": "ENE",
         "role": "Primary/Anchor",
-        "gust_mph": 7,
-        "temp_f": 77,
-        "humidity": 84,
-        "time_local": "2026-08-13 07:02:55",
-        "time_utc": "2026-08-13T17:02:55Z",
+        "gust_mph": 8,
+        "temp_f": 81,
+        "humidity": 80,
+        "time_local": "2026-08-13 08:28:31",
+        "time_utc": "2026-08-13T18:28:31Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 4.0,
-        "direction_deg": 112.0,
-        "direction_compass": "ESE",
+        "speed_mph": 5.0,
+        "direction_deg": 90.0,
+        "direction_compass": "E",
         "role": "Verification 1",
-        "gust_mph": 4,
-        "temp_f": 77,
-        "humidity": 78,
-        "time_local": "2026-08-13 07:02:54",
-        "time_utc": "2026-08-13T17:02:54Z",
+        "gust_mph": 6,
+        "temp_f": 81,
+        "humidity": 71,
+        "time_local": "2026-08-13 08:28:54",
+        "time_utc": "2026-08-13T18:28:54Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 4.5,
-    "vector_average_speed_mph": 3.1,
-    "average_direction_deg": 59.4,
+    "average_speed_mph": 5.0,
+    "vector_average_speed_mph": 4.9,
+    "average_direction_deg": 76.0,
     "average_direction_compass": "ENE",
     "direction_reliable": true,
     "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
@@ -2015,32 +2015,32 @@
   },
   "forecast_text": "PHZ112-140415-\nKauai Leeward Waters-\n532 AM HST Thu Aug 13 2026\n\n.TODAY...East northeast winds 15 to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 5 feet at 6 seconds and south 5 feet at\n15 seconds. \n.TONIGHT...East northeast winds to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 6 feet at 7 seconds and south 5 feet at\n15 seconds. Isolated showers after midnight. \n.FRIDAY...East northeast winds to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 6 feet at 7 seconds and south 4 feet at\n14 seconds. \n.FRIDAY NIGHT...East northeast winds 20 to 25 knots. Seas 6 to\n8 feet. Wave Detail: East 7 feet at 7 seconds and south 4 feet at\n14 seconds. Isolated showers. \n.SATURDAY...Northeast winds 20 to 25 knots, rising to 25 to\n30 knots in the afternoon. Seas 6 to 9 feet, building to 9 to\n12 feet in the afternoon. Wave Detail: East southeast 11 feet at\n11 seconds and south 4 feet at 13 seconds. Isolated showers in\nthe morning, then scattered showers in the afternoon. \n.SATURDAY NIGHT...Tropical storm conditions possible. Scattered\nshowers in the evening, then heavy showers after midnight. \n.SUNDAY...Tropical storm conditions possible. Heavy showers.\nIsolated thunderstorms in the afternoon. \n.MONDAY...East winds 15 to 20 knots. Seas 5 to 8 feet. Wave\nDetail: East 6 feet at 6 seconds and south 4 feet at 14 seconds.\nShowers likely, mainly in the morning.  \n\nWinds and seas higher in and near tstms.",
   "wind_khiwaime179": {
-    "speed_mph": 1,
-    "direction_deg": 22,
-    "gust_mph": 7,
-    "temp_f": 73,
-    "humidity": 78,
-    "time_local": "2026-08-13 07:00:00",
-    "time_utc": "2026-08-13T17:00:00Z",
+    "speed_mph": 0,
+    "direction_deg": 90,
+    "gust_mph": 2,
+    "temp_f": 83,
+    "humidity": 68,
+    "time_local": "2026-08-13 08:25:00",
+    "time_utc": "2026-08-13T18:25:00Z",
     "status": "Online"
   },
   "wind_khikalah11": {
     "speed_mph": 0,
-    "direction_deg": 172,
+    "direction_deg": 180,
     "gust_mph": 0,
-    "temp_f": 78,
-    "humidity": 79,
-    "time_local": "2026-08-13 07:02:00",
-    "time_utc": "2026-08-13T17:02:00Z",
+    "temp_f": 79,
+    "humidity": 78,
+    "time_local": "2026-08-13 08:28:00",
+    "time_utc": "2026-08-13T18:28:00Z",
     "status": "Online"
   },
   "swell_51208": {
-    "obs_time_utc": "2026-08-13T16:26:00",
-    "wvht_m": 1.4,
-    "wvht_ft": 4.6,
-    "dpd_s": 8.0,
-    "mwd_deg": 77.0,
-    "mwd_compass": "ENE"
+    "obs_time_utc": "2026-08-13T17:56:00",
+    "wvht_m": 1.5,
+    "wvht_ft": 4.9,
+    "dpd_s": 7.0,
+    "mwd_deg": 81.0,
+    "mwd_compass": "E"
   },
   "tides_1611347": {
     "predictions": [
@@ -7823,9 +7823,9 @@
   "forecast_text_110": "PHZ110-140415-\nKauai Northwest Waters-\n532 AM HST Thu Aug 13 2026\n\n.TODAY...East northeast winds 15 to 20 knots, rising to 20 to\n25 knots this afternoon. Seas 5 to 7 feet. Wave Detail: East\n5 feet at 6 seconds and south southwest 5 feet at 15 seconds.\nIsolated showers. \n.TONIGHT...East northeast winds to 20 knots. Seas 5 to 8 feet.\nWave Detail: East 6 feet at 7 seconds and south southwest 5 feet\nat 14 seconds. Scattered showers. \n.FRIDAY...East northeast winds to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 5 feet at 6 seconds, east 5 feet at 10 seconds\nand south southwest 4 feet at 14 seconds. Isolated showers in the\nmorning. \n.FRIDAY NIGHT...East northeast winds 20 to 25 knots. Seas 6 to\n9 feet. Wave Detail: East 6 feet at 7 seconds, east 5 feet at\n10 seconds and south southwest 4 feet at 14 seconds. Isolated\nshowers in the evening, then scattered showers after midnight. \n.SATURDAY...East northeast winds 20 to 25 knots. Seas 7 to\n9 feet. Wave Detail: East 8 feet at 9 seconds and south southwest\n4 feet at 13 seconds. Scattered showers. \n.SATURDAY NIGHT...East northeast winds 25 to 30 knots. Seas 8 to\n11 feet, building to 11 to 15 feet after midnight. Wave Detail:\nEast southeast 15 feet at 10 seconds and south 3 feet at\n12 seconds. Scattered showers in the evening, then heavy showers\nlikely after midnight. \n.SUNDAY...East northeast winds 25 to 30 knots. Gusts up to\n45 knots. Seas 10 to 14 feet. Wave Detail: East 14 feet at\n8 seconds and south 3 feet at 13 seconds. Heavy showers through\nthe night. Isolated thunderstorms in the afternoon, then\nscattered showers through the day. \n.MONDAY...East winds 20 to 25 knots, easing to 15 to 20 knots\nafter midnight. Seas 6 to 8 feet. Wave Detail: East 7 feet at\n7 seconds and south 3 feet at 14 seconds. Scattered showers,\nmainly in the morning.  \n\nWinds and seas higher in and near tstms.",
   "forecast_text_111": "PHZ111-140415-\nKauai Windward Waters-\n532 AM HST Thu Aug 13 2026\n\n.TODAY...East northeast winds to 15 knots. Seas 5 to 7 feet. Wave\nDetail: South 5 feet at 15 seconds and east southeast 4 feet at\n6 seconds. Isolated showers. \n.TONIGHT...East northeast winds 15 to 20 knots. Seas 5 to 8 feet.\nWave Detail: East southeast 5 feet at 8 seconds and south 5 feet\nat 15 seconds. Scattered showers. \n.FRIDAY...East northeast winds 15 to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 5 feet at 6 seconds, east southeast 5 feet at\n10 seconds and south 4 feet at 14 seconds. Scattered showers in\nthe morning. Isolated showers in the afternoon. \n.FRIDAY NIGHT...East northeast winds to 20 knots. Seas 7 to\n9 feet. Wave Detail: East southeast 7 feet at 9 seconds and south\n4 feet at 14 seconds. Scattered showers. \n.SATURDAY...East northeast winds 20 to 25 knots. Seas 9 to\n11 feet. Wave Detail: East southeast 9 feet at 10 seconds and\nsouth 4 feet at 13 seconds. Scattered showers in the morning,\nthen heavy showers likely in the afternoon. \n.SATURDAY NIGHT...East northeast winds 25 to 30 knots. Seas 11 to\n15 feet, building to 13 to 18 feet after midnight. Wave Detail:\nSoutheast 16 feet at 10 seconds, east 4 feet at 9 seconds and\nsouth 4 feet at 13 seconds. Heavy showers. \n.SUNDAY...East winds 25 to 30 knots, easing to 20 knots after\nmidnight. Seas 10 to 14 feet. Wave Detail: East southeast 10 feet\nat 8 seconds and south 4 feet at 14 seconds. Heavy showers\nthrough the night. Isolated thunderstorms in the afternoon, then\nscattered showers through the day. \n.MONDAY...East winds 15 to 20 knots. Seas 6 to 9 feet. Wave\nDetail: East 7 feet at 7 seconds and south 4 feet at 14 seconds.\nScattered showers, mainly in the morning.  \n\nWinds and seas higher in and near tstms.",
   "model_wind_port_allen": {
-    "speed_mph": 12.7,
-    "speed_knots": 11.0,
-    "direction_deg": 60,
+    "speed_mph": 15.0,
+    "speed_knots": 13.0,
+    "direction_deg": 70,
     "direction_compass": "ENE",
     "source": "NWS gridded forecast (Honolulu WFO HFO/82,171)"
   },
@@ -7836,16 +7836,5 @@
     "direction_compass": "E",
     "source": "NWS gridded forecast (Honolulu WFO HFO/75,174)"
   },
-  "metar_phbk": {
-    "station": "PHBK",
-    "speed_knots": 3.0,
-    "speed_mph": 3.5,
-    "direction_deg": 90.0,
-    "direction_compass": "E",
-    "gust_knots": null,
-    "gust_mph": null,
-    "raw_metar": "METAR PHBK 131651Z AUTO 09003KT 10SM CLR 24/19 A2996 RMK AO2 SLP146 T02390189 PWINO $",
-    "obs_time_utc": 1786639860,
-    "source": "METAR ASOS PHBK (aviationweather.gov)"
-  }
+  "metar_phbk": null
 }
