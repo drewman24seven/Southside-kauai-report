@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-08-14T20:36:52.424580+00:00",
+  "last_updated": "2026-08-14T21:31:29.351659+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 4.0,
-        "direction_deg": 130.0,
-        "direction_compass": "SE",
+        "speed_mph": 3.0,
+        "direction_deg": 80.0,
+        "direction_compass": "E",
         "role": "Primary/Anchor",
         "gust_mph": 6,
         "temp_f": 82,
-        "humidity": 79,
-        "time_local": "2026-08-14 10:36:31",
-        "time_utc": "2026-08-14T20:36:31Z",
+        "humidity": 74,
+        "time_local": "2026-08-14 11:31:09",
+        "time_utc": "2026-08-14T21:31:09Z",
         "status": "Online"
       },
       {
@@ -22,19 +22,19 @@
         "direction_deg": 68.0,
         "direction_compass": "ENE",
         "role": "Verification 1",
-        "gust_mph": 6,
+        "gust_mph": 7,
         "temp_f": 84,
-        "humidity": 72,
-        "time_local": "2026-08-14 10:36:43",
-        "time_utc": "2026-08-14T20:36:43Z",
+        "humidity": 63,
+        "time_local": "2026-08-14 11:31:19",
+        "time_utc": "2026-08-14T21:31:19Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 5.0,
-    "vector_average_speed_mph": 4.3,
-    "average_direction_deg": 92.1,
-    "average_direction_compass": "E",
+    "average_speed_mph": 4.5,
+    "vector_average_speed_mph": 4.5,
+    "average_direction_deg": 72.0,
+    "average_direction_compass": "ENE",
     "direction_reliable": true,
     "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
   },
@@ -2013,34 +2013,34 @@
     "observations": [],
     "surge_ft": null
   },
-  "forecast_text": "PHZ112-150415-\nKauai Leeward Waters-\n508 AM HST Fri Aug 14 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH SATURDAY AFTERNOON...\n...TROPICAL STORM WATCH IN EFFECT...\n\n.TODAY...East northeast winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East 6 feet at 7 seconds and south 4 feet at\n14 seconds. \n.TONIGHT...East northeast winds 20 to 25 knots. Seas 6 to 9 feet.\nWave Detail: East 7 feet at 8 seconds and south 4 feet at\n14 seconds. Isolated showers after midnight. \n.SATURDAY...Northeast winds 20 to 25 knots, rising to 25 to\n30 knots in the afternoon. Seas 7 to 10 feet. Wave Detail: East\n8 feet at 9 seconds and south 4 feet at 13 seconds. Isolated\nshowers in the afternoon. \n.SATURDAY NIGHT...Tropical storm conditions possible. Northeast\nwinds 25 to 30 knots. Gusts up to 50 knots after midnight. Seas\n10 to 14 feet, building to 13 to 18 feet after midnight. Wave\nDetail: East southeast 17 feet at 12 seconds and south 4 feet at\n13 seconds. Scattered showers in the evening, then heavy showers\nlikely after midnight. \n.SUNDAY...Tropical storm conditions possible. East northeast\nwinds 35 to 45 knots. Seas 17 to 22 feet. Wave Detail: East\nsoutheast 22 feet at 12 seconds and south 4 feet at 13 seconds.\nOccasional heavy showers. A slight chance of thunderstorms in the\nafternoon. \n.SUNDAY NIGHT...Tropical storm conditions possible. Occasional\nheavy showers with a slight chance of thunderstorms in the\nevening, then showers likely after midnight. \n.MONDAY...Tropical storm conditions possible. Showers likely,\nmainly in the morning. \n.TUESDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds and south 3 feet at 13 seconds.\nIsolated showers.  \n\nWinds and seas higher in and near tstms.",
+  "forecast_text": "PHZ112-150915-\nKauai Leeward Waters-\n1055 AM HST Fri Aug 14 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH SATURDAY AFTERNOON...\n...TROPICAL STORM WATCH IN EFFECT...\n\n.REST OF TODAY...East northeast winds 20 to 25 knots. Seas 6 to\n8 feet. Wave Detail: East 6 feet at 7 seconds and south 5 feet at\n14 seconds. \n.TONIGHT...East northeast winds 15 to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and south 5 feet at\n14 seconds. Isolated showers after midnight. \n.SATURDAY...Northeast winds 15 to 20 knots, rising to 20 to\n25 knots in the afternoon. Seas 6 to 9 feet. Wave Detail: East\n7 feet at 8 seconds, south 4 feet at 13 seconds and east 3 feet\nat 11 seconds. Isolated showers in the afternoon. \n.SATURDAY NIGHT...Tropical storm conditions possible. Northeast\nwinds 20 to 25 knots, rising to 25 to 30 knots after midnight.\nSeas 7 to 10 feet, building to 9 to 13 feet after midnight. Wave\nDetail: East 11 feet at 9 seconds and south 4 feet at 12 seconds.\nScattered showers in the evening, then heavy showers likely after\nmidnight. \n.SUNDAY...Tropical storm conditions possible. East northeast\nwinds 35 to 45 knots. Seas 7 to 9 feet. Wave Detail: East 8 feet\nat 8 seconds and south 4 feet at 13 seconds. Occasional heavy\nshowers. A slight chance of thunderstorms in the afternoon. \n.SUNDAY NIGHT...Tropical storm conditions possible. Occasional\nheavy showers with a slight chance of thunderstorms in the\nevening, then showers likely after midnight. \n.MONDAY...Tropical storm conditions possible. Showers likely,\nmainly in the morning. \n.TUESDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds and south 3 feet at 13 seconds.\nIsolated showers.  \n\nWinds and seas higher in and near tstms.",
   "wind_khiwaime179": {
-    "speed_mph": 1,
-    "direction_deg": 223,
-    "gust_mph": 9,
-    "temp_f": 89,
-    "humidity": 56,
-    "time_local": "2026-08-14 10:35:00",
-    "time_utc": "2026-08-14T20:35:00Z",
+    "speed_mph": 5,
+    "direction_deg": 204,
+    "gust_mph": 12,
+    "temp_f": 91,
+    "humidity": 54,
+    "time_local": "2026-08-14 11:30:00",
+    "time_utc": "2026-08-14T21:30:00Z",
     "status": "Online"
   },
   "wind_khikalah11": {
     "speed_mph": 0,
-    "direction_deg": 180,
+    "direction_deg": 195,
     "gust_mph": 0,
     "temp_f": 79,
-    "humidity": 78,
-    "time_local": "2026-08-14 10:36:00",
-    "time_utc": "2026-08-14T20:36:00Z",
+    "humidity": 76,
+    "time_local": "2026-08-14 11:30:00",
+    "time_utc": "2026-08-14T21:30:00Z",
     "status": "Online"
   },
   "swell_51208": {
-    "obs_time_utc": "2026-08-14T19:56:00",
+    "obs_time_utc": "2026-08-14T20:56:00",
     "wvht_m": 1.9,
     "wvht_ft": 6.2,
     "dpd_s": 8.0,
-    "mwd_deg": 82.0,
-    "mwd_compass": "E"
+    "mwd_deg": 77.0,
+    "mwd_compass": "ENE"
   },
   "tides_1611347": {
     "predictions": [
@@ -7820,32 +7820,32 @@
     "observations": [],
     "tide_surge_ft": null
   },
-  "forecast_text_110": "PHZ110-150415-\nKauai Northwest Waters-\n508 AM HST Fri Aug 14 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH SATURDAY AFTERNOON...\n...TROPICAL STORM WATCH IN EFFECT...\n\n.TODAY...East northeast winds 20 to 25 knots. Seas 6 to 8 feet.\nWave Detail: East 6 feet at 6 seconds, east 5 feet at 10 seconds\nand south southwest 4 feet at 14 seconds. Isolated showers this\nmorning. \n.TONIGHT...East northeast winds 20 to 25 knots. Seas 7 to 9 feet.\nWave Detail: East 7 feet at 9 seconds and south southwest 4 feet\nat 14 seconds. Isolated showers. \n.SATURDAY...East northeast winds 20 to 25 knots. Seas 8 to\n10 feet. Wave Detail: East 9 feet at 10 seconds and south\nsouthwest 4 feet at 13 seconds. Isolated showers in the morning,\nthen scattered showers in the afternoon. \n.SATURDAY NIGHT...Tropical storm conditions possible. East\nnortheast winds to 25 knots. Seas 9 to 11 feet, building to 10 to\n13 feet after midnight. Wave Detail: East southeast 11 feet at\n11 seconds, east 4 feet at 8 seconds and south southwest 4 feet\nat 12 seconds. Scattered showers in the evening, then heavy\nshowers likely after midnight. \n.SUNDAY...Tropical storm conditions possible. East northeast\nwinds 25 to 30 knots, rising to 30 to 35 knots in the afternoon.\nGusts up to 50 knots. Seas 11 to 15 feet. Wave Detail: East\nsoutheast 14 feet at 9 seconds and south 4 feet at 12 seconds.\nHeavy showers likely. A slight chance of thunderstorms in the\nafternoon. \n.SUNDAY NIGHT...Tropical storm conditions possible. Numerous\nheavy showers with a slight chance of thunderstorms in the\nevening, then scattered showers after midnight. \n.MONDAY...Tropical storm conditions possible. Scattered showers,\nmainly in the morning. \n.TUESDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds. Isolated showers, then\nscattered showers after midnight.  \n\nWinds and seas higher in and near tstms.",
-  "forecast_text_111": "PHZ111-150415-\nKauai Windward Waters-\n508 AM HST Fri Aug 14 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH SATURDAY AFTERNOON...\n...TROPICAL STORM WATCH IN EFFECT...\n\n.TODAY...East northeast winds 20 to 25 knots. Seas 6 to 9 feet.\nWave Detail: East 5 feet at 6 seconds, east southeast 5 feet at\n10 seconds and south 4 feet at 14 seconds. Scattered showers this\nmorning. Isolated showers this afternoon. \n.TONIGHT...East northeast winds 20 to 25 knots. Seas 8 to\n11 feet. Wave Detail: East southeast 8 feet at 8 seconds, east\nsoutheast 6 feet at 11 seconds and south 4 feet at 14 seconds.\nIsolated showers. \n.SATURDAY...East northeast winds 20 to 25 knots. Seas 9 to\n12 feet. Wave Detail: East southeast 10 feet at 10 seconds and\nsouth 4 feet at 13 seconds. Isolated showers in the morning, then\nscattered showers in the afternoon. \n.SATURDAY NIGHT...Tropical storm conditions possible. East\nnortheast winds 25 to 30 knots. Gusts up to 50 knots. Seas 11 to\n13 feet, building to 13 to 16 feet after midnight. Wave Detail:\nEast southeast 14 feet at 9 seconds and south 4 feet at\n13 seconds. Heavy showers. \n.SUNDAY...Tropical storm conditions possible. East northeast\nwinds 30 to 35 knots, veering to east 25 to 35 knots in the\nafternoon. Gusts up to 50 knots. Seas 14 to 19 feet, subsiding to\n11 to 13 feet in the afternoon. Wave Detail: South southeast\n17 feet at 10 seconds, east 4 feet at 8 seconds and south 4 feet\nat 13 seconds. Occasional heavy showers with a slight chance of\nthunderstorms. \n.SUNDAY NIGHT...East winds 20 to 25 knots. Gusts up to 35 knots\nin the evening. Seas 10 to 11 feet, subsiding to 8 to 11 feet\nafter midnight. Wave Detail: East 10 feet at 8 seconds and south\n4 feet at 15 seconds. Numerous heavy showers with a slight chance\nof thunderstorms in the evening, then scattered showers after\nmidnight. \n.MONDAY...East winds 15 to 20 knots. Seas 5 to 8 feet. Wave\nDetail: East 7 feet at 7 seconds and south 4 feet at 14 seconds.\nScattered showers, mainly in the morning. \n.TUESDAY...East winds to 15 knots. Seas 4 to 6 feet. Wave Detail:\nEast southeast 5 feet at 6 seconds. Isolated showers through the\nnight, then scattered showers through the day.  \n\nWinds and seas higher in and near tstms.",
+  "forecast_text_110": "PHZ110-150915-\nKauai Northwest Waters-\n1055 AM HST Fri Aug 14 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH SATURDAY AFTERNOON...\n...TROPICAL STORM WATCH IN EFFECT...\n\n.REST OF TODAY...East northeast winds to 20 knots. Seas 6 to\n9 feet. Wave Detail: East 7 feet at 10 seconds and south\nsouthwest 4 feet at 14 seconds. Isolated showers late this\nmorning. \n.TONIGHT...East northeast winds to 20 knots. Seas 7 to 9 feet.\nWave Detail: East 7 feet at 11 seconds and south southwest 4 feet\nat 14 seconds. Isolated showers. \n.SATURDAY...East northeast winds 20 to 25 knots. Seas 7 to\n9 feet. Wave Detail: East 8 feet at 10 seconds and south\nsouthwest 4 feet at 13 seconds. Isolated showers in the morning,\nthen scattered showers in the afternoon. \n.SATURDAY NIGHT...Tropical storm conditions possible. Northeast\nwinds 20 to 25 knots, becoming east northeast 25 to 30 knots\nafter midnight. Seas 7 to 10 feet, building to 9 to 11 feet after\nmidnight. Wave Detail: East 10 feet at 9 seconds and south 4 feet\nat 12 seconds. Scattered showers in the evening, then heavy\nshowers likely after midnight. \n.SUNDAY...Tropical storm conditions possible. East northeast\nwinds 25 to 35 knots. Seas 8 to 9 feet. Wave Detail: East 8 feet\nat 9 seconds and south 4 feet at 12 seconds. Heavy showers\nlikely. A slight chance of thunderstorms in the afternoon. \n.SUNDAY NIGHT...Tropical storm conditions possible. Numerous\nheavy showers with a slight chance of thunderstorms in the\nevening, then scattered showers after midnight. \n.MONDAY...Tropical storm conditions possible. Scattered showers,\nmainly in the morning. \n.TUESDAY...East winds 15 to 20 knots. Seas 5 to 7 feet. Wave\nDetail: East 5 feet at 6 seconds and east 3 feet at 9 seconds.\nIsolated showers, then scattered showers after midnight.  \n\nWinds and seas higher in and near tstms.",
+  "forecast_text_111": "PHZ111-150915-\nKauai Windward Waters-\n1055 AM HST Fri Aug 14 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH SATURDAY AFTERNOON...\n...TROPICAL STORM WATCH IN EFFECT...\n\n.REST OF TODAY...East northeast winds 15 to 20 knots. Seas 7 to\n10 feet. Wave Detail: East southeast 7 feet at 10 seconds and\nsouth 5 feet at 14 seconds. Scattered showers late this morning.\nIsolated showers this afternoon. \n.TONIGHT...East northeast winds 15 to 20 knots. Seas 9 to\n11 feet. Wave Detail: East southeast 8 feet at 11 seconds and\nsouth 4 feet at 14 seconds. Isolated showers. \n.SATURDAY...East northeast winds to 20 knots. Seas 9 to 10 feet.\nWave Detail: East southeast 8 feet at 10 seconds and south 4 feet\nat 13 seconds. Isolated showers in the morning, then scattered\nshowers in the afternoon. \n.SATURDAY NIGHT...Tropical storm conditions possible. East\nnortheast winds 20 to 25 knots. Seas 9 to 12 feet, building to\n11 to 13 feet after midnight. Wave Detail: East southeast 11 feet\nat 9 seconds and south 4 feet at 13 seconds. Heavy showers. \n.SUNDAY...Tropical storm conditions possible. East northeast\nwinds 25 to 35 knots. Seas 9 to 11 feet. Wave Detail: East 9 feet\nat 9 seconds and south 4 feet at 13 seconds. Occasional heavy\nshowers with a slight chance of thunderstorms. \n.SUNDAY NIGHT...East winds 20 to 25 knots. Seas 9 to 10 feet.\nWave Detail: East 8 feet at 9 seconds and south 4 feet at\n15 seconds. Numerous heavy showers with a slight chance of\nthunderstorms in the evening, then scattered showers after\nmidnight. \n.MONDAY...East winds 15 to 20 knots. Seas 6 to 9 feet. Wave\nDetail: East 6 feet at 8 seconds and south 4 feet at 14 seconds.\nScattered showers, mainly in the morning. \n.TUESDAY...East winds to 15 knots. Seas 5 to 7 feet. Wave Detail:\nEast 5 feet at 6 seconds and east 3 feet at 9 seconds. Isolated\nshowers through the night, then scattered showers through the\nday.  \n\nWinds and seas higher in and near tstms.",
   "model_wind_port_allen": {
-    "speed_mph": 13.8,
-    "speed_knots": 12.0,
-    "direction_deg": 60,
+    "speed_mph": 16.1,
+    "speed_knots": 14.0,
+    "direction_deg": 70,
     "direction_compass": "ENE",
     "source": "NWS gridded forecast (Honolulu WFO HFO/82,171)"
   },
   "model_wind_kikiaola": {
     "speed_mph": 13.8,
     "speed_knots": 12.0,
-    "direction_deg": 100,
-    "direction_compass": "E",
+    "direction_deg": 50,
+    "direction_compass": "NE",
     "source": "NWS gridded forecast (Honolulu WFO HFO/75,174)"
   },
   "metar_phbk": {
     "station": "PHBK",
-    "speed_knots": 7.0,
-    "speed_mph": 8.1,
-    "direction_deg": 230.0,
-    "direction_compass": "SW",
+    "speed_knots": 8.0,
+    "speed_mph": 9.2,
+    "direction_deg": 270.0,
+    "direction_compass": "W",
     "gust_knots": null,
     "gust_mph": null,
-    "raw_metar": "METAR PHBK 141951Z AUTO 23007KT 10SM BKN044 28/21 A2995 RMK AO2 SLP144 T02830211 PWINO $",
-    "obs_time_utc": 1786737060,
+    "raw_metar": "SPECI PHBK 142108Z AUTO 27008KT 10SM SCT041 29/21 A2994 RMK AO2 T02890211 PWINO $",
+    "obs_time_utc": 1786741680,
     "source": "METAR ASOS PHBK (aviationweather.gov)"
   }
 }
