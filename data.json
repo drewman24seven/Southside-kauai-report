@@ -1,39 +1,39 @@
 {
-  "last_updated": "2026-08-14T06:19:21.327036+00:00",
+  "last_updated": "2026-08-14T07:57:54.747683+00:00",
   "cdip_health": "Laggard",
   "wind": {
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 3.0,
-        "direction_deg": 25.0,
+        "speed_mph": 7.0,
+        "direction_deg": 30.0,
         "direction_compass": "NNE",
         "role": "Primary/Anchor",
-        "gust_mph": 3,
+        "gust_mph": 9,
         "temp_f": 79,
         "humidity": 84,
-        "time_local": "2026-08-13 20:19:10",
-        "time_utc": "2026-08-14T06:19:10Z",
+        "time_local": "2026-08-13 21:57:34",
+        "time_utc": "2026-08-14T07:57:34Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 8.0,
+        "speed_mph": 6.0,
         "direction_deg": 90.0,
         "direction_compass": "E",
         "role": "Verification 1",
-        "gust_mph": 10,
-        "temp_f": 80,
-        "humidity": 76,
-        "time_local": "2026-08-13 20:19:07",
-        "time_utc": "2026-08-14T06:19:07Z",
+        "gust_mph": 7,
+        "temp_f": 79,
+        "humidity": 78,
+        "time_local": "2026-08-13 21:57:43",
+        "time_utc": "2026-08-14T07:57:43Z",
         "status": "Online"
       }
     ],
     "num_stations": 2,
-    "average_speed_mph": 5.5,
-    "vector_average_speed_mph": 4.8,
-    "average_direction_deg": 73.6,
+    "average_speed_mph": 6.5,
+    "vector_average_speed_mph": 5.6,
+    "average_direction_deg": 57.5,
     "average_direction_compass": "ENE",
     "direction_reliable": true,
     "method": "speed-weighted vector average for direction; arithmetic mean for average_speed_mph"
@@ -2016,30 +2016,30 @@
   "forecast_text": "PHZ112-141615-\nKauai Leeward Waters-\n505 PM HST Thu Aug 13 2026\n\n.TONIGHT...East northeast winds to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 7 feet at 7 seconds and south 4 feet at\n15 seconds. Isolated showers after midnight. \n.FRIDAY...East northeast winds to 20 knots. Seas 6 to 8 feet.\nWave Detail: East 6 feet at 7 seconds and south 5 feet at\n14 seconds. \n.FRIDAY NIGHT...East northeast winds 20 to 25 knots. Seas 6 to\n9 feet. Wave Detail: East 7 feet at 8 seconds and south 4 feet at\n14 seconds. Isolated showers after midnight. \n.SATURDAY...Northeast winds 20 to 25 knots, rising to 25 to\n30 knots in the afternoon. Seas 7 to 9 feet, building to 8 to\n11 feet in the afternoon. Wave Detail: East southeast 10 feet at\n10 seconds and south 4 feet at 13 seconds. Isolated showers in\nthe morning, then scattered showers in the afternoon. \n.SATURDAY NIGHT...Tropical storm conditions possible. Northeast\nwinds 25 to 30 knots, rising to 30 to 40 knots after midnight.\nSeas 11 to 15 feet, building to 14 to 19 feet after midnight.\nWave Detail: Southeast 18 feet at 12 seconds and south 4 feet at\n13 seconds. Scattered showers in the evening, then showers likely\nafter midnight. \n.SUNDAY...Tropical storm conditions possible. Occasional heavy\nshowers with a slight chance of thunderstorms. \n.SUNDAY NIGHT...Tropical storm conditions possible. A slight\nchance of thunderstorms in the evening. Heavy showers likely. \n.MONDAY...East winds 15 to 20 knots. Seas 6 to 9 feet. Wave\nDetail: East 7 feet at 6 seconds and south 4 feet at 14 seconds.\nShowers likely, mainly in the morning. \n.TUESDAY...East winds 15 to 20 knots. Seas 4 to 6 feet. Wave\nDetail: East 5 feet at 6 seconds and south 3 feet at 13 seconds.\nIsolated showers.  \n\nWinds and seas higher in and near tstms.",
   "wind_khiwaime179": {
     "speed_mph": 0,
-    "direction_deg": 66,
-    "gust_mph": 2,
-    "temp_f": 81,
-    "humidity": 72,
-    "time_local": "2026-08-13 20:15:00",
-    "time_utc": "2026-08-14T06:15:00Z",
+    "direction_deg": 195,
+    "gust_mph": 4,
+    "temp_f": 80,
+    "humidity": 66,
+    "time_local": "2026-08-13 21:55:00",
+    "time_utc": "2026-08-14T07:55:00Z",
     "status": "Online"
   },
   "wind_khikalah11": {
     "speed_mph": 0,
-    "direction_deg": 270,
+    "direction_deg": 246,
     "gust_mph": 0,
-    "temp_f": 82,
-    "humidity": 72,
-    "time_local": "2026-08-13 20:18:00",
-    "time_utc": "2026-08-14T06:18:00Z",
+    "temp_f": 81,
+    "humidity": 73,
+    "time_local": "2026-08-13 21:57:00",
+    "time_utc": "2026-08-14T07:57:00Z",
     "status": "Online"
   },
   "swell_51208": {
-    "obs_time_utc": "2026-08-14T05:56:00",
-    "wvht_m": 1.3,
-    "wvht_ft": 4.3,
+    "obs_time_utc": "2026-08-14T07:26:00",
+    "wvht_m": 1.4,
+    "wvht_ft": 4.6,
     "dpd_s": 6.0,
-    "mwd_deg": 69.0,
+    "mwd_deg": 68.0,
     "mwd_compass": "ENE"
   },
   "tides_1611347": {
@@ -7844,8 +7844,8 @@
     "direction_compass": "VAR",
     "gust_knots": null,
     "gust_mph": null,
-    "raw_metar": "METAR PHBK 140551Z AUTO 00000KT 10SM CLR 28/20 A2991 RMK AO2 SLP130 T02780200 10311 20278 53009 PWINO $",
-    "obs_time_utc": 1786686660,
+    "raw_metar": "METAR PHBK 140751Z AUTO 00000KT 10SM CLR 27/21 A2995 RMK AO2 SLP143 T02670211 PWINO $",
+    "obs_time_utc": 1786693860,
     "source": "METAR ASOS PHBK (aviationweather.gov)"
   }
 }
