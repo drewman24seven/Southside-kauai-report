@@ -84,23 +84,31 @@ def group_velocity_kmh(period_s):
     return 0.78 * period_s * 3.6
  
  
-def compute_lag_hours(mwd_deg, dpd_s):
+def compute_lag_hours(mwd_deg, dpd_s, buoy_coords=None, coast_coords=None):
     """
-    Physics-based lag (hours) between Barbers Point and the South Shore
+    Physics-based lag (hours) between buoy and coast coordinates
     for a swell with the given direction (MWD, degrees FROM which it
-    comes) and dominant period. Positive = Barbers Point sees it first
-    (South Shore lags behind). Negative = South Shore actually gets it
-    first (common for more southwesterly swell, since Kauai sits west
-    of Oahu).
-    Returns (lag_hours, confidence) or (None, "unknown") if inputs missing.
+    comes) and dominant period. Positive = Buoy sees it first.
+    Negative = Coast receives it first.
     """
     if mwd_deg is None or dpd_s is None:
         return None, "unknown"
  
+    if buoy_coords is None:
+        buoy_coords = BARBERS_POINT
+    if coast_coords is None:
+        coast_coords = SOUTH_SHORE_MID
+ 
+    lat_mid = (buoy_coords[0] + coast_coords[0]) / 2
+    km_per_deg_lat = 111.32
+    km_per_deg_lon = 111.32 * math.cos(math.radians(lat_mid))
+    d_east_km = (coast_coords[1] - buoy_coords[1]) * km_per_deg_lon
+    d_north_km = (coast_coords[0] - buoy_coords[0]) * km_per_deg_lat
+ 
     travel_bearing = (mwd_deg + 180) % 360
     tx = math.sin(math.radians(travel_bearing))
     ty = math.cos(math.radians(travel_bearing))
-    projected_km = _D_EAST_KM * tx + _D_NORTH_KM * ty
+    projected_km = d_east_km * tx + d_north_km * ty
  
     v = group_velocity_kmh(dpd_s)
     if not v:
@@ -141,6 +149,17 @@ def parse_series(series):
         r["wvht_ft"] = round(r["wvht_m"] * M_TO_FT, 1)
         if r.get("mwd_deg") is not None:
             r["mwd_compass"] = deg_to_compass(r["mwd_deg"])
+            
+        if "primary_swell" in r and r["primary_swell"].get("height_m") is not None:
+            r["primary_swell"]["height_ft"] = round(r["primary_swell"]["height_m"] * M_TO_FT, 1)
+            if r["primary_swell"].get("direction_deg") is not None:
+                r["primary_swell"]["compass"] = deg_to_compass(r["primary_swell"]["direction_deg"])
+                
+        if "wind_wave" in r and r["wind_wave"].get("height_m") is not None:
+            r["wind_wave"]["height_ft"] = round(r["wind_wave"]["height_m"] * M_TO_FT, 1)
+            if r["wind_wave"].get("direction_deg") is not None:
+                r["wind_wave"]["compass"] = deg_to_compass(r["wind_wave"]["direction_deg"])
+                
         out.append(r)
     out.sort(key=lambda r: r["_dt"])
     return out
@@ -158,30 +177,30 @@ def strip_internal(row):
     return {k: v for k, v in row.items() if k != "_dt"}
  
  
-def estimate_current_south_shore(series, now_dt):
+def estimate_current_south_shore(series, now_dt, buoy_coords=None, coast_coords=None):
     """Look BACKWARD (or forward, if lag is negative) in the buoy history
-    to estimate what's hitting the South Shore right now. Iterates once
+    to estimate what's hitting the target coast right now. Iterates once
     since the lag depends on the period/direction of the row we land on."""
     if not series:
         return None, None
  
     # First pass: use the most recent row's own lag as an initial guess.
     latest = series[-1]
-    guess_lag, _ = compute_lag_hours(latest.get("mwd_deg"), latest.get("dpd_s"))
+    guess_lag, _ = compute_lag_hours(latest.get("mwd_deg"), latest.get("dpd_s"), buoy_coords, coast_coords)
     if guess_lag is None:
         guess_lag = 1.5
     target_dt = now_dt - timedelta(hours=guess_lag)
     candidate = closest_row(series, target_dt)
  
     # Second pass: refine using that candidate's own direction/period.
-    lag, confidence = compute_lag_hours(candidate.get("mwd_deg"), candidate.get("dpd_s"))
+    lag, confidence = compute_lag_hours(candidate.get("mwd_deg"), candidate.get("dpd_s"), buoy_coords, coast_coords)
     if lag is None:
         lag = guess_lag
         confidence = "unknown"
     refined_target = now_dt - timedelta(hours=lag)
     refined = closest_row(series, refined_target)
  
-    lag, confidence = compute_lag_hours(refined.get("mwd_deg"), refined.get("dpd_s"))
+    lag, confidence = compute_lag_hours(refined.get("mwd_deg"), refined.get("dpd_s"), buoy_coords, coast_coords)
     gap_hours = abs((now_dt - refined["_dt"]).total_seconds()) / 3600.0
  
     estimate = strip_internal(refined)
@@ -219,6 +238,13 @@ def main():
     except ValueError:
         now_dt = datetime.now(timezone.utc).replace(tzinfo=None)
  
+    buoy_coords = payload.get("buoy_coords")
+    coast_coords = payload.get("coast_coords")
+    if buoy_coords:
+        buoy_coords = tuple(buoy_coords)
+    if coast_coords:
+        coast_coords = tuple(coast_coords)
+ 
     primary_series = parse_series(payload.get("primary_series"))
     verification_series = parse_series(payload.get("verification_series"))
     tide_surge_ft = payload.get("tide_surge_ft")
@@ -227,12 +253,12 @@ def main():
         print(json.dumps({"error": "primary_series with at least one valid row is required"}))
         sys.exit(1)
  
-    current_estimate, latest_row = estimate_current_south_shore(primary_series, now_dt)
+    current_estimate, latest_row = estimate_current_south_shore(primary_series, now_dt, buoy_coords, coast_coords)
     latest_row_out = strip_internal(latest_row)
  
     verification_estimate = None
     if verification_series:
-        verification_estimate, _ = estimate_current_south_shore(verification_series, now_dt)
+        verification_estimate, _ = estimate_current_south_shore(verification_series, now_dt, buoy_coords, coast_coords)
  
     agreement = None
     if verification_estimate and current_estimate.get("mwd_deg") is not None and verification_estimate.get("mwd_deg") is not None:
