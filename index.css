@@ -1,0 +1,41 @@
+
+/* Multi-Zone Wind Route Styling */
+.route-wind-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+.route-wind-container .wind-column {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.transit-leg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text);
+    opacity: 0.6;
+    padding: 0 0.5rem;
+}
+
+.transit-leg svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .route-wind-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .transit-leg {
+        transform: rotate(90deg);
+        padding: 0.5rem 0;
+    }
+}
