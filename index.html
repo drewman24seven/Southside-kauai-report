@@ -198,41 +198,68 @@
                         <span class="surge-badge" id="tide-surge-badge">Surge: Offline</span>
                     </div>
                 </div>
-                <div class="card-body marine-row swell-row-container" style="border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.8rem; justify-content: space-between; width: 100%; display: flex;">
-                    <div class="swell-stats">
-                        <div class="stat-main" style="margin-bottom: 0.5rem;">
-                            <div class="stat-number" id="swell-height">--.-</div>
-                            <div class="stat-unit">FT</div>
+                <div class="card-body marine-row swell-tide-row" style="border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.8rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; width: 100%; align-items: center;">
+                    <!-- Multi-Swell Container -->
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 0.8rem; width: 100%;">
+                        
+                        <!-- Primary Swell -->
+                        <div class="swell-stats primary-swell" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 0.8rem; border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-cyan); letter-spacing: 0.5px; margin-bottom: 0.2rem;">Groundswell</div>
+                                <div class="stat-main" style="margin-bottom: 0;">
+                                    <div class="stat-number" id="swell-height">--.-</div>
+                                    <div class="stat-unit">FT</div>
+                                </div>
+                            </div>
+                            <div class="stat-meta-grid" style="grid-template-columns: repeat(2, 1fr); gap: 0.5rem; text-align: right;">
+                                <div class="sub-stat">
+                                    <span class="sub-label">Period</span>
+                                    <span class="sub-val" id="swell-period" style="font-family: var(--font-mono); color: var(--text-light);">--s</span>
+                                </div>
+                                <div class="sub-stat">
+                                    <span class="sub-label">Dir</span>
+                                    <span class="sub-val" id="swell-dir" style="font-family: var(--font-mono); color: var(--text-light);">---° --</span>
+                                </div>
+                                <div class="sub-stat">
+                                    <span class="sub-label">Lag</span>
+                                    <span class="sub-val" id="swell-lag">-.--h</span>
+                                </div>
+                                <div class="sub-stat">
+                                    <span class="sub-label">Profile</span>
+                                    <span class="sub-val confidence-high" id="swell-conf">---</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat-meta-grid">
-                            <div class="sub-stat">
-                                <span class="sub-label">Period</span>
-                                <span class="sub-val" id="swell-period">--s</span>
+
+                        <!-- Wind Wave (Secondary) -->
+                        <div class="swell-stats wind-wave" id="wind-wave-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.05); padding: 0.6rem 0.8rem; border-radius: 6px;">
+                            <div style="flex: 1;">
+                                <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 0.1rem;">Wind Wave</div>
+                                <div style="display: flex; align-items: baseline; gap: 0.2rem;">
+                                    <div id="wind-wave-height" style="font-size: 1.2rem; font-weight: 700; color: var(--text-light);">--.-</div>
+                                    <div style="font-size: 0.65rem; color: var(--text-muted);">FT</div>
+                                </div>
                             </div>
-                            <div class="sub-stat">
-                                <span class="sub-label">Direction</span>
-                                <span class="sub-val" id="swell-dir">---° --</span>
-                            </div>
-                            <div class="sub-stat">
-                                <span class="sub-label">Buoy Lag</span>
-                                <span class="sub-val" id="swell-lag">-.--h</span>
-                            </div>
-                            <div class="sub-stat">
-                                <span class="sub-label">Swell Profile</span>
-                                <span class="sub-val confidence-high" id="swell-conf">---</span>
+                            <div style="display: flex; gap: 1rem; text-align: right;">
+                                <div class="sub-stat">
+                                    <span class="sub-label">Period</span>
+                                    <span class="sub-val" id="wind-wave-period" style="font-family: var(--font-mono); color: var(--text-light);">--s</span>
+                                </div>
+                                <div class="sub-stat">
+                                    <span class="sub-label">Dir</span>
+                                    <span class="sub-val" id="wind-wave-dir" style="font-family: var(--font-mono); color: var(--text-light);">---° --</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="dir-text-display swell-dir-display">
+                    <div class="dir-text-display swell-dir-display" style="flex: 0 0 auto;">
                         <div class="dir-abbr" id="swell-dir-abbr">--</div>
                         <div class="dir-deg" id="swell-dir-deg">---°</div>
                     </div>
-                </div>
 
-                <div class="card-body marine-row tide-row-container" style="padding-top: 0.8rem; padding-bottom: 0.8rem; justify-content: space-between; width: 100%; display: flex; align-items: center;">
-                    <div class="tide-graph-container" style="flex: 1; margin-bottom: 0; margin-right: 1.25rem; background: rgba(0, 0, 0, 0.1); padding: 0.4rem 0.6rem 0.2rem;">
-                        <svg class="tide-curve" viewBox="0 0 240 80" id="tide-svg" style="height: 60px;">
+                    <div class="tide-graph-compact" style="flex: 1; min-width: 150px; background: rgba(0, 0, 0, 0.1); padding: 0.4rem 0.6rem; border-radius: 8px;">
+                        <svg class="tide-curve" viewBox="0 0 240 60" id="tide-svg" style="height: 60px; width: 100%;">
                             <defs>
                                 <linearGradient id="tide-grad" x1="0%" y1="0%" x2="0%" y2="100%">
                                     <stop offset="0%" stop-color="rgba(78, 205, 196, 0.4)" />
@@ -243,18 +270,13 @@
                             <path class="tide-area-path" d="" fill="url(#tide-grad)"/>
                             <path class="tide-line-path" d="" fill="none" stroke="var(--accent-teal)" stroke-width="2"/>
                             <!-- Indicator line for current time -->
-                            <line class="current-time-line" x1="120" y1="0" x2="120" y2="80" stroke="#e0a96d" stroke-dasharray="3,3"/>
-                            <circle class="current-time-dot" cx="120" cy="40" r="4" fill="#e0a96d"/>
+                            <line class="current-time-line" x1="120" y1="0" x2="120" y2="60" stroke="#e0a96d" stroke-dasharray="3,3"/>
+                            <circle class="current-time-dot" cx="120" cy="30" r="4" fill="#e0a96d"/>
                         </svg>
-                        <div class="tide-axis" style="font-size: 0.65rem; margin-top: 0.2rem;">
-                            <span>00:00</span>
-                            <span>06:00</span>
-                            <span>12:00</span>
-                            <span>18:00</span>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">
+                            <span>Now</span>
+                            <span>+6hr</span>
                         </div>
-                    </div>
-                    <div class="tide-extreme-stats" id="tide-extremes" style="flex-direction: column; justify-content: center; gap: 0.4rem; flex-wrap: nowrap; display: flex;">
-                        <!-- High and Low tides list -->
                     </div>
                 </div>
 
@@ -365,9 +387,39 @@
                             <span class="surge-badge" id="napali-tide-surge-badge">Surge: Offline</span>
                         </div>
                     </div>
-                    <div class="card-body marine-row" style="padding-top: 0.8rem; padding-bottom: 0.8rem; justify-content: space-between; width: 100%; display: flex; align-items: center; border-bottom: none;">
-                        <div class="tide-graph-container" style="flex: 1; margin-bottom: 0; margin-right: 1.25rem; background: rgba(0, 0, 0, 0.1); padding: 0.4rem 0.6rem 0.2rem;">
-                            <svg class="tide-curve" viewBox="0 0 240 80" id="napali-tide-svg" style="height: 60px;">
+                    <div class="card-body marine-row swell-tide-row" style="border-bottom: none; padding-bottom: 0.8rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; width: 100%; align-items: center;">
+                        <div class="swell-stats" style="flex: 1; min-width: 180px;">
+                            <div class="stat-main" style="margin-bottom: 0.5rem;">
+                                <div class="stat-number" id="napali-transit-height">--.-</div>
+                                <div class="stat-unit">FT</div>
+                            </div>
+                            <div class="stat-meta-grid">
+                                <div class="sub-stat">
+                                    <span class="sub-label">Period</span>
+                                    <span class="sub-val" id="napali-transit-period">--s</span>
+                                </div>
+                                <div class="sub-stat">
+                                    <span class="sub-label">Direction</span>
+                                    <span class="sub-val" id="napali-transit-dir">---° --</span>
+                                </div>
+                                <div class="sub-stat">
+                                    <span class="sub-label">Tide Surge</span>
+                                    <span class="sub-val" id="napali-tide-surge">--</span>
+                                </div>
+                                <div class="sub-stat">
+                                    <span class="sub-label">Swell Profile</span>
+                                    <span class="sub-val confidence-high" id="napali-transit-conf">---</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dir-text-display swell-dir-display" style="flex: 0 0 auto;">
+                            <div class="dir-abbr" id="napali-transit-dir-abbr">--</div>
+                            <div class="dir-deg" id="napali-transit-dir-deg">---°</div>
+                        </div>
+                        
+                        <div class="tide-graph-compact" style="flex: 1; min-width: 150px; background: rgba(0, 0, 0, 0.1); padding: 0.4rem 0.6rem; border-radius: 8px;">
+                            <svg class="tide-curve" viewBox="0 0 240 60" id="napali-tide-svg" style="height: 60px; width: 100%;">
                                 <defs>
                                     <linearGradient id="napali-tide-grad" x1="0%" y1="0%" x2="0%" y2="100%">
                                         <stop offset="0%" stop-color="rgba(78, 205, 196, 0.4)" />
@@ -377,17 +429,10 @@
                                 <g class="loading-windows-group"></g>
                                 <path class="tide-area-path" d="" fill="url(#napali-tide-grad)"/>
                                 <path class="tide-line-path" d="" fill="none" stroke="var(--accent-teal)" stroke-width="2"/>
-                                <line class="current-time-line" x1="120" y1="0" x2="120" y2="80" stroke="#e0a96d" stroke-dasharray="3,3"/>
-                                <circle class="current-time-dot" cx="120" cy="40" r="4" fill="#e0a96d"/>
+                                <!-- Indicator line for current time -->
+                                <line class="current-time-line" x1="120" y1="0" x2="120" y2="60" stroke="#e0a96d" stroke-dasharray="3,3"/>
+                                <circle class="current-time-dot" cx="120" cy="30" r="4" fill="#e0a96d"/>
                             </svg>
-                            <div class="tide-axis" style="font-size: 0.65rem; margin-top: 0.2rem;">
-                                <span>00:00</span>
-                                <span>06:00</span>
-                                <span>12:00</span>
-                                <span>18:00</span>
-                            </div>
-                        </div>
-                        <div class="tide-extreme-stats" id="napali-tide-extremes" style="flex-direction: column; justify-content: center; gap: 0.4rem; flex-wrap: nowrap; display: flex;">
                         </div>
                     </div>
                 </section>
@@ -421,48 +466,8 @@
                     </div>
                 </div>
                 <div class="card-body wind-body">
-                    <div class="twin-wind-container">
-                        <!-- Column 1: PWS Wind -->
-                        <div class="wind-column pws-column">
-                            <h3 class="wind-column-title" id="pws-wind-title">Landing</h3>
-                            <span class="trend-badge" id="wind-reliability" style="margin-bottom: 0.5rem; font-size: 0.65rem;">Checking...</span>
-                            <div class="wind-main-stat">
-                                <div class="stat-number compact" id="wind-speed">--.-</div>
-                                <div class="stat-unit">MPH</div>
-                            </div>
-                            <div class="wind-abbr-under" id="wind-dir-abbr">--</div>
-                            <div class="wind-column-meta">
-                                <div class="column-sub-stat">
-                                    <span class="sub-label">Avg Gusts</span>
-                                    <span class="sub-val" id="wind-gusts">-- mph</span>
-                                </div>
-                                <div class="column-sub-stat">
-                                    <span class="sub-label">Direction</span>
-                                    <span class="sub-val" id="wind-dir">---°</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Column 2: NAM Wind -->
-                        <div class="wind-column model-column">
-                            <h3 class="wind-column-title" id="model-wind-title">Exposed Points</h3>
-                            <span class="trend-badge" id="model-wind-reliability" style="margin-bottom: 0.5rem; font-size: 0.65rem;">Checking...</span>
-                            <div class="wind-main-stat">
-                                <div class="stat-number compact" id="model-wind-speed">--.-</div>
-                                <div class="stat-unit">KT</div>
-                            </div>
-                            <div class="wind-abbr-under" id="model-wind-dir-abbr">--</div>
-                            <div class="wind-column-meta">
-                                <div class="column-sub-stat">
-                                    <span class="sub-label">Wind Speed</span>
-                                    <span class="sub-val" id="model-wind-mph">--.- mph</span>
-                                </div>
-                                <div class="column-sub-stat">
-                                    <span class="sub-label">Direction</span>
-                                    <span class="sub-val" id="model-wind-dir">---°</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="twin-wind-container route-wind-container" id="dynamic-wind-container">
+                        <!-- Dynamically populated via JS: Harbor -> Transit -> Destination -->
                     </div>
 
                     <!-- Transit Comfort Levels Section -->
@@ -527,6 +532,21 @@
          </main>
     </div>
 
+    <!-- Universal Site Intel Modal Window (Section 6) -->
+    <div class="site-intel-modal" id="site-intel-modal">
+        <div class="modal-header">
+            <div class="modal-title-group">
+                <span class="modal-badge">SITE INTEL</span>
+                <h3 id="modal-site-title">Site Overview</h3>
+            </div>
+            <button class="close-modal-btn" id="close-site-intel-btn" aria-label="Close Site Intel">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-site-content">
+            <!-- Dynamic Site Hydrodynamics Intel Rendered Here -->
+        </div>
+    </div>
+    <div class="modal-overlay" id="site-intel-overlay"></div>
+
     <!-- Settings Drawer Container (Section 5) -->
     <div class="settings-drawer" id="settings-drawer">
         <div class="drawer-header">
@@ -551,6 +571,32 @@
                 </div>
             </div>
 
+            <!-- Pro Vessel Profile -->
+            <div class="settings-section">
+                <h4 style="color: var(--accent-gold); display: flex; align-items: center; gap: 0.4rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 22l10-4 10 4L12 2z"/></svg>
+                    Pro Vessel Profile
+                </h4>
+                <div class="form-group" style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0;">
+                    <label for="toggle-pro-user" style="color: var(--accent-gold); font-weight: bold; margin-bottom: 0;">Pro Account Activated</label>
+                    <input type="checkbox" id="toggle-pro-user" checked style="width: 18px; height: 18px;">
+                </div>
+                <div class="form-group">
+                    <label for="select-vessel-type">Hull Type</label>
+                    <select id="select-vessel-type" class="settings-select">
+                        <option value="rhib" selected>RHIB (Rigid Hull Inflatable)</option>
+                        <option value="catamaran">Catamaran (Power/Sail)</option>
+                        <option value="monohull">Monohull / V-Hull</option>
+                        <option value="yacht">Yacht / Cruiser</option>
+                        <option value="tug">Tug / Commercial</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="range-vessel-length">Length Overall (LOA): <span id="vessel-length-val">26</span> ft</label>
+                    <input type="range" id="range-vessel-length" class="settings-slider" min="15" max="100" value="26">
+                </div>
+            </div>
+
             <!-- Per-Site Tolerances -->
             <div class="settings-section">
                 <h4>Per-Site Safety Tolerances</h4>
@@ -563,6 +609,7 @@
     <!-- Drawer Overlay -->
     <div class="drawer-overlay" id="drawer-overlay"></div>
 
-    <script src="app.js?v=3.5"></script>
+    <script src="data.js"></script>
+    <script type="module" src="app.js?v=3.8"></script>
 </body>
 </html>
