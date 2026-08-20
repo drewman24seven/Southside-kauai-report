@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-20T09:07:06.355349+00:00",
+  "last_updated": "2026-08-20T10:02:23.480877+00:00",
   "cdip_health": "Laggard",
   "islands": {
     "kauai": {
@@ -7,43 +7,43 @@
       "shores": {
         "south": {
           "wind": {
-            "average_speed_mph": 2.0,
-            "vector_average_speed_mph": 1.7,
-            "average_direction_deg": 79.5,
-            "average_direction_compass": "E",
+            "average_speed_mph": 0.7,
+            "vector_average_speed_mph": 0.7,
+            "average_direction_deg": 33.0,
+            "average_direction_compass": "NNE",
             "direction_reliable": true,
             "stations": [
               {
                 "id": "KHIKOLOA25",
-                "speed_mph": 0,
-                "direction_deg": 100,
-                "gust_mph": 1,
-                "temp_f": 77,
-                "humidity": 86,
-                "time_local": "2026-08-19 23:06:14",
-                "time_utc": "2026-08-20T09:06:14Z",
+                "speed_mph": 2,
+                "direction_deg": 33,
+                "gust_mph": 2,
+                "temp_f": 75,
+                "humidity": 92,
+                "time_local": "2026-08-20 00:01:42",
+                "time_utc": "2026-08-20T10:01:42Z",
                 "status": "Online"
               },
               {
                 "id": "KHIKOLOA34",
-                "speed_mph": 5,
-                "direction_deg": 68,
-                "gust_mph": 5,
-                "temp_f": 78,
-                "humidity": 81,
-                "time_local": "2026-08-19 23:06:54",
-                "time_utc": "2026-08-20T09:06:54Z",
+                "speed_mph": 0,
+                "direction_deg": 90,
+                "gust_mph": 0,
+                "temp_f": 77,
+                "humidity": 83,
+                "time_local": "2026-08-20 00:01:54",
+                "time_utc": "2026-08-20T10:01:54Z",
                 "status": "Online"
               },
               {
                 "id": "KHIKOLOA27",
-                "speed_mph": 1,
-                "direction_deg": 165,
-                "gust_mph": 1,
-                "temp_f": 77,
-                "humidity": 84,
-                "time_local": "2026-08-19 23:06:00",
-                "time_utc": "2026-08-20T09:06:00Z",
+                "speed_mph": 0,
+                "direction_deg": 174,
+                "gust_mph": 0,
+                "temp_f": 76,
+                "humidity": 89,
+                "time_local": "2026-08-20 00:01:00",
+                "time_utc": "2026-08-20T10:01:00Z",
                 "status": "Online"
               }
             ],
@@ -75,30 +75,30 @@
           "metar_wind": null,
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T07:30:00",
+              "obs_time_utc": "2026-08-20T09:00:00",
               "wvht_m": 0.8,
-              "dpd_s": 13.3,
-              "mwd_deg": 180,
+              "dpd_s": 12.5,
+              "mwd_deg": 202.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 13.3,
-                "direction_deg": 180,
-                "height_ft": 2.0,
-                "compass": "S"
+                "height_m": 0.5,
+                "period_s": 12.5,
+                "direction_deg": 202.5,
+                "height_ft": 1.6,
+                "compass": "SSW"
               },
               "wind_wave": {
                 "height_m": 0.6,
-                "period_s": 8.3,
+                "period_s": 8.7,
                 "direction_deg": 180,
                 "height_ft": 2.0,
                 "compass": "S"
               },
               "wvht_ft": 2.6,
-              "mwd_compass": "S",
-              "lag_hours": 1.65,
+              "mwd_compass": "SSW",
+              "lag_hours": 0.12,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T07:30:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T09:00:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
@@ -125,35 +125,35 @@
               "lag_hours": 3.13,
               "lag_confidence": "medium",
               "source_obs_time_utc": "2026-07-13T11:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "agreement": {
-              "direction_diff_deg": 22.0,
+              "direction_diff_deg": 45.0,
               "height_diff_ft": 1.0,
-              "confirmed": true
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T07:30:00",
+              "obs_time_utc": "2026-08-20T09:00:00",
               "wvht_m": 0.8,
-              "dpd_s": 13.3,
-              "mwd_deg": 180,
+              "dpd_s": 12.5,
+              "mwd_deg": 202.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 13.3,
-                "direction_deg": 180,
-                "height_ft": 2.0,
-                "compass": "S"
+                "height_m": 0.5,
+                "period_s": 12.5,
+                "direction_deg": 202.5,
+                "height_ft": 1.6,
+                "compass": "SSW"
               },
               "wind_wave": {
                 "height_m": 0.6,
-                "period_s": 8.3,
+                "period_s": 8.7,
                 "direction_deg": 180,
                 "height_ft": 2.0,
                 "compass": "S"
               },
               "wvht_ft": 2.6,
-              "mwd_compass": "S"
+              "mwd_compass": "SSW"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -4045,45 +4045,45 @@
             "station": "PHBK",
             "speed_knots": 4.0,
             "speed_mph": 4.6,
-            "direction_deg": 90.0,
-            "direction_compass": "E",
+            "direction_deg": 120.0,
+            "direction_compass": "ESE",
             "gust_knots": null,
             "gust_mph": null,
-            "raw_metar": "METAR PHBK 200851Z AUTO 09004KT 10SM CLR 25/20 A2997 RMK AO2 SLP152 T02500200 51013 PWINO $",
-            "obs_time_utc": 1787215860,
+            "raw_metar": "METAR PHBK 200951Z AUTO 12004KT 10SM CLR 24/18 A2997 RMK AO2 SLP149 T02440183 403000233 PWINO $",
+            "obs_time_utc": 1787219460,
             "source": "METAR ASOS PHBK"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.3,
-              "dpd_s": 11.1,
+              "obs_time_utc": "2026-08-20T08:56:00",
+              "wvht_m": 1.4,
+              "dpd_s": 10.5,
               "mwd_deg": 270,
               "primary_swell": {
                 "height_m": 0.2,
-                "period_s": 11.1,
+                "period_s": 10.5,
                 "direction_deg": 270,
                 "height_ft": 0.7,
                 "compass": "W"
               },
               "wind_wave": {
-                "height_m": 1.3,
-                "period_s": 8.3,
+                "height_m": 1.4,
+                "period_s": 7.7,
                 "direction_deg": 67.5,
-                "height_ft": 4.3,
+                "height_ft": 4.6,
                 "compass": "ENE"
               },
-              "wvht_ft": 4.3,
+              "wvht_ft": 4.6,
               "mwd_compass": "W",
-              "lag_hours": 0.98,
+              "lag_hours": 1.03,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T08:56:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T07:26:00",
-              "wvht_m": 1.0,
+              "obs_time_utc": "2026-08-20T08:56:00",
+              "wvht_m": 1.1,
               "dpd_s": 11.8,
               "mwd_deg": 270,
               "primary_swell": {
@@ -4094,18 +4094,18 @@
                 "compass": "W"
               },
               "wind_wave": {
-                "height_m": 1.0,
+                "height_m": 1.1,
                 "period_s": 6.7,
                 "direction_deg": 22.5,
-                "height_ft": 3.3,
+                "height_ft": 3.6,
                 "compass": "NNE"
               },
-              "wvht_ft": 3.3,
+              "wvht_ft": 3.6,
               "mwd_compass": "W",
               "lag_hours": 0.92,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:26:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T08:56:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "good"
             },
             "agreement": {
@@ -4114,8 +4114,8 @@
               "confirmed": true
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.3,
+              "obs_time_utc": "2026-08-20T09:26:00",
+              "wvht_m": 1.4,
               "dpd_s": 11.1,
               "mwd_deg": 270,
               "primary_swell": {
@@ -4127,12 +4127,12 @@
               },
               "wind_wave": {
                 "height_m": 1.3,
-                "period_s": 8.3,
-                "direction_deg": 67.5,
+                "period_s": 6.7,
+                "direction_deg": 45,
                 "height_ft": 4.3,
-                "compass": "ENE"
+                "compass": "NE"
               },
-              "wvht_ft": 4.3,
+              "wvht_ft": 4.6,
               "mwd_compass": "W"
             },
             "trend_next_several_hours": "holding steady",
@@ -8010,18 +8010,18 @@
             "station": "PHBK",
             "speed_knots": 4.0,
             "speed_mph": 4.6,
-            "direction_deg": 90.0,
-            "direction_compass": "E",
+            "direction_deg": 120.0,
+            "direction_compass": "ESE",
             "gust_knots": null,
             "gust_mph": null,
-            "raw_metar": "METAR PHBK 200851Z AUTO 09004KT 10SM CLR 25/20 A2997 RMK AO2 SLP152 T02500200 51013 PWINO $",
-            "obs_time_utc": 1787215860,
+            "raw_metar": "METAR PHBK 200951Z AUTO 12004KT 10SM CLR 24/18 A2997 RMK AO2 SLP149 T02440183 403000233 PWINO $",
+            "obs_time_utc": 1787219460,
             "source": "METAR ASOS PHBK"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.3,
+              "obs_time_utc": "2026-08-20T09:26:00",
+              "wvht_m": 1.4,
               "dpd_s": 11.1,
               "mwd_deg": 270,
               "primary_swell": {
@@ -8033,54 +8033,54 @@
               },
               "wind_wave": {
                 "height_m": 1.3,
-                "period_s": 8.3,
-                "direction_deg": 67.5,
+                "period_s": 6.7,
+                "direction_deg": 45,
                 "height_ft": 4.3,
-                "compass": "ENE"
+                "compass": "NE"
               },
-              "wvht_ft": 4.3,
+              "wvht_ft": 4.6,
               "mwd_compass": "W",
               "lag_hours": 0.0,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
-              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+              "source_obs_time_utc": "2026-08-20T09:26:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
+              "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T07:30:00",
+              "obs_time_utc": "2026-08-20T09:00:00",
               "wvht_m": 0.8,
-              "dpd_s": 13.3,
-              "mwd_deg": 180,
+              "dpd_s": 12.5,
+              "mwd_deg": 202.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 13.3,
-                "direction_deg": 180,
-                "height_ft": 2.0,
-                "compass": "S"
+                "height_m": 0.5,
+                "period_s": 12.5,
+                "direction_deg": 202.5,
+                "height_ft": 1.6,
+                "compass": "SSW"
               },
               "wind_wave": {
                 "height_m": 0.6,
-                "period_s": 8.3,
+                "period_s": 8.7,
                 "direction_deg": 180,
                 "height_ft": 2.0,
                 "compass": "S"
               },
               "wvht_ft": 2.6,
-              "mwd_compass": "S",
+              "mwd_compass": "SSW",
               "lag_hours": 0.0,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T07:30:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T09:00:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "agreement": {
-              "direction_diff_deg": 90,
-              "height_diff_ft": 1.7,
+              "direction_diff_deg": 68.0,
+              "height_diff_ft": 2.0,
               "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.3,
+              "obs_time_utc": "2026-08-20T09:26:00",
+              "wvht_m": 1.4,
               "dpd_s": 11.1,
               "mwd_deg": 270,
               "primary_swell": {
@@ -8092,12 +8092,12 @@
               },
               "wind_wave": {
                 "height_m": 1.3,
-                "period_s": 8.3,
-                "direction_deg": 67.5,
+                "period_s": 6.7,
+                "direction_deg": 45,
                 "height_ft": 4.3,
-                "compass": "ENE"
+                "compass": "NE"
               },
-              "wvht_ft": 4.3,
+              "wvht_ft": 4.6,
               "mwd_compass": "W"
             },
             "trend_next_several_hours": "holding steady",
@@ -10060,97 +10060,97 @@
           },
           "metar_wind": {
             "station": "PHNL",
-            "speed_knots": 4.0,
-            "speed_mph": 4.6,
-            "direction_deg": 50.0,
-            "direction_compass": "NE",
+            "speed_knots": 0.0,
+            "speed_mph": 0.0,
+            "direction_deg": null,
+            "direction_compass": "VAR",
             "gust_knots": null,
             "gust_mph": null,
-            "raw_metar": "METAR PHNL 200853Z 05004KT 10SM FEW025 26/20 A2998 RMK AO2 SLP151 T02610200 51008 $",
-            "obs_time_utc": 1787215980,
+            "raw_metar": "METAR PHNL 200953Z 00000KT 10SM FEW025 25/20 A2997 RMK AO2 SLP148 T02500200 403170233 $",
+            "obs_time_utc": 1787219580,
             "source": "METAR ASOS PHNL"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T08:00:00",
+              "obs_time_utc": "2026-08-20T09:30:00",
               "wvht_m": 0.6,
-              "dpd_s": 12.5,
-              "mwd_deg": 180,
+              "dpd_s": 13.3,
+              "mwd_deg": 157.5,
               "primary_swell": {
-                "height_m": 0.4,
-                "period_s": 12.5,
-                "direction_deg": 180,
-                "height_ft": 1.3,
-                "compass": "S"
+                "height_m": 0.3,
+                "period_s": 13.3,
+                "direction_deg": 157.5,
+                "height_ft": 1.0,
+                "compass": "SSE"
               },
               "wind_wave": {
                 "height_m": 0.5,
-                "period_s": 8.0,
-                "direction_deg": 180,
+                "period_s": 7.4,
+                "direction_deg": 135,
                 "height_ft": 1.6,
-                "compass": "S"
+                "compass": "SE"
               },
               "wvht_ft": 2.0,
-              "mwd_compass": "S",
-              "lag_hours": -0.05,
+              "mwd_compass": "SSE",
+              "lag_hours": -0.16,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T08:00:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
-              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+              "source_obs_time_utc": "2026-08-20T09:30:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
+              "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T07:30:00",
+              "obs_time_utc": "2026-08-20T09:00:00",
               "wvht_m": 0.8,
-              "dpd_s": 13.3,
-              "mwd_deg": 180,
+              "dpd_s": 12.5,
+              "mwd_deg": 202.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 13.3,
-                "direction_deg": 180,
-                "height_ft": 2.0,
-                "compass": "S"
+                "height_m": 0.5,
+                "period_s": 12.5,
+                "direction_deg": 202.5,
+                "height_ft": 1.6,
+                "compass": "SSW"
               },
               "wind_wave": {
                 "height_m": 0.6,
-                "period_s": 8.3,
+                "period_s": 8.7,
                 "direction_deg": 180,
                 "height_ft": 2.0,
                 "compass": "S"
               },
               "wvht_ft": 2.6,
-              "mwd_compass": "S",
-              "lag_hours": -0.05,
+              "mwd_compass": "SSW",
+              "lag_hours": 0.07,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T07:30:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
-              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+              "source_obs_time_utc": "2026-08-20T09:00:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
+              "lookback_match_quality": "good"
             },
             "agreement": {
-              "direction_diff_deg": 0,
+              "direction_diff_deg": 45.0,
               "height_diff_ft": 0.6,
-              "confirmed": true
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T08:00:00",
+              "obs_time_utc": "2026-08-20T09:30:00",
               "wvht_m": 0.6,
-              "dpd_s": 12.5,
-              "mwd_deg": 180,
+              "dpd_s": 13.3,
+              "mwd_deg": 157.5,
               "primary_swell": {
-                "height_m": 0.4,
-                "period_s": 12.5,
-                "direction_deg": 180,
-                "height_ft": 1.3,
-                "compass": "S"
+                "height_m": 0.3,
+                "period_s": 13.3,
+                "direction_deg": 157.5,
+                "height_ft": 1.0,
+                "compass": "SSE"
               },
               "wind_wave": {
                 "height_m": 0.5,
-                "period_s": 8.0,
-                "direction_deg": 180,
+                "period_s": 7.4,
+                "direction_deg": 135,
                 "height_ft": 1.6,
-                "compass": "S"
+                "compass": "SE"
               },
               "wvht_ft": 2.0,
-              "mwd_compass": "S"
+              "mwd_compass": "SSE"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -12108,40 +12108,40 @@
           "metar_wind": null,
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T07:10:00",
-              "wvht_m": 1.7,
+              "obs_time_utc": "2026-08-20T08:40:00",
+              "wvht_m": 1.8,
               "dpd_s": 8.3,
-              "mwd_deg": 135,
+              "mwd_deg": 112.5,
               "primary_swell": {
-                "height_m": 1.0,
+                "height_m": 0.9,
                 "period_s": 8.3,
-                "direction_deg": 135,
-                "height_ft": 3.3,
-                "compass": "SE"
+                "direction_deg": 112.5,
+                "height_ft": 3.0,
+                "compass": "ESE"
               },
               "wind_wave": {
-                "height_m": 1.3,
-                "period_s": 6.7,
+                "height_m": 1.5,
+                "period_s": 6.2,
                 "direction_deg": 90,
-                "height_ft": 4.3,
+                "height_ft": 4.9,
                 "compass": "E"
               },
-              "wvht_ft": 5.6,
-              "mwd_compass": "SE",
-              "lag_hours": -21.89,
+              "wvht_ft": 5.9,
+              "mwd_compass": "ESE",
+              "lag_hours": -21.17,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:10:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T08:40:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-19T21:26:00",
+              "obs_time_utc": "2026-08-19T21:56:00",
               "wvht_m": 0.9,
-              "dpd_s": 12.5,
+              "dpd_s": 11.8,
               "mwd_deg": 270,
               "primary_swell": {
                 "height_m": 0.2,
-                "period_s": 12.5,
+                "period_s": 11.8,
                 "direction_deg": 270,
                 "height_ft": 0.7,
                 "compass": "W"
@@ -12149,44 +12149,44 @@
               "wind_wave": {
                 "height_m": 0.8,
                 "period_s": 7.1,
-                "direction_deg": 45,
+                "direction_deg": 22.5,
                 "height_ft": 2.6,
-                "compass": "NE"
+                "compass": "NNE"
               },
               "wvht_ft": 3.0,
               "mwd_compass": "W",
-              "lag_hours": 11.44,
-              "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-19T21:26:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "lag_hours": 12.12,
+              "lag_confidence": "low",
+              "source_obs_time_utc": "2026-08-19T21:56:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "good"
             },
             "agreement": {
-              "direction_diff_deg": 135,
-              "height_diff_ft": 2.6,
+              "direction_diff_deg": 158.0,
+              "height_diff_ft": 2.9,
               "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T07:10:00",
-              "wvht_m": 1.7,
+              "obs_time_utc": "2026-08-20T08:40:00",
+              "wvht_m": 1.8,
               "dpd_s": 8.3,
-              "mwd_deg": 135,
+              "mwd_deg": 112.5,
               "primary_swell": {
-                "height_m": 1.0,
+                "height_m": 0.9,
                 "period_s": 8.3,
-                "direction_deg": 135,
-                "height_ft": 3.3,
-                "compass": "SE"
+                "direction_deg": 112.5,
+                "height_ft": 3.0,
+                "compass": "ESE"
               },
               "wind_wave": {
-                "height_m": 1.3,
-                "period_s": 6.7,
+                "height_m": 1.5,
+                "period_s": 6.2,
                 "direction_deg": 90,
-                "height_ft": 4.3,
+                "height_ft": 4.9,
                 "compass": "E"
               },
-              "wvht_ft": 5.6,
-              "mwd_compass": "SE"
+              "wvht_ft": 5.9,
+              "mwd_compass": "ESE"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -14143,97 +14143,97 @@
           },
           "metar_wind": {
             "station": "PHNL",
-            "speed_knots": 4.0,
-            "speed_mph": 4.6,
-            "direction_deg": 50.0,
-            "direction_compass": "NE",
+            "speed_knots": 0.0,
+            "speed_mph": 0.0,
+            "direction_deg": null,
+            "direction_compass": "VAR",
             "gust_knots": null,
             "gust_mph": null,
-            "raw_metar": "METAR PHNL 200853Z 05004KT 10SM FEW025 26/20 A2998 RMK AO2 SLP151 T02610200 51008 $",
-            "obs_time_utc": 1787215980,
+            "raw_metar": "METAR PHNL 200953Z 00000KT 10SM FEW025 25/20 A2997 RMK AO2 SLP148 T02500200 403170233 $",
+            "obs_time_utc": 1787219580,
             "source": "METAR ASOS PHNL"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T07:30:00",
+              "obs_time_utc": "2026-08-20T09:00:00",
               "wvht_m": 0.8,
-              "dpd_s": 13.3,
-              "mwd_deg": 180,
+              "dpd_s": 12.5,
+              "mwd_deg": 202.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 13.3,
-                "direction_deg": 180,
-                "height_ft": 2.0,
-                "compass": "S"
+                "height_m": 0.5,
+                "period_s": 12.5,
+                "direction_deg": 202.5,
+                "height_ft": 1.6,
+                "compass": "SSW"
               },
               "wind_wave": {
                 "height_m": 0.6,
-                "period_s": 8.3,
+                "period_s": 8.7,
                 "direction_deg": 180,
                 "height_ft": 2.0,
                 "compass": "S"
               },
               "wvht_ft": 2.6,
-              "mwd_compass": "S",
-              "lag_hours": 0.23,
+              "mwd_compass": "SSW",
+              "lag_hours": 0.17,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T07:30:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
-              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+              "source_obs_time_utc": "2026-08-20T09:00:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
+              "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T08:00:00",
+              "obs_time_utc": "2026-08-20T09:30:00",
               "wvht_m": 0.6,
-              "dpd_s": 12.5,
-              "mwd_deg": 180,
+              "dpd_s": 13.3,
+              "mwd_deg": 157.5,
               "primary_swell": {
-                "height_m": 0.4,
-                "period_s": 12.5,
-                "direction_deg": 180,
-                "height_ft": 1.3,
-                "compass": "S"
+                "height_m": 0.3,
+                "period_s": 13.3,
+                "direction_deg": 157.5,
+                "height_ft": 1.0,
+                "compass": "SSE"
               },
               "wind_wave": {
                 "height_m": 0.5,
-                "period_s": 8.0,
-                "direction_deg": 180,
+                "period_s": 7.4,
+                "direction_deg": 135,
                 "height_ft": 1.6,
-                "compass": "S"
+                "compass": "SE"
               },
               "wvht_ft": 2.0,
-              "mwd_compass": "S",
-              "lag_hours": 0.24,
+              "mwd_compass": "SSE",
+              "lag_hours": 0.27,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T08:00:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T09:30:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "good"
             },
             "agreement": {
-              "direction_diff_deg": 0,
+              "direction_diff_deg": 45.0,
               "height_diff_ft": 0.6,
-              "confirmed": true
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T07:30:00",
+              "obs_time_utc": "2026-08-20T09:00:00",
               "wvht_m": 0.8,
-              "dpd_s": 13.3,
-              "mwd_deg": 180,
+              "dpd_s": 12.5,
+              "mwd_deg": 202.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 13.3,
-                "direction_deg": 180,
-                "height_ft": 2.0,
-                "compass": "S"
+                "height_m": 0.5,
+                "period_s": 12.5,
+                "direction_deg": 202.5,
+                "height_ft": 1.6,
+                "compass": "SSW"
               },
               "wind_wave": {
                 "height_m": 0.6,
-                "period_s": 8.3,
+                "period_s": 8.7,
                 "direction_deg": 180,
                 "height_ft": 2.0,
                 "compass": "S"
               },
               "wvht_ft": 2.6,
-              "mwd_compass": "S"
+              "mwd_compass": "SSW"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -16190,28 +16190,28 @@
           },
           "metar_wind": {
             "station": "PHNG",
-            "speed_knots": 0.0,
-            "speed_mph": 0.0,
-            "direction_deg": null,
-            "direction_compass": "VAR",
+            "speed_knots": 4.0,
+            "speed_mph": 4.6,
+            "direction_deg": 80.0,
+            "direction_compass": "E",
             "gust_knots": null,
             "gust_mph": null,
-            "raw_metar": "METAR PHNG 200857Z 00000KT 7SM SCT024 BKN040 26/21 A2996 RMK AO2 SLP141 T02560211 50005 $",
-            "obs_time_utc": 1787216220,
+            "raw_metar": "METAR PHNG 200957Z 08004KT 7SM SCT024 BKN050 25/21 A2995 RMK AO2 SLP137 T02500211 402830250 $ ",
+            "obs_time_utc": 1787219820,
             "source": "METAR ASOS PHNG"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T07:26:00",
-              "wvht_m": 1.5,
+              "obs_time_utc": "2026-08-20T09:26:00",
+              "wvht_m": 1.6,
               "dpd_s": 10.5,
-              "mwd_deg": 112.5,
+              "mwd_deg": 90,
               "primary_swell": {
                 "height_m": 0.2,
                 "period_s": 10.5,
-                "direction_deg": 112.5,
+                "direction_deg": 90,
                 "height_ft": 0.7,
-                "compass": "ESE"
+                "compass": "E"
               },
               "wind_wave": {
                 "height_m": 1.5,
@@ -16220,57 +16220,57 @@
                 "height_ft": 4.9,
                 "compass": "E"
               },
-              "wvht_ft": 4.9,
-              "mwd_compass": "ESE",
+              "wvht_ft": 5.2,
+              "mwd_compass": "E",
               "lag_hours": 0.45,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:26:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
-              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+              "source_obs_time_utc": "2026-08-20T09:26:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
+              "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T08:00:00",
+              "obs_time_utc": "2026-08-20T09:30:00",
               "wvht_m": 0.6,
-              "dpd_s": 12.5,
-              "mwd_deg": 180,
+              "dpd_s": 13.3,
+              "mwd_deg": 157.5,
               "primary_swell": {
-                "height_m": 0.4,
-                "period_s": 12.5,
-                "direction_deg": 180,
-                "height_ft": 1.3,
-                "compass": "S"
+                "height_m": 0.3,
+                "period_s": 13.3,
+                "direction_deg": 157.5,
+                "height_ft": 1.0,
+                "compass": "SSE"
               },
               "wind_wave": {
                 "height_m": 0.5,
-                "period_s": 8.0,
-                "direction_deg": 180,
+                "period_s": 7.4,
+                "direction_deg": 135,
                 "height_ft": 1.6,
-                "compass": "S"
+                "compass": "SE"
               },
               "wvht_ft": 2.0,
-              "mwd_compass": "S",
-              "lag_hours": 0.07,
+              "mwd_compass": "SSE",
+              "lag_hours": 0.2,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T08:00:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
-              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+              "source_obs_time_utc": "2026-08-20T09:30:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
+              "lookback_match_quality": "good"
             },
             "agreement": {
               "direction_diff_deg": 68.0,
-              "height_diff_ft": 2.9,
+              "height_diff_ft": 3.2,
               "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T07:26:00",
-              "wvht_m": 1.5,
+              "obs_time_utc": "2026-08-20T09:26:00",
+              "wvht_m": 1.6,
               "dpd_s": 10.5,
-              "mwd_deg": 112.5,
+              "mwd_deg": 90,
               "primary_swell": {
                 "height_m": 0.2,
                 "period_s": 10.5,
-                "direction_deg": 112.5,
+                "direction_deg": 90,
                 "height_ft": 0.7,
-                "compass": "ESE"
+                "compass": "E"
               },
               "wind_wave": {
                 "height_m": 1.5,
@@ -16279,8 +16279,8 @@
                 "height_ft": 4.9,
                 "compass": "E"
               },
-              "wvht_ft": 4.9,
-              "mwd_compass": "ESE"
+              "wvht_ft": 5.2,
+              "mwd_compass": "E"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -18266,40 +18266,40 @@
               "lag_hours": -0.06,
               "lag_confidence": "medium",
               "source_obs_time_utc": "2026-07-13T11:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T07:30:00",
+              "obs_time_utc": "2026-08-20T09:00:00",
               "wvht_m": 0.8,
-              "dpd_s": 13.3,
-              "mwd_deg": 180,
+              "dpd_s": 12.5,
+              "mwd_deg": 202.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 13.3,
-                "direction_deg": 180,
-                "height_ft": 2.0,
-                "compass": "S"
+                "height_m": 0.5,
+                "period_s": 12.5,
+                "direction_deg": 202.5,
+                "height_ft": 1.6,
+                "compass": "SSW"
               },
               "wind_wave": {
                 "height_m": 0.6,
-                "period_s": 8.3,
+                "period_s": 8.7,
                 "direction_deg": 180,
                 "height_ft": 2.0,
                 "compass": "S"
               },
               "wvht_ft": 2.6,
-              "mwd_compass": "S",
-              "lag_hours": 0.18,
+              "mwd_compass": "SSW",
+              "lag_hours": 0.42,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T07:30:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
-              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+              "source_obs_time_utc": "2026-08-20T09:00:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
+              "lookback_match_quality": "good"
             },
             "agreement": {
-              "direction_diff_deg": 22.0,
+              "direction_diff_deg": 45.0,
               "height_diff_ft": 1.0,
-              "confirmed": true
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
               "obs_time_utc": "2026-07-13T11:56:00",
@@ -26056,20 +26056,20 @@
           },
           "metar_wind": {
             "station": "PHOG",
-            "speed_knots": 8.0,
-            "speed_mph": 9.2,
-            "direction_deg": 20.0,
-            "direction_compass": "NNE",
+            "speed_knots": 7.0,
+            "speed_mph": 8.1,
+            "direction_deg": 330.0,
+            "direction_compass": "NNW",
             "gust_knots": null,
             "gust_mph": null,
-            "raw_metar": "METAR PHOG 200854Z 02008KT 10SM FEW020 SCT055 25/21 A2998 RMK AO2 SLP157 T02500211 50006 $",
-            "obs_time_utc": 1787216040,
+            "raw_metar": "METAR PHOG 200954Z AUTO 33007KT 10SM BKN037 OVC046 24/21 A2997 RMK AO2 SLP152 T02440211 402890239 TSNO $",
+            "obs_time_utc": 1787219640,
             "source": "METAR ASOS PHOG"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.6,
+              "obs_time_utc": "2026-08-20T08:56:00",
+              "wvht_m": 1.8,
               "dpd_s": 10.5,
               "mwd_deg": 67.5,
               "primary_swell": {
@@ -26080,23 +26080,23 @@
                 "compass": "ENE"
               },
               "wind_wave": {
-                "height_m": 1.6,
+                "height_m": 1.7,
                 "period_s": 8.3,
                 "direction_deg": 90,
-                "height_ft": 5.2,
+                "height_ft": 5.6,
                 "compass": "E"
               },
-              "wvht_ft": 5.2,
+              "wvht_ft": 5.9,
               "mwd_compass": "ENE",
               "lag_hours": 0.33,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T08:56:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.6,
+              "obs_time_utc": "2026-08-20T09:26:00",
+              "wvht_m": 1.4,
               "dpd_s": 10.5,
               "mwd_deg": 112.5,
               "primary_swell": {
@@ -26107,28 +26107,28 @@
                 "compass": "ESE"
               },
               "wind_wave": {
-                "height_m": 1.5,
+                "height_m": 1.3,
                 "period_s": 8.3,
-                "direction_deg": 90,
-                "height_ft": 4.9,
-                "compass": "E"
+                "direction_deg": 67.5,
+                "height_ft": 4.3,
+                "compass": "ENE"
               },
-              "wvht_ft": 5.2,
+              "wvht_ft": 4.6,
               "mwd_compass": "ESE",
               "lag_hours": -0.01,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
-              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
+              "source_obs_time_utc": "2026-08-20T09:26:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
+              "lookback_match_quality": "good"
             },
             "agreement": {
               "direction_diff_deg": 45.0,
-              "height_diff_ft": 0.0,
+              "height_diff_ft": 1.3,
               "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.6,
+              "obs_time_utc": "2026-08-20T08:56:00",
+              "wvht_m": 1.8,
               "dpd_s": 10.5,
               "mwd_deg": 67.5,
               "primary_swell": {
@@ -26139,13 +26139,13 @@
                 "compass": "ENE"
               },
               "wind_wave": {
-                "height_m": 1.6,
+                "height_m": 1.7,
                 "period_s": 8.3,
                 "direction_deg": 90,
-                "height_ft": 5.2,
+                "height_ft": 5.6,
                 "compass": "E"
               },
-              "wvht_ft": 5.2,
+              "wvht_ft": 5.9,
               "mwd_compass": "ENE"
             },
             "trend_next_several_hours": "holding steady",
@@ -28108,14 +28108,14 @@
           },
           "metar_wind": {
             "station": "PHKO",
-            "speed_knots": 5.0,
-            "speed_mph": 5.8,
-            "direction_deg": 240.0,
-            "direction_compass": "WSW",
+            "speed_knots": 3.0,
+            "speed_mph": 3.5,
+            "direction_deg": 150.0,
+            "direction_compass": "SSE",
             "gust_knots": null,
             "gust_mph": null,
-            "raw_metar": "METAR PHKO 200853Z AUTO 24005KT 10SM CLR 27/23 A2996 RMK AO2 SLP143 T02720228 50007",
-            "obs_time_utc": 1787215980,
+            "raw_metar": "METAR PHKO 200953Z AUTO 15003KT 10SM CLR 27/22 A2995 RMK AO2 SLP140 T02670222 403110233",
+            "obs_time_utc": 1787219580,
             "source": "METAR ASOS PHKO"
           },
           "swell": {
@@ -28143,40 +28143,40 @@
               "lag_hours": -4.35,
               "lag_confidence": "medium",
               "source_obs_time_utc": "2026-07-13T11:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T07:30:00",
+              "obs_time_utc": "2026-08-20T09:00:00",
               "wvht_m": 0.8,
-              "dpd_s": 13.3,
-              "mwd_deg": 180,
+              "dpd_s": 12.5,
+              "mwd_deg": 202.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 13.3,
-                "direction_deg": 180,
-                "height_ft": 2.0,
-                "compass": "S"
+                "height_m": 0.5,
+                "period_s": 12.5,
+                "direction_deg": 202.5,
+                "height_ft": 1.6,
+                "compass": "SSW"
               },
               "wind_wave": {
                 "height_m": 0.6,
-                "period_s": 8.3,
+                "period_s": 8.7,
                 "direction_deg": 180,
                 "height_ft": 2.0,
                 "compass": "S"
               },
               "wvht_ft": 2.6,
-              "mwd_compass": "S",
-              "lag_hours": -3.28,
+              "mwd_compass": "SSW",
+              "lag_hours": -2.09,
               "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-08-20T07:30:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T09:00:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "agreement": {
-              "direction_diff_deg": 22.0,
+              "direction_diff_deg": 45.0,
               "height_diff_ft": 1.0,
-              "confirmed": true
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
               "obs_time_utc": "2026-07-13T11:56:00",
@@ -32102,22 +32102,11 @@
               "source": "NWS gridded forecast (HFO/271,74)"
             }
           },
-          "metar_wind": {
-            "station": "PHTO",
-            "speed_knots": 3.0,
-            "speed_mph": 3.5,
-            "direction_deg": 240.0,
-            "direction_compass": "WSW",
-            "gust_knots": null,
-            "gust_mph": null,
-            "raw_metar": "METAR PHTO 200853Z AUTO 24003KT 10SM CLR 24/22 A2997 RMK AO2 SLP148 60000 T02440217 50009 TSNO $",
-            "obs_time_utc": 1787215980,
-            "source": "METAR ASOS PHTO"
-          },
+          "metar_wind": null,
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.6,
+              "obs_time_utc": "2026-08-20T09:26:00",
+              "wvht_m": 1.4,
               "dpd_s": 10.5,
               "mwd_deg": 112.5,
               "primary_swell": {
@@ -32128,23 +32117,23 @@
                 "compass": "ESE"
               },
               "wind_wave": {
-                "height_m": 1.5,
+                "height_m": 1.3,
                 "period_s": 8.3,
-                "direction_deg": 90,
-                "height_ft": 4.9,
-                "compass": "E"
+                "direction_deg": 67.5,
+                "height_ft": 4.3,
+                "compass": "ENE"
               },
-              "wvht_ft": 5.2,
+              "wvht_ft": 4.6,
               "mwd_compass": "ESE",
               "lag_hours": 0.23,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T09:26:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.6,
+              "obs_time_utc": "2026-08-20T08:56:00",
+              "wvht_m": 1.8,
               "dpd_s": 10.5,
               "mwd_deg": 67.5,
               "primary_swell": {
@@ -32155,28 +32144,28 @@
                 "compass": "ENE"
               },
               "wind_wave": {
-                "height_m": 1.6,
+                "height_m": 1.7,
                 "period_s": 8.3,
                 "direction_deg": 90,
-                "height_ft": 5.2,
+                "height_ft": 5.6,
                 "compass": "E"
               },
-              "wvht_ft": 5.2,
+              "wvht_ft": 5.9,
               "mwd_compass": "ENE",
               "lag_hours": 0.37,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-08-20T07:56:00",
-              "as_of_now_utc": "2026-08-20T09:07:01.487391",
+              "source_obs_time_utc": "2026-08-20T08:56:00",
+              "as_of_now_utc": "2026-08-20T10:02:00.829917",
               "lookback_match_quality": "good"
             },
             "agreement": {
               "direction_diff_deg": 45.0,
-              "height_diff_ft": 0.0,
+              "height_diff_ft": 1.3,
               "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-08-20T07:56:00",
-              "wvht_m": 1.6,
+              "obs_time_utc": "2026-08-20T09:26:00",
+              "wvht_m": 1.4,
               "dpd_s": 10.5,
               "mwd_deg": 112.5,
               "primary_swell": {
@@ -32187,13 +32176,13 @@
                 "compass": "ESE"
               },
               "wind_wave": {
-                "height_m": 1.5,
+                "height_m": 1.3,
                 "period_s": 8.3,
-                "direction_deg": 90,
-                "height_ft": 4.9,
-                "compass": "E"
+                "direction_deg": 67.5,
+                "height_ft": 4.3,
+                "compass": "ENE"
               },
-              "wvht_ft": 5.2,
+              "wvht_ft": 4.6,
               "mwd_compass": "ESE"
             },
             "trend_next_several_hours": "holding steady",
@@ -34135,43 +34124,43 @@
     }
   },
   "wind": {
-    "average_speed_mph": 2.0,
-    "vector_average_speed_mph": 1.7,
-    "average_direction_deg": 79.5,
-    "average_direction_compass": "E",
+    "average_speed_mph": 0.7,
+    "vector_average_speed_mph": 0.7,
+    "average_direction_deg": 33.0,
+    "average_direction_compass": "NNE",
     "direction_reliable": true,
     "stations": [
       {
         "id": "KHIKOLOA25",
-        "speed_mph": 0,
-        "direction_deg": 100,
-        "gust_mph": 1,
-        "temp_f": 77,
-        "humidity": 86,
-        "time_local": "2026-08-19 23:06:14",
-        "time_utc": "2026-08-20T09:06:14Z",
+        "speed_mph": 2,
+        "direction_deg": 33,
+        "gust_mph": 2,
+        "temp_f": 75,
+        "humidity": 92,
+        "time_local": "2026-08-20 00:01:42",
+        "time_utc": "2026-08-20T10:01:42Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA34",
-        "speed_mph": 5,
-        "direction_deg": 68,
-        "gust_mph": 5,
-        "temp_f": 78,
-        "humidity": 81,
-        "time_local": "2026-08-19 23:06:54",
-        "time_utc": "2026-08-20T09:06:54Z",
+        "speed_mph": 0,
+        "direction_deg": 90,
+        "gust_mph": 0,
+        "temp_f": 77,
+        "humidity": 83,
+        "time_local": "2026-08-20 00:01:54",
+        "time_utc": "2026-08-20T10:01:54Z",
         "status": "Online"
       },
       {
         "id": "KHIKOLOA27",
-        "speed_mph": 1,
-        "direction_deg": 165,
-        "gust_mph": 1,
-        "temp_f": 77,
-        "humidity": 84,
-        "time_local": "2026-08-19 23:06:00",
-        "time_utc": "2026-08-20T09:06:00Z",
+        "speed_mph": 0,
+        "direction_deg": 174,
+        "gust_mph": 0,
+        "temp_f": 76,
+        "humidity": 89,
+        "time_local": "2026-08-20 00:01:00",
+        "time_utc": "2026-08-20T10:01:00Z",
         "status": "Online"
       }
     ],
@@ -34202,30 +34191,30 @@
   },
   "swell": {
     "current_south_shore_estimate": {
-      "obs_time_utc": "2026-08-20T07:30:00",
+      "obs_time_utc": "2026-08-20T09:00:00",
       "wvht_m": 0.8,
-      "dpd_s": 13.3,
-      "mwd_deg": 180,
+      "dpd_s": 12.5,
+      "mwd_deg": 202.5,
       "primary_swell": {
-        "height_m": 0.6,
-        "period_s": 13.3,
-        "direction_deg": 180,
-        "height_ft": 2.0,
-        "compass": "S"
+        "height_m": 0.5,
+        "period_s": 12.5,
+        "direction_deg": 202.5,
+        "height_ft": 1.6,
+        "compass": "SSW"
       },
       "wind_wave": {
         "height_m": 0.6,
-        "period_s": 8.3,
+        "period_s": 8.7,
         "direction_deg": 180,
         "height_ft": 2.0,
         "compass": "S"
       },
       "wvht_ft": 2.6,
-      "mwd_compass": "S",
-      "lag_hours": 1.65,
+      "mwd_compass": "SSW",
+      "lag_hours": 0.12,
       "lag_confidence": "medium",
-      "source_obs_time_utc": "2026-08-20T07:30:00",
-      "as_of_now_utc": "2026-08-20T09:07:01.487391",
+      "source_obs_time_utc": "2026-08-20T09:00:00",
+      "as_of_now_utc": "2026-08-20T10:02:00.829917",
       "lookback_match_quality": "good"
     },
     "verification_estimate": {
@@ -34252,35 +34241,35 @@
       "lag_hours": 3.13,
       "lag_confidence": "medium",
       "source_obs_time_utc": "2026-07-13T11:56:00",
-      "as_of_now_utc": "2026-08-20T09:07:01.487391",
+      "as_of_now_utc": "2026-08-20T10:02:00.829917",
       "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
     },
     "agreement": {
-      "direction_diff_deg": 22.0,
+      "direction_diff_deg": 45.0,
       "height_diff_ft": 1.0,
-      "confirmed": true
+      "confirmed": false
     },
     "latest_barbers_point_reading": {
-      "obs_time_utc": "2026-08-20T07:30:00",
+      "obs_time_utc": "2026-08-20T09:00:00",
       "wvht_m": 0.8,
-      "dpd_s": 13.3,
-      "mwd_deg": 180,
+      "dpd_s": 12.5,
+      "mwd_deg": 202.5,
       "primary_swell": {
-        "height_m": 0.6,
-        "period_s": 13.3,
-        "direction_deg": 180,
-        "height_ft": 2.0,
-        "compass": "S"
+        "height_m": 0.5,
+        "period_s": 12.5,
+        "direction_deg": 202.5,
+        "height_ft": 1.6,
+        "compass": "SSW"
       },
       "wind_wave": {
         "height_m": 0.6,
-        "period_s": 8.3,
+        "period_s": 8.7,
         "direction_deg": 180,
         "height_ft": 2.0,
         "compass": "S"
       },
       "wvht_ft": 2.6,
-      "mwd_compass": "S"
+      "mwd_compass": "SSW"
     },
     "trend_next_several_hours": "holding steady",
     "tide_surge": {
@@ -36217,13 +36206,13 @@
   "forecast_text": "PHZ112-201415-\nKauai Leeward Waters-\n327 PM HST Wed Aug 19 2026\n\n.TONIGHT...East winds 10 to 15 knots. Seas 3 to 4 feet. Wave\nDetail: East 4 feet at 5 seconds. Isolated showers after\nmidnight. \n.THURSDAY...East winds 10 to 15 knots. Seas 3 to 4 feet. Wave\nDetail: East 4 feet at 5 seconds. Isolated showers. \n.THURSDAY NIGHT...East northeast winds to 10 knots. Seas 3 to\n4 feet. Wave Detail: East 3 feet at 4 seconds. Isolated showers\nin the evening, then scattered showers after midnight. \n.FRIDAY...East northeast winds 7 to 10 knots in the morning,\nbecoming variable less than 10 knots. In the Kaulakahi Channel,\nwinds variable less than 10 knots. Seas 3 to 4 feet. Wave Detail:\nSouthwest 3 feet at 16 seconds. Scattered showers, mainly in the\nmorning. \n.FRIDAY NIGHT...Winds variable less than 10 knots, becoming east\nto 10 knots after midnight. Seas 3 to 5 feet. Wave Detail: East\n3 feet at 7 seconds, west northwest 3 feet at 11 seconds and\nsouthwest 3 feet at 16 seconds. Isolated showers in the evening,\nthen scattered showers after midnight. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 7 feet. Wave\nDetail: East 5 feet at 7 seconds, west northwest 3 feet at\n11 seconds and southwest 3 feet at 16 seconds. Isolated showers\nin the morning, then scattered showers in the afternoon. \n.SATURDAY NIGHT...East northeast winds 15 to 20 knots. Seas 5 to\n7 feet. Wave Detail: East 6 feet at 7 seconds, west northwest\n3 feet at 12 seconds and southwest 3 feet at 15 seconds. Isolated\nshowers. \n.SUNDAY...East northeast winds 15 to 20 knots, rising to 20 to\n25 knots. In the Kaulakahi Channel, east northeast winds 20 to\n25 knots, easing to 10 to 15 knots. Seas 5 to 7 feet. Wave\nDetail: East 7 feet at 8 seconds and northwest 3 feet at\n11 seconds. Scattered heavy showers. \n.MONDAY...East northeast winds 15 to 20 knots. Seas 5 to 8 feet.\nWave Detail: East 8 feet at 7 seconds and south 3 feet at\n12 seconds. Scattered heavy showers.",
   "wind_khiwaime179": {
     "id": "KHIKOLOA25",
-    "speed_mph": 0,
-    "direction_deg": 100,
-    "gust_mph": 1,
-    "temp_f": 77,
-    "humidity": 86,
-    "time_local": "2026-08-19 23:06:14",
-    "time_utc": "2026-08-20T09:06:14Z",
+    "speed_mph": 2,
+    "direction_deg": 33,
+    "gust_mph": 2,
+    "temp_f": 75,
+    "humidity": 92,
+    "time_local": "2026-08-20 00:01:42",
+    "time_utc": "2026-08-20T10:01:42Z",
     "status": "Online"
   },
   "swell_51208": {
@@ -42026,12 +42015,12 @@
     "station": "PHBK",
     "speed_knots": 4.0,
     "speed_mph": 4.6,
-    "direction_deg": 90.0,
-    "direction_compass": "E",
+    "direction_deg": 120.0,
+    "direction_compass": "ESE",
     "gust_knots": null,
     "gust_mph": null,
-    "raw_metar": "METAR PHBK 200851Z AUTO 09004KT 10SM CLR 25/20 A2997 RMK AO2 SLP152 T02500200 51013 PWINO $",
-    "obs_time_utc": 1787215860,
+    "raw_metar": "METAR PHBK 200951Z AUTO 12004KT 10SM CLR 24/18 A2997 RMK AO2 SLP149 T02440183 403000233 PWINO $",
+    "obs_time_utc": 1787219460,
     "source": "METAR ASOS PHBK"
   },
   "model_wind_napali_exposed": {
