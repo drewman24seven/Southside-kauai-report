@@ -1,118 +1,87 @@
 {
-  "last_updated": "2026-09-08T06:27:47.801736+00:00",
+  "last_updated": "2026-09-08T11:40:50.076839+00:00",
   "cdip_health": "Laggard",
   "islands": {
     "kauai": {
-      "forecast_text": "PHZ112-081530-\nKauai Leeward Waters-\n446 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...HURRICANE WARNING IN EFFECT...\n\n.TONIGHT...Hurricane conditions. Southeast winds 70 to 90 knots,\nveering to southwest 60 to 80 knots after midnight. Seas 29 to\n34 feet, subsiding to 27 to 32 feet after midnight. Wave Detail:\nSouth southwest 34 feet at 12 seconds and east 3 feet at\n11 seconds. Frequent heavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions possible with hurricane\nconditions also possible. Southwest winds 25 to 30 knots, easing\nto 15 to 20 knots in the afternoon. Seas 12 to 16 feet, subsiding\nto 6 to 8 feet in the afternoon. Wave Detail: West southwest\n16 feet at 8 seconds, south southwest 5 feet at 14 seconds and\neast 3 feet at 11 seconds. Frequent heavy showers in the morning,\nthen numerous showers in the afternoon. \n.TUESDAY NIGHT...Southwest winds to 15 knots, becoming west\nsouthwest after midnight. Seas 5 to 7 feet. Wave Detail:\nSouthwest 4 feet at 4 seconds and south southwest 4 feet at\n14 seconds. Scattered showers. \n.WEDNESDAY...South southwest winds 7 to 10 knots in the morning,\nbecoming variable less than 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 14 seconds. Isolated showers. \n.WEDNESDAY NIGHT...Winds variable less than 10 knots. Seas 4 to\n5 feet. Wave Detail: South southwest 4 feet at 13 seconds.\nScattered showers. \n.THURSDAY...Winds variable less than 10 knots, becoming east\nsoutheast 7 to 10 knots in the afternoon. Seas 3 to 5 feet. Wave\nDetail: South southwest 4 feet at 13 seconds and east 3 feet at\n6 seconds. Scattered showers. \n.THURSDAY NIGHT...East winds 7 to 10 knots, becoming 10 to\n15 knots after midnight. Seas 3 to 5 feet. Wave Detail: East\n3 feet at 6 seconds and south southwest 3 feet at 12 seconds.\nScattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers. \n.SATURDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers.  \n\nWinds and seas higher in and near tstms.\n\nPHZ110-081530-\nKauai Northwest Waters-\n446 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...HURRICANE WARNING IN EFFECT...\n\n.TONIGHT...Hurricane conditions. East southeast winds 65 to\n85 knots, veering to south after midnight. Gusts up to 100 knots.\nSeas 21 to 26 feet, building to 27 to 32 feet after midnight.\nWave Detail: South southwest 32 feet at 13 seconds, south\nsouthwest 5 feet at 9 seconds and east 5 feet at 12 seconds.\nFrequent heavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions expected with hurricane\nconditions possible. Southwest winds 40 to 50 knots, easing to\n25 to 30 knots in the afternoon. Seas 18 to 23 feet, subsiding to\n8 to 11 feet in the afternoon. Wave Detail: Southwest 23 feet at\n10 seconds, south southwest 5 feet at 14 seconds and east 4 feet\nat 12 seconds. Frequent heavy showers in the morning, then\nnumerous showers in the afternoon. \n.TUESDAY NIGHT...Southwest winds 15 to 20 knots, easing to 10 to\n15 knots after midnight. Seas 6 to 8 feet, subsiding to 4 to\n6 feet after midnight. Wave Detail: Southwest 5 feet at\n5 seconds, east 4 feet at 11 seconds and south southwest 4 feet\nat 14 seconds. Scattered showers. \n.WEDNESDAY...South southwest winds to 10 knots in the morning,\nbecoming variable less than 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 14 seconds, east 3 feet at\n5 seconds and east 3 feet at 13 seconds. Isolated showers. \n.WEDNESDAY NIGHT...Winds variable less than 10 knots, becoming\neast 7 to 10 knots after midnight. Seas 4 to 5 feet. Wave Detail:\nEast 3 feet at 6 seconds, east 3 feet at 12 seconds and south\nsouthwest 3 feet at 13 seconds. Scattered showers. \n.THURSDAY...East winds to 10 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 6 seconds and east 3 feet at 12 seconds.\nScattered showers, mainly in the morning. \n.THURSDAY NIGHT...East winds 10 to 15 knots. Seas 3 to 5 feet.\nWave Detail: East 3 feet at 6 seconds and east 3 feet at\n11 seconds. Scattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds. Isolated showers through the\nnight, then scattered showers through the day. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers.  \n\nWinds and seas higher in and near tstms.\n\nPHZ111-081530-\nKauai Windward Waters-\n446 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...TROPICAL STORM WARNING IN EFFECT...\n\n.TONIGHT...Tropical storm conditions. Southeast winds 45 to\n55 knots. Seas 15 to 20 feet, building to 17 to 21 feet after\nmidnight. Wave Detail: South southwest 18 feet at 9 seconds and\neast 5 feet at 11 seconds. Frequent heavy showers with isolated\nthunderstorms. \n.TUESDAY...Tropical storm conditions expected. South winds 35 to\n45 knots, becoming south southwest 20 to 25 knots in the\nafternoon. Seas 13 to 18 feet, subsiding to 8 to 11 feet in the\nafternoon. Wave Detail: Southwest 16 feet at 8 seconds, south\nsouthwest 5 feet at 14 seconds and east 4 feet at 11 seconds.\nFrequent heavy showers in the morning, then numerous showers in\nthe afternoon. \n.TUESDAY NIGHT...Southwest winds 15 to 20 knots, becoming south\nsouthwest 10 to 15 knots after midnight. Seas 5 to 8 feet. Wave\nDetail: South southwest 5 feet at 5 seconds, east 4 feet at\n13 seconds and south 4 feet at 14 seconds. Scattered showers. \n.WEDNESDAY...South southeast winds 7 to 10 knots. Seas 5 to\n7 feet. Wave Detail: South southwest 4 feet at 14 seconds, east\n3 feet at 5 seconds and east 3 feet at 13 seconds. Scattered\nshowers. \n.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: East 4 feet at 6 seconds, south southwest\n4 feet at 13 seconds and east 3 feet at 12 seconds. Scattered\nshowers. \n.THURSDAY...East southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: East southeast 4 feet at 6 seconds, south\nsouthwest 4 feet at 13 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY NIGHT...East winds to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East southeast 4 feet at 6 seconds, east 3 feet at\n11 seconds and south southwest 3 feet at 12 seconds. Scattered\nshowers. \n.FRIDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East southeast 4 feet at 5 seconds. Scattered showers in\nthe morning, then isolated showers in the afternoon. Scattered\nshowers through the day. \n.SATURDAY...East winds to 10 knots. Seas 5 to 6 feet. Wave\nDetail: East southeast 3 feet at 5 seconds. Scattered showers in\nthe morning, then isolated showers in the afternoon. Scattered\nshowers through the day.  \n\nWinds and seas higher in and near tstms.",
+      "forecast_text": "PHZ112-082115-\nKauai Leeward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...HURRICANE WARNING IN EFFECT...\n\n.REST OF TONIGHT...Hurricane conditions. South winds 70 to\n90 knots. Seas 30 to 35 feet, subsiding to 27 to 32 feet. Wave\nDetail: South southwest 34 feet at 13 seconds, south southwest\n7 feet at 10 seconds and east 3 feet at 11 seconds. Frequent\nheavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions expected with hurricane\nconditions possible. Southwest winds 25 to 35 knots, easing to\n15 to 20 knots in the afternoon. Seas 12 to 16 feet, subsiding to\n6 to 8 feet in the afternoon. Wave Detail: West southwest 16 feet\nat 8 seconds, south southwest 5 feet at 14 seconds and east\n3 feet at 11 seconds. Frequent heavy showers in the morning, then\nnumerous showers in the afternoon. \n.TUESDAY NIGHT...Southwest winds 10 to 15 knots, becoming 7 to\n10 knots after midnight. Seas 5 to 7 feet. Wave Detail: Southwest\n4 feet at 4 seconds and south southwest 4 feet at 14 seconds.\nScattered showers. \n.WEDNESDAY...South winds 7 to 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 14 seconds. Isolated showers. \n.WEDNESDAY NIGHT...Winds variable less than 10 knots, becoming\neast northeast 7 to 10 knots after midnight. Seas 4 to 5 feet.\nWave Detail: South southwest 4 feet at 13 seconds. Scattered\nshowers. \n.THURSDAY...East southeast winds 7 to 10 knots. Seas 3 to 5 feet.\nWave Detail: South southwest 4 feet at 13 seconds and east 3 feet\nat 6 seconds. Scattered showers. \n.THURSDAY NIGHT...East southeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: East 3 feet at 6 seconds and south southwest\n3 feet at 12 seconds. Scattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers. \n.SATURDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers.  \n\nWinds and seas higher in and near tstms.\n\nPHZ110-082115-\nKauai Northwest Waters-\n1054 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...HURRICANE WARNING IN EFFECT...\n\n.REST OF TONIGHT...Hurricane conditions. East southeast winds\n70 to 90 knots, veering to south. Seas 25 to 30 feet, building to\n27 to 32 feet. Wave Detail: South southwest 32 feet at\n13 seconds, south southwest 5 feet at 9 seconds and east 5 feet\nat 12 seconds. Frequent heavy showers with isolated\nthunderstorms. \n.TUESDAY...Tropical storm conditions expected with hurricane\nconditions possible. Southwest winds 40 to 50 knots, easing to\n20 to 25 knots in the afternoon. Seas 18 to 23 feet, subsiding to\n8 to 11 feet in the afternoon. Wave Detail: Southwest 23 feet at\n10 seconds, south southwest 5 feet at 14 seconds and east 4 feet\nat 12 seconds. Frequent heavy showers in the morning, then\nnumerous showers in the afternoon. \n.TUESDAY NIGHT...Southwest winds 15 to 20 knots, easing to 10 to\n15 knots after midnight. Seas 6 to 8 feet, subsiding to 4 to\n6 feet after midnight. Wave Detail: Southwest 5 feet at\n5 seconds, east 4 feet at 11 seconds and south southwest 4 feet\nat 14 seconds. Scattered showers. \n.WEDNESDAY...South winds 7 to 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 14 seconds, east 3 feet at\n5 seconds and east 3 feet at 13 seconds. Isolated showers. \n.WEDNESDAY NIGHT...East southeast winds 7 to 10 knots. Seas 4 to\n5 feet. Wave Detail: East 3 feet at 6 seconds, east 3 feet at\n12 seconds and south southwest 3 feet at 13 seconds. Scattered\nshowers. \n.THURSDAY...East southeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: East 3 feet at 6 seconds and east 3 feet at\n12 seconds. Scattered showers, mainly in the morning. \n.THURSDAY NIGHT...East southeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: East 3 feet at 6 seconds and east 3 feet at\n11 seconds. Scattered showers. \n.FRIDAY...East winds to 15 knots. Seas 4 to 6 feet. Wave Detail:\nEast 3 feet at 5 seconds. Isolated showers through the night,\nthen scattered showers through the day. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers.  \n\nWinds and seas higher in and near tstms.\n\nPHZ111-082115-\nKauai Windward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...TROPICAL STORM WARNING IN EFFECT...\n\n.REST OF TONIGHT...Tropical storm conditions. South southeast\nwinds 45 to 55 knots. Seas 17 to 21 feet. Wave Detail: South\nsouthwest 18 feet at 9 seconds and east 5 feet at 11 seconds.\nFrequent heavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions expected. South southwest\nwinds 35 to 45 knots, easing to 20 to 25 knots in the afternoon.\nSeas 13 to 18 feet, subsiding to 8 to 11 feet in the afternoon.\nWave Detail: Southwest 16 feet at 8 seconds, south southwest\n5 feet at 14 seconds and east 4 feet at 11 seconds. Frequent\nheavy showers in the morning, then numerous showers in the\nafternoon. \n.TUESDAY NIGHT...Southwest winds 15 to 20 knots, becoming south\nsouthwest 10 to 15 knots after midnight. Seas 5 to 8 feet. Wave\nDetail: South southwest 5 feet at 5 seconds, east 4 feet at\n13 seconds and south 4 feet at 14 seconds. Scattered showers. \n.WEDNESDAY...South southeast winds 7 to 10 knots. Seas 5 to\n7 feet. Wave Detail: South southwest 4 feet at 14 seconds, east\n3 feet at 5 seconds and east 3 feet at 13 seconds. Scattered\nshowers. \n.WEDNESDAY NIGHT...East southeast winds to 10 knots. Seas 4 to\n6 feet. Wave Detail: East 4 feet at 6 seconds, south southwest\n4 feet at 13 seconds and east 3 feet at 12 seconds. Scattered\nshowers. \n.THURSDAY...East southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: East southeast 4 feet at 6 seconds, south\nsouthwest 4 feet at 13 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY NIGHT...East winds to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East southeast 4 feet at 6 seconds, east 3 feet at\n11 seconds and south southwest 3 feet at 12 seconds. Scattered\nshowers. \n.FRIDAY...East winds to 15 knots. Seas 4 to 6 feet. Wave Detail:\nEast southeast 4 feet at 5 seconds. Scattered showers in the\nmorning, then isolated showers in the afternoon. Scattered\nshowers through the day. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East southeast 3 feet at 5 seconds. Scattered showers in\nthe morning, then isolated showers in the afternoon. Scattered\nshowers through the day.  \n\nWinds and seas higher in and near tstms.",
       "shores": {
         "south": {
-          "wind": {
-            "average_speed_mph": 8.5,
-            "vector_average_speed_mph": 5.8,
-            "average_direction_deg": 162.6,
-            "average_direction_compass": "SSE",
-            "direction_reliable": true,
-            "stations": [
-              {
-                "id": "KHIKOLOA34",
-                "speed_mph": 8,
-                "direction_deg": 112,
-                "gust_mph": 9,
-                "temp_f": 79,
-                "humidity": 95,
-                "time_local": "2026-09-07 20:27:31",
-                "time_utc": "2026-09-08T06:27:31Z",
-                "status": "Online"
-              },
-              {
-                "id": "KHIKOLOA27",
-                "speed_mph": 9,
-                "direction_deg": 206,
-                "gust_mph": 13,
-                "temp_f": 78,
-                "humidity": 99,
-                "time_local": "2026-09-07 20:27:00",
-                "time_utc": "2026-09-08T06:27:00Z",
-                "status": "Online"
-              }
-            ],
-            "num_stations": 2
-          },
+          "wind": null,
           "model_wind": {
-            "speed_mph": 52.9,
-            "speed_knots": 46.0,
-            "direction_deg": 130,
-            "direction_compass": "SE",
+            "speed_mph": 55.2,
+            "speed_knots": 48.0,
+            "direction_deg": 180,
+            "direction_compass": "S",
             "source": "NWS gridded forecast (HFO/86,169)"
           },
           "extra_winds": {
             "poipu": {
-              "speed_mph": 51.8,
-              "speed_knots": 45.0,
-              "direction_deg": 130,
-              "direction_compass": "SE",
+              "speed_mph": 55.2,
+              "speed_knots": 48.0,
+              "direction_deg": 180,
+              "direction_compass": "S",
               "source": "NWS gridded forecast (HFO/86,170)"
             },
             "port_allen": {
-              "speed_mph": 46.0,
-              "speed_knots": 40.0,
-              "direction_deg": 120,
-              "direction_compass": "ESE",
+              "speed_mph": 54.1,
+              "speed_knots": 47.0,
+              "direction_deg": 170,
+              "direction_compass": "S",
               "source": "NWS gridded forecast (HFO/82,171)"
             }
           },
           "metar_wind": null,
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-09-08T05:30:00",
-              "wvht_m": 3.2,
-              "dpd_s": 14.3,
-              "mwd_deg": 202.5,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 7.7,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 2.5,
-                "period_s": 14.3,
-                "direction_deg": 202.5,
-                "height_ft": 8.2,
-                "compass": "SSW"
+                "height_m": 6.7,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 22.0,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 2.0,
+                "height_m": 3.8,
                 "period_s": 9.5,
-                "direction_deg": 202.5,
-                "height_ft": 6.6,
-                "compass": "SSW"
+                "direction_deg": 225,
+                "height_ft": 12.5,
+                "compass": "SW"
               },
-              "wvht_ft": 10.5,
-              "mwd_compass": "SSW",
-              "lag_hours": 0.1,
-              "lag_confidence": "high",
-              "source_obs_time_utc": "2026-09-08T05:30:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
-              "lookback_match_quality": "good"
+              "wvht_ft": 25.3,
+              "mwd_compass": "WSW",
+              "lag_hours": -2.79,
+              "lag_confidence": "medium",
+              "source_obs_time_utc": "2026-09-08T11:00:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
+              "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "verification_estimate": null,
             "agreement": null,
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-09-08T05:30:00",
-              "wvht_m": 3.2,
-              "dpd_s": 14.3,
-              "mwd_deg": 202.5,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 7.7,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 2.5,
-                "period_s": 14.3,
-                "direction_deg": 202.5,
-                "height_ft": 8.2,
-                "compass": "SSW"
+                "height_m": 6.7,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 22.0,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 2.0,
+                "height_m": 3.8,
                 "period_s": 9.5,
-                "direction_deg": 202.5,
-                "height_ft": 6.6,
-                "compass": "SSW"
+                "direction_deg": 225,
+                "height_ft": 12.5,
+                "compass": "SW"
               },
-              "wvht_ft": 10.5,
-              "mwd_compass": "SSW"
+              "wvht_ft": 25.3,
+              "mwd_compass": "WSW"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -3978,121 +3947,121 @@
         "napali": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 50.6,
-            "speed_knots": 44.0,
-            "direction_deg": 120,
-            "direction_compass": "ESE",
+            "speed_mph": 69.0,
+            "speed_knots": 60.0,
+            "direction_deg": 170,
+            "direction_compass": "S",
             "source": "NWS gridded forecast (HFO/75,187)"
           },
           "extra_winds": {
             "napali_coast": {
-              "speed_mph": 47.2,
-              "speed_knots": 41.0,
-              "direction_deg": 120,
-              "direction_compass": "ESE",
+              "speed_mph": 59.8,
+              "speed_knots": 52.0,
+              "direction_deg": 170,
+              "direction_compass": "S",
               "source": "NWS gridded forecast (HFO/78,184)"
             },
             "port_allen": {
-              "speed_mph": 46.0,
-              "speed_knots": 40.0,
-              "direction_deg": 120,
-              "direction_compass": "ESE",
+              "speed_mph": 54.1,
+              "speed_knots": 47.0,
+              "direction_deg": 170,
+              "direction_compass": "S",
               "source": "NWS gridded forecast (HFO/82,171)"
             }
           },
           "metar_wind": {
             "station": "PHBK",
-            "speed_knots": 35.0,
-            "speed_mph": 40.3,
-            "direction_deg": 110.0,
+            "speed_knots": 38.0,
+            "speed_mph": 43.7,
+            "direction_deg": 120.0,
             "direction_compass": "ESE",
-            "gust_knots": 68.0,
-            "gust_mph": 78.3,
-            "raw_metar": "SPECI PHBK 080607Z AUTO 11035G68KT 5SM -RA BR BKN045 OVC065 26/24 A2929 RMK AO2 PK WND 11069/0556 PRESFR T02610239 PNO $",
-            "obs_time_utc": 1788847620,
+            "gust_knots": 73.0,
+            "gust_mph": 84.0,
+            "raw_metar": "SPECI PHBK 080633Z AUTO 12038G73KT 6SM -RA BKN044 BKN065 OVC085 27/24 A2925 RMK AO2 PK WND 11073/0624 PRESFR T02670239 PNO $",
+            "obs_time_utc": 1788849180,
             "source": "METAR ASOS PHBK"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 4.7,
-              "dpd_s": 10.5,
-              "mwd_deg": 67.5,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 4.4,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 1.8,
-                "period_s": 10.5,
-                "direction_deg": 67.5,
-                "height_ft": 5.9,
-                "compass": "ENE"
+                "height_m": 2.4,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 7.9,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 4.4,
-                "period_s": 9.1,
-                "direction_deg": 90,
-                "height_ft": 14.4,
-                "compass": "E"
+                "height_m": 3.7,
+                "period_s": 9.9,
+                "direction_deg": 67.5,
+                "height_ft": 12.1,
+                "compass": "ENE"
               },
-              "wvht_ft": 15.4,
-              "mwd_compass": "ENE",
-              "lag_hours": -0.8,
-              "lag_confidence": "low",
-              "source_obs_time_utc": "2026-09-08T05:56:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "wvht_ft": 14.4,
+              "mwd_compass": "WSW",
+              "lag_hours": 0.63,
+              "lag_confidence": "medium",
+              "source_obs_time_utc": "2026-09-08T10:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-09-08T05:26:00",
-              "wvht_m": 1.7,
-              "dpd_s": 13.3,
-              "mwd_deg": 270,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 3.7,
+              "dpd_s": 14.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 1.2,
-                "period_s": 13.3,
-                "direction_deg": 270,
-                "height_ft": 3.9,
-                "compass": "W"
+                "height_m": 3.0,
+                "period_s": 14.3,
+                "direction_deg": 247.5,
+                "height_ft": 9.8,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 1.2,
-                "period_s": 8.3,
-                "direction_deg": 22.5,
-                "height_ft": 3.9,
-                "compass": "NNE"
+                "height_m": 2.2,
+                "period_s": 9.9,
+                "direction_deg": 270,
+                "height_ft": 7.2,
+                "compass": "W"
               },
-              "wvht_ft": 5.6,
-              "mwd_compass": "W",
-              "lag_hours": 0.82,
-              "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-09-08T05:26:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "wvht_ft": 12.1,
+              "mwd_compass": "WSW",
+              "lag_hours": 0.59,
+              "lag_confidence": "high",
+              "source_obs_time_utc": "2026-09-08T10:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "agreement": {
-              "direction_diff_deg": 158.0,
-              "height_diff_ft": 9.8,
+              "direction_diff_deg": 0.0,
+              "height_diff_ft": 2.3,
               "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 4.7,
-              "dpd_s": 10.5,
-              "mwd_deg": 67.5,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 4.4,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 1.8,
-                "period_s": 10.5,
-                "direction_deg": 67.5,
-                "height_ft": 5.9,
-                "compass": "ENE"
+                "height_m": 2.4,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 7.9,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 4.4,
-                "period_s": 9.1,
-                "direction_deg": 90,
-                "height_ft": 14.4,
-                "compass": "E"
+                "height_m": 3.7,
+                "period_s": 9.9,
+                "direction_deg": 67.5,
+                "height_ft": 12.1,
+                "compass": "ENE"
               },
-              "wvht_ft": 15.4,
-              "mwd_compass": "ENE"
+              "wvht_ft": 14.4,
+              "mwd_compass": "WSW"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -7958,106 +7927,106 @@
         "niihau": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 50.6,
-            "speed_knots": 44.0,
-            "direction_deg": 110,
-            "direction_compass": "ESE",
+            "speed_mph": 73.6,
+            "speed_knots": 64.0,
+            "direction_deg": 150,
+            "direction_compass": "SSE",
             "source": "NWS gridded forecast (HFO/56,171)"
           },
           "extra_winds": {},
           "metar_wind": {
             "station": "PHBK",
-            "speed_knots": 35.0,
-            "speed_mph": 40.3,
-            "direction_deg": 110.0,
+            "speed_knots": 38.0,
+            "speed_mph": 43.7,
+            "direction_deg": 120.0,
             "direction_compass": "ESE",
-            "gust_knots": 68.0,
-            "gust_mph": 78.3,
-            "raw_metar": "SPECI PHBK 080607Z AUTO 11035G68KT 5SM -RA BR BKN045 OVC065 26/24 A2929 RMK AO2 PK WND 11069/0556 PRESFR T02610239 PNO $",
-            "obs_time_utc": 1788847620,
+            "gust_knots": 73.0,
+            "gust_mph": 84.0,
+            "raw_metar": "SPECI PHBK 080633Z AUTO 12038G73KT 6SM -RA BKN044 BKN065 OVC085 27/24 A2925 RMK AO2 PK WND 11073/0624 PRESFR T02670239 PNO $",
+            "obs_time_utc": 1788849180,
             "source": "METAR ASOS PHBK"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 4.7,
-              "dpd_s": 10.5,
-              "mwd_deg": 67.5,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 4.4,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 1.8,
-                "period_s": 10.5,
-                "direction_deg": 67.5,
-                "height_ft": 5.9,
-                "compass": "ENE"
+                "height_m": 2.4,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 7.9,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 4.4,
-                "period_s": 9.1,
-                "direction_deg": 90,
-                "height_ft": 14.4,
-                "compass": "E"
+                "height_m": 3.7,
+                "period_s": 9.9,
+                "direction_deg": 67.5,
+                "height_ft": 12.1,
+                "compass": "ENE"
               },
-              "wvht_ft": 15.4,
-              "mwd_compass": "ENE",
-              "lag_hours": -0.0,
-              "lag_confidence": "low",
-              "source_obs_time_utc": "2026-09-08T05:56:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "wvht_ft": 14.4,
+              "mwd_compass": "WSW",
+              "lag_hours": 0.0,
+              "lag_confidence": "medium",
+              "source_obs_time_utc": "2026-09-08T10:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-09-08T05:30:00",
-              "wvht_m": 3.2,
-              "dpd_s": 14.3,
-              "mwd_deg": 202.5,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 7.7,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 2.5,
-                "period_s": 14.3,
-                "direction_deg": 202.5,
-                "height_ft": 8.2,
-                "compass": "SSW"
+                "height_m": 6.7,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 22.0,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 2.0,
+                "height_m": 3.8,
                 "period_s": 9.5,
-                "direction_deg": 202.5,
-                "height_ft": 6.6,
-                "compass": "SSW"
+                "direction_deg": 225,
+                "height_ft": 12.5,
+                "compass": "SW"
               },
-              "wvht_ft": 10.5,
-              "mwd_compass": "SSW",
+              "wvht_ft": 25.3,
+              "mwd_compass": "WSW",
               "lag_hours": 0.0,
-              "lag_confidence": "high",
-              "source_obs_time_utc": "2026-09-08T05:30:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "lag_confidence": "medium",
+              "source_obs_time_utc": "2026-09-08T11:00:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "agreement": {
-              "direction_diff_deg": 135.0,
-              "height_diff_ft": 4.9,
+              "direction_diff_deg": 0.0,
+              "height_diff_ft": 10.9,
               "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 4.7,
-              "dpd_s": 10.5,
-              "mwd_deg": 67.5,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 4.4,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 1.8,
-                "period_s": 10.5,
-                "direction_deg": 67.5,
-                "height_ft": 5.9,
-                "compass": "ENE"
+                "height_m": 2.4,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 7.9,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 4.4,
-                "period_s": 9.1,
-                "direction_deg": 90,
-                "height_ft": 14.4,
-                "compass": "E"
+                "height_m": 3.7,
+                "period_s": 9.9,
+                "direction_deg": 67.5,
+                "height_ft": 12.1,
+                "compass": "ENE"
               },
-              "wvht_ft": 15.4,
-              "mwd_compass": "ENE"
+              "wvht_ft": 14.4,
+              "mwd_compass": "WSW"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -9997,118 +9966,118 @@
       }
     },
     "oahu": {
-      "forecast_text": "PHZ115-081530-\nOahu Leeward Waters-\n446 PM HST Mon Sep 7 2026\n\n...TROPICAL STORM WARNING IN EFFECT...\n\n.TONIGHT...Tropical storm conditions expected. Southeast winds\n30 to 35 knots, veering to south southeast 25 to 30 knots after\nmidnight. Seas 16 to 19 feet, subsiding to 13 to 17 feet after\nmidnight. Wave Detail: Southwest 16 feet at 10 seconds. Frequent\nheavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions possible. South southwest\nwinds 20 to 25 knots, easing to 15 knots in the afternoon. Seas\n9 to 12 feet, subsiding to 6 to 7 feet in the afternoon. Wave\nDetail: West 10 feet at 8 seconds and south southwest 6 feet at\n8 seconds. Numerous showers. \n.TUESDAY NIGHT...Southwest winds to 10 knots in the evening,\nbecoming variable less than 10 knots. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds and west 3 feet at\n4 seconds. Numerous showers, mainly in the evening. \n.WEDNESDAY...Winds variable less than 10 knots. Seas 4 to 5 feet.\nWave Detail: South southwest 4 feet at 14 seconds. Scattered\nshowers. \n.WEDNESDAY NIGHT...East winds 7 to 10 knots. Seas 4 to 5 feet.\nWave Detail: South southwest 4 feet at 13 seconds and east\nsoutheast 3 feet at 5 seconds. Scattered showers. \n.THURSDAY...East winds 7 to 10 knots in the morning, becoming\nvariable less than 10 knots. Seas 4 to 5 feet. Wave Detail: South\nsouthwest 4 feet at 13 seconds and east 3 feet at 5 seconds.\nScattered showers, mainly in the morning. \n.THURSDAY NIGHT...Winds variable less than 10 knots, becoming\neast 7 to 10 knots after midnight. Seas 4 to 6 feet. Wave Detail:\nSouth southwest 4 feet at 12 seconds and east 3 feet at\n5 seconds. Scattered showers. \n.FRIDAY...East northeast winds 10 to 15 knots. Seas 3 to 5 feet.\nWave Detail: East 3 feet at 5 seconds. Isolated showers through\nthe night, then scattered showers through the day. \n.SATURDAY...East winds 7 to 10 knots, backing to east northeast\n10 to 15 knots in the evening, veering to east 7 to 10 knots\nafter midnight. Seas 3 to 4 feet. Wave Detail: East 3 feet at\n5 seconds. Isolated showers, then scattered showers after\nmidnight.  \n\nWinds and seas higher in and near tstms.\n\nPHZ114-081530-\nOahu Windward Waters-\n446 PM HST Mon Sep 7 2026\n\n...TROPICAL STORM WARNING IN EFFECT...\n\n.TONIGHT...Tropical storm conditions expected. Southeast winds\n25 to 35 knots. Seas 12 to 17 feet. Wave Detail: South southwest\n15 feet at 15 seconds, south southwest 7 feet at 11 seconds and\neast 5 feet at 11 seconds. Isolated thunderstorms this evening.\nFrequent heavy showers. \n.TUESDAY...Tropical storm conditions possible. South winds 20 to\n25 knots, becoming south southwest 15 to 20 knots in the\nafternoon. Seas 9 to 12 feet, subsiding to 6 to 9 feet in the\nafternoon. Wave Detail: South southwest 10 feet at 8 seconds,\nsouth southwest 5 feet at 14 seconds and east 4 feet at\n13 seconds. Numerous showers. \n.TUESDAY NIGHT...South southwest winds 10 to 15 knots, backing to\nsouth 7 to 10 knots after midnight. Seas 5 to 7 feet. Wave\nDetail: East southeast 4 feet at 5 seconds, south southwest\n4 feet at 14 seconds and east 3 feet at 13 seconds. Scattered\nshowers. \n.WEDNESDAY...Southeast winds 7 to 10 knots, backing to east\nsoutheast 10 to 15 knots in the afternoon. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds, east 3 feet at\n5 seconds and east 3 feet at 13 seconds. Scattered showers. \n.WEDNESDAY NIGHT...East southeast winds to 15 knots. Seas 4 to\n6 feet. Wave Detail: East 4 feet at 6 seconds, east 3 feet at\n12 seconds and south southwest 3 feet at 13 seconds. Scattered\nshowers. \n.THURSDAY...East winds to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East southeast 4 feet at 6 seconds and east 3 feet at\n12 seconds. Scattered showers. \n.THURSDAY NIGHT...East winds to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East 4 feet at 5 seconds and east 3 feet at 11 seconds.\nScattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds and east 3 feet at 11 seconds.\nScattered showers in the morning, then isolated showers in the\nafternoon. Scattered showers through the day. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers in the\nmorning, then isolated showers in the afternoon. Scattered\nshowers through the day.  \n\nWinds and seas higher in and near tstms.",
+      "forecast_text": "PHZ115-082115-\nOahu Leeward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...TROPICAL STORM WARNING IN EFFECT...\n\n.REST OF TONIGHT...Tropical storm conditions expected. South\nsoutheast winds 30 to 35 knots, veering to south 25 to 35 knots.\nGusts up to 50 knots. Seas 15 to 18 feet, subsiding to 13 to\n17 feet. Wave Detail: Southwest 16 feet at 9 seconds. Frequent\nheavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions possible. South southwest\nwinds 20 to 25 knots, easing to 15 to 20 knots in the afternoon.\nSeas 9 to 12 feet, subsiding to 6 to 7 feet in the afternoon.\nWave Detail: West 10 feet at 8 seconds and south southwest 6 feet\nat 8 seconds. Numerous showers. \n.TUESDAY NIGHT...South southwest winds 7 to 10 knots. Seas 4 to\n6 feet. Wave Detail: South southwest 4 feet at 14 seconds and\nwest 3 feet at 4 seconds. Numerous showers, mainly in the\nevening. \n.WEDNESDAY...Winds variable less than 10 knots, becoming east\n7 to 10 knots in the afternoon. Seas 4 to 5 feet. Wave Detail:\nSouth southwest 4 feet at 14 seconds. Scattered showers. \n.WEDNESDAY NIGHT...Winds variable less than 10 knots, becoming\neast northeast 7 to 10 knots after midnight. Seas 4 to 5 feet.\nWave Detail: South southwest 4 feet at 13 seconds and east\nsoutheast 3 feet at 5 seconds. Scattered showers. \n.THURSDAY...East winds 7 to 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 13 seconds and east 3 feet at\n5 seconds. Scattered showers, mainly in the morning. \n.THURSDAY NIGHT...East northeast winds to 15 knots. Seas 4 to\n6 feet. Wave Detail: South southwest 4 feet at 12 seconds and\neast 3 feet at 5 seconds. Scattered showers. \n.FRIDAY...East northeast winds 10 to 15 knots. Seas 3 to 5 feet.\nWave Detail: East 3 feet at 5 seconds. Isolated showers through\nthe night, then scattered showers through the day. \n.SATURDAY...East northeast winds 10 to 15 knots. Seas 3 to\n4 feet. Wave Detail: East 3 feet at 5 seconds. Isolated showers,\nthen scattered showers after midnight.  \n\nWinds and seas higher in and near tstms.\n\nPHZ114-082115-\nOahu Windward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...TROPICAL STORM WARNING IN EFFECT...\n\n.REST OF TONIGHT...Tropical storm conditions expected. Southeast\nwinds 30 to 40 knots. Seas 13 to 18 feet. Wave Detail: South\nsouthwest 15 feet at 10 seconds and east 5 feet at 11 seconds.\nIsolated thunderstorms late this evening. Frequent heavy showers.\n.TUESDAY...Tropical storm conditions possible. South winds 25 to\n30 knots, becoming south southwest 15 to 20 knots in the\nafternoon. Seas 9 to 12 feet, subsiding to 6 to 9 feet in the\nafternoon. Wave Detail: South southwest 10 feet at 8 seconds,\nsouth southwest 5 feet at 14 seconds and east 4 feet at\n13 seconds. Numerous showers. \n.TUESDAY NIGHT...South southwest winds 10 to 15 knots, backing to\nsouth 7 to 10 knots after midnight. Seas 5 to 7 feet. Wave\nDetail: East southeast 4 feet at 5 seconds, south southwest\n4 feet at 14 seconds and east 3 feet at 13 seconds. Scattered\nshowers. \n.WEDNESDAY...Winds variable less than 10 knots, becoming east\nnortheast 7 to 10 knots in the afternoon. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds, east 3 feet at\n5 seconds and east 3 feet at 13 seconds. Scattered showers. \n.WEDNESDAY NIGHT...East southeast winds to 15 knots. Seas 4 to\n6 feet. Wave Detail: East 4 feet at 6 seconds, east 3 feet at\n12 seconds and south southwest 3 feet at 13 seconds. Scattered\nshowers. \n.THURSDAY...East winds to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East southeast 4 feet at 6 seconds and east 3 feet at\n12 seconds. Scattered showers. \n.THURSDAY NIGHT...East winds to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East 4 feet at 5 seconds and east 3 feet at 11 seconds.\nScattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds and east 3 feet at 11 seconds.\nScattered showers in the morning, then isolated showers in the\nafternoon. Scattered showers through the day. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers in the\nmorning, then isolated showers in the afternoon. Scattered\nshowers through the day.  \n\nWinds and seas higher in and near tstms.",
       "shores": {
         "south": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 27.6,
-            "speed_knots": 24.0,
-            "direction_deg": 120,
-            "direction_compass": "ESE",
+            "speed_mph": 29.9,
+            "speed_knots": 26.0,
+            "direction_deg": 140,
+            "direction_compass": "SE",
             "source": "NWS gridded forecast (HFO/155,142)"
           },
           "extra_winds": {
             "honolulu": {
               "speed_mph": 21.9,
               "speed_knots": 19.0,
-              "direction_deg": 110,
-              "direction_compass": "ESE",
+              "direction_deg": 130,
+              "direction_compass": "SE",
               "source": "NWS gridded forecast (HFO/155,143)"
             }
           },
           "metar_wind": {
             "station": "PHNL",
-            "speed_knots": 22.0,
-            "speed_mph": 25.3,
-            "direction_deg": 120.0,
-            "direction_compass": "ESE",
-            "gust_knots": 34.0,
-            "gust_mph": 39.1,
-            "raw_metar": "METAR PHNL 080553Z 12022G34KT 10SM -RA SCT020 BKN031 BKN065 28/24 A2967 RMK AO2 PK WND 10039/0458 RAB05E15B38 SLP046 P0000 60006 T02780239 10311 20256 53001 $",
-            "obs_time_utc": 1788846780,
+            "speed_knots": 21.0,
+            "speed_mph": 24.2,
+            "direction_deg": 150.0,
+            "direction_compass": "SSE",
+            "gust_knots": 31.0,
+            "gust_mph": 35.7,
+            "raw_metar": "METAR PHNL 081053Z 15021G31KT 10SM SCT016 BKN024 BKN033 27/25 A2970 RMK AO2 PK WND 14035/1028 RAB06E37 SLP056 SHRA N-E P0000 T02720250 VISNO RWY04R $",
+            "obs_time_utc": 1788864780,
             "source": "METAR ASOS PHNL"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-09-08T06:00:00",
-              "wvht_m": 3.5,
-              "dpd_s": 13.3,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 3.8,
+              "dpd_s": 10.5,
               "mwd_deg": 180,
               "primary_swell": {
-                "height_m": 2.1,
-                "period_s": 13.3,
+                "height_m": 2.4,
+                "period_s": 10.5,
                 "direction_deg": 180,
-                "height_ft": 6.9,
+                "height_ft": 7.9,
                 "compass": "S"
               },
               "wind_wave": {
-                "height_m": 2.8,
-                "period_s": 6.9,
+                "height_m": 3.0,
+                "period_s": 7.7,
                 "direction_deg": 157.5,
-                "height_ft": 9.2,
+                "height_ft": 9.8,
                 "compass": "SSE"
               },
-              "wvht_ft": 11.5,
+              "wvht_ft": 12.5,
               "mwd_compass": "S",
-              "lag_hours": -0.05,
-              "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-09-08T06:00:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "lag_hours": -0.06,
+              "lag_confidence": "low",
+              "source_obs_time_utc": "2026-09-08T11:00:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-09-08T05:30:00",
-              "wvht_m": 3.2,
-              "dpd_s": 14.3,
-              "mwd_deg": 202.5,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 7.7,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 2.5,
-                "period_s": 14.3,
-                "direction_deg": 202.5,
-                "height_ft": 8.2,
-                "compass": "SSW"
+                "height_m": 6.7,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 22.0,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 2.0,
+                "height_m": 3.8,
                 "period_s": 9.5,
-                "direction_deg": 202.5,
-                "height_ft": 6.6,
-                "compass": "SSW"
+                "direction_deg": 225,
+                "height_ft": 12.5,
+                "compass": "SW"
               },
-              "wvht_ft": 10.5,
-              "mwd_compass": "SSW",
-              "lag_hours": 0.06,
-              "lag_confidence": "high",
-              "source_obs_time_utc": "2026-09-08T05:30:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "wvht_ft": 25.3,
+              "mwd_compass": "WSW",
+              "lag_hours": 0.26,
+              "lag_confidence": "medium",
+              "source_obs_time_utc": "2026-09-08T11:00:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "agreement": {
-              "direction_diff_deg": 22.0,
-              "height_diff_ft": 1.0,
-              "confirmed": true
+              "direction_diff_deg": 68.0,
+              "height_diff_ft": 12.8,
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-09-08T06:00:00",
-              "wvht_m": 3.5,
-              "dpd_s": 13.3,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 3.8,
+              "dpd_s": 10.5,
               "mwd_deg": 180,
               "primary_swell": {
-                "height_m": 2.1,
-                "period_s": 13.3,
+                "height_m": 2.4,
+                "period_s": 10.5,
                 "direction_deg": 180,
-                "height_ft": 6.9,
+                "height_ft": 7.9,
                 "compass": "S"
               },
               "wind_wave": {
-                "height_m": 2.8,
-                "period_s": 6.9,
+                "height_m": 3.0,
+                "period_s": 7.7,
                 "direction_deg": 157.5,
-                "height_ft": 9.2,
+                "height_ft": 9.8,
                 "compass": "SSE"
               },
-              "wvht_ft": 11.5,
+              "wvht_ft": 12.5,
               "mwd_compass": "S"
             },
             "trend_next_several_hours": "holding steady",
@@ -12049,18 +12018,18 @@
         "north": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 26.5,
-            "speed_knots": 23.0,
-            "direction_deg": 110,
-            "direction_compass": "ESE",
+            "speed_mph": 31.1,
+            "speed_knots": 27.0,
+            "direction_deg": 130,
+            "direction_compass": "SE",
             "source": "NWS gridded forecast (HFO/144,161)"
           },
           "extra_winds": {
             "haleiwa": {
-              "speed_mph": 18.4,
-              "speed_knots": 16.0,
-              "direction_deg": 110,
-              "direction_compass": "ESE",
+              "speed_mph": 31.1,
+              "speed_knots": 27.0,
+              "direction_deg": 130,
+              "direction_compass": "SE",
               "source": "NWS gridded forecast (HFO/144,158)"
             }
           },
@@ -12090,38 +12059,38 @@
               "lag_hours": -9.73,
               "lag_confidence": "low",
               "source_obs_time_utc": "2026-09-02T14:10:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-09-07T18:26:00",
+              "obs_time_utc": "2026-09-08T00:56:00",
               "wvht_m": 1.9,
-              "dpd_s": 14.3,
-              "mwd_deg": 0,
+              "dpd_s": 12.5,
+              "mwd_deg": 337.5,
               "primary_swell": {
-                "height_m": 0.6,
-                "period_s": 14.3,
-                "direction_deg": 0,
-                "height_ft": 2.0,
-                "compass": "N"
+                "height_m": 0.7,
+                "period_s": 12.5,
+                "direction_deg": 337.5,
+                "height_ft": 2.3,
+                "compass": "NNW"
               },
               "wind_wave": {
-                "height_m": 1.9,
+                "height_m": 1.7,
                 "period_s": 7.7,
                 "direction_deg": 45,
-                "height_ft": 6.2,
+                "height_ft": 5.6,
                 "compass": "NE"
               },
               "wvht_ft": 6.2,
-              "mwd_compass": "N",
-              "lag_hours": 7.97,
-              "lag_confidence": "high",
-              "source_obs_time_utc": "2026-09-07T18:26:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "mwd_compass": "NNW",
+              "lag_hours": 12.8,
+              "lag_confidence": "medium",
+              "source_obs_time_utc": "2026-09-08T00:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
             },
             "agreement": {
-              "direction_diff_deg": 68.0,
+              "direction_diff_deg": 90.0,
               "height_diff_ft": 0.4,
               "confirmed": false
             },
@@ -14085,114 +14054,114 @@
         "west": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 33.4,
-            "speed_knots": 29.0,
-            "direction_deg": 130,
+            "speed_mph": 32.2,
+            "speed_knots": 28.0,
+            "direction_deg": 140,
             "direction_compass": "SE",
             "source": "NWS gridded forecast (HFO/138,149)"
           },
           "extra_winds": {
             "waianae": {
-              "speed_mph": 34.5,
-              "speed_knots": 30.0,
-              "direction_deg": 120,
-              "direction_compass": "ESE",
+              "speed_mph": 32.2,
+              "speed_knots": 28.0,
+              "direction_deg": 140,
+              "direction_compass": "SE",
               "source": "NWS gridded forecast (HFO/140,149)"
             }
           },
           "metar_wind": {
             "station": "PHNL",
-            "speed_knots": 22.0,
-            "speed_mph": 25.3,
-            "direction_deg": 120.0,
-            "direction_compass": "ESE",
-            "gust_knots": 34.0,
-            "gust_mph": 39.1,
-            "raw_metar": "METAR PHNL 080553Z 12022G34KT 10SM -RA SCT020 BKN031 BKN065 28/24 A2967 RMK AO2 PK WND 10039/0458 RAB05E15B38 SLP046 P0000 60006 T02780239 10311 20256 53001 $",
-            "obs_time_utc": 1788846780,
+            "speed_knots": 21.0,
+            "speed_mph": 24.2,
+            "direction_deg": 150.0,
+            "direction_compass": "SSE",
+            "gust_knots": 31.0,
+            "gust_mph": 35.7,
+            "raw_metar": "METAR PHNL 081053Z 15021G31KT 10SM SCT016 BKN024 BKN033 27/25 A2970 RMK AO2 PK WND 14035/1028 RAB06E37 SLP056 SHRA N-E P0000 T02720250 VISNO RWY04R $",
+            "obs_time_utc": 1788864780,
             "source": "METAR ASOS PHNL"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-09-08T05:30:00",
-              "wvht_m": 3.2,
-              "dpd_s": 14.3,
-              "mwd_deg": 202.5,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 7.7,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 2.5,
-                "period_s": 14.3,
-                "direction_deg": 202.5,
-                "height_ft": 8.2,
-                "compass": "SSW"
+                "height_m": 6.7,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 22.0,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 2.0,
+                "height_m": 3.8,
                 "period_s": 9.5,
-                "direction_deg": 202.5,
-                "height_ft": 6.6,
-                "compass": "SSW"
+                "direction_deg": 225,
+                "height_ft": 12.5,
+                "compass": "SW"
               },
-              "wvht_ft": 10.5,
-              "mwd_compass": "SSW",
-              "lag_hours": 0.15,
-              "lag_confidence": "high",
-              "source_obs_time_utc": "2026-09-08T05:30:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "wvht_ft": 25.3,
+              "mwd_compass": "WSW",
+              "lag_hours": -0.04,
+              "lag_confidence": "medium",
+              "source_obs_time_utc": "2026-09-08T11:00:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-09-08T06:00:00",
-              "wvht_m": 3.5,
-              "dpd_s": 13.3,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 3.8,
+              "dpd_s": 10.5,
               "mwd_deg": 180,
               "primary_swell": {
-                "height_m": 2.1,
-                "period_s": 13.3,
+                "height_m": 2.4,
+                "period_s": 10.5,
                 "direction_deg": 180,
-                "height_ft": 6.9,
+                "height_ft": 7.9,
                 "compass": "S"
               },
               "wind_wave": {
-                "height_m": 2.8,
-                "period_s": 6.9,
+                "height_m": 3.0,
+                "period_s": 7.7,
                 "direction_deg": 157.5,
-                "height_ft": 9.2,
+                "height_ft": 9.8,
                 "compass": "SSE"
               },
-              "wvht_ft": 11.5,
+              "wvht_ft": 12.5,
               "mwd_compass": "S",
-              "lag_hours": 0.23,
-              "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-09-08T06:00:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "lag_hours": 0.29,
+              "lag_confidence": "low",
+              "source_obs_time_utc": "2026-09-08T11:00:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "agreement": {
-              "direction_diff_deg": 22.0,
-              "height_diff_ft": 1.0,
-              "confirmed": true
+              "direction_diff_deg": 68.0,
+              "height_diff_ft": 12.8,
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-09-08T05:30:00",
-              "wvht_m": 3.2,
-              "dpd_s": 14.3,
-              "mwd_deg": 202.5,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 7.7,
+              "dpd_s": 13.3,
+              "mwd_deg": 247.5,
               "primary_swell": {
-                "height_m": 2.5,
-                "period_s": 14.3,
-                "direction_deg": 202.5,
-                "height_ft": 8.2,
-                "compass": "SSW"
+                "height_m": 6.7,
+                "period_s": 13.3,
+                "direction_deg": 247.5,
+                "height_ft": 22.0,
+                "compass": "WSW"
               },
               "wind_wave": {
-                "height_m": 2.0,
+                "height_m": 3.8,
                 "period_s": 9.5,
-                "direction_deg": 202.5,
-                "height_ft": 6.6,
-                "compass": "SSW"
+                "direction_deg": 225,
+                "height_ft": 12.5,
+                "compass": "SW"
               },
-              "wvht_ft": 10.5,
-              "mwd_compass": "SSW"
+              "wvht_ft": 25.3,
+              "mwd_compass": "WSW"
             },
             "trend_next_several_hours": "holding steady",
             "tide_surge": {
@@ -16132,18 +16101,18 @@
         "windward": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 29.9,
-            "speed_knots": 26.0,
-            "direction_deg": 110,
-            "direction_compass": "ESE",
+            "speed_mph": 25.3,
+            "speed_knots": 22.0,
+            "direction_deg": 130,
+            "direction_compass": "SE",
             "source": "NWS gridded forecast (HFO/158,153)"
           },
           "extra_winds": {
             "kailua": {
-              "speed_mph": 12.7,
-              "speed_knots": 11.0,
-              "direction_deg": 120,
-              "direction_compass": "ESE",
+              "speed_mph": 13.8,
+              "speed_knots": 12.0,
+              "direction_deg": 140,
+              "direction_compass": "SE",
               "source": "NWS gridded forecast (HFO/156,150)"
             }
           },
@@ -16151,92 +16120,92 @@
             "station": "PHNG",
             "speed_knots": 16.0,
             "speed_mph": 18.4,
-            "direction_deg": 130.0,
-            "direction_compass": "SE",
-            "gust_knots": 27.0,
-            "gust_mph": 31.1,
-            "raw_metar": "METAR PHNG 080557Z AUTO 13016G27KT 10SM OVC026 27/24 A2965 RMK AO2 PK WND 14027/0554 SLP034 60021 T02720239 10278 20256 52008",
-            "obs_time_utc": 1788847020,
+            "direction_deg": 180.0,
+            "direction_compass": "S",
+            "gust_knots": 38.0,
+            "gust_mph": 43.7,
+            "raw_metar": "SPECI PHNG 081128Z AUTO 18016G38KT 7SM FEW018 OVC036 27/23 A2964 RMK AO2 PK WND 18038/1123 P0002 T02720233",
+            "obs_time_utc": 1788866880,
             "source": "METAR ASOS PHNG"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-09-08T05:56:00",
+              "obs_time_utc": "2026-09-08T10:56:00",
               "wvht_m": 3.1,
-              "dpd_s": 11.1,
+              "dpd_s": 12.5,
               "mwd_deg": 67.5,
               "primary_swell": {
-                "height_m": 1.3,
-                "period_s": 11.1,
+                "height_m": 1.5,
+                "period_s": 12.5,
                 "direction_deg": 67.5,
-                "height_ft": 4.3,
+                "height_ft": 4.9,
                 "compass": "ENE"
               },
               "wind_wave": {
                 "height_m": 2.8,
-                "period_s": 8.3,
-                "direction_deg": 67.5,
+                "period_s": 6.7,
+                "direction_deg": 112.5,
                 "height_ft": 9.2,
-                "compass": "ENE"
+                "compass": "ESE"
               },
               "wvht_ft": 10.2,
               "mwd_compass": "ENE",
-              "lag_hours": 0.37,
-              "lag_confidence": "low",
-              "source_obs_time_utc": "2026-09-08T05:56:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "lag_hours": 0.33,
+              "lag_confidence": "medium",
+              "source_obs_time_utc": "2026-09-08T10:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-09-08T06:00:00",
-              "wvht_m": 3.5,
-              "dpd_s": 13.3,
+              "obs_time_utc": "2026-09-08T11:00:00",
+              "wvht_m": 3.8,
+              "dpd_s": 10.5,
               "mwd_deg": 180,
               "primary_swell": {
-                "height_m": 2.1,
-                "period_s": 13.3,
+                "height_m": 2.4,
+                "period_s": 10.5,
                 "direction_deg": 180,
-                "height_ft": 6.9,
+                "height_ft": 7.9,
                 "compass": "S"
               },
               "wind_wave": {
-                "height_m": 2.8,
-                "period_s": 6.9,
+                "height_m": 3.0,
+                "period_s": 7.7,
                 "direction_deg": 157.5,
-                "height_ft": 9.2,
+                "height_ft": 9.8,
                 "compass": "SSE"
               },
-              "wvht_ft": 11.5,
+              "wvht_ft": 12.5,
               "mwd_compass": "S",
-              "lag_hours": 0.07,
-              "lag_confidence": "medium",
-              "source_obs_time_utc": "2026-09-08T06:00:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "lag_hours": 0.08,
+              "lag_confidence": "low",
+              "source_obs_time_utc": "2026-09-08T11:00:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "agreement": {
               "direction_diff_deg": 112.0,
-              "height_diff_ft": 1.3,
+              "height_diff_ft": 2.3,
               "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-09-08T05:56:00",
+              "obs_time_utc": "2026-09-08T10:56:00",
               "wvht_m": 3.1,
-              "dpd_s": 11.1,
+              "dpd_s": 12.5,
               "mwd_deg": 67.5,
               "primary_swell": {
-                "height_m": 1.3,
-                "period_s": 11.1,
+                "height_m": 1.5,
+                "period_s": 12.5,
                 "direction_deg": 67.5,
-                "height_ft": 4.3,
+                "height_ft": 4.9,
                 "compass": "ENE"
               },
               "wind_wave": {
                 "height_m": 2.8,
-                "period_s": 8.3,
-                "direction_deg": 67.5,
+                "period_s": 6.7,
+                "direction_deg": 112.5,
                 "height_ft": 9.2,
-                "compass": "ENE"
+                "compass": "ESE"
               },
               "wvht_ft": 10.2,
               "mwd_compass": "ENE"
@@ -18179,21 +18148,21 @@
       }
     },
     "maui": {
-      "forecast_text": "PHZ118-081530-\nMaui County Leeward Waters-\n446 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.TONIGHT...Southeast winds 25 to 30 knots. Seas 11 to 15 feet.\nWave Detail: West southwest 11 feet at 11 seconds. Isolated\nthunderstorms this evening. Frequent heavy showers. \n.TUESDAY...South winds 25 to 30 knots, easing to 15 to 20 knots\nin the afternoon. Seas 9 to 12 feet, subsiding to 6 to 7 feet in\nthe afternoon. Wave Detail: South southwest 9 feet at 7 seconds.\nNumerous showers, mainly in the morning. \n.TUESDAY NIGHT...South winds 7 to 10 knots. Seas 4 to 6 feet.\nWave Detail: South southwest 4 feet at 14 seconds and west 3 feet\nat 4 seconds. Numerous showers, mainly in the evening. \n.WEDNESDAY...Winds variable less than 10 knots, becoming east\nsoutheast 7 to 10 knots in the afternoon. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds and east southeast\n3 feet at 5 seconds. Scattered showers. \n.WEDNESDAY NIGHT...East northeast winds 7 to 10 knots. Seas 4 to\n5 feet. Wave Detail: South southwest 4 feet at 13 seconds and\neast southeast 3 feet at 5 seconds. Scattered showers. \n.THURSDAY...East northeast winds 7 to 10 knots. Seas 4 to 5 feet.\nWave Detail: South southwest 4 feet at 13 seconds and east\nsoutheast 3 feet at 5 seconds. Isolated showers. \n.THURSDAY NIGHT...East northeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: Southwest 4 feet at 12 seconds and east\nsoutheast 3 feet at 5 seconds. Scattered showers. \n.FRIDAY...East northeast winds 7 to 10 knots. Seas 3 to 4 feet.\nIsolated showers. \n.SATURDAY...East winds 7 to 10 knots, backing to east northeast\n10 to 15 knots after midnight. Seas 3 to 4 feet. Isolated\nshowers.  \n\nWinds and seas higher in and near tstms.\n\nPHZ117-081530-\nMaui County Windward Waters-\n446 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.TONIGHT...East southeast winds 20 to 25 knots. Seas 7 to\n10 feet. Wave Detail: South southeast 7 feet at 6 seconds, east\n5 feet at 11 seconds and west southwest 5 feet at 11 seconds.\nFrequent heavy showers. \n.TUESDAY...South southeast winds 20 to 25 knots. Seas 5 to\n8 feet. Wave Detail: Southeast 6 feet at 6 seconds, east 4 feet\nat 13 seconds and southwest 4 feet at 14 seconds. Numerous\nshowers. \n.TUESDAY NIGHT...South southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: East southeast 4 feet at 5 seconds and east\n3 feet at 13 seconds. Scattered showers. \n.WEDNESDAY...East southeast winds 10 to 15 knots. Seas 4 to\n5 feet. Wave Detail: East 4 feet at 5 seconds and east 3 feet at\n13 seconds. Scattered showers. \n.WEDNESDAY NIGHT...East southeast winds to 15 knots. Seas 4 to\n5 feet. Wave Detail: East 4 feet at 5 seconds and east 3 feet at\n12 seconds. Scattered showers. \n.THURSDAY...East winds to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 5 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY NIGHT...East winds to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 5 seconds and east 3 feet at 11 seconds.\nScattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East 3 feet at 4 seconds and east 3 feet at 11 seconds.\nScattered showers. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East 3 feet at 4 seconds. Scattered showers in the\nmorning, then isolated showers in the afternoon. Scattered\nshowers through the day.",
+      "forecast_text": "PHZ118-082115-\nMaui County Leeward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.REST OF TONIGHT...South southeast winds 25 to 30 knots. Seas\n10 to 14 feet. Wave Detail: Southwest 11 feet at 10 seconds.\nIsolated thunderstorms late this evening. Frequent heavy showers.\n.TUESDAY...South winds 20 to 25 knots, becoming south southwest\n10 to 15 knots in the afternoon. Seas 9 to 12 feet, subsiding to\n6 to 7 feet in the afternoon. Wave Detail: South southwest 9 feet\nat 7 seconds. Numerous showers, mainly in the morning. \n.TUESDAY NIGHT...South southwest winds 7 to 10 knots in the\nevening, becoming variable less than 10 knots. Seas 4 to 6 feet.\nWave Detail: South southwest 4 feet at 14 seconds and west 3 feet\nat 4 seconds. Numerous showers, mainly in the evening. \n.WEDNESDAY...Winds variable less than 10 knots, becoming east\nnortheast 10 to 15 knots in the afternoon. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds and east southeast\n3 feet at 5 seconds. Scattered showers. \n.WEDNESDAY NIGHT...East northeast winds 7 to 10 knots, becoming\n10 to 15 knots after midnight. Seas 4 to 5 feet. Wave Detail:\nSouth southwest 4 feet at 13 seconds and east southeast 3 feet at\n5 seconds. Scattered showers. \n.THURSDAY...East northeast winds 10 to 15 knots. Seas 4 to\n5 feet. Wave Detail: South southwest 4 feet at 13 seconds and\neast southeast 3 feet at 5 seconds. Isolated showers. \n.THURSDAY NIGHT...East northeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: Southwest 4 feet at 12 seconds and east\nsoutheast 3 feet at 5 seconds. Scattered showers. \n.FRIDAY...East northeast winds 7 to 10 knots, becoming 10 to\n15 knots after midnight. Seas 3 to 4 feet. Isolated showers. \n.SATURDAY...East northeast winds 10 to 15 knots, becoming 7 to\n10 knots in the afternoon, veering to east 10 to 15 knots in the\nevening, backing to east northeast 7 to 10 knots after midnight.\nSeas 3 to 4 feet. Isolated showers.  \n\nWinds and seas higher in and near tstms.\n\nPHZ117-082115-\nMaui County Windward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.REST OF TONIGHT...East southeast winds 20 to 25 knots. Seas 7 to\n10 feet. Wave Detail: Southeast 7 feet at 6 seconds, east 5 feet\nat 11 seconds and southwest 4 feet at 10 seconds. Frequent heavy\nshowers. \n.TUESDAY...South winds 20 to 25 knots, easing to 15 to 20 knots\nin the afternoon. Seas 5 to 8 feet. Wave Detail: Southeast 6 feet\nat 6 seconds, east 4 feet at 13 seconds and southwest 4 feet at\n14 seconds. Numerous showers. \n.TUESDAY NIGHT...Southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: East southeast 4 feet at 5 seconds and east\n3 feet at 13 seconds. Scattered showers. \n.WEDNESDAY...East southeast winds 10 to 15 knots. Seas 4 to\n5 feet. Wave Detail: East 4 feet at 5 seconds and east 3 feet at\n13 seconds. Scattered showers. \n.WEDNESDAY NIGHT...East southeast winds 15 to 20 knots. Seas 4 to\n5 feet. Wave Detail: East 4 feet at 5 seconds and east 3 feet at\n12 seconds. Scattered showers. \n.THURSDAY...East winds 15 to 20 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 5 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY NIGHT...East winds to 15 knots. Seas 4 to 5 feet. Wave\nDetail: East 4 feet at 5 seconds and east 3 feet at 11 seconds.\nScattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East 3 feet at 4 seconds and east 3 feet at 11 seconds.\nScattered showers. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East 3 feet at 4 seconds. Scattered showers in the\nmorning, then isolated showers in the afternoon. Scattered\nshowers through the day.",
       "shores": {
         "leeward": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 17.3,
-            "speed_knots": 15.0,
+            "speed_mph": 12.7,
+            "speed_knots": 11.0,
             "direction_deg": 130,
             "direction_compass": "SE",
             "source": "NWS gridded forecast (HFO/197,120)"
           },
           "extra_winds": {
             "lahaina": {
-              "speed_mph": 16.1,
-              "speed_knots": 14.0,
+              "speed_mph": 12.7,
+              "speed_knots": 11.0,
               "direction_deg": 150,
               "direction_compass": "SSE",
               "source": "NWS gridded forecast (HFO/198,122)"
@@ -25911,16 +25880,16 @@
         "windward": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 24.2,
-            "speed_knots": 21.0,
+            "speed_mph": 18.4,
+            "speed_knots": 16.0,
             "direction_deg": 100,
             "direction_compass": "E",
             "source": "NWS gridded forecast (HFO/214,130)"
           },
           "extra_winds": {
             "kahului": {
-              "speed_mph": 6.9,
-              "speed_knots": 6.0,
+              "speed_mph": 1.2,
+              "speed_knots": 1.0,
               "direction_deg": 330,
               "direction_compass": "NNW",
               "source": "NWS gridded forecast (HFO/212,126)"
@@ -25928,96 +25897,96 @@
           },
           "metar_wind": {
             "station": "PHOG",
-            "speed_knots": 9.0,
-            "speed_mph": 10.4,
-            "direction_deg": 30.0,
-            "direction_compass": "NNE",
-            "gust_knots": 23.0,
-            "gust_mph": 26.5,
-            "raw_metar": "METAR PHOG 080554Z 03009G23KT 350V050 10SM FEW029 28/23 A2973 RMK AO2 SLP073 T02780233 10317 20272 51017 $",
-            "obs_time_utc": 1788846840,
+            "speed_knots": 17.0,
+            "speed_mph": 19.6,
+            "direction_deg": 200.0,
+            "direction_compass": "SSW",
+            "gust_knots": 28.0,
+            "gust_mph": 32.2,
+            "raw_metar": "METAR PHOG 081054Z AUTO 20017G28KT 9SM -RA BKN070 OVC085 26/24 A2975 RMK AO2 PK WND 20037/1011 RAB14E24B40 SLP079 P0000 T02610239 TSNO $",
+            "obs_time_utc": 1788864840,
             "source": "METAR ASOS PHOG"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 2.1,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 2.0,
               "dpd_s": 11.1,
               "mwd_deg": 67.5,
               "primary_swell": {
-                "height_m": 1.0,
+                "height_m": 1.1,
                 "period_s": 11.1,
                 "direction_deg": 67.5,
-                "height_ft": 3.3,
+                "height_ft": 3.6,
                 "compass": "ENE"
               },
               "wind_wave": {
                 "height_m": 1.8,
-                "period_s": 7.1,
+                "period_s": 6.7,
                 "direction_deg": 67.5,
                 "height_ft": 5.9,
                 "compass": "ENE"
               },
-              "wvht_ft": 6.9,
+              "wvht_ft": 6.6,
               "mwd_compass": "ENE",
               "lag_hours": 0.31,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-09-08T05:56:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "source_obs_time_utc": "2026-09-08T10:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 2.2,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 2.6,
               "dpd_s": 11.8,
               "mwd_deg": 67.5,
               "primary_swell": {
-                "height_m": 1.5,
-                "period_s": 11.8,
-                "direction_deg": 67.5,
-                "height_ft": 4.9,
-                "compass": "ENE"
-              },
-              "wind_wave": {
                 "height_m": 1.7,
-                "period_s": 9.9,
+                "period_s": 11.8,
                 "direction_deg": 67.5,
                 "height_ft": 5.6,
                 "compass": "ENE"
               },
-              "wvht_ft": 7.2,
+              "wind_wave": {
+                "height_m": 1.9,
+                "period_s": 9.9,
+                "direction_deg": 67.5,
+                "height_ft": 6.2,
+                "compass": "ENE"
+              },
+              "wvht_ft": 8.5,
               "mwd_compass": "ENE",
               "lag_hours": 0.29,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-09-08T05:56:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "source_obs_time_utc": "2026-09-08T10:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "agreement": {
               "direction_diff_deg": 0.0,
-              "height_diff_ft": 0.3,
-              "confirmed": true
+              "height_diff_ft": 1.9,
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 2.1,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 2.0,
               "dpd_s": 11.1,
               "mwd_deg": 67.5,
               "primary_swell": {
-                "height_m": 1.0,
+                "height_m": 1.1,
                 "period_s": 11.1,
                 "direction_deg": 67.5,
-                "height_ft": 3.3,
+                "height_ft": 3.6,
                 "compass": "ENE"
               },
               "wind_wave": {
                 "height_m": 1.8,
-                "period_s": 7.1,
+                "period_s": 6.7,
                 "direction_deg": 67.5,
                 "height_ft": 5.9,
                 "compass": "ENE"
               },
-              "wvht_ft": 6.9,
+              "wvht_ft": 6.6,
               "mwd_compass": "ENE"
             },
             "trend_next_several_hours": "holding steady",
@@ -27958,36 +27927,36 @@
       }
     },
     "big_island": {
-      "forecast_text": "PHZ123-081530-\nBig Island Leeward Waters-\n446 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.TONIGHT...South southeast winds 20 to 25 knots. Gusts up to\n35 knots this evening. Seas 9 to 13 feet, subsiding to 8 to\n11 feet after midnight. Wave Detail: West southwest 10 feet at\n12 seconds and southwest 7 feet at 6 seconds. Isolated\nthunderstorms this evening. Frequent heavy showers. \n.TUESDAY...South southeast winds 20 to 25 knots, becoming south\n15 to 20 knots in the afternoon. Seas 7 to 8 feet, subsiding to\n5 to 6 feet in the afternoon. Wave Detail: Southwest 6 feet at\n9 seconds and west northwest 5 feet at 8 seconds. Numerous\nshowers. Isolated thunderstorms in the afternoon. \n.TUESDAY NIGHT...South winds 10 to 15 knots, backing to south\nsoutheast 7 to 10 knots after midnight. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds. Numerous showers. \n.WEDNESDAY...East southeast winds 7 to 10 knots, veering to\nsoutheast 10 to 15 knots in the afternoon. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds and east 3 feet at\n4 seconds. Scattered showers. \n.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 6 feet.\nWave Detail: South southwest 4 feet at 13 seconds and east\nnortheast 3 feet at 5 seconds. Scattered showers. \n.THURSDAY...East winds 10 to 15 knots, veering to south southeast\nin the afternoon. Seas 4 to 6 feet. Wave Detail: South southwest\n4 feet at 13 seconds and east northeast 3 feet at 5 seconds.\nScattered showers. \n.THURSDAY NIGHT...East southeast winds 10 to 15 knots, backing to\nnortheast after midnight. Seas 3 to 5 feet. Wave Detail: East\nnortheast 3 feet at 5 seconds and south southwest 3 feet at\n12 seconds. Scattered showers. \n.FRIDAY...East southeast winds 10 to 15 knots. Seas 3 to 5 feet.\nWave Detail: East 3 feet at 4 seconds. Scattered showers in the\nmorning, then isolated showers in the afternoon. Scattered\nshowers through the day. \n.SATURDAY...Northeast winds 10 to 15 knots, veering to southeast.\nSeas 3 to 4 feet. Wave Detail: East 3 feet at 4 seconds. Isolated\nshowers, then scattered showers after midnight.  \n\nWinds and seas higher in and near tstms.\n\nPHZ124-081530-\nBig Island Southeast Waters-\n446 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.TONIGHT...South southeast winds 10 to 15 knots. Seas 7 to\n9 feet. Wave Detail: West southwest 7 feet at 12 seconds, west\n3 feet at 9 seconds and east 3 feet at 14 seconds. Frequent heavy\nshowers. \n.TUESDAY...South winds 10 to 15 knots. Seas 6 to 7 feet. Wave\nDetail: West southwest 6 feet at 10 seconds, west northwest\n3 feet at 8 seconds and east 3 feet at 13 seconds. Frequent heavy\nshowers in the morning, then numerous showers with isolated\nthunderstorms in the afternoon. \n.TUESDAY NIGHT...Southeast winds 7 to 10 knots. Seas 5 to 6 feet.\nWave Detail: South southwest 4 feet at 14 seconds and east 3 feet\nat 14 seconds. Frequent heavy showers in the evening, then\noccasional showers after midnight. \n.WEDNESDAY...East winds 10 to 15 knots. Seas 5 to 7 feet. Wave\nDetail: South southwest 4 feet at 14 seconds, east 3 feet at\n4 seconds and east 3 feet at 13 seconds. Numerous showers. \n.WEDNESDAY NIGHT...East northeast winds to 15 knots. Seas 5 to\n6 feet. Wave Detail: South southwest 4 feet at 13 seconds, east\nnortheast 3 feet at 4 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY...East northeast winds 10 to 15 knots. Seas 5 to\n6 feet. Wave Detail: Northeast 4 feet at 4 seconds, south\nsouthwest 4 feet at 13 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY NIGHT...East northeast winds to 15 knots. Seas 5 to\n6 feet. Wave Detail: Northeast 4 feet at 4 seconds and east\n3 feet at 11 seconds. Scattered showers. \n.FRIDAY...East northeast winds to 15 knots. Seas 3 to 5 feet.\nWave Detail: East northeast 4 feet at 4 seconds. Isolated showers\nthrough the night, then scattered showers through the day. \n.SATURDAY...East northeast winds 10 to 15 knots. Seas 4 to\n5 feet. Wave Detail: Northeast 4 feet at 5 seconds. Isolated\nshowers through the night, then scattered showers through the\nday.  \n\nWinds and seas higher in and near tstms.\n\nPHZ122-081530-\nBig Island Windward Waters-\n446 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.TONIGHT...Southeast winds 20 to 25 knots, becoming south\nsoutheast 15 to 20 knots after midnight. Seas 6 to 9 feet,\nsubsiding to 5 to 7 feet after midnight. Wave Detail: South\n5 feet at 4 seconds, west southwest 5 feet at 12 seconds and east\n4 feet at 13 seconds. Frequent heavy showers. \n.TUESDAY...South southeast winds 15 to 20 knots. Seas 5 to\n7 feet. Wave Detail: Southwest 5 feet at 15 seconds, southeast\n4 feet at 4 seconds and east 3 feet at 13 seconds. Numerous\nshowers. Isolated thunderstorms in the afternoon. \n.TUESDAY NIGHT...Southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: South southwest 4 feet at 15 seconds,\nsoutheast 3 feet at 4 seconds and east 3 feet at 13 seconds.\nScattered showers in the evening, then numerous showers after\nmidnight. \n.WEDNESDAY...East southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: South southwest 4 feet at 14 seconds,\nnortheast 3 feet at 4 seconds and east 3 feet at 13 seconds.\nScattered showers, mainly in the morning. \n.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 6 feet.\nWave Detail: South southwest 4 feet at 13 seconds, north\nnortheast 3 feet at 4 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 13 seconds, north northeast\n3 feet at 4 seconds and east 3 feet at 12 seconds. Scattered\nshowers, mainly in the morning. \n.THURSDAY NIGHT...East winds to 10 knots. Seas 4 to 5 feet. Wave\nDetail: North northeast 3 feet at 4 seconds and east 3 feet at\n11 seconds. Isolated showers in the evening, then scattered\nshowers after midnight. \n.FRIDAY...East northeast winds 10 to 15 knots. Seas 4 to 6 feet.\nIsolated showers through the night, then scattered showers\nthrough the day. \n.SATURDAY...East northeast winds 10 to 15 knots. Seas 5 to\n6 feet. Isolated showers through the night, then scattered\nshowers through the day.  \n\nWinds and seas higher in and near tstms.",
+      "forecast_text": "PHZ123-082115-\nBig Island Leeward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.REST OF TONIGHT...South southeast winds 20 to 25 knots. Gusts up\nto 35 knots late this evening. Seas 9 to 12 feet. Wave Detail:\nWest southwest 9 feet at 11 seconds and southwest 7 feet at\n6 seconds. Isolated thunderstorms late this evening. Frequent\nheavy showers. \n.TUESDAY...South winds 20 to 25 knots. Seas 7 to 8 feet,\nsubsiding to 5 to 6 feet in the afternoon. Wave Detail: Southwest\n6 feet at 9 seconds and west northwest 5 feet at 8 seconds.\nNumerous showers. Isolated thunderstorms in the afternoon. \n.TUESDAY NIGHT...South winds 15 to 20 knots, becoming south\nsoutheast 7 to 10 knots after midnight. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds. Numerous showers. \n.WEDNESDAY...South southeast winds 7 to 10 knots, veering to\nsouth 10 to 15 knots in the afternoon. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds and east 3 feet at\n4 seconds. Scattered showers. \n.WEDNESDAY NIGHT...Southeast winds 10 to 15 knots, becoming\nnortheast 15 to 20 knots after midnight. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 13 seconds and east northeast\n3 feet at 5 seconds. Scattered showers. \n.THURSDAY...East northeast winds 15 to 20 knots, becoming\nsoutheast 10 to 15 knots in the afternoon. Seas 4 to 6 feet. Wave\nDetail: South southwest 4 feet at 13 seconds and east northeast\n3 feet at 5 seconds. Scattered showers. \n.THURSDAY NIGHT...East winds 15 to 20 knots. Seas 3 to 5 feet.\nWave Detail: East northeast 3 feet at 5 seconds and south\nsouthwest 3 feet at 12 seconds. Scattered showers. \n.FRIDAY...East southeast winds 10 to 15 knots. Seas 3 to 5 feet.\nWave Detail: East 3 feet at 4 seconds. Scattered showers in the\nmorning, then isolated showers in the afternoon. Scattered\nshowers through the day. \n.SATURDAY...East northeast winds 10 to 15 knots, veering to\nsoutheast after midnight. Seas 3 to 4 feet. Wave Detail: East\n3 feet at 4 seconds. Isolated showers, then scattered showers\nafter midnight.  \n\nWinds and seas higher in and near tstms.\n\nPHZ124-082115-\nBig Island Southeast Waters-\n1054 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.REST OF TONIGHT...South southeast winds 10 to 15 knots. Seas\n7 to 8 feet. Wave Detail: West southwest 7 feet at 12 seconds,\nwest 3 feet at 9 seconds and east 3 feet at 14 seconds. Frequent\nheavy showers. \n.TUESDAY...South winds 10 to 15 knots. Seas 6 to 7 feet. Wave\nDetail: West southwest 6 feet at 10 seconds, west northwest\n3 feet at 8 seconds and east 3 feet at 13 seconds. Frequent heavy\nshowers in the morning, then numerous showers with isolated\nthunderstorms in the afternoon. \n.TUESDAY NIGHT...South winds 7 to 10 knots in the evening,\nbecoming variable less than 10 knots. Seas 5 to 6 feet. Wave\nDetail: South southwest 4 feet at 14 seconds and east 3 feet at\n14 seconds. Frequent heavy showers in the evening, then\noccasional showers after midnight. \n.WEDNESDAY...East winds 10 to 15 knots. Seas 5 to 7 feet. Wave\nDetail: South southwest 4 feet at 14 seconds, east 3 feet at\n4 seconds and east 3 feet at 13 seconds. Numerous showers. \n.WEDNESDAY NIGHT...East northeast winds 15 to 20 knots. Seas 5 to\n6 feet. Wave Detail: South southwest 4 feet at 13 seconds, east\nnortheast 3 feet at 4 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY...East northeast winds 15 to 20 knots. Seas 5 to\n6 feet. Wave Detail: Northeast 4 feet at 4 seconds, south\nsouthwest 4 feet at 13 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY NIGHT...East northeast winds 15 to 20 knots. Seas 5 to\n6 feet. Wave Detail: Northeast 4 feet at 4 seconds and east\n3 feet at 11 seconds. Scattered showers. \n.FRIDAY...East northeast winds to 15 knots. Seas 3 to 5 feet.\nWave Detail: East northeast 4 feet at 4 seconds. Isolated showers\nthrough the night, then scattered showers through the day. \n.SATURDAY...East northeast winds to 15 knots. Seas 4 to 5 feet.\nWave Detail: Northeast 4 feet at 5 seconds. Isolated showers\nthrough the night, then scattered showers through the day.  \n\nWinds and seas higher in and near tstms.\n\nPHZ122-082115-\nBig Island Windward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...SMALL CRAFT ADVISORY IN EFFECT THROUGH TUESDAY AFTERNOON...\n\n.REST OF TONIGHT...South southeast winds 20 to 25 knots. Seas\n5 to 8 feet. Wave Detail: South 5 feet at 4 seconds, west\nsouthwest 5 feet at 12 seconds and east 3 feet at 13 seconds.\nFrequent heavy showers. \n.TUESDAY...South southeast winds 15 to 20 knots. Seas 5 to\n7 feet. Wave Detail: Southwest 5 feet at 15 seconds, southeast\n4 feet at 4 seconds and east 3 feet at 13 seconds. Numerous\nshowers. Isolated thunderstorms in the afternoon. \n.TUESDAY NIGHT...Southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: South southwest 4 feet at 15 seconds,\nsoutheast 3 feet at 4 seconds and east 3 feet at 13 seconds.\nScattered showers in the evening, then numerous showers after\nmidnight. \n.WEDNESDAY...East southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: South southwest 4 feet at 14 seconds,\nnortheast 3 feet at 4 seconds and east 3 feet at 13 seconds.\nScattered showers, mainly in the morning. \n.WEDNESDAY NIGHT...East winds 10 to 15 knots. Seas 4 to 6 feet.\nWave Detail: South southwest 4 feet at 13 seconds, north\nnortheast 3 feet at 4 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY...East northeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: South southwest 4 feet at 13 seconds, north\nnortheast 3 feet at 4 seconds and east 3 feet at 12 seconds.\nScattered showers, mainly in the morning. \n.THURSDAY NIGHT...East northeast winds 10 to 15 knots. Seas 4 to\n5 feet. Wave Detail: North northeast 3 feet at 4 seconds and east\n3 feet at 11 seconds. Isolated showers in the evening, then\nscattered showers after midnight. \n.FRIDAY...East northeast winds 10 to 15 knots. Seas 4 to 6 feet.\nIsolated showers through the night, then scattered showers\nthrough the day. \n.SATURDAY...East northeast winds 10 to 15 knots. Seas 5 to\n6 feet. Isolated showers through the night, then scattered\nshowers through the day.  \n\nWinds and seas higher in and near tstms.",
       "shores": {
         "leeward": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 5.8,
-            "speed_knots": 5.0,
-            "direction_deg": 350,
-            "direction_compass": "N",
+            "speed_mph": 10.4,
+            "speed_knots": 9.0,
+            "direction_deg": 170,
+            "direction_compass": "S",
             "source": "NWS gridded forecast (HFO/229,70)"
           },
           "extra_winds": {
             "kailua_kona": {
-              "speed_mph": 5.8,
-              "speed_knots": 5.0,
-              "direction_deg": 340,
-              "direction_compass": "NNW",
+              "speed_mph": 9.2,
+              "speed_knots": 8.0,
+              "direction_deg": 170,
+              "direction_compass": "S",
               "source": "NWS gridded forecast (HFO/231,70)"
             }
           },
           "metar_wind": {
             "station": "PHKO",
-            "speed_knots": 17.0,
-            "speed_mph": 19.6,
-            "direction_deg": 170.0,
-            "direction_compass": "S",
-            "gust_knots": 26.0,
-            "gust_mph": 29.9,
-            "raw_metar": "METAR PHKO 080553Z 17017G26KT 10SM CLR 30/22 A2974 RMK AO2 PK WND 19028/0542 SLP071 60000 T03000217 10317 20294 51018 $",
-            "obs_time_utc": 1788846780,
+            "speed_knots": 16.0,
+            "speed_mph": 18.4,
+            "direction_deg": 160.0,
+            "direction_compass": "SSE",
+            "gust_knots": 24.0,
+            "gust_mph": 27.6,
+            "raw_metar": "METAR PHKO 081053Z AUTO 16016G24KT 10SM -RA SCT047 OVC055 29/23 A2977 RMK AO2 RAB0958E07B38 SLP080 P0000 T02890233 $",
+            "obs_time_utc": 1788864780,
             "source": "METAR ASOS PHKO"
           },
           "swell": null,
@@ -29923,18 +29892,18 @@
         "kawaihae": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 8.1,
-            "speed_knots": 7.0,
-            "direction_deg": 170,
-            "direction_compass": "S",
+            "speed_mph": 2.3,
+            "speed_knots": 2.0,
+            "direction_deg": 110,
+            "direction_compass": "ESE",
             "source": "NWS gridded forecast (HFO/238,91)"
           },
           "extra_winds": {
             "kawaihae": {
-              "speed_mph": 3.5,
-              "speed_knots": 3.0,
-              "direction_deg": 190,
-              "direction_compass": "S",
+              "speed_mph": 2.3,
+              "speed_knots": 2.0,
+              "direction_deg": 10,
+              "direction_compass": "N",
               "source": "NWS gridded forecast (HFO/239,88)"
             }
           },
@@ -31872,113 +31841,113 @@
         "windward": {
           "wind": null,
           "model_wind": {
-            "speed_mph": 16.1,
-            "speed_knots": 14.0,
-            "direction_deg": 150,
-            "direction_compass": "SSE",
+            "speed_mph": 17.3,
+            "speed_knots": 15.0,
+            "direction_deg": 140,
+            "direction_compass": "SE",
             "source": "NWS gridded forecast (HFO/274,74)"
           },
           "extra_winds": {
             "hilo": {
-              "speed_mph": 9.2,
-              "speed_knots": 8.0,
-              "direction_deg": 140,
+              "speed_mph": 8.1,
+              "speed_knots": 7.0,
+              "direction_deg": 130,
               "direction_compass": "SE",
               "source": "NWS gridded forecast (HFO/271,74)"
             }
           },
           "metar_wind": {
             "station": "PHTO",
-            "speed_knots": 12.0,
-            "speed_mph": 13.8,
-            "direction_deg": 130.0,
-            "direction_compass": "SE",
+            "speed_knots": 3.0,
+            "speed_mph": 3.5,
+            "direction_deg": 200.0,
+            "direction_compass": "SSW",
             "gust_knots": null,
             "gust_mph": null,
-            "raw_metar": "METAR PHTO 080553Z 13012KT 10SM SCT080 26/23 A2977 RMK AO2 SLP079 60004 T02560233 10283 20256 53020 $",
-            "obs_time_utc": 1788846780,
+            "raw_metar": "METAR PHTO 081053Z AUTO 20003KT 10SM CLR 25/22 A2977 RMK AO2 SLP078 T02500222 TSNO $",
+            "obs_time_utc": 1788864780,
             "source": "METAR ASOS PHTO"
           },
           "swell": {
             "current_south_shore_estimate": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 2.2,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 2.6,
               "dpd_s": 11.8,
               "mwd_deg": 67.5,
               "primary_swell": {
-                "height_m": 1.5,
-                "period_s": 11.8,
-                "direction_deg": 67.5,
-                "height_ft": 4.9,
-                "compass": "ENE"
-              },
-              "wind_wave": {
                 "height_m": 1.7,
-                "period_s": 9.9,
+                "period_s": 11.8,
                 "direction_deg": 67.5,
                 "height_ft": 5.6,
                 "compass": "ENE"
               },
-              "wvht_ft": 7.2,
+              "wind_wave": {
+                "height_m": 1.9,
+                "period_s": 9.9,
+                "direction_deg": 67.5,
+                "height_ft": 6.2,
+                "compass": "ENE"
+              },
+              "wvht_ft": 8.5,
               "mwd_compass": "ENE",
               "lag_hours": 0.33,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-09-08T05:56:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "source_obs_time_utc": "2026-09-08T10:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "verification_estimate": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 2.1,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 2.0,
               "dpd_s": 11.1,
               "mwd_deg": 67.5,
               "primary_swell": {
-                "height_m": 1.0,
+                "height_m": 1.1,
                 "period_s": 11.1,
                 "direction_deg": 67.5,
-                "height_ft": 3.3,
+                "height_ft": 3.6,
                 "compass": "ENE"
               },
               "wind_wave": {
                 "height_m": 1.8,
-                "period_s": 7.1,
+                "period_s": 6.7,
                 "direction_deg": 67.5,
                 "height_ft": 5.9,
                 "compass": "ENE"
               },
-              "wvht_ft": 6.9,
+              "wvht_ft": 6.6,
               "mwd_compass": "ENE",
               "lag_hours": 0.35,
               "lag_confidence": "low",
-              "source_obs_time_utc": "2026-09-08T05:56:00",
-              "as_of_now_utc": "2026-09-08T06:27:38.595843",
+              "source_obs_time_utc": "2026-09-08T10:56:00",
+              "as_of_now_utc": "2026-09-08T11:40:39.771633",
               "lookback_match_quality": "good"
             },
             "agreement": {
               "direction_diff_deg": 0.0,
-              "height_diff_ft": 0.3,
-              "confirmed": true
+              "height_diff_ft": 1.9,
+              "confirmed": false
             },
             "latest_barbers_point_reading": {
-              "obs_time_utc": "2026-09-08T05:56:00",
-              "wvht_m": 2.2,
+              "obs_time_utc": "2026-09-08T10:56:00",
+              "wvht_m": 2.6,
               "dpd_s": 11.8,
               "mwd_deg": 67.5,
               "primary_swell": {
-                "height_m": 1.5,
-                "period_s": 11.8,
-                "direction_deg": 67.5,
-                "height_ft": 4.9,
-                "compass": "ENE"
-              },
-              "wind_wave": {
                 "height_m": 1.7,
-                "period_s": 9.9,
+                "period_s": 11.8,
                 "direction_deg": 67.5,
                 "height_ft": 5.6,
                 "compass": "ENE"
               },
-              "wvht_ft": 7.2,
+              "wind_wave": {
+                "height_m": 1.9,
+                "period_s": 9.9,
+                "direction_deg": 67.5,
+                "height_ft": 6.2,
+                "compass": "ENE"
+              },
+              "wvht_ft": 8.5,
               "mwd_compass": "ENE"
             },
             "trend_next_several_hours": "holding steady",
@@ -33919,112 +33888,81 @@
       }
     }
   },
-  "wind": {
-    "average_speed_mph": 8.5,
-    "vector_average_speed_mph": 5.8,
-    "average_direction_deg": 162.6,
-    "average_direction_compass": "SSE",
-    "direction_reliable": true,
-    "stations": [
-      {
-        "id": "KHIKOLOA34",
-        "speed_mph": 8,
-        "direction_deg": 112,
-        "gust_mph": 9,
-        "temp_f": 79,
-        "humidity": 95,
-        "time_local": "2026-09-07 20:27:31",
-        "time_utc": "2026-09-08T06:27:31Z",
-        "status": "Online"
-      },
-      {
-        "id": "KHIKOLOA27",
-        "speed_mph": 9,
-        "direction_deg": 206,
-        "gust_mph": 13,
-        "temp_f": 78,
-        "humidity": 99,
-        "time_local": "2026-09-07 20:27:00",
-        "time_utc": "2026-09-08T06:27:00Z",
-        "status": "Online"
-      }
-    ],
-    "num_stations": 2
-  },
+  "wind": null,
   "model_wind": {
-    "speed_mph": 52.9,
-    "speed_knots": 46.0,
-    "direction_deg": 130,
-    "direction_compass": "SE",
+    "speed_mph": 55.2,
+    "speed_knots": 48.0,
+    "direction_deg": 180,
+    "direction_compass": "S",
     "source": "NWS gridded forecast (HFO/86,169)"
   },
   "extra_winds": {
     "poipu": {
-      "speed_mph": 51.8,
-      "speed_knots": 45.0,
-      "direction_deg": 130,
-      "direction_compass": "SE",
+      "speed_mph": 55.2,
+      "speed_knots": 48.0,
+      "direction_deg": 180,
+      "direction_compass": "S",
       "source": "NWS gridded forecast (HFO/86,170)"
     },
     "port_allen": {
-      "speed_mph": 46.0,
-      "speed_knots": 40.0,
-      "direction_deg": 120,
-      "direction_compass": "ESE",
+      "speed_mph": 54.1,
+      "speed_knots": 47.0,
+      "direction_deg": 170,
+      "direction_compass": "S",
       "source": "NWS gridded forecast (HFO/82,171)"
     }
   },
   "swell": {
     "current_south_shore_estimate": {
-      "obs_time_utc": "2026-09-08T05:30:00",
-      "wvht_m": 3.2,
-      "dpd_s": 14.3,
-      "mwd_deg": 202.5,
+      "obs_time_utc": "2026-09-08T11:00:00",
+      "wvht_m": 7.7,
+      "dpd_s": 13.3,
+      "mwd_deg": 247.5,
       "primary_swell": {
-        "height_m": 2.5,
-        "period_s": 14.3,
-        "direction_deg": 202.5,
-        "height_ft": 8.2,
-        "compass": "SSW"
+        "height_m": 6.7,
+        "period_s": 13.3,
+        "direction_deg": 247.5,
+        "height_ft": 22.0,
+        "compass": "WSW"
       },
       "wind_wave": {
-        "height_m": 2.0,
+        "height_m": 3.8,
         "period_s": 9.5,
-        "direction_deg": 202.5,
-        "height_ft": 6.6,
-        "compass": "SSW"
+        "direction_deg": 225,
+        "height_ft": 12.5,
+        "compass": "SW"
       },
-      "wvht_ft": 10.5,
-      "mwd_compass": "SSW",
-      "lag_hours": 0.1,
-      "lag_confidence": "high",
-      "source_obs_time_utc": "2026-09-08T05:30:00",
-      "as_of_now_utc": "2026-09-08T06:27:38.595843",
-      "lookback_match_quality": "good"
+      "wvht_ft": 25.3,
+      "mwd_compass": "WSW",
+      "lag_hours": -2.79,
+      "lag_confidence": "medium",
+      "source_obs_time_utc": "2026-09-08T11:00:00",
+      "as_of_now_utc": "2026-09-08T11:40:39.771633",
+      "lookback_match_quality": "poor -- series didn't cover the needed lookback window"
     },
     "verification_estimate": null,
     "agreement": null,
     "latest_barbers_point_reading": {
-      "obs_time_utc": "2026-09-08T05:30:00",
-      "wvht_m": 3.2,
-      "dpd_s": 14.3,
-      "mwd_deg": 202.5,
+      "obs_time_utc": "2026-09-08T11:00:00",
+      "wvht_m": 7.7,
+      "dpd_s": 13.3,
+      "mwd_deg": 247.5,
       "primary_swell": {
-        "height_m": 2.5,
-        "period_s": 14.3,
-        "direction_deg": 202.5,
-        "height_ft": 8.2,
-        "compass": "SSW"
+        "height_m": 6.7,
+        "period_s": 13.3,
+        "direction_deg": 247.5,
+        "height_ft": 22.0,
+        "compass": "WSW"
       },
       "wind_wave": {
-        "height_m": 2.0,
+        "height_m": 3.8,
         "period_s": 9.5,
-        "direction_deg": 202.5,
-        "height_ft": 6.6,
-        "compass": "SSW"
+        "direction_deg": 225,
+        "height_ft": 12.5,
+        "compass": "SW"
       },
-      "wvht_ft": 10.5,
-      "mwd_compass": "SSW"
+      "wvht_ft": 25.3,
+      "mwd_compass": "WSW"
     },
     "trend_next_several_hours": "holding steady",
     "tide_surge": {
@@ -35958,18 +35896,8 @@
     "observations": [],
     "surge_ft": null
   },
-  "forecast_text": "PHZ112-081530-\nKauai Leeward Waters-\n446 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...HURRICANE WARNING IN EFFECT...\n\n.TONIGHT...Hurricane conditions. Southeast winds 70 to 90 knots,\nveering to southwest 60 to 80 knots after midnight. Seas 29 to\n34 feet, subsiding to 27 to 32 feet after midnight. Wave Detail:\nSouth southwest 34 feet at 12 seconds and east 3 feet at\n11 seconds. Frequent heavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions possible with hurricane\nconditions also possible. Southwest winds 25 to 30 knots, easing\nto 15 to 20 knots in the afternoon. Seas 12 to 16 feet, subsiding\nto 6 to 8 feet in the afternoon. Wave Detail: West southwest\n16 feet at 8 seconds, south southwest 5 feet at 14 seconds and\neast 3 feet at 11 seconds. Frequent heavy showers in the morning,\nthen numerous showers in the afternoon. \n.TUESDAY NIGHT...Southwest winds to 15 knots, becoming west\nsouthwest after midnight. Seas 5 to 7 feet. Wave Detail:\nSouthwest 4 feet at 4 seconds and south southwest 4 feet at\n14 seconds. Scattered showers. \n.WEDNESDAY...South southwest winds 7 to 10 knots in the morning,\nbecoming variable less than 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 14 seconds. Isolated showers. \n.WEDNESDAY NIGHT...Winds variable less than 10 knots. Seas 4 to\n5 feet. Wave Detail: South southwest 4 feet at 13 seconds.\nScattered showers. \n.THURSDAY...Winds variable less than 10 knots, becoming east\nsoutheast 7 to 10 knots in the afternoon. Seas 3 to 5 feet. Wave\nDetail: South southwest 4 feet at 13 seconds and east 3 feet at\n6 seconds. Scattered showers. \n.THURSDAY NIGHT...East winds 7 to 10 knots, becoming 10 to\n15 knots after midnight. Seas 3 to 5 feet. Wave Detail: East\n3 feet at 6 seconds and south southwest 3 feet at 12 seconds.\nScattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers. \n.SATURDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers.  \n\nWinds and seas higher in and near tstms.",
-  "wind_khiwaime179": {
-    "id": "KHIKOLOA34",
-    "speed_mph": 8,
-    "direction_deg": 112,
-    "gust_mph": 9,
-    "temp_f": 79,
-    "humidity": 95,
-    "time_local": "2026-09-07 20:27:31",
-    "time_utc": "2026-09-08T06:27:31Z",
-    "status": "Online"
-  },
+  "forecast_text": "PHZ112-082115-\nKauai Leeward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...HURRICANE WARNING IN EFFECT...\n\n.REST OF TONIGHT...Hurricane conditions. South winds 70 to\n90 knots. Seas 30 to 35 feet, subsiding to 27 to 32 feet. Wave\nDetail: South southwest 34 feet at 13 seconds, south southwest\n7 feet at 10 seconds and east 3 feet at 11 seconds. Frequent\nheavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions expected with hurricane\nconditions possible. Southwest winds 25 to 35 knots, easing to\n15 to 20 knots in the afternoon. Seas 12 to 16 feet, subsiding to\n6 to 8 feet in the afternoon. Wave Detail: West southwest 16 feet\nat 8 seconds, south southwest 5 feet at 14 seconds and east\n3 feet at 11 seconds. Frequent heavy showers in the morning, then\nnumerous showers in the afternoon. \n.TUESDAY NIGHT...Southwest winds 10 to 15 knots, becoming 7 to\n10 knots after midnight. Seas 5 to 7 feet. Wave Detail: Southwest\n4 feet at 4 seconds and south southwest 4 feet at 14 seconds.\nScattered showers. \n.WEDNESDAY...South winds 7 to 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 14 seconds. Isolated showers. \n.WEDNESDAY NIGHT...Winds variable less than 10 knots, becoming\neast northeast 7 to 10 knots after midnight. Seas 4 to 5 feet.\nWave Detail: South southwest 4 feet at 13 seconds. Scattered\nshowers. \n.THURSDAY...East southeast winds 7 to 10 knots. Seas 3 to 5 feet.\nWave Detail: South southwest 4 feet at 13 seconds and east 3 feet\nat 6 seconds. Scattered showers. \n.THURSDAY NIGHT...East southeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: East 3 feet at 6 seconds and south southwest\n3 feet at 12 seconds. Scattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers. \n.SATURDAY...East winds 10 to 15 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers.  \n\nWinds and seas higher in and near tstms.",
+  "wind_khiwaime179": null,
   "swell_51208": {
     "obs_time_utc": "2026-07-25T00:26:00",
     "wvht_m": 2.0,
@@ -41756,33 +41684,33 @@
     "observations": [],
     "surge_ft": null
   },
-  "forecast_text_110": "PHZ110-081530-\nKauai Northwest Waters-\n446 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...HURRICANE WARNING IN EFFECT...\n\n.TONIGHT...Hurricane conditions. East southeast winds 65 to\n85 knots, veering to south after midnight. Gusts up to 100 knots.\nSeas 21 to 26 feet, building to 27 to 32 feet after midnight.\nWave Detail: South southwest 32 feet at 13 seconds, south\nsouthwest 5 feet at 9 seconds and east 5 feet at 12 seconds.\nFrequent heavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions expected with hurricane\nconditions possible. Southwest winds 40 to 50 knots, easing to\n25 to 30 knots in the afternoon. Seas 18 to 23 feet, subsiding to\n8 to 11 feet in the afternoon. Wave Detail: Southwest 23 feet at\n10 seconds, south southwest 5 feet at 14 seconds and east 4 feet\nat 12 seconds. Frequent heavy showers in the morning, then\nnumerous showers in the afternoon. \n.TUESDAY NIGHT...Southwest winds 15 to 20 knots, easing to 10 to\n15 knots after midnight. Seas 6 to 8 feet, subsiding to 4 to\n6 feet after midnight. Wave Detail: Southwest 5 feet at\n5 seconds, east 4 feet at 11 seconds and south southwest 4 feet\nat 14 seconds. Scattered showers. \n.WEDNESDAY...South southwest winds to 10 knots in the morning,\nbecoming variable less than 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 14 seconds, east 3 feet at\n5 seconds and east 3 feet at 13 seconds. Isolated showers. \n.WEDNESDAY NIGHT...Winds variable less than 10 knots, becoming\neast 7 to 10 knots after midnight. Seas 4 to 5 feet. Wave Detail:\nEast 3 feet at 6 seconds, east 3 feet at 12 seconds and south\nsouthwest 3 feet at 13 seconds. Scattered showers. \n.THURSDAY...East winds to 10 knots. Seas 3 to 5 feet. Wave\nDetail: East 3 feet at 6 seconds and east 3 feet at 12 seconds.\nScattered showers, mainly in the morning. \n.THURSDAY NIGHT...East winds 10 to 15 knots. Seas 3 to 5 feet.\nWave Detail: East 3 feet at 6 seconds and east 3 feet at\n11 seconds. Scattered showers. \n.FRIDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds. Isolated showers through the\nnight, then scattered showers through the day. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers.  \n\nWinds and seas higher in and near tstms.",
-  "forecast_text_111": "PHZ111-081530-\nKauai Windward Waters-\n446 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...TROPICAL STORM WARNING IN EFFECT...\n\n.TONIGHT...Tropical storm conditions. Southeast winds 45 to\n55 knots. Seas 15 to 20 feet, building to 17 to 21 feet after\nmidnight. Wave Detail: South southwest 18 feet at 9 seconds and\neast 5 feet at 11 seconds. Frequent heavy showers with isolated\nthunderstorms. \n.TUESDAY...Tropical storm conditions expected. South winds 35 to\n45 knots, becoming south southwest 20 to 25 knots in the\nafternoon. Seas 13 to 18 feet, subsiding to 8 to 11 feet in the\nafternoon. Wave Detail: Southwest 16 feet at 8 seconds, south\nsouthwest 5 feet at 14 seconds and east 4 feet at 11 seconds.\nFrequent heavy showers in the morning, then numerous showers in\nthe afternoon. \n.TUESDAY NIGHT...Southwest winds 15 to 20 knots, becoming south\nsouthwest 10 to 15 knots after midnight. Seas 5 to 8 feet. Wave\nDetail: South southwest 5 feet at 5 seconds, east 4 feet at\n13 seconds and south 4 feet at 14 seconds. Scattered showers. \n.WEDNESDAY...South southeast winds 7 to 10 knots. Seas 5 to\n7 feet. Wave Detail: South southwest 4 feet at 14 seconds, east\n3 feet at 5 seconds and east 3 feet at 13 seconds. Scattered\nshowers. \n.WEDNESDAY NIGHT...East southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: East 4 feet at 6 seconds, south southwest\n4 feet at 13 seconds and east 3 feet at 12 seconds. Scattered\nshowers. \n.THURSDAY...East southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: East southeast 4 feet at 6 seconds, south\nsouthwest 4 feet at 13 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY NIGHT...East winds to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East southeast 4 feet at 6 seconds, east 3 feet at\n11 seconds and south southwest 3 feet at 12 seconds. Scattered\nshowers. \n.FRIDAY...East winds 10 to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East southeast 4 feet at 5 seconds. Scattered showers in\nthe morning, then isolated showers in the afternoon. Scattered\nshowers through the day. \n.SATURDAY...East winds to 10 knots. Seas 5 to 6 feet. Wave\nDetail: East southeast 3 feet at 5 seconds. Scattered showers in\nthe morning, then isolated showers in the afternoon. Scattered\nshowers through the day.  \n\nWinds and seas higher in and near tstms.",
+  "forecast_text_110": "PHZ110-082115-\nKauai Northwest Waters-\n1054 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...HURRICANE WARNING IN EFFECT...\n\n.REST OF TONIGHT...Hurricane conditions. East southeast winds\n70 to 90 knots, veering to south. Seas 25 to 30 feet, building to\n27 to 32 feet. Wave Detail: South southwest 32 feet at\n13 seconds, south southwest 5 feet at 9 seconds and east 5 feet\nat 12 seconds. Frequent heavy showers with isolated\nthunderstorms. \n.TUESDAY...Tropical storm conditions expected with hurricane\nconditions possible. Southwest winds 40 to 50 knots, easing to\n20 to 25 knots in the afternoon. Seas 18 to 23 feet, subsiding to\n8 to 11 feet in the afternoon. Wave Detail: Southwest 23 feet at\n10 seconds, south southwest 5 feet at 14 seconds and east 4 feet\nat 12 seconds. Frequent heavy showers in the morning, then\nnumerous showers in the afternoon. \n.TUESDAY NIGHT...Southwest winds 15 to 20 knots, easing to 10 to\n15 knots after midnight. Seas 6 to 8 feet, subsiding to 4 to\n6 feet after midnight. Wave Detail: Southwest 5 feet at\n5 seconds, east 4 feet at 11 seconds and south southwest 4 feet\nat 14 seconds. Scattered showers. \n.WEDNESDAY...South winds 7 to 10 knots. Seas 4 to 5 feet. Wave\nDetail: South southwest 4 feet at 14 seconds, east 3 feet at\n5 seconds and east 3 feet at 13 seconds. Isolated showers. \n.WEDNESDAY NIGHT...East southeast winds 7 to 10 knots. Seas 4 to\n5 feet. Wave Detail: East 3 feet at 6 seconds, east 3 feet at\n12 seconds and south southwest 3 feet at 13 seconds. Scattered\nshowers. \n.THURSDAY...East southeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: East 3 feet at 6 seconds and east 3 feet at\n12 seconds. Scattered showers, mainly in the morning. \n.THURSDAY NIGHT...East southeast winds 10 to 15 knots. Seas 3 to\n5 feet. Wave Detail: East 3 feet at 6 seconds and east 3 feet at\n11 seconds. Scattered showers. \n.FRIDAY...East winds to 15 knots. Seas 4 to 6 feet. Wave Detail:\nEast 3 feet at 5 seconds. Isolated showers through the night,\nthen scattered showers through the day. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East 3 feet at 5 seconds. Scattered showers.  \n\nWinds and seas higher in and near tstms.",
+  "forecast_text_111": "PHZ111-082115-\nKauai Windward Waters-\n1054 PM HST Mon Sep 7 2026\n\n...TORNADO WATCH 1 IN EFFECT UNTIL 4 AM HST TUESDAY...\n...TROPICAL STORM WARNING IN EFFECT...\n\n.REST OF TONIGHT...Tropical storm conditions. South southeast\nwinds 45 to 55 knots. Seas 17 to 21 feet. Wave Detail: South\nsouthwest 18 feet at 9 seconds and east 5 feet at 11 seconds.\nFrequent heavy showers with isolated thunderstorms. \n.TUESDAY...Tropical storm conditions expected. South southwest\nwinds 35 to 45 knots, easing to 20 to 25 knots in the afternoon.\nSeas 13 to 18 feet, subsiding to 8 to 11 feet in the afternoon.\nWave Detail: Southwest 16 feet at 8 seconds, south southwest\n5 feet at 14 seconds and east 4 feet at 11 seconds. Frequent\nheavy showers in the morning, then numerous showers in the\nafternoon. \n.TUESDAY NIGHT...Southwest winds 15 to 20 knots, becoming south\nsouthwest 10 to 15 knots after midnight. Seas 5 to 8 feet. Wave\nDetail: South southwest 5 feet at 5 seconds, east 4 feet at\n13 seconds and south 4 feet at 14 seconds. Scattered showers. \n.WEDNESDAY...South southeast winds 7 to 10 knots. Seas 5 to\n7 feet. Wave Detail: South southwest 4 feet at 14 seconds, east\n3 feet at 5 seconds and east 3 feet at 13 seconds. Scattered\nshowers. \n.WEDNESDAY NIGHT...East southeast winds to 10 knots. Seas 4 to\n6 feet. Wave Detail: East 4 feet at 6 seconds, south southwest\n4 feet at 13 seconds and east 3 feet at 12 seconds. Scattered\nshowers. \n.THURSDAY...East southeast winds 10 to 15 knots. Seas 4 to\n6 feet. Wave Detail: East southeast 4 feet at 6 seconds, south\nsouthwest 4 feet at 13 seconds and east 3 feet at 12 seconds.\nScattered showers. \n.THURSDAY NIGHT...East winds to 15 knots. Seas 4 to 6 feet. Wave\nDetail: East southeast 4 feet at 6 seconds, east 3 feet at\n11 seconds and south southwest 3 feet at 12 seconds. Scattered\nshowers. \n.FRIDAY...East winds to 15 knots. Seas 4 to 6 feet. Wave Detail:\nEast southeast 4 feet at 5 seconds. Scattered showers in the\nmorning, then isolated showers in the afternoon. Scattered\nshowers through the day. \n.SATURDAY...East winds 10 to 15 knots. Seas 5 to 6 feet. Wave\nDetail: East southeast 3 feet at 5 seconds. Scattered showers in\nthe morning, then isolated showers in the afternoon. Scattered\nshowers through the day.  \n\nWinds and seas higher in and near tstms.",
   "model_wind_port_allen": {
-    "speed_mph": 46.0,
-    "speed_knots": 40.0,
-    "direction_deg": 120,
-    "direction_compass": "ESE",
+    "speed_mph": 54.1,
+    "speed_knots": 47.0,
+    "direction_deg": 170,
+    "direction_compass": "S",
     "source": "NWS gridded forecast (HFO/82,171)"
   },
   "model_wind_kikiaola": null,
   "metar_phbk": {
     "station": "PHBK",
-    "speed_knots": 35.0,
-    "speed_mph": 40.3,
-    "direction_deg": 110.0,
+    "speed_knots": 38.0,
+    "speed_mph": 43.7,
+    "direction_deg": 120.0,
     "direction_compass": "ESE",
-    "gust_knots": 68.0,
-    "gust_mph": 78.3,
-    "raw_metar": "SPECI PHBK 080607Z AUTO 11035G68KT 5SM -RA BR BKN045 OVC065 26/24 A2929 RMK AO2 PK WND 11069/0556 PRESFR T02610239 PNO $",
-    "obs_time_utc": 1788847620,
+    "gust_knots": 73.0,
+    "gust_mph": 84.0,
+    "raw_metar": "SPECI PHBK 080633Z AUTO 12038G73KT 6SM -RA BKN044 BKN065 OVC085 27/24 A2925 RMK AO2 PK WND 11073/0624 PRESFR T02670239 PNO $",
+    "obs_time_utc": 1788849180,
     "source": "METAR ASOS PHBK"
   },
   "model_wind_napali_exposed": {
-    "speed_mph": 50.6,
-    "speed_knots": 44.0,
-    "direction_deg": 120,
-    "direction_compass": "ESE",
+    "speed_mph": 69.0,
+    "speed_knots": 60.0,
+    "direction_deg": 170,
+    "direction_compass": "S",
     "source": "NWS gridded forecast (HFO/75,187)"
   },
   "model_wind_napali_mid": null,
